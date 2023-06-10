@@ -121,6 +121,14 @@
     position: relative;
   }
 
+  .menu button:active {
+    outline: none;
+  }
+
+  .menu button:focus {
+    outline: none;
+  }
+
   .menu button svg{
 
   }
