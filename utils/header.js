@@ -11,7 +11,7 @@ export default function Header ( ) {
   const [menuDisplay, setMenuDisplay] = useState('inactive')
   
 
-  function showMobileNav (e) {
+  function showMobileNav () {
     const nav = document.getElementById('mobileNav');
 
     if (menuDisplay == 'inactive') {
@@ -64,13 +64,13 @@ export default function Header ( ) {
           <svg style={{display: 'none'}} xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512" id="close" fill="rgba(24,40,102,255)"><path d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"></path></svg>
           </button>
         </div>
-        <nav id='mobileNav' className={style.mobileNav} style={{display: menuDisplay}}>
+        <nav id='mobileNav' className={style.mobileNav}>
           <ul>
-              <li><Link href='/'> Wealth 101 </Link></li>
-              <li><Link href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
-              <li><Link href="/calculators/"> Calculators </Link></li>
-              <li><Link href="/"> Guides </Link></li>
-              <li><Link href="/"> Markets </Link></li>
+              <li><Link onClick={showMobileNav} href='/'> Wealth 101 </Link></li>
+              <li><Link  onClick={showMobileNav} href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
+              <li><Link onClick={showMobileNav} href="/calculators/"> Calculators </Link></li>
+              <li><Link onClick={showMobileNav} href="/"> Guides </Link></li>
+              <li><Link onClick={showMobileNav} href="/"> Markets </Link></li>
             </ul>
           </nav>  
 
