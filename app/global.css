@@ -25,3 +25,8 @@ a:focus {
   width: auto;
   height: auto;
 }
+
+header {
+  position: sticky;
+  top: 0;
+}
