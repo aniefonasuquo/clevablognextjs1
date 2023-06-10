@@ -1,0 +1,16 @@
+.facebook {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+.facebook svg:hover {
+  cursor: pointer;
+}
+
+.socialbutton {
+  background-color: transparent;
+}
+.socialsharing {
+  display: flex;
+}

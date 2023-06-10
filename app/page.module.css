@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100&display=swap');
+
+.topDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 80vh;
+  margin: 0 50px 50px 50px;
+  padding: 20px 0 0 0;
+}
+
+.postThumbnail {
+  border: black solid 1px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.featuredcategory {
+  border-bottom: gray 1px solid;
+  padding-bottom: 2px;
+  font-size: 20px;
+  margin-bottom: 2px;
+  color: black;
+}
+
+.featuredtitle {
+  font-size: 30px;
+  line-height: 50px;
+  color: black;
+}
+
+.recentposts {
+  padding-bottom: 20px;
+  font-size: 30px;
+}
+.recentpostimg {
+  display:  block;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 200px;
+}
+
+.recentpostswrapper {
+  display: grid;
+  row-gap: 8px;
+}
+
+
+.postdetails {
+  padding: 10px 0 0 30px
+}
+
+.blogtitle {
+  font-size: 20px;
+  font-weight: lighter;
+  color: black;
+}
+
+.category {
+  border-bottom: gray 1px solid;
+  padding-bottom: 2px;
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 2px;
+  color: black;
+}
+
+.featuredimagewrapper {
+  position: relative;
+  border-radius: 10px;
+  border: 0.5px black solid;
+  margin-bottom: 15px;
+}
+
+.featuredimage {
+  position: absolute;
+}
+
+.topleft {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  margin-right: 30px;
+}
+
+.rightsection {
+  padding-left: 80px;
+}
+
+.topright {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.topright::-webkit-scrollbar {
+  display: none;
+}
+
+.blotterwrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.categoryblotter {
+
+  padding: 70px 50px 70px 50px;
+  min-height: 60vh;
+  background-color: lightgray;
+}
+
+.rightblock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.catposts {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.catimgwrapper {
+  height: 300px;
+  position: relative;
+  margin-bottom: 10px;
+  border: black 1px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.catimage {
+  position: absolute;
+}
+
+.categoryheading {
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.categorydesc {
+  font-size: 20px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+
+.button {
+  color: black;
+  border: 1px black solid;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.leftsection span {
+  color: black;
+  border: 1px black solid;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.blottercategory {
+  color: black;
+  border-bottom: grey 1px solid;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.blottertitle {
+  margin-top: 10px;
+  color: black;
+  font-weight: lighter;
+  font-size: 20px;
+}

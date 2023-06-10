@@ -1,0 +1,60 @@
+.articlebuttom {
+  padding-bottom: 100px;
+}
+
+.articlehead {
+  margin: 0 70px 0 70px;
+  display: flex;
+}
+
+.blogpic {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+}
+
+.blogpic img {
+  max-width: inherit;
+  height: auto;
+}
+
+.headright {
+  background-color: lightgray;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 50px 50px;
+}
+
+.textmiddle {
+  margin-bottom: 10px;
+}
+
+.textmiddle h1 {
+  font-size: 40px;
+  margin: 10px 0 10px 0;
+}
+
+.textmiddle span {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: 200;
+  border-bottom: 0.5px solid black;
+  padding-bottom: 5px;
+}
+
+.textmiddle h4 {
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: 100;
+}
+
+
+
+.articlebody {
+  margin: 40px 100px 0 100px;
+  padding: 0 250px;
+  line-height: 30px;
+}

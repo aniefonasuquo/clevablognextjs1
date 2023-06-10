@@ -1,0 +1,164 @@
+.header {
+  height: 100px;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.headerwrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  height: 100px;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 200px;
+  padding-top: 20px;
+  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15), 0px 5px 17px -2px rgba(0, 0, 0, 0.15);
+  transition: ease-in 4s;
+}
+
+
+.headerlogo {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 50%;
+}
+
+.headerlogo img{
+  position: absolute;
+  object-position: top left;
+}
+
+
+.headernav {
+  flex: 3;
+}
+
+.headernav ul {
+  list-style: none;
+  display: flex;
+  justify-content:center;
+  padding: 0;
+}
+
+.headernav ul li{
+  display: inline;
+  padding: 20px 20px;
+
+}
+
+.headernav ul li a{
+  text-decoration: none;
+
+}
+
+.ctabutton {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.ctabutton button {
+  background-color: #0A018E;
+  width: 130px;
+  height: 51px;
+  color: white;
+  border-radius: 8px;
+  border: none;
+}
+
+.footer {
+  background-color: rgba(20, 20, 20, 1);
+  height: 85vh;
+  padding: 95px 200px 95px 200px;
+  color:  rgba(255, 255, 255, 0.7) ;
+}
+
+.footerwrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 115px auto 90px;
+
+}
+
+.topfooter {
+  border-bottom:rgba(255, 255, 255, 0.1) solid 0.5px;
+  align-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.footerlogowrap {
+  flex: 1;
+  position: relative;
+  height: 40%;
+  display: flex;
+}
+
+.footerlogowrap img{
+  position: absolute;
+  object-position: top left;
+}
+
+.addresswrap {
+  font-size: 16px;
+  flex: 2;
+}
+
+.addresswrap p {
+  text-align: end;
+}
+
+.middlefooter {
+  padding: 65px 0 65px 0;
+  font-size: 14px;
+}
+
+.buttomfooter {
+  border-top: rgba(255, 255, 255, 0.1) solid 0.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.copywritewrap {
+  flex: 1;
+}
+
+.socialicons {
+  list-style: none;
+  display: flex;
+  justify-content:center;
+  padding: 0;
+}
+
+.socialicons li {
+  border: white 1px solid;
+  display: inline;
+  padding: 20px;
+  position: relative;
+  height: 40%;
+  width: 100%;
+}
+

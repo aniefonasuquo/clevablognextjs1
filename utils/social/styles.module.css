@@ -1,0 +1,9 @@
+.social {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+}
+
+.socialsharing {
+  display: flex;
+}

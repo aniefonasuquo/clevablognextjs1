@@ -1,0 +1,450 @@
+.topheading {
+  margin: 20px 150px;
+  display: flex;
+  color: grey;
+  font-weight: bolder;
+  padding: 80px 50px;
+}
+
+.toOptions {
+  display: flex;
+  margin: 0 150px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.topheading p {
+  font-size: 60px;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.optionDesc {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.targetOption {
+  flex: 1;
+  background: rgb(24, 40, 102);;
+  height: 400px;
+  box-shadow: 0px 2px 2px rgb(243, 242, 242, 0.50);
+  transition: all 0.5s linear;
+}
+
+.targetOption:hover {
+  background-color: rgba(1,87,164,255);
+  border: 1px solid whitesmoke;
+  cursor: pointer;
+}
+
+.referencediv {
+  position: relative;
+  height: 100vh;
+  padding: 100px 0;
+  display: none;
+}
+
+.targetcontainer {
+  position: absolute;
+  display: none;
+}
+
+.targetinput {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(245, 245, 245, 0.901);
+  margin: 0 250px;
+  border-radius: 40px;
+}
+
+/* Form Styles */
+.inputDiv {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.inputDiv:hover {
+  background-color: rgba(245, 245, 245, 0.444);
+  cursor: pointer;
+}
+
+.inputDiv:active {
+  background-color: rgba(245, 245, 245, 0.444);
+}
+
+.inputDiv:focus {
+  background-color:rgba(245, 245, 245, 0.444);
+}
+
+.inputAmount {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  color: blue;
+  -moz-appearance: textfield;
+  text-align: start;
+  padding: 0 5px;
+ }
+
+
+ .inputAmount:focus {
+  outline: none;
+}
+
+.amountcurr { 
+  position: absolute;
+  font-size: 20px;
+  top: 20%;
+  right: 2%;
+  color: blue;
+  z-index: 1;
+}
+
+.selectInput {
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  font-size: 20px;
+  text-align: center;
+  color: blue;
+  border-radius: 10px;
+  border: none;
+}
+
+.selectInput:hover {
+  background-color: rgba(245, 245, 245, 0.444);
+  cursor: pointer;
+}
+
+.selectInput:active {
+  background-color: rgba(245, 245, 245, 0.444);
+}
+
+.selectInput:focus {
+  background-color: rgba(245, 245, 245, 0.444);
+}
+
+.targetdate {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  color: blue;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+}
+
+.targetdate:hover {
+  background-color: rgba(245, 245, 245, 0.444);
+  cursor: pointer;
+}
+
+.targetdate:active {
+  background-color: rgba(245, 245, 245, 0.444);
+}
+
+.targetdate:focus {
+  background-color: rgba(245, 245, 245, 0.444);
+}
+
+.targetdate:focus {
+  outline: none;
+}
+
+.targetSubmit {
+  background-color: blue;
+  border-radius: 30px;
+  color: white;
+  height: 50px;
+  width: 100px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  text-align: center;
+}
+
+.targetSubmit:hover {
+  background-color: rgb(35, 35, 187);
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.icon:hover {
+  background-color: rgb(35, 35, 187);
+}
+
+.targetresult {
+  margin: 0 150px;
+  padding: 0 100px;
+}
+
+.resultHead {
+  display: flex;
+  padding-bottom: 10px;
+  border-bottom: 0.5px grey solid;
+  margin-bottom: 10px;
+  padding: 20px 0;
+  justify-content: space-evenly;
+
+}
+
+.resultHead div {
+  text-align: center;
+}
+
+.resultHead div p:nth-child(1) {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.resultHead div p:nth-child(2) {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.targetTableHeading {
+  display: flex;
+}
+
+.targetResultRow {
+  display: flex;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 100;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.targetRecomRow {
+  display: flex;
+  border-bottom: 1px solid grey;
+  padding: 5px 0;
+  align-items: center;
+}
+
+.targetRecomRow div p:nth-child(1){
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.targetRecomRow div p:nth-child(2){
+  font-size: 15px;
+}
+
+.totalContri {
+  display: flex;
+}
+
+.targetResultProduct {
+  display: flex;
+  flex: 3;
+  border-bottom: 1px grey solid;
+  align-items: center;
+}
+
+.targetResultProduct div {
+  flex: 1;
+}
+
+.targetResultProduct div:nth-child(1) {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.targetResultContri {
+  flex: 2
+}
+
+.targetResultContri div {
+  flex: 1;
+}
+
+/* Retirement Styling */
+
+.retirementContainer {
+  display: flex;
+  margin: 0 150px;
+  padding: 0 100px;
+  justify-content: center;
+  position: absolute;
+  display: none;
+}
+
+.retireInputCard {
+  display: block;
+  justify-content: flex-start;
+  padding: 50px;
+  width: 50%;
+}
+
+.slidercontainer {
+  position: relative;
+}
+
+.expenseinput {
+  padding: 10px 0;
+}
+
+.expenseinput p{
+  padding-bottom: 10px;
+}
+
+
+.expenseinput input {
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background-color: whitesmoke;
+  padding: 10px;
+  text-align: start;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.expenseinput input::-webkit-outer-spin-button,
+.expenseinput input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.expenseinput input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.resultsdisplay {
+  background-color: rgba(24,40,102,255);
+  padding: 50px 50px 0;
+  flex: 1;
+}
+
+.retireValueOutput {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.retireValueOutput p {
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.retireValueOutput p:nth-child(1){
+  background-color: rgba(1,87,164,255);
+  padding: 5px;
+}  
+
+.retireValueOutput div{
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+}
+
+.retireContribution{
+  padding: 30px 0 0 0;
+  display: block;
+}
+
+.retireContribution > {
+  
+  
+}
+
+.retireContribution div:nth-child(2) {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.retireContribution div:nth-child(2) > div {
+  display: block;
+  padding: 20px 10px;
+}
+
+.retireContribution div:nth-child(2) p:nth-child(2)  {
+  font-weight: bold;
+  color: white;
+  font-size: 20px;
+}
+
+.retireContribution div:nth-child(2) p:nth-child(1)  {
+  font-weight: 100;
+  color: grey;
+}
+
+/* Buttons */
+
+#buttonSwitch {
+  border: solid 1px white;
+  position: relative;
+  border-radius: 20px;
+  height: auto;
+  width: 300px;
+  overflow: hidden;
+  display: flex;
+  background-color: whitesmoke;
+}
+
+#buttonSwitch > button {
+  outline: none;
+  border: none;
+  height: inherit;
+  width: inherit;
+  height: 40px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.contriActive {
+  background-color: rgba(24,40,102,255);
+  color: white;
+}
+
+.pieChartContainer {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pieChart {
+  position: absolute;
+}
+
+.incomeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  position: absolute;
+  display: none;
+}
+
+.incomeInput {
+  display: flex;
+  flex-direction: column;
+}
