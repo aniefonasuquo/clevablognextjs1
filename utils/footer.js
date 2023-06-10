@@ -1,4 +1,4 @@
-import style from './styles.module.css'
+import style from './footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SocialSharing from './social/page'
@@ -16,9 +16,7 @@ export default function Footer () {
             </Link>
           </div>
           <div className={style.addresswrap}>
-            <p>
               <span> 281 Ajose Adeogun Str. V/I, <br></br> Lagos, Nigeria </span>
-            </p>
           </div>
         
         </div>
