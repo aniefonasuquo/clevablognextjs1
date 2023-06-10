@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@100&display=swap');
-
 .topDiv {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 80vh;
   margin: 0 50px 50px 50px;
   padding: 20px 0 0 0;
+  background-color: blue;
 }
 
 .postThumbnail {
