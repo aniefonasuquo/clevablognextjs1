@@ -63,6 +63,8 @@
     justify-content: space-between;
     padding: 0 20px;
     width: 100%;
+    position: fixed;
+    z-index: 1000;
   }
 
   .ctabutton {
@@ -77,7 +79,6 @@
     position: absolute;
     left: 0;
     top: 100px;
-    z-index: 1;
     background-color: white;
     width: 100%;
     height: 300px;
@@ -89,6 +90,11 @@
     font-size: 30px;
     color: black;
     padding: 2px 0;
+    transition: transform 0.5s ease-in;
+  }
+
+  .mobileNav li:hover {
+    transform: scale(1.1);
   }
 
   .mobileNav li a{

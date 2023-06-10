@@ -40,7 +40,8 @@ export default function Header ( ) {
   })
 
   return (
-    <header className={style.header}>
+    <>
+      <header className={style.header}>
         <div className={style.headerlogo}>
           <Link href="/">
             <Image alt='pic' src='/../public/logos/logo-main.png' fill= 'true' objectFit='contain'/>
@@ -64,14 +65,16 @@ export default function Header ( ) {
           </button>
         </div>
         <nav id='mobileNav' className={style.mobileNav} style={{display: menuDisplay}}>
-        <ul>
-            <li><Link href='/'> Wealth 101 </Link></li>
-            <li><Link href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
-            <li><Link href="/calculators/"> Calculators </Link></li>
-            <li><Link href="/"> Guides </Link></li>
-            <li><Link href="/"> Markets </Link></li>
-          </ul>
-        </nav>
-    </header>
+          <ul>
+              <li><Link href='/'> Wealth 101 </Link></li>
+              <li><Link href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
+              <li><Link href="/calculators/"> Calculators </Link></li>
+              <li><Link href="/"> Guides </Link></li>
+              <li><Link href="/"> Markets </Link></li>
+            </ul>
+          </nav>  
+
+      </header>
+          </>
   )
 }
