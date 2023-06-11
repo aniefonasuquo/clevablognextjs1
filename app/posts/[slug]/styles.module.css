@@ -58,8 +58,16 @@
 
 .articlebody {
   margin: 40px 100px 0 100px;
-  padding: 0 250px;
+  padding: 0 200px;
   line-height: 30px;
+}
+
+@media (max-width: 1400px) and (min-width: 300px){
+  .articlebody {
+    margin: 20px 0;
+    padding: 10px;
+  }
+  
 }
 
 @media screen and (max-width: 600px) {

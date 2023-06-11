@@ -28,7 +28,7 @@ export default async function Homepage() {
     <div className={styles.topleft}>
       <div className={styles.featuredimagewrapper}>
       <Link href="/">
-        <Image className="featuredimage" layout="fill" objectFit="contain"  src="/../public/img1.jpg" alt="featuredblog"/>
+        <Image className="featuredimage" layout="fill" objectFit="contain"  src="https://placehold.co/600x400" alt="featuredblog"/>
       </Link>
 
       <div className={styles.featuredarticle}>
@@ -50,7 +50,7 @@ export default async function Homepage() {
            {posts.slice(0,4).map(({id, title, tags, slug}) => (
              <div className={styles.rArticle} key={id}>
               <div className={styles.rArticleImg}>
-                <Image fill='true' objectFit="cover" src="/../public/img1.jpg" alt=""/>
+                <Image fill='true' objectFit="cover" src="https://placehold.co/600x400" alt=""/>
               </div>
               <div className={styles.rArticleDetails}>           
                 <Link href={`/category/${tags[0]}`}><span className={styles.rArticleCategory}> {tags[0]} </span> </Link>
@@ -83,7 +83,7 @@ export default async function Homepage() {
             {posts.slice(0,3).map(({id, tags, title, slug}) => (
               <div className={styles.blotterPost} key={id}>
                 <div className={styles.blotterPostImg}>
-                  <Link href={`/posts/${slug}`}><Image className={styles.catimage} fill='true' src="/../public/img1.jpg" alt=""/> </Link>
+                  <Link href={`/posts/${slug}`}><Image className={styles.catimage} fill='true' src="https://placehold.co/600x400" alt=""/> </Link>
                 </div>
                 <div>
                   <Link className={`${raleway.className}`} href={`/category/${tags[0]}`}><p className={styles.blottercategory}>{tags[0]}</p></Link>     
