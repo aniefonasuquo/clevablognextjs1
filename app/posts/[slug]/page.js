@@ -29,12 +29,13 @@ export default async function Post({ params }) {
 
 
   return (<>
+  <div className={styles.pagecontainer}> 
+
       <section className={styles.articlehead}>
         <div className={styles.blogpic}>
           <Image objectFit="cover" fill='true' src='/../public/investimg.jpg'></Image>
         </div>
-        <div className={styles.headright}>
-          <div className={styles.articletitlecontainer}>
+          <div className={styles.headright}>
             <div className={styles.textmiddle}>
               <Link href={`/category/${content.tags[0]}`}><span>{content.tags[0]}</span></Link>
               <h1 className={raleway.className}> {content.title}</h1>
@@ -44,7 +45,6 @@ export default async function Post({ params }) {
             </div>
             <SocialSharing></SocialSharing>
           </div>
-        </div>
       </section>
 
       
@@ -52,5 +52,7 @@ export default async function Post({ params }) {
 
         {content.body}
       </section>
+  </div>
+    
       
   </> )}

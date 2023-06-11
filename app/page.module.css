@@ -7,10 +7,11 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 50px 100px;
   grid-column-gap: 60px;
+  height: 730px;
+  overflow-y: hidden;
 }
 
 .topleft {
-  display: grid;
 }
 
 .featuredimagewrapper {
@@ -50,6 +51,7 @@
 }
 
 .topright {
+  overflow-y: auto;
 }
 
 .topright::-webkit-scrollbar {
@@ -60,17 +62,15 @@
 }
 
 .recentpostswrapper {
-  margin: 30px 0 0 0;
-  display: grid;
-  row-gap: 8px;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  padding: 20px 0;
+  overflow-y: hidden;
 }
 
 .rArticle {
   display: grid;
   grid-template-columns: 1fr 2fr;
   column-gap: 20px;
+  padding: 5px 0;
 }
 
 .rArticleImg {
@@ -142,6 +142,7 @@
 }
 
 .blotterPost {
+  padding-bottom: 20px;
 }
 
 .blotterPostImg {
@@ -173,6 +174,14 @@
 @media screen and (max-width: 500px){
   .pagecontainer {
     padding: 10px;
+  }
+
+  .topDiv {
+    height: max-content;
+  }
+
+  .topleft {
+
   }
 
   .topleft > div{

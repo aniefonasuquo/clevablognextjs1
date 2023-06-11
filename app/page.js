@@ -33,7 +33,7 @@ export default async function Homepage() {
 
       <div className={styles.featuredarticle}>
         <Link href="/">
-          <span className={`${raleway.className} ${styles.featuredcategory}`}>Category</span>
+          <span className={`${styles.featuredcategory}`}>Category</span>
          </Link>
         <Link href="/">
           <h4 className={`${styles.featuredtitle} ${raleway.className}`}> Improving Your Investment Return Through Diversifiation </h4>
@@ -73,8 +73,9 @@ export default async function Homepage() {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores, sequi perspiciatis ullam sunt architecto! Iusto.
           </p>
           <div>
-          <Link href="/"><span className={`${raleway.className} ${styles.button}` }>Read more</span> </Link>
+          <Link href="/"><span className={styles.button}>Read more</span></Link>
           </div>
+          
 
         </div>
 

@@ -1,9 +1,13 @@
+.pagecontainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .articlebuttom {
   padding-bottom: 100px;
 }
 
 .articlehead {
-  margin: 0 70px 0 70px;
   display: flex;
 }
 
@@ -11,20 +15,21 @@
   flex: 1;
   position: relative;
   width: 100%;
-  height: 50vh;
+  flex-shrink: 1;
 }
 
 .blogpic img {
-  max-width: inherit;
-  height: auto;
+  position: absolute;
 }
 
 .headright {
   background-color: lightgray;
   flex: 1;
   display: flex;
-  align-items: flex-end;
-  padding: 0 20px 50px 50px;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px 20px;
+  flex-shrink: 1;
 }
 
 .textmiddle {
@@ -51,10 +56,47 @@
   font-weight: 100;
 }
 
-
-
 .articlebody {
   margin: 40px 100px 0 100px;
   padding: 0 250px;
   line-height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .articlehead {
+    display: block;
+    position: relative;
+  }
+
+  .blogpic {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 600px;
+  }
+  
+  .articlebody {
+    margin: 10px;
+    padding: 0;
+    line-height: normal;
+  }
+  
+  .headright {
+    position: absolute;
+    background-color: transparent;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px 10px;
+    flex-shrink: 1;
+    bottom: 0;
+    color: white
+  }
+
+  .headright > * {
+    padding: 0px;
+    margin: 0px;
+  }
+
 }
