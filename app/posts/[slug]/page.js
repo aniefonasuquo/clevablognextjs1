@@ -33,7 +33,7 @@ export default async function Post({ params }) {
 
       <section className={styles.articlehead}>
         <div className={styles.blogpic}>
-          <Image objectFit="cover" fill='true' src='/../public/investimg.jpg'></Image>
+          <Image objectFit="cover" fill='true' src='https://placehold.co/600x400'></Image>
         </div>
           <div className={styles.headright}>
             <div className={styles.textmiddle}>
