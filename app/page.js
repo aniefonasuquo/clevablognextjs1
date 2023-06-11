@@ -21,7 +21,8 @@ export default async function Homepage() {
 
   return (<>
 
-   
+  <div className={styles.pagecontainter}>
+
   <section className={styles.topDiv}>
     
     <div className={styles.topleft}>
@@ -29,7 +30,6 @@ export default async function Homepage() {
       <Link href="/">
         <Image className="featuredimage" layout="fill" objectFit="contain"  src="/../public/img1.jpg" alt="featuredblog"/>
       </Link>
-      </div>
       <div className={styles.featuredarticle}>
         <Link href="/">
           <span className={`${raleway.className} ${styles.featuredcategory}`}>Category</span>
@@ -38,21 +38,23 @@ export default async function Homepage() {
           <h4 className={`${styles.featuredtitle} ${raleway.className}`}> Improving Your Investment Return Through Diversifiation </h4>
         </Link>
       </div>
+      </div>
+
     </div>
     
     <div className={styles.topright}> 
       <h1 className={`${styles.recentposts} ${raleway.className}`}> Recent Posts </h1>
       <div className={styles.recentpostswrapper}>
            {posts.slice(0,4).map(({id, title, tags, slug}) => (
-           <div className={styles.article} key={id}>
-             <div className={styles.postThumbnail}>
-               <Image className={styles.recentpostimg} fill='true' objectFit="contain" src="/../public/img1.jpg" alt=""/>
-             </div>
-             <div className={`${styles.postdetails}` }>           
-               <Link href={`/category/${tags[0]}`}><span className={styles.category}> {tags[0]} </span> </Link>
-               <Link href={`/posts/${slug}`}> 
-               <p className={`${styles.blogtitle} ${raleway.className}`}> {title} </p> </Link>
-             </div>
+             <div className={styles.rArticle} key={id}>
+              <div className={styles.rArticleImg}>
+                <Image fill='true' objectFit="cover" src="/../public/img1.jpg" alt=""/>
+              </div>
+              <div className={styles.rArticleDetails}>           
+                <Link href={`/category/${tags[0]}`}><span className={styles.rArticleCategory}> {tags[0]} </span> </Link>
+                <Link href={`/posts/${slug}`}> 
+                <p className={`${styles.rArticleTitle} ${raleway.className}`}> {title} </p> </Link>
+              </div>
            </div>
          )
       
@@ -61,39 +63,40 @@ export default async function Homepage() {
     </div>
   </section>
 
-  <section className={styles.categoryblotter}>
-    <div className={styles.blotterwrapper}>
+  <section className={styles.blotterwrapper}>
         <div className={`${styles.leftsection} ${raleway.className}`}>
 
           <h1 className={`${styles.categoryheading} ${raleway.className}`}>From Investing</h1>
           <p className={`${styles.categorydesc}`}>  
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores, sequi perspiciatis ullam sunt architecto! Iusto.
           </p>
-          <Link href="/"><span className={`${raleway.className} ${styles.button}` }>Read more</span> </Link>
-
-        </div>
-
-        <div className={styles.rightsection}>
-
-          <div className={styles.rightblock}>
-            {posts.slice(0,3).map(({id, tags, title, slug}) => (
-              <div className={styles.catposts} key={id}>
-              <div className={styles.catimgwrapper}>
-                <Link href={`/posts/${slug}`}><Image className={styles.catimage} fill='true' src="/../public/img1.jpg" alt=""/> </Link>
-              </div>
-              <Link className={`${raleway.className}`} href={`/category/${tags[0]}`}><span className={styles.blottercategory}>{tags[0]}</span></Link>     
-              <Link href={`/posts/${slug}`}> <p className={`${raleway.className} ${styles.blottertitle}`}>{title}</p></Link>
-            </div>
-            ))}
-          </div>
           <div>
-            <Link href="/"> <span className={`${raleway.className}`}>View all</span> </Link>
+          <Link href="/"><span className={`${raleway.className} ${styles.button}` }>Read more</span> </Link>
           </div>
-            
+
         </div>
-    </div>
+
+        {/* <div className={styles.rightsection}>
+
+          <div className={styles.blotterPostWrapper}> */}
+            {posts.slice(0,3).map(({id, tags, title, slug}) => (
+              <div className={styles.blotterPost} key={id}>
+                <div className={styles.blotterPostImg}>
+                  <Link href={`/posts/${slug}`}><Image className={styles.catimage} fill='true' src="/../public/img1.jpg" alt=""/> </Link>
+                </div>
+                <Link className={`${raleway.className}`} href={`/category/${tags[0]}`}><p className={styles.blottercategory}>{tags[0]}</p></Link>     
+                <Link href={`/posts/${slug}`}> <p className={`${raleway.className} ${styles.blottertitle}`}>{title}</p></Link>
+              </div>
+            ))}
+          {/* </div> */}
+          {/* <div>
+            <Link href="/"> <span className={`${raleway.className}`}>View all</span> </Link>
+          </div> */}
+            
+        {/* </div> */}
 
   </section>
+  </div>
 
   </> )}
 
