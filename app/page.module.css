@@ -132,6 +132,12 @@
   padding: 15px;
 }
 
+.blotterPostWrapper {
+  display: grid;
+  column-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
 .blotterPost {
   display: grid;
   /* grid-template-rows: repeat(auto-fit, minmax(300px, 1fr)); */
@@ -139,6 +145,7 @@
 
 .blotterPost > *{
   padding: 5px 0;
+  display: grid;
 }
 
 .blotterPostImg {
@@ -177,7 +184,7 @@
   }
 
   .topDiv {
-    padding: 0 10px;
+    padding: 20px 10px;
   }
 
   .topDiv > div{
@@ -186,9 +193,19 @@
   
   .blotterwrapper {
     padding: 10px;
+    display: grid;
   }
 
-  
+  .blotterPostWrapper {
+    margin: 20px 0;
+  }
+
+  .blotterPost {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 20px;
+    padding: 5px 0;
+  }
   
   
 }

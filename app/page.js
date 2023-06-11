@@ -78,19 +78,19 @@ export default async function Homepage() {
 
         </div>
 
-        {/* <div className={styles.rightsection}>
-
-          <div className={styles.blotterPostWrapper}> */}
+        <div className={styles.blotterPostWrapper}>
             {posts.slice(0,3).map(({id, tags, title, slug}) => (
               <div className={styles.blotterPost} key={id}>
                 <div className={styles.blotterPostImg}>
                   <Link href={`/posts/${slug}`}><Image className={styles.catimage} fill='true' src="/../public/img1.jpg" alt=""/> </Link>
                 </div>
-                <Link className={`${raleway.className}`} href={`/category/${tags[0]}`}><p className={styles.blottercategory}>{tags[0]}</p></Link>     
-                <Link href={`/posts/${slug}`}> <p className={`${raleway.className} ${styles.blottertitle}`}>{title}</p></Link>
+                <div>
+                  <Link className={`${raleway.className}`} href={`/category/${tags[0]}`}><p className={styles.blottercategory}>{tags[0]}</p></Link>     
+                  <Link href={`/posts/${slug}`}> <p className={`${raleway.className} ${styles.blottertitle}`}>{title}</p></Link>
+                </div>
               </div>
             ))}
-          {/* </div> */}
+        </div>
           {/* <div>
             <Link href="/"> <span className={`${raleway.className}`}>View all</span> </Link>
           </div> */}
