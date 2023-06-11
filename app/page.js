@@ -30,6 +30,7 @@ export default async function Homepage() {
       <Link href="/">
         <Image className="featuredimage" layout="fill" objectFit="contain"  src="/../public/img1.jpg" alt="featuredblog"/>
       </Link>
+
       <div className={styles.featuredarticle}>
         <Link href="/">
           <span className={`${raleway.className} ${styles.featuredcategory}`}>Category</span>
@@ -38,6 +39,7 @@ export default async function Homepage() {
           <h4 className={`${styles.featuredtitle} ${raleway.className}`}> Improving Your Investment Return Through Diversifiation </h4>
         </Link>
       </div>
+
       </div>
 
     </div>

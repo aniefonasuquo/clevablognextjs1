@@ -1,6 +1,10 @@
+.pagecontainer {
+  padding: 0 100px;
+}
+
 .topDiv {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 50px 100px;
   grid-column-gap: 60px;
 }
@@ -57,6 +61,7 @@
 }
 
 .recentpostswrapper {
+  margin: 30px 0 0 0;
   display: grid;
   row-gap: 8px;
   overflow-y: scroll;
@@ -101,7 +106,7 @@
 
 .blotterwrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   padding: 50px 100px;
   background-color: whitesmoke;
   column-gap: 20px;
@@ -162,11 +167,28 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 900px){
-  .topDiv {
-    display: grid;
-    grid-template-columns: auto;
-    padding: 50px 100px;
+@media screen and (max-width: 500px){
+  .pagecontainer {
+    padding: 10px;
   }
+
+  .topleft > div{
+    margin: 10px 0;
+  }
+
+  .topDiv {
+    padding: 0 10px;
+  }
+
+  .topDiv > div{
+    margin: 10px 0;
+  }
+  
+  .blotterwrapper {
+    padding: 10px;
+  }
+
+  
+  
   
 }
