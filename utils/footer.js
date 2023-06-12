@@ -12,7 +12,7 @@ export default function Footer () {
         <div className={style.topfooter}>
           <div className={style.footerlogowrap}> 
             <Link href="/"> 
-              <Image fill={true} src='/../public/logos/logo-white.png' objectFit='scale-down' alt='clevalogo'></Image> 
+              <Image fill={true} sizes='100vw' src='/../public/logos/logo-white.png' objectFit='contain' alt='clevalogo'></Image> 
             </Link>
           </div>
           <div className={style.addresswrap}>

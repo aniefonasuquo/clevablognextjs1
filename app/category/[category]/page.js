@@ -20,7 +20,7 @@ export default async function Homepage({ params }) {
         <div className={styles.articleframe}>
           <div className={styles.imgwrap}>
             <Link href="/"> 
-            <Image className={styles.catimg} src={"/../public/investimg.jpg"} fill='true'/> 
+            <Image className={styles.catimg} sizes="100vw" src={"/../public/investimg.jpg"} fill='true'/> 
             </Link>
           </div>
           <Link href="/"><h3 className={raleway.className}> Title </h3></Link>

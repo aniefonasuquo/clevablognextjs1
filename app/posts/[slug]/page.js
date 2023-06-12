@@ -4,6 +4,8 @@ import Image from 'next/image'
 import slugify from 'slugify'
 import SocialSharing from './../../../utils/share/page'
 import { Raleway  } from 'next/font/google'
+import img from './../../../public/investimg.jpg'
+
 
 const raleway = Raleway({
   weight: '600',
@@ -33,7 +35,7 @@ export default async function Post({ params }) {
 
       <section className={styles.articlehead}>
         <div className={styles.blogpic}>
-          <Image objectFit="cover" fill='true' src='https://placehold.co/600x400'></Image>
+          <Image objectFit="cover" fill='true' src={img} sizes="100vw"></Image>
         </div>
           <div className={styles.headright}>
             <div className={styles.textmiddle}>

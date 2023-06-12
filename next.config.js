@@ -6,9 +6,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'placehold.co',
+        hostname: 'fastly.picsum.photos',
         port: '',
-        pathname: '/600x400/**',
+        pathname: '/id/53/1280/',
       },
     ],
   },
