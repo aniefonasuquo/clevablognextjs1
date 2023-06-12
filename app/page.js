@@ -51,7 +51,7 @@ export default async function Homepage() {
            {posts.slice(0,4).map(({id, title, tags, slug}) => (
              <div className={styles.rArticle} key={id}>
               <div className={styles.rArticleImg}>
-                <Image fill='true'sizes="100vw" src={img} alt=""/>
+                <Image fill='true' sizes="100vw" src={img} alt=""/>
               </div>
               <div className={styles.rArticleDetails}>           
                 <Link href={`/category/${tags[0]}`}><span className={styles.rArticleCategory}> {tags[0]} </span> </Link>
