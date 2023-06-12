@@ -45,7 +45,7 @@ export default function Header ( ) {
       <header className={style.header}>
         <div className={style.headerlogo}>
           <Link href="/">
-            <Image alt='pic' sizes='100vw' src={logo} fill= 'true' objectFit='contain'/>
+            <Image alt='pic' sizes='100vw' src={logo} fill='true' objectFit='contain'/>
           </Link>
         </div>
         <nav className={style.navs}>

@@ -76,7 +76,7 @@
   display: grid;
   position: relative;
   border-radius: 10px;
-  overflow: none; 
+  overflow: hidden; 
   aspect-ratio: 1 / 0.9;
 }
 
@@ -168,7 +168,7 @@
   font-size: 20px;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 700px){
   .pagecontainer {
     padding: 10px;
   }
