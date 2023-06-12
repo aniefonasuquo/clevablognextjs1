@@ -4,6 +4,7 @@ import style from './header.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
+import logo from './../public/logos/logo-main.png'
 
 
 export default function Header ( ) {
@@ -44,7 +45,7 @@ export default function Header ( ) {
       <header className={style.header}>
         <div className={style.headerlogo}>
           <Link href="/">
-            <Image alt='pic' sizes='100vw' src='/../public/logos/logo-main.png' fill= 'true' objectFit='contain'/>
+            <Image alt='pic' sizes='100vw' src={logo} fill= 'true' objectFit='contain'/>
           </Link>
         </div>
         <nav className={style.navs}>

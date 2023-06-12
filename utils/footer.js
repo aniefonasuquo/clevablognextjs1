@@ -2,6 +2,7 @@ import style from './footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SocialSharing from './social/page'
+import logo from './../public/logos/logo-main.png'
 
 export default function Footer () {
 
@@ -12,7 +13,7 @@ export default function Footer () {
         <div className={style.topfooter}>
           <div className={style.footerlogowrap}> 
             <Link href="/"> 
-              <Image fill={true} sizes='100vw' src='/../public/logos/logo-white.png' objectFit='contain' alt='clevalogo'></Image> 
+              <Image fill={true} sizes='100vw' src={logo} objectFit='contain' alt='clevalogo'></Image> 
             </Link>
           </div>
           <div className={style.addresswrap}>
