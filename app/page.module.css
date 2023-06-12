@@ -67,14 +67,13 @@
 
 .rArticle {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 20px;
+  grid-template-columns: minmax(30%, 1fr) 3fr;
+  column-gap: 10px;
   padding: 5px 0;
 }
 
 .rArticleImg {
   display: grid;
-  border: black solid 1px;
   position: relative;
   border-radius: 10px;
   overflow: hidden; 
@@ -175,29 +174,33 @@
   }
 
   .topDiv {
+    display: block;
     height: max-content;
-  }
-
-  .topleft {
-
-  }
-
-  .topleft > div{
-    margin: 10px 0;
-  }
-
-  .topDiv {
-    padding: 20px 10px;
+    padding: 0 10px;
   }
 
   .topDiv > div{
     margin: 10px 0;
   }
 
+  .topleft {
+    
+  }
+
+  .recentpostswrapper {
+    margin: 0;
+    padding: 0;
+  }
+
+  .topleft > div{
+    margin: 10px 0;
+    display: block;
+  }
+
   .blotterwrapper {
     padding: 10px;
     display: block;
-    margin: 20px 0;
+    margin: 10px 0;
   }
 
   .leftsection {
@@ -214,6 +217,10 @@
     grid-template-columns: 1fr 2fr;
     column-gap: 10px;
     padding: 5px 0;
+  }
+
+  .rArticle {
+    /* display: block; */
   }
   
 }
