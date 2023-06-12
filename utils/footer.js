@@ -2,7 +2,7 @@ import style from './footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SocialSharing from './social/page'
-import logo from './../public/logos/logo-main.png'
+import logo from './../public/logos/logo-white.png'
 
 export default function Footer () {
 

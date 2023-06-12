@@ -61,7 +61,7 @@ export default function Header ( ) {
           <button> {`Sign Up >`} </button>
         </div>
         <div className={style.menu}>
-          <button id='menuButton' onClick={showMobileNav}><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="menu"><path fill="none" d="M0 0h48v48H0z"></path><path d="M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path></svg>
+          <button id='menuButton' onClick={showMobileNav}><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="menu"><path fill='none' color="rgba(24,40,102,255)" d="M0 0h48v48H0z"></path><path d="M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path></svg>
           <svg style={{display: 'none'}} xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512" id="close" fill="rgba(24,40,102,255)"><path d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"></path></svg>
           </button>
         </div>
