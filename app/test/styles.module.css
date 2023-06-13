@@ -1,16 +1,42 @@
 .pagecontainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   background-color:  rgb(24, 40, 102);
+  color: greenyellow;
+  padding: 100px 200px;
+}
+
+.quizintro > div{
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  color: greenyellow;
+
+}
+
+.quizintro  *{
+ padding: 10px 0;
+}
+
+.quizintro p{
+  font-size: 20px;
+  font-weight: 100;
+ }
+
+.pagecontainer * button{
+ background-color: greenyellow;
+ color:navy;
+ border: 1px white solid;
+ border: none;
+ font-weight: bold;
+ font-size: 20px;
+ padding: 20px;
+ border-radius: 20px;
 }
 
 .formcontainer {
   display: grid;
   grid-template-columns: 600px;
   justify-content: center;
-  padding: 50px 50px;
+  /* padding: 50px; */
   color: white;
   font-weight: 100;
 }
@@ -18,15 +44,11 @@
 .formnavigation {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .formcontainer * h1  {
   padding: 20px 0;
-}
-
-.formcontainer form  {
-  min-height: 40vh;
 }
 
 .formnavigation button{
@@ -43,9 +65,9 @@
 }
 
 .formnavigation  .prevbutton {
-  background-color: navy;
+  /* background-color: navy;
   color:white;
-  border: 1px white solid;
+  border: 1px white solid; */
 }
 
 .multichoiceContainter label {
@@ -117,7 +139,12 @@ border-color: blue;
   height: 55px;
 }
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 700px) {
+.pagecontainer {
+  padding: 10px;
+}
+
   .formcontainer {
     /* border: 1px black solid; */
     display: block;

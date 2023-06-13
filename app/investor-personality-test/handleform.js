@@ -6,7 +6,8 @@ export const processForm = async (e) => {
   const df = new FormData(e.target)
 
   const formInput = {
-  
+
+    gender: String(df.get('gender')),
    annualIncome : Number(df.get('annualIncome')),
    incomeCurrency : Number(df.get('incomeCurrency')),
    incomeDuration : Number(df.get('incomeDuration')),

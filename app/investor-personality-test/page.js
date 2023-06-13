@@ -17,7 +17,8 @@ export default async function testForm () {
       body: JSON.stringify({data: {
       archetype: formInput.archetype,
       willingness: formInput.willingnessRank,
-      capacity: formInput.capacityRank
+      capacity: formInput.capacityRank,
+      gender: formInput.gender,
     }})
   })
 

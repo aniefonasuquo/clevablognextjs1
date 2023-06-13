@@ -6,8 +6,14 @@ export async function POST(request) {
 
   const body = await request.json()
 
-  cookies().set('archetype', `${body.data.archetype}`)
-  cookies().set('willigness', `${body.data.willingness}`)
-  cookies().set('capacity', `${body.data.capacity}`)
-  redirect(`/personality/${body.data.archetype}`)
+  if (body) {
+    cookies().set('archetype', `${body.data.archetype}`)
+    cookies().set('willigness', `${body.data.willingness}`)
+    cookies().set('capacity', `${body.data.capacity}`)
+    cookies().set('gender', `${body.data.gender}`)
+    redirect(`/personality/${body.data.archetype}`)
+  } else {
+    NextResponse.error()
+  }
+
 } 
