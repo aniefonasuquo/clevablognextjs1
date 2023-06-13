@@ -32,7 +32,7 @@ export default async function Post({ params }) {
 
   return (<>
   <div className={styles.pagecontainer}> 
-
+      
       <section className={styles.articlehead}>
         <div className={styles.blogpic}>
           <Image objectFit="cover" fill='true' src={img} sizes="100vw"></Image>

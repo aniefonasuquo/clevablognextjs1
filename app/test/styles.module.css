@@ -1,13 +1,125 @@
-
-
-.pieChartContainer {
-  position: relative;
-  height: 100px;
-  width: 100px;
+.pagecontainer {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  width: 100%;
+  background-color: navy;
 }
 
-.pieChart {
-  position: absolute;
+.formcontainer {
+  /* border: 1px black solid; */
+  justify-content: center;
+  padding: 50px 50px;
+  width: 50%;
+  color: white;
+  font-weight: 100;
+}
+
+.formnavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.formcontainer * h1  {
+  padding: 20px 0;
+
+}
+
+.formcontainer form  {
+  min-height: 40vh;
+}
+
+.formnavigation button{
+  border: none;
+  padding: 15px;
+  border-radius: 50px;
+  width: 100px;
+  background-color: white;
+  color: navy;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.formnavigation  .prevbutton {
+  background-color: navy;
+  color:white;
+  border: 1px white solid;
+}
+
+.multichoiceContainter label {
+  position: relative;
+}
+
+.multichoiceContainter input {
+  display: none;
+}
+
+.multichoiceContainter input:checked + div {
+  cursor: pointer;
+  background-color: rgb(30, 144, 255, 0.3);
+}
+
+.multichoiceContainter label > div {
+  padding: 15px;
+  margin: 5px 0;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.multichoiceContainter * div:hover{
+  background-color: rgb(30, 144, 255, 0.3);
+  border: 2px solid white; 
+}
+
+.circleOptionContainer * div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+display: flex;
+border-radius: 50%;
+border: 2px solid blue;
+margin: 0 10px;
+}
+
+.circle:hover {
+background-color: blue;
+}
+
+input[type="radio"]:checked + .circle {
+background-color: blue;
+border-color: blue;
+}
+
+.ranking {
+  display: none
+}
+
+#big {
+  width: 50px;
+  height: 50px;
+}
+
+#small {
+  width: 20px;
+  height: 20px;
+}
+
+#mid {
+  width: 30px;
+  height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .formcontainer {
+    /* border: 1px black solid; */
+    width: 100%;
+
+  }
+
+  
 }

@@ -1,15 +1,13 @@
 
 import { cookies } from 'next/headers';
 
-export default async function PersonalityPage () {
+export default async function PersonalityPage ({params}) {
   
-  const archetype = cookies().get('archetype',)
-  // const body = await useRequestBody();
-  console.log(archetype)
-  
+  console.log(params)
+
   return (
     <>
-      {archetype.value}
+      {params.personality}
     </>
   )
 }
