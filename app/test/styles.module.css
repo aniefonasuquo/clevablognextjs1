@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: navy;
+  background-color:  rgb(24, 40, 102);
 }
 
 .formcontainer {
@@ -141,4 +141,20 @@ border-color: blue;
 
   }
   
+  #big {
+    width: 70px;
+    height: 70px;
+  }
+  
+  #small {
+    width: 25px;
+    height: 25px;
+  }
+  
+  #mid {
+    width: 40px;
+    height: 40px;
+  }
+
+
 }
