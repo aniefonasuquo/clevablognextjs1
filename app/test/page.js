@@ -201,6 +201,10 @@ function SocialSharing() {
         I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck
       </h1>
       <div>
+          <div>Strongly Disagree</div>
+          <div>Strongly Agree</div>
+        </div>
+      <div>
         <label>
           <input className={styles.ranking} type="radio" name="confidence" value={1} required/>
           <div id={styles.big} className={styles.circle}></div>
@@ -230,6 +234,10 @@ function SocialSharing() {
       <div className={styles.circleOptionContainer}>
         {text == 8 && (<div>    
         <h1>How do you feel about missing out on investment opportunity</h1>
+        <div>
+          <div>Strongly Disagree</div>
+          <div>Strongly Agree</div>
+        </div>
         <div>
         <label>
           <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
@@ -261,6 +269,10 @@ function SocialSharing() {
         How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?
       </h1>
       <div>
+          <div>Strongly Disagree</div>
+          <div>Strongly Agree</div>
+        </div>
+      <div>
         <label>
           <input className={styles.ranking} type="radio" name="preserve" value={1} required/>
           <div id={styles.big} className={styles.circle}></div>
@@ -290,6 +302,10 @@ function SocialSharing() {
       <h1>How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
       </h1>
       <div>
+          <div>Strongly Disagree</div>
+          <div>Strongly Agree</div>
+      </div>
+      <div>
         <label>
           <input className={styles.ranking} type="radio" name="aversion" value={1} required/>
           <div id={styles.big} className={styles.circle}></div>
@@ -315,12 +331,17 @@ function SocialSharing() {
     </div>
     
     <div className={styles.circleOptionContainer}>
-    {text == 11 && (<div>
-            
+    {text == 11 && (<div>       
       <h1>
         How would you describe your comfort level with uncertainty and potential losses when it comes to investing?    
       </h1>
-      <div>
+      {/* <div> */}
+        <div>
+          <div>Strongly Disagree</div>
+          <div>Strongly Agree</div>
+        </div>
+        <div>
+
         <label>
           <input className={styles.ranking} type="radio" name="uncertainty" value={1} required/>
           <div id={styles.big} className={styles.circle}></div>
@@ -341,7 +362,8 @@ function SocialSharing() {
           <input className={styles.ranking} type="radio" name="uncertainty" value={5} required/>
           <div id={styles.big} className={styles.circle}></div>
         </label>
-      </div>    
+        </div>
+      {/* </div>     */}
             </div>)}
     </div>
     

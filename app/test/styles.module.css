@@ -74,10 +74,19 @@
   border: 2px solid white; 
 }
 
-.circleOptionContainer * div{
+.circleOptionContainer  div {
+  /* background-color: yellow;
   display: flex;
-  justify-content: center;
+  flex-direction: column; */
+}
+
+.circleOptionContainer > div > div{
+  display: flex;
+  /* background-color: yellow; */
+  justify-content: space-between;
   align-items: center;
+  padding: 10px 0;
+  font-size: 20px;
 }
 .circle {
 display: flex;
@@ -100,18 +109,18 @@ border-color: blue;
 }
 
 #big {
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
 }
 
 #small {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 
 #mid {
-  width: 30px;
-  height: 30px;
+  width: 55px;
+  height: 55px;
 }
 
 @media screen and (max-width: 600px) {
@@ -121,6 +130,7 @@ border-color: blue;
     height: 100vh;
     font-size: 12px;
     padding: 10px;
+    align-self: center;
   }
 
   .formcontainer * h1  {
