@@ -22,7 +22,6 @@
 
 .formcontainer * h1  {
   padding: 20px 0;
-
 }
 
 .formcontainer form  {
@@ -118,8 +117,20 @@ border-color: blue;
   .formcontainer {
     /* border: 1px black solid; */
     width: 100%;
-
+    font-size: 12px
   }
 
+  .formcontainer * h1  {
+    padding: 15px 0;
+  }
+
+  .formnavigation button{
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100px;
+    font-size: 12px;
+
+  }
   
 }
