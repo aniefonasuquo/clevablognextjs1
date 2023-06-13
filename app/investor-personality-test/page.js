@@ -1,216 +1,69 @@
 'use client'
 
-import styles from './styles.module.css';
 import { useRouter } from 'next/navigation';
+import styles from './styles.module.css';
+import { processForm } from './handleform';
 
 export default async function testForm () {
 
   const router = useRouter()
-  
+
   const handleSubmit = async (e) => {
-
-      e.preventDefault();
-
-      const df = new FormData(e.target)
-
-      const formInput = {
-      
-       annualIncome : Number(df.get('annualIncome')),
-       incomeCurrency : Number(df.get('incomeCurrency')),
-       incomeDuration : Number(df.get('incomeDuration')),
-       investmentvalue : Number(df.get('investmentvalue')),
-       incomeType : Number(df.get('incomeType')),
-       aversion : Number(df.get('aversion')),
-       fomo : Number(df.get('fomo')),
-       preserve : Number(df.get('preserve')),
-       uncertainty : Number(df.get('uncertainty')),
-       orientation : Number(df.get('orientation')),
-       operation : Number(df.get('operation')),
-       judgement : Number(df.get('judgement')),
-       lossReaction : Number(df.get('lossReaction')),
-       confidence : Number(df.get('confidence')),
-
-       agerank: Number,
-
-       capacityRank: String,      
-       capacityScore: Number,
-       willingnessRank: String,
-       willingnessScore: Number,
-       
-       ageWeight : 0.1,
-       incomeWeight : 0.5,
-       durationWeight: 0.05,
-       portfolioWeight: 0.3,
-       sourceWeight: 0.05,
-
-       archetype: String,
-
-       getAgeRanking() {
-        if (this.age <= 25) {
-          this.agerank = 4;
-        } else if (this.age <= 35) {
-          this.agerank = 3;
-        } else if (this.age <= 50) {
-          this.agerank = 2;
-        } else {
-          this.agerank = 1;
-        }
-      },
-
-      calculateCapacity() {
-      this.getAgeRanking();
-
-      console.log(formInput)
-      if(!formInput.hasOwnProperty('incomeType')) {
-      formInput['incomeType'] = 0;
-      }
-
-      if(!formInput.hasOwnProperty('investmentvalue')) {
-      formInput['investmentvalue'] = 0;
-    }
-
-      this.capacityScore = 
-      (this.agerank * 1.25 * this.ageWeight) + 
-      (this.annualIncome * 0.625 * this.incomeCurrency * this.incomeWeight) +
-      (this.incomeDuration * 1.67 * this.durationWeight) +
-      (this.incomeType * 2.5 * this.sourceWeight) +
-      (this.investmentvalue * 1.67 * this.portfolioWeight)
-
-    },
-
-      getCapacityRank() {
-        this.calculateCapacity()
-        
-        if (this.capacityScore <= 2.1) {
-          this.capacityRank = "low-capacity"
-        } else if (this.capacityScore <= 3.5) {
-          this.capacityRank = "average-capacity"
-        } else if (this.capacityScore <= 5) {
-          this.capacityRank = "high-capacity"}
-          else {this.capacityRank = ""}
-      },
-
-      getWillingnessRank() {
-
-        this.willingnessScore = (
-        this.confidence + this.fomo + this.preserve + this.aversion + this.uncertainty +
-        (this.orientation * 1.667) + 
-        (this.operation * 1.667) +
-        (this.judgement * 1.667) +
-        (this.lossReaction * 1.667))/9
-
-        if (this.willingnessScore <= 2.3) {
-          this.willingnessRank = "low-willingness"
-        } else if (this.willingnessScore <= 3.7) {
-          this.willingnessRank = "average-willingness"
-        } else if (this.willingnessScore <= 5) {
-          this.willingnessRank = "high-willingness"}
-          else {this.willingnessRank = ""}
-      },
-
-
-      getarchetype() {
-
-        this.getCapacityRank();
-        this.getWillingnessRank();
-
-        const combinedRank = `${this.willingnessRank}/${this.capacityRank}`
-
-        switch (combinedRank) {
-          case 'low-willingness/low-capacity':
-          case 'low-willingness/average-capacity':
-          case 'average-willingness/low-capacity':
-            this.archetype = 'Builder';
-            break;
-          case 'low-willingness/high-capacity':
-            this.archetype = 'Custodian';
-            break;
-          case 'average-willingness/average-capacity':
-          case 'average-willingness/high-capacity':
-            this.archetype = 'Scientist';
-            break;
-          case 'high-willingness/low-capacity':
-          case 'high-willingness/average-capacity':
-          case 'high-willingness/high-capacity':
-            this.archetype = 'Boss';
-            break;
-          default:
-            this.archetype = '';
-        }        
-        
-      }
- 
-      }
-
-      formInput.getarchetype()
-
-      console.log(formInput); 
-      console.log(formInput.capacityRank); 
-      console.log(formInput.willingnessRank); 
-      console.log(formInput.archetype);
-
-      const data = await fetch('/api/testform', {
+    
+    const formInput = await processForm(e) ;
+    
+    const data = await fetch('/api/testform', {
       method: 'POST',
       body: JSON.stringify({data: {
-        archetype: formInput.archetype,
-        willingness: formInput.willingnessRank,
-        capacity: formInput.capacityRank
-      }})
-    })
-    
-    const redirectlink = `/personality/${formInput.archetype}`
-    
-    router.push(redirectlink)
-  }
-  
-  return (
+      archetype: formInput.archetype,
+      willingness: formInput.willingnessRank,
+      capacity: formInput.capacityRank
+    }})
+  })
 
+    router.push(data.url)
+  }
+
+  return (
     <div className={styles.formcontainer}>
     
     <form onSubmit={handleSubmit}>
       <div>
-        <input type="range" name="age" id="age"/>
-        <label htmlFor="age">
-          <span>Age</span>
-        </label>
+        <div><input type="range" name="age" id="age"/>Age</div>
       </div>
-      <br/>
       {/* Annual Income  */}
       <div className={styles.annualIncome}>
+      <div>
         <div>
-
           <label htmlFor="income1">
           <input type="radio" name="annualIncome" value='1' id='income1' required />
             <span> Below 499k </span>
           </label>
         </div>
         <div>
-
           <label htmlFor="income2">
           <input type="radio" name="annualIncome" value='2' id='income2' required/>
             <span> 500k to 1m </span>
           </label>        
         </div>
         <div>
-
           <label htmlFor="income3">
           <input type="radio" name="annualIncome" value='3' id='income3' required />
             <span> above 1m to 2.5m </span>
-          </label>        
+          </label>
         </div>
         <div>
-
           <label htmlFor="income4">
           <input type="radio" name="annualIncome" value='4' id='income4' required/>
             <span> Below 2.5m </span>
           </label>
-        </div> 
+        </div>
+      </div> 
       </div>
-
-      <div>{}</div>
     
       <br/>
       {/* <!-- Income Currency --> */}
+      <div>
       <div>
         <div>
           <input type="radio" name="incomeCurrency" id="NGN" value={1} required/>
@@ -226,11 +79,14 @@ export default async function testForm () {
           </label>
         </div>
       </div> 
+      </div>
     
       <br/>
     
   {/*   <!-- income duration --> */}
       <div>
+        <div>
+
         <div>
           <input type="radio" name="incomeDuration" id="durationone" required value={1}/>
           <label htmlFor="durationone">
@@ -249,73 +105,48 @@ export default async function testForm () {
             <span> Over ten years </span>
           </label>
         </div>
+        </div>
       </div>
       <br/>
-{/*   <!-- Investment ownership section --> */}
-      {/* <div>
-        <div>
-          <input type="radio" name="investmentOwnership" id="yes-invest" required value={1} />
-          <label htmlFor="yes-invest>">
-            <span>YES</span>
-          </label>  
-        </div>
-        <div>
-          <input type="radio" name="investmentOwnership" id="no-invest" required value={0} />
-          <label htmlFor="no-invest">
-            <span>NO</span>
-          </label>  
-        </div>      
-      </div>
-      <br/> */}
 {/*   <!-- portfolio value --> */}
       <div className={styles.investmentvalueshow} >
-        <div>
-          <input type="radio" name="investmentvalue" id="5m-invest" value={1} />
-          <label htmlFor="{5}m-invest">
-            <span> less than 1m </span>
-          </label>  
-        </div>
-        <div>
-          <input type="radio" name="investmentvalue" id="10m-invest" value={2} />
-          <label htmlFor="{1}0m-invest">
-            <span> greater than 1m  & less than 10m </span>
-          </label>  
-        </div>      
-        <div>
-          <input type="radio" name="investmentvalue" id="big-invest" value={3} />
-          <label htmlFor="big-invest">
-            <span> greater than 10m </span>
-          </label>  
-        </div>      
-        <div>
-          <input type="radio" name="investmentvalue" id="noInvestment" value={3} />
-          <label htmlFor="big-invest">
-            <span> I have no investments </span>
-          </label>  
-        </div>      
-        <br/> 
-      </div>
+      
+          <div>
+            
+            <div>
+              <input type="radio" name="investmentvalue" id="5m-invest" value={1} />
+              <label htmlFor="{5}m-invest">
+                <span> less than 1m </span>
+              </label>  
+            </div>
+            <div>
+              <input type="radio" name="investmentvalue" id="10m-invest" value={2} />
+              <label htmlFor="{1}0m-invest">
+                <span> greater than 1m  & less than 10m </span>
+              </label>  
+            </div>      
+            <div>
+              <input type="radio" name="investmentvalue" id="big-invest" value={3} />
+              <label htmlFor="big-invest">
+                <span> greater than 10m </span>
+              </label>  
+            </div>      
+            <div>
+              <input type="radio" name="investmentvalue" id="noInvestment" value={3} />
+              <label htmlFor="big-invest">
+                <span> I have no investments </span>
+              </label>  
+            </div>      
+            <br/> 
+          </div>
+          
+          </div>
            
-  {/* <!-- Income Source Section -->
-      <div>
-        <div>
-          <input type="radio" name="incomeSource" id="single-income" required value={1}/>
-          <label htmlFor="single-income">
-            <span> Single </span>
-          </label>
-        </div>
-        <div>
-          <input type="radio" name="incomeSource" id="multi-income" required value={2}/>
-          <label htmlFor="multi-income">
-            <span> Multiple</span>
-          </label>
-        </div>
-      </div>
-    
-      <br/> */}
 {/*   <!-- Income categories --> */}
 
       <div className={styles.incomeSources}>
+      <div>
+            
         <div>
           <input type="checkbox" name="incomeType" id="salary" value={2}/>
           <label htmlFor="salary">
@@ -341,12 +172,12 @@ export default async function testForm () {
           </label>
           <input type="text" name="others" id="others" placeholder="please specify your other income source category"/>
         </div>
+          </div>
       </div>    
     
-      <div id="known-confidence"></div>    
-      
-      <br/>
-      
+      <div id="known-confidence"></div>
+      <div>
+            
       <div>
         I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck
     </div>    
@@ -373,7 +204,14 @@ export default async function testForm () {
         </label>
         <br/>
       </fieldset>
+            </div>    
       
+      <br/>
+      
+      <div>
+
+      <div>
+            
       <div>
         How do you feel about missing out on investment opportunity
       </div>  
@@ -400,7 +238,12 @@ export default async function testForm () {
         </label>
         <br/>
       </fieldset >
+            </div>
+      </div>
     
+    <div>
+    <div>
+            
       <div>
         How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?
       </div>  
@@ -427,9 +270,12 @@ export default async function testForm () {
         </label>
         <br/>
       </fieldset>
+            </div>
+    </div>
     
-      <div>
-        How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
+    <div>
+    (<div>    
+      <div>How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
       </div>  
       <fieldset className={styles.fieldset}>
         <label>
@@ -454,8 +300,12 @@ export default async function testForm () {
         </label>
         <br/>
       </fieldset>
+      </div>
+    </div>
     
-    
+    <div>
+    <div>
+            
       <div>
         How would you describe your comfort level with uncertainty and potential losses when it comes to investing?    
       </div>  
@@ -482,8 +332,13 @@ export default async function testForm () {
         </label>
         <br/>
       </fieldset>
+            </div>
+    </div>
     
     
+    <div>
+    <div>
+            
       <div className={styles.questionBlock}> Investment Orientation 
           <div>
             <input type="radio" name="orientation" id="trading" value={3} required/>
@@ -511,7 +366,12 @@ export default async function testForm () {
           </div>
         <br/>
       </div>
+            </div>
+    </div>
     
+    <div>
+    <div>
+            
       <div className={styles.questionblock}> Investment operations 
         <div>
           <input type="radio" name="operation" id="DIY" value={3} required/>
@@ -534,7 +394,12 @@ export default async function testForm () {
     
         <br/>
       </div>
+            </div>
+    </div>
       
+    <div>
+    <div>
+            
       <div className={styles.questionblock}> 
         How can you you tell that an investment is profitable
         <div>  
@@ -558,7 +423,12 @@ export default async function testForm () {
     
         <br/>
       </div>
+            </div>
+    </div>
     
+    <div>
+    <div>
+            
       <div className={styles.questionblock}>
           How would you react if a significant portion of your investment portfolio declined in value over a short period?
         <div>
@@ -582,6 +452,8 @@ export default async function testForm () {
     
         <br/>
       </div>
+            </div>
+    </div>
     
       <button type="submit">Submit</button>
     
