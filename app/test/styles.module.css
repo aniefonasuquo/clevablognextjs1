@@ -74,15 +74,14 @@
   border: 2px solid white; 
 }
 
-
 .circleOptionContainer > div > div{
   display: flex;
   justify-content: space-between;
-  /* width: 60%; */
   align-items: center;
   padding: 10px 0;
   font-size: 20px;
 }
+
 .circle {
 display: flex;
 border-radius: 50%;
@@ -129,7 +128,7 @@ border-color: blue;
   }
 
   .formcontainer * h1  {
-    padding: 12px 0;
+    padding: 10px 0;
   }
 
   .formnavigation button{
@@ -138,7 +137,6 @@ border-color: blue;
     border-radius: 20px;
     width: 100px;
     font-size: 12px;
-
   }
   
   #big {
@@ -154,6 +152,14 @@ border-color: blue;
   #mid {
     width: 40px;
     height: 40px;
+  }
+
+  .circleOptionContainer {
+    font-size: 10px;
+  }
+
+  .circleOptionContainer > div > div{
+  font-size: 15px;
   }
 
 
