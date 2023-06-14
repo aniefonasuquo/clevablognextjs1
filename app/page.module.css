@@ -1,27 +1,22 @@
 .pagecontainer {
-  padding: 0 100px;
+  box-sizing: border-box;
 }
 
 .topDiv {
+  margin-top: 50px;
+  padding: 0 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding: 50px 100px;
   grid-column-gap: 60px;
-  grid-template-rows: 650px;
-  overflow-y: hidden;
 }
 
 .topleft {
+  display: block;
 }
 
 .featuredimagewrapper {
   position: relative;
-  border-radius: 10px;
-  border: 0.5px black solid;
-  display: grid;
-  overflow:  hidden;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 0.8;
 }
 
 .featuredimage {
@@ -29,53 +24,43 @@
 }
 
 .featuredarticle {
-  margin-top: 20px;
-  position: absolute;
-  bottom: 0;
-  margin: 10px;
-  padding: 10px;
   background-color: white;
+  margin-top: 10px;
 }
 
-.featuredcategory {
+ .featuredarticle span {
+  padding: 5px 0;
   border-bottom: gray 1px solid;
   font-size: 20px;
   font-weight: 100;
   color: black;
 }
 
-.featuredtitle {
-  font-size: 30px;
+.featuredarticle h2 {
+  margin-top: 10px;
   color: black;
-}
+} 
 
 .topright {
-  overflow-y: auto;
-}
-
-.topright::-webkit-scrollbar {
-  display: none;
-}
-.recentposts {
-  font-size: 30px;
+  display: block;
+  position: relative;
+  overflow: scroll;
 }
 
 .recentpostswrapper {
-  padding: 20px 0;
-  overflow-y: hidden;
+  position: absolute;
 }
 
 .rArticle {
   display: grid;
   grid-template-columns: minmax(30%, 1fr) 3fr;
   column-gap: 10px;
-  padding: 5px 0;
+  padding: 2px 0;
 }
 
 .rArticleImg {
   display: grid;
   position: relative;
-  border-radius: 10px;
   overflow: hidden; 
   aspect-ratio: 1 / 0.9;
 }
@@ -84,53 +69,44 @@
   position: absolute;
 }
 
-.rArticleDetails {
-
-}
-
-.rArticleTitle {
-  font-size: 20px;
-  font-weight: 100;
-  color: black;
-}
-
-.rArticleCategory {
+.rArticleDetails span {
+  padding: 5px 0;
   border-bottom: gray 1px solid;
   font-size: 20px;
   font-weight: 100;
   color: black;
 }
 
+.rArticleDetails h2 {
+  font-weight: 100;
+  color: black;
+  margin-top: 10px;
+}
+
 /* Categories blotter  */
 
 .blotterwrapper {
+  margin-top: 50px;
+  padding: 50px;
   display: grid;
-  width: auto;
   grid-template-columns: minmax(30%, 1fr) 3fr;
-
-  padding: 50px 100px;
   background-color: whitesmoke;
   column-gap: 20px;
 }
 
-.leftsection > div{
-  margin-top: 30px;
- }
-
-.categoryheading {
-  font-size: 30px;
-}
-
 .categorydesc {
+  margin-top: 10px;
   font-size: 20px;
   font-weight: 100;
 }
 
 .button {
+  margin-top: 10px;
   color: black;
   border: 1px black solid;
   border-radius: 15px;
   padding: 10px;
+  width: 100px;
 }
 
 .blotterPostWrapper {
@@ -146,8 +122,6 @@
 .blotterPostImg {
   display: grid;
   position: relative;
-  border-radius: 10px;
-  overflow: hidden;
   aspect-ratio: 1 / 0.9;
 }
 
@@ -156,40 +130,31 @@
 }
 
 .blottercategory {
-  color: black;
-  text-decoration: underline;
+  padding: 5px 0;
+  border-bottom: gray 1px solid;
   font-size: 20px;
   font-weight: 100;
+  color: black;
 }
 
 .blottertitle {
+  font-weight: 100;
   color: black;
-  font-weight: lighter;
-  font-size: 20px;
+  margin-top: 10px;
 }
 
 @media screen and (max-width: 700px){
   .pagecontainer {
-    padding: 10px;
   }
 
   .topDiv {
+    margin-top: 10px;
     display: block;
-    height: max-content;
     padding: 0 10px;
   }
 
   .topDiv > div{
     margin: 10px 0;
-  }
-
-  .topleft {
-    
-  }
-
-  .recentpostswrapper {
-    margin: 0;
-    padding: 0;
   }
 
   .topleft > div{
@@ -203,9 +168,13 @@
     margin: 10px 0;
   }
 
-  .leftsection {
+  .topright {
+    overflow: hidden;
+  }
 
-   }
+  .recentpostswrapper {
+    position: relative;
+  }
   
   .blotterPostWrapper {
     margin: 30px 0;
@@ -217,10 +186,6 @@
     grid-template-columns: 1fr 2fr;
     column-gap: 10px;
     padding: 5px 0;
-  }
-
-  .rArticle {
-    /* display: block; */
   }
   
 }

@@ -5,16 +5,19 @@ import React, { useState } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 import { useRouter } from 'next/navigation';
 import { processForm } from '../investor-personality-test/handleform';
+import { Varela   } from 'next/font/google'
+
+const varela = Varela ({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-redhat',
+  display: 'swap' 
+})
 
 
 function SocialSharing() {
 
   const [amount, setamount] = useState(0.00)
-
-  // function setInput (e) {
-
-  // }
-  // // .toLocaleString('en-US', {maximumFractionDigits: 2, minimumFractionDigits: 2})
 
   const [text, setText] = useState(0)
   function prevText () {
@@ -58,13 +61,13 @@ function SocialSharing() {
   </div> */}
     <div className={styles.pagecontainer}>
     
-    <div className={styles.quizintro}>
+    <div className={`${styles.quizintro} ${varela.className}`}>
       {text == 0 && (<div>
           <h1>Discover You</h1>
           <p>Making sense of your wealth journey begins with clarifying what type of investor your your are</p>
           <p> This quiz helps you determine what type of investors you are based on your biodata, financial status, emotional responses investing related changes.
           </p>
-          <div>{ text == 0 && (<button onClick={nextText} type="Start">Take Quix</button>)}</div>
+          <div>{ text == 0 && (<button onClick={nextText} type="Start">Take quiz</button>)}</div>
         </div>)}
     </div>
 
@@ -482,9 +485,9 @@ function SocialSharing() {
               {text == 16 && (<div>
                 <h1>What gender are you?</h1>
                   <label htmlFor="male">
-                  <input type="radio" name="gender" id="make" value='male' required/>
+                    <input type="radio" name="gender" id="male" value='male' required/>
                     <div>
-                        <span> Male </span>
+                      <span> Male </span>
                     </div>
                   </label>
                   <label htmlFor="female">
