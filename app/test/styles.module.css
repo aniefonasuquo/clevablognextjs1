@@ -91,7 +91,7 @@
 }
 
 .questionContainer {
-  height: 400px;
+  height: 450px;
 }
 
 .questionContainer h1 {
@@ -127,7 +127,7 @@
 }
 
 .multichoiceContainter input {
-  display: none;
+  opacity: 0;
 }
 
 .multichoiceContainter input:checked + div {
@@ -169,7 +169,7 @@
 .circle {
 display: flex;
 border-radius: 50%;
-border: 2px solid blue;
+border: 1px solid greenyellow;
 margin: 0 10px;
 }
 
@@ -179,7 +179,7 @@ background-color: blue;
 
 input[type="radio"]:checked + .circle {
 background-color: blue;
-border-color: blue;
+border-color: greenyellow;
 }
 
 .ranking {

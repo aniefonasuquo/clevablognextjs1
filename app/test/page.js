@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './styles.module.css'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 import { useRouter } from 'next/navigation';
 import { processForm } from '../investor-personality-test/handleform';
@@ -52,6 +52,11 @@ function SocialSharing() {
     setAge(e.target.value)
   }
 
+  const form = {
+    1 : 'age',
+    2 : 'annualIncome'
+  }
+
   return (
     <>
     <div className={styles.pagecontainer}>
@@ -62,7 +67,7 @@ function SocialSharing() {
           <p>Making sense of your wealth journey begins with clarifying what type of investor your your are</p>
           <p> This quiz helps you determine what type of investors you are based on your biodata, financial status, emotional responses investing related changes.
           </p>
-          <div>{text == 0 && (<button onClick={nextText} type="Start">Take quiz</button>)}</div>
+          <div>{text == 0 && (<button onClick={nextText} type="button">Take quiz</button>)}</div>
         </div>)}
       </div>
 
@@ -506,9 +511,9 @@ function SocialSharing() {
           </div>
             
             <div className={styles.formnavigation}>    
-              <div>{ text > 1 && (<button className={styles.prevbutton} onClick={prevText}>previous</button>)}</div>
+              <div>{ text > 1 && (<button type='button' className={styles.prevbutton} onClick={prevText}>previous</button>)}</div>
               <div>{ text < 16 && text > 0 && (<button className={styles.nextbutton}onClick={nextText}>next</button>)}
-              { text == 16 && (<button className={styles.submit} type="submit">Submit</button>)}</div>
+              { text == 16 && (<button type='button' className={styles.submit} type="submit">Submit</button>)}</div>
             </div>
           </form>
         </div>
