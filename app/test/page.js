@@ -46,43 +46,41 @@ function SocialSharing() {
     router.push(data.url)
   }
 
+  const [age, setAge] = useState(28)
+
+  function showAgeInput (e) {
+    setAge(e.target.value)
+  }
 
   return (
     <>
-
-    {/* <div className={styles.pieChartContainer}>
-    <h1ieChart className={styles.pieChart}
-  data={[
-    { title: 'One', value: 10, color: '#E38627' },
-    { title: 'Two', value: 15, color: '#C13C37' },
-    { title: 'Three', value: 20, color: '#6A2135' },
-  ]}
-/>;
-  </div> */}
     <div className={styles.pagecontainer}>
     
-    <div className={`${styles.quizintro} ${varela.className}`}>
-      {text == 0 && (<div>
+      <div className={`${styles.quizintro} ${varela.className}`}>
+        {text == 0 && (<div>
           <h1>Discover You</h1>
           <p>Making sense of your wealth journey begins with clarifying what type of investor your your are</p>
           <p> This quiz helps you determine what type of investors you are based on your biodata, financial status, emotional responses investing related changes.
           </p>
-          <div>{ text == 0 && (<button onClick={nextText} type="Start">Take quiz</button>)}</div>
+          <div>{text == 0 && (<button onClick={nextText} type="Start">Take quiz</button>)}</div>
         </div>)}
-    </div>
+      </div>
 
-    <div className={styles.formcontainer}>
-            <form onSubmit={handleSubmit}>
+      <div className={styles.formcontainer}>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.questionContainer}>
+            
             <div>
-              {text == 1 && (<div>
-                <h1>Please select your age</h1>
-                <input type="range" name="age" id="age"/>
-                </div>)}
+              {text == 1 && (<div className={styles.ageQuestion}>
+                <h1>How old are you?</h1>
+                <input onChange={showAgeInput} defaultValue={age} type="range" name="age" id="age"/>
+                <div>{age}<span> years old</span></div>
+                </div>)}     
             </div>
               
-            <div className={styles.multichoiceContainter}>
-            {text == 2 && (<div>
-              <h1>How much do you earn annually?</h1>   
+              <div className={styles.multichoiceContainter}>
+              {text == 2 && (<div>
+              <h1>How much do you earn annually?</h1>
                 <label htmlFor="income1">
                 <input type="radio" name="annualIncome" value='1' id='income1' required />
                   <div>
@@ -101,8 +99,8 @@ function SocialSharing() {
                   <input type="radio" name="annualIncome" value='4' id='income4' required/>
                   <div><span> Below 2.5m </span></div>
                 </label>
-            </div>)} 
-            </div>
+              </div>)} 
+              </div>
               {/* <!-- Income Currency --> */}
             <div className={styles.multichoiceContainter}>
               {text == 3 && (<div>
@@ -121,7 +119,7 @@ function SocialSharing() {
                   </label>
               </div>)} 
             </div>    
-          {/*   <!-- income duration --> */}
+           {/*   <!-- income duration --> */}
             <div className={styles.multichoiceContainter}>
               {text == 4 && (<div>
               <h1>What is the total value of all your investments</h1>
@@ -141,7 +139,7 @@ function SocialSharing() {
                 </label>
               </div>)}
             </div>
-        {/*   <!-- portfolio value --> */}
+            {/*   <!-- portfolio value --> */}
             <div className={styles.multichoiceContainter}>
             {text == 5 && (<div>
               <h1>What is the total value of all your investments</h1>
@@ -173,7 +171,7 @@ function SocialSharing() {
               )}
             </div>
                    
-        {/*   <!-- Income categories --> */}
+           {/*   <!-- Income categories --> */}
         
               <div className={styles.multichoiceContainter}>
                 {text == 6 && (<div>
@@ -206,16 +204,17 @@ function SocialSharing() {
                 </div>)}
               </div>    
                   
-              <div className={styles.circleOptionContainer}>
-              {text == 7 && (<div>    
+              <div>
+              {text == 7 && (<div className={styles.circleOptionContainer}>    
               <h1>
                 I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck
               </h1>
               <div>
-                  <div>Strongly Disagree</div>
-                  <div>Strongly Agree</div>
-                </div>
-              <div>
+                  <div>
+                    <p>Strongly Disagree</p>
+                    <p>Strongly Disagree</p>
+                  </div>
+                  <div>
                 <label>
                   <input className={styles.ranking} type="radio" name="confidence" value={1} required/>
                   <div id={styles.big} className={styles.circle}></div>
@@ -236,54 +235,55 @@ function SocialSharing() {
                   <input className={styles.ranking} type="radio" name="confidence" value={5} required/>
                   <div id={styles.big} className={styles.circle}></div>
                   </label>
-              </div>    
-                
-                <br/>
+              </div>
+              </div>
               </div>)}    
               </div>
-              
-              <div className={styles.circleOptionContainer}>
-                {text == 8 && (<div>    
+      
+              <div>
+                {text == 8 && (<div className={styles.circleOptionContainer}>    
                 <h1>How do you feel about missing out on investment opportunity</h1>
                 <div>
-                  <div>Strongly Disagree</div>
-                  <div>Strongly Agree</div>
+                  <div>
+                    <p>Strongly Disagree</p>
+                    <p>Strongly Disagree</p>
+                  </div>
+                  <div>
+                  <label>
+                    <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
+                    <div id={styles.big} className={styles.circle}></div>
+                  </label>
+                  <label>
+                    <input className={styles.ranking} type="radio" name="fomo" value={2} required/>
+                    <div id={styles.mid} className={styles.circle}></div>
+                  </label>
+                  <label>
+                    <input className={styles.ranking} type="radio" name="fomo" value={3} required/>
+                    <div id={styles.small} className={styles.circle}></div>
+                  </label>
+                  <label>
+                    <input className={styles.ranking} type="radio" name="fomo" value={4} required/>
+                    <div id={styles.mid} className={styles.circle}></div>
+                  </label>
+                  <label>
+                    <input className={styles.ranking} type="radio" name="fomo" value={5} required/>
+                    <div id={styles.big} className={styles.circle}></div>
+                  </label>
+                  </div>   
                 </div>
-                <div>
-                <label>
-                  <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
-                  <div id={styles.big} className={styles.circle}></div>
-                </label>
-                <label>
-                  <input className={styles.ranking} type="radio" name="fomo" value={2} required/>
-                  <div id={styles.mid} className={styles.circle}></div>
-                </label>
-                <label>
-                  <input className={styles.ranking} type="radio" name="fomo" value={3} required/>
-                  <div id={styles.small} className={styles.circle}></div>
-                </label>
-                <label>
-                  <input className={styles.ranking} type="radio" name="fomo" value={4} required/>
-                  <div id={styles.mid} className={styles.circle}></div>
-                </label>
-                <label>
-                  <input className={styles.ranking} type="radio" name="fomo" value={5} required/>
-                  <div id={styles.big} className={styles.circle}></div>
-                </label>
-                </div>  
                 </div>)}
-              </div>
             
-            <div className={styles.circleOptionContainer}>
-            {text == 9 && (<div>       
+              <div >
+              {text == 9 && (<div className={styles.circleOptionContainer}>       
               <h1>
                 How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?
               </h1>
               <div>
-                  <div>Strongly Disagree</div>
-                  <div>Strongly Agree</div>
-                </div>
-              <div>
+                  <div>
+                    <p>Strongly Disagree</p>
+                    <p>Strongly Disagree</p>
+                  </div>
+                <div>
                 <label>
                   <input className={styles.ranking} type="radio" name="preserve" value={1} required/>
                   <div id={styles.big} className={styles.circle}></div>
@@ -304,19 +304,21 @@ function SocialSharing() {
                   <input className={styles.ranking} type="radio" name="preserve" value={5} required/>
                   <div id={styles.big} className={styles.circle}></div>
                 </label>
+                </div>
               </div>  
                     </div>)}
-            </div>
+              </div>
             
-            <div className={styles.circleOptionContainer}>
-            {text == 10 && (<div>    
+                <div >
+              {text == 10 && (<div className={styles.circleOptionContainer}>    
               <h1>How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
               </h1>
               <div>
-                  <div>Strongly Disagree</div>
-                  <div>Strongly Agree</div>
-              </div>
-              <div>
+                  <div>
+                    <p>Strongly Disagree</p>
+                    <p>Strongly Disagree</p>
+                  </div>
+                <div>
                 <label>
                   <input className={styles.ranking} type="radio" name="aversion" value={1} required/>
                   <div id={styles.big} className={styles.circle}></div>
@@ -337,20 +339,21 @@ function SocialSharing() {
                   <input className={styles.ranking} type="radio" name="aversion" value={5} required/>
                   <div id={styles.big} className={styles.circle}></div>
                 </label>
+                </div>
               </div>  
               </div>)}
-            </div>
+              </div>
             
-            <div className={styles.circleOptionContainer}>
-            {text == 11 && (<div>       
-              <h1>
+              <div>
+              {text == 11 && (<div  className={styles.circleOptionContainer}>       
+                <h1>
                 How would you describe your comfort level with uncertainty and potential losses when it comes to investing?    
-              </h1>
-              {/* <div> */}
-                <div>
-                  <div>Strongly Disagree</div>
-                  <div>Strongly Agree</div>
-                </div>
+                  </h1>
+                  <div>
+                  <div>
+                    <p>Strongly Disagree</p>
+                    <p>Strongly Disagree</p>
+                  </div>
                 <div>
         
                 <label>
@@ -374,13 +377,13 @@ function SocialSharing() {
                   <div id={styles.big} className={styles.circle}></div>
                 </label>
                 </div>
-              {/* </div>     */}
-                    </div>)}
-            </div>
+                </div>
+                </div>)}
+              </div>
             
             
-            <div className={styles.multichoiceContainter}>
-            {text == 12 && (<div>
+              <div className={styles.multichoiceContainter}>
+              {text == 12 && (<div>
                 <h1>Investment Orientation </h1>
                     <label htmlFor="trading">
                     <input type="radio" name="orientation" id="trading" value={3} required/>
@@ -407,10 +410,10 @@ function SocialSharing() {
                       </div>
                     </label>
                 </div>)}
-            </div>
+              </div>
             
-            <div className={styles.multichoiceContainter}>
-            {text == 13 && (<div>
+              <div className={styles.multichoiceContainter}>
+              {text == 13 && (<div>
               <h1>How can you you tell that an investment is profitable</h1>      
                   <label htmlFor="DIY">
                   <input type="radio" name="operation" id="DIY" value={3} required/>
@@ -431,10 +434,10 @@ function SocialSharing() {
                     </div>
                   </label>
                     </div>)}
-            </div>
+              </div>
               
-            <div className={styles.multichoiceContainter}>
-            {text == 14 && (<div>
+              <div className={styles.multichoiceContainter}>
+              {text == 14 && (<div>
                 <h1>How can you you tell that an investment is profitable</h1>
                   <label htmlFor="research">
                   <input type="radio" name="judgement" id="research" value={3} required/>
@@ -455,10 +458,10 @@ function SocialSharing() {
                     </div>
                   </label>
                     </div>)}
-            </div>
+              </div>
             
-            <div className={styles.multichoiceContainter}>
-            {text == 15 && (<div>
+              <div className={styles.multichoiceContainter}>
+                {text == 15 && (<div>
                 <h1>How would you react if a significant portion of your investment portfolio declined in value over a short period?</h1>
                   <label htmlFor="sell">
                   <input type="radio" name="lossReaction" id="sell" value={1} required/>
@@ -479,34 +482,36 @@ function SocialSharing() {
                     </div>
                   </label>
                   </div>)}
-            </div>
+              </div>
         
-            <div className={styles.multichoiceContainter}>
-              {text == 16 && (<div>
+              <div className={styles.multichoiceContainter}>
+                {text == 16 && (<div>
                 <h1>What gender are you?</h1>
-                  <label htmlFor="male">
-                    <input type="radio" name="gender" id="male" value='male' required/>
+                <label htmlFor="male">
+                  <input type="radio" name="gender" id="male" value='male' required/>
                     <div>
                       <span> Male </span>
                     </div>
-                  </label>
-                  <label htmlFor="female">
+                </label>
+                <label htmlFor="female">
                   <input type="radio" name="gender" id="female" value='female' required/>
                     <div>
                         <span> Female </span>
                     </div>
-                  </label>
-              
+                </label>
                 </div>)}
-              </div> 
-        
+              </div>
+
+            </div>
+          </div>
+            
             <div className={styles.formnavigation}>    
               <div>{ text > 1 && (<button className={styles.prevbutton} onClick={prevText}>previous</button>)}</div>
               <div>{ text < 16 && text > 0 && (<button className={styles.nextbutton}onClick={nextText}>next</button>)}
               { text == 16 && (<button className={styles.submit} type="submit">Submit</button>)}</div>
             </div>
-            </form>
-    </div>
+          </form>
+        </div>
     
     </div>
     </>
