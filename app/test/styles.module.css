@@ -4,6 +4,17 @@
   padding: 50px 0;
 }
 
+.progressOut {
+  width: 100%;
+  height: 5px;
+  background-color: gray;
+}
+
+.progressOut div {
+  background-color: greenyellow;
+  height: 100%;
+}
+
 .quizintro > div{
   display: block;
   text-align: center;
@@ -127,7 +138,8 @@
 }
 
 .multichoiceContainter input {
-  opacity: 0;
+  /* opacity: 1; */
+  /* visibility: hidden; */
 }
 
 .multichoiceContainter input:checked + div {
@@ -209,24 +221,20 @@ border-color: greenyellow;
 
   .formnavigation button{
   }
-  
-
-
 }
 
 @media screen and (max-width: 900px){
-
   .formcontainer {
     padding: 0 50px;
   }
-
   .formnavigation button{
   }
-
-  
 }
 
 @media screen and (max-width: 600px){
+  .pagecontainer {
+    padding: 10px 0;
+  }
 
   .formcontainer {
     padding: 0 10px;
