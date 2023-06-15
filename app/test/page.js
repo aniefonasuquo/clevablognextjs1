@@ -20,6 +20,7 @@ function SocialSharing() {
   const [amount, setamount] = useState(0.00)
 
   const [text, setText] = useState(0)
+  
   function prevText () {
     setText(text - 1)
   }
@@ -30,6 +31,7 @@ function SocialSharing() {
   const router = useRouter()
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     
     const formInput = await processForm(e) ;
     
@@ -46,6 +48,21 @@ function SocialSharing() {
     router.push(data.url)
   }
 
+  const [isChecked, setIsChecked] = useState([]);
+
+  const checkedid = []
+
+  const handleInputChange = (event) => {
+    if (checkedid.includes(event.target.id)) {
+      checkedid.pop(event.target.id)
+    } else {checkedid.push(event.target.id)}
+
+    console.log(event.target)
+   
+    setIsChecked(checkedid)
+  };
+
+
   const [age, setAge] = useState(28)
 
   function showAgeInput (e) {
@@ -59,8 +76,9 @@ function SocialSharing() {
 
   return (
     <>
+    {text > 0 && (<div className={styles.progressOut}><div style={{width: `${((text/16)*100)}%`}}></div></div>)}
     <div className={styles.pagecontainer}>
-    
+
       <div className={`${styles.quizintro} ${varela.className}`}>
         {text == 0 && (<div>
           <h1>Discover You</h1>
@@ -74,14 +92,13 @@ function SocialSharing() {
       <div className={styles.formcontainer}>
         <form onSubmit={handleSubmit}>
           <div className={styles.questionContainer}>
-            
             <div>
               {text == 1 && (<div className={styles.ageQuestion}>
                 <h1>How old are you?</h1>
                 <input onChange={showAgeInput} defaultValue={age} type="range" name="age" id="age"/>
                 <div>{age}<span> years old</span></div>
                 </div>)}     
-            </div>
+              </div>
               
               <div className={styles.multichoiceContainter}>
               {text == 2 && (<div>
@@ -106,6 +123,8 @@ function SocialSharing() {
                 </label>
               </div>)} 
               </div>
+
+              
               {/* <!-- Income Currency --> */}
             <div className={styles.multichoiceContainter}>
               {text == 3 && (<div>
@@ -116,8 +135,8 @@ function SocialSharing() {
                     <span> NGN </span>
                     </div>    
                   </label>        
-                  <label htmlFor="USD-GBP-EUR">
-                    <input type="radio" name="incomeCurrency" id="USD-GBP-EUR" value={2} required/>
+                  <label htmlFor="USD">
+                    <input type="radio" name="incomeCurrency" id="USD" value={2} required/>
                     <div>
                     <span> Forex (USD/GBP/EUR) </span>
                     </div>
@@ -167,7 +186,7 @@ function SocialSharing() {
                   </div>      
                 </label>  
                 <label htmlFor="noinvest">
-                <input required type="radio" name="investmentvalue" id="noInvestment" value={3} />
+                <input required type="radio" name="investmentvalue" id="noinvest" value={3} />
                   <div>
                     <span> I have no investments </span>
                   </div>      
@@ -513,7 +532,7 @@ function SocialSharing() {
             <div className={styles.formnavigation}>    
               <div>{ text > 1 && (<button type='button' className={styles.prevbutton} onClick={prevText}>previous</button>)}</div>
               <div>{ text < 16 && text > 0 && (<button className={styles.nextbutton}onClick={nextText}>next</button>)}
-              { text == 16 && (<button type='button' className={styles.submit} type="submit">Submit</button>)}</div>
+              { text == 16 && (<button className={styles.submit} type="submit">Submit</button>)}</div>
             </div>
           </form>
         </div>

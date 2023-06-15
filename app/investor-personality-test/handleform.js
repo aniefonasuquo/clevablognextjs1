@@ -1,7 +1,7 @@
 'use client'
 
 export const processForm = async (e) => { 
-  e.preventDefault();
+  
 
   const df = new FormData(e.target)
 
