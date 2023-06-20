@@ -1,0 +1,203 @@
+.pagecontainer {
+  width: 100%;
+  background-color:  rgb(24, 40, 102);;
+  color: white;
+}
+
+.formcontainer {
+  padding: 20px 0;
+}
+
+.progressOut {
+  width: 100%;
+  height: 5px;
+  background-color: gray;
+}
+
+.progressOut div {
+  background-color: greenyellow;
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+
+.questioncontainer{
+  display: block;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.question {
+  height: inherit;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  /* display: none; */
+  position: absolute;
+  left: -200%;
+  right: 0%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.visible {
+  height: inherit;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.radio {
+  font-size: 20px;
+}
+
+.radio > div:first-child {
+  font-weight: bolder;
+  margin: 10px 0;
+}
+
+.radio div:nth-child(2) * {
+  margin: 10px 0;
+}
+
+.radio div:nth-child(2) label {
+  border: 1px solid greenyellow ;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 100;
+  display: flex;
+}
+
+.radio div:nth-child(2) label:has(input:checked) {
+  background-color: skyblue;
+}
+
+.radio div:nth-child(2) input {
+  width: 20px;
+  height: 20px;
+}
+
+.radio div:nth-child(2) label:hover {
+  background-color: lightskyblue;
+}
+
+.radio div:nth-child(2) * p {
+  padding: 0 10px;
+}
+
+.circle {
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid greenyellow;
+  margin: 0 10px;
+  }
+  
+  .circle:hover {
+  background-color: blue;
+  }
+  
+  input[type="radio"]:checked + .circle {
+  background-color: blue;
+  border-color: greenyellow;
+  }
+  
+  .ranking {
+    display: none
+  }
+  
+  #big {
+    width: 80px;
+    height: 80px;
+  }
+  
+  #small {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #mid {
+    width: 55px;
+    height: 55px;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .controls button{
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    width: 100px;
+    background-color: white;
+    color: navy;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100;
+  }
+
+  .ageQuestion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ageQuestion * {
+    margin: 10px 0;
+  }
+  
+  .ageQuestion input {
+   width: 300px;
+   height: 1px;
+   -webkit-appearance: none;
+   appearance: none;
+  }
+  
+  .ageQuestion input::-webkit-slider-thumb {
+    
+    -webkit-appearance: none;/* appearance: none; */
+    width: 30px;
+    height: 30px;
+    background-color: rgb(24, 40, 102);
+    border: 1px solid greenyellow;
+    border-radius: 50%;
+    cursor: pointer;
+   }
+  
+   .ageQuestion input::-ms-thumb {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(24, 40, 102);
+    border: 1px solid greenyellow;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .ageQuestion input::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(24, 40, 102);
+    border: 1px solid greenyellow;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .ageQuestion div {
+    font-size: 20px;
+    padding: 20px 0;
+    font-weight: bolder;
+  }
+  

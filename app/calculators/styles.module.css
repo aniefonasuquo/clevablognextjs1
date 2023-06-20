@@ -21,430 +21,344 @@
   text-align: center;
 }
 
-.optionDesc {
+
+.bodycontainer {
+  padding: 0 150px;
+  background-color:
+   rgb(24, 40, 102);
+}
+
+.up {
   display: flex;
-  justify-content: center;
-  margin: 50px 0;
+  padding: 10px 0;
 }
 
-.targetOption {
-  flex: 1;
-  background: rgb(24, 40, 102);;
-  height: 400px;
-  box-shadow: 0px 2px 2px rgb(243, 242, 242, 0.50);
-  transition: all 0.5s linear;
-}
-
-.targetOption:hover {
-  background-color: rgba(1,87,164,255);
-  border: 1px solid whitesmoke;
+.selected {
+  padding: 10px 10px;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  text-align: start;
   cursor: pointer;
+  color: white;
+  opacity: 0.5;
 }
 
-.referencediv {
+.up button {
+  padding: 10px 10px;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  text-align: start;
+  cursor: pointer;
+  color: silver;
+  opacity: 0.5;
+}
+
+.selected {
+  font-size: 28px;
+  color: white;
+  opacity: 1;
+}
+
+.up button:hover {
+  color: white;
+  border: silver solid 1px;
+  font-size: 28px;
+}
+
+.down {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+}
+
+.down * p {
+  /* font-weight: 100; */
+  /* font-size: 18px; */
+}
+
+.down * h2 {
+  font-size: 30px;
+}
+.calcInfo {
+  background-color: transparent;
+}
+
+.calcInfo div:nth-child(1) {
   position: relative;
-  height: 100vh;
-  padding: 100px 0;
-  display: none;
+  width: 100%;
+  height: 300px;
 }
 
-.targetcontainer {
+.calcInfo div:nth-child(2) {
+  padding: 20px 10px;
+  color: silver
+}
+
+.calcInfo img {
   position: absolute;
-  display: none;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
-.targetinput {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 10px;
-  background-color: rgba(245, 245, 245, 0.901);
-  margin: 0 250px;
-  border-radius: 40px;
-}
 
-/* Form Styles */
-.inputDiv {
+
+.calculators {
+  width: 100%;
   position: relative;
-  display: inline-block;
-  border-radius: 10px;
+  display: flex;
+  height: 500px;
   overflow: hidden;
 }
 
-.inputDiv:hover {
-  background-color: rgba(245, 245, 245, 0.444);
-  cursor: pointer;
-}
-
-.inputDiv:active {
-  background-color: rgba(245, 245, 245, 0.444);
-}
-
-.inputDiv:focus {
-  background-color:rgba(245, 245, 245, 0.444);
-}
-
-.inputAmount {
-  width: 200px;
-  height: 50px;
-  border: none;
-  background-color: transparent;
-  font-size: 20px;
-  color: blue;
-  -moz-appearance: textfield;
-  text-align: start;
-  padding: 0 5px;
- }
-
-
- .inputAmount:focus {
-  outline: none;
-}
-
-.amountcurr { 
+.invisible {
   position: absolute;
-  font-size: 20px;
-  top: 20%;
-  right: 2%;
-  color: blue;
-  z-index: 1;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  left: 0%;
+  right: 0;
+  translate: 3000px 0;
+  transition: all 1s ease-in-out;
+  display: grid;
 }
 
-.selectInput {
-  width: 200px;
-  height: 50px;
-  background-color: transparent;
-  font-size: 20px;
-  text-align: center;
-  color: blue;
-  border-radius: 10px;
-  border: none;
+.active {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 1s ease-in-out;
+  display: grid;
 }
-
-.selectInput:hover {
-  background-color: rgba(245, 245, 245, 0.444);
-  cursor: pointer;
-}
-
-.selectInput:active {
-  background-color: rgba(245, 245, 245, 0.444);
-}
-
-.selectInput:focus {
-  background-color: rgba(245, 245, 245, 0.444);
-}
-
-.targetdate {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  text-align: center;
-  color: blue;
-  border-radius: 10px;
-  background-color: transparent;
-  border: none;
-}
-
-.targetdate:hover {
-  background-color: rgba(245, 245, 245, 0.444);
-  cursor: pointer;
-}
-
-.targetdate:active {
-  background-color: rgba(245, 245, 245, 0.444);
-}
-
-.targetdate:focus {
-  background-color: rgba(245, 245, 245, 0.444);
-}
-
-.targetdate:focus {
-  outline: none;
-}
-
-.targetSubmit {
-  background-color: blue;
-  border-radius: 30px;
-  color: white;
-  height: 50px;
-  width: 100px;
-  outline: none;
-  border: none;
-  font-size: 20px;
-  text-align: center;
-}
-
-.targetSubmit:hover {
-  background-color: rgb(35, 35, 187);
-}
-
-.icon {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: blue;
-  margin: 0 10px;
-  padding: 10px;
-}
-
-.icon:hover {
-  background-color: rgb(35, 35, 187);
-}
-
-.targetresult {
-  margin: 0 150px;
-  padding: 0 100px;
-}
-
-.resultHead {
-  display: flex;
-  padding-bottom: 10px;
-  border-bottom: 0.5px grey solid;
-  margin-bottom: 10px;
-  padding: 20px 0;
-  justify-content: space-evenly;
-
-}
-
-.resultHead div {
-  text-align: center;
-}
-
-.resultHead div p:nth-child(1) {
-  font-size: 20px;
-  font-weight: 100;
-}
-
-.resultHead div p:nth-child(2) {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.targetTableHeading {
-  display: flex;
-}
-
-.targetResultRow {
-  display: flex;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 100;
-  background-color: whitesmoke;
-  border-radius: 5px;
-  margin-bottom: 5px;
-}
-
-.targetRecomRow {
-  display: flex;
-  border-bottom: 1px solid grey;
-  padding: 5px 0;
-  align-items: center;
-}
-
-.targetRecomRow div p:nth-child(1){
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.targetRecomRow div p:nth-child(2){
-  font-size: 15px;
-}
-
-.totalContri {
-  display: flex;
-}
-
-.targetResultProduct {
-  display: flex;
-  flex: 3;
-  border-bottom: 1px grey solid;
-  align-items: center;
-}
-
-.targetResultProduct div {
-  flex: 1;
-}
-
-.targetResultProduct div:nth-child(1) {
-  display: inline-block;
-  padding-right: 10px;
-}
-
-.targetResultContri {
-  flex: 2
-}
-
-.targetResultContri div {
-  flex: 1;
-}
-
-/* Retirement Styling */
 
 .retirementContainer {
-  display: flex;
-  margin: 0 150px;
-  padding: 0 100px;
-  justify-content: center;
-  position: absolute;
-  display: none;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  background-color: white;
+  height: 100%;
+}
+
+.retirementContainer > div {
+  padding: 20px
 }
 
 .retireInputCard {
-  display: block;
-  justify-content: flex-start;
-  padding: 50px;
-  width: 50%;
+  color: grey;
+
 }
 
-.slidercontainer {
+.expenseinput input{
+  padding: 5px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.expenseinput p {
+  margin: 10px 0;
+  color: gray;
+}
+
+.RetireResultsdisplay {
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.RetireResultsdisplay > div {
+ padding: 10px 0;
+}
+
+.RetireResultsdisplay > div p {
+  font-weight: 100;
+ }
+
+ .targetcontainer {
+  display: grid;
+  grid-template-columns: minmax(35%, 1fr) 3fr;
+  font-size: 15px;
+ }
+
+ .targetcontainer > div {
+  padding: 25px 20px;
+
+}
+
+ .targetinput {
+  background-color: white;
+  border-right: 1px silver solid;
+ }
+
+.targetinput > div {
+}
+.inputAmount {
   position: relative;
 }
 
-.expenseinput {
-  padding: 10px 0;
+.inputAmount span {
+  position: absolute;
+  align-items: center;
+  top: 20%;
+  left: 150px;
+  color: grey;
 }
 
-.expenseinput p{
-  padding-bottom: 10px;
-}
 
+ .targetinput button {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: navy;
+  color: white;
+ }
 
-.expenseinput input {
+ .targetCurr {
+  /* display: flex; */
+ }
+
+ .targetCurr label{
+  display: inline-flex;
+  border: 1px whitesmoke solid;
+  width: 100px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+ }
+
+ .targetCurr label:hover {
+  background-color: silver;
+  border: 2px solid grey;
+ }
+
+ .targetCurr input {}
+
+ .targetAmount input {
+  background-color: whitesmoke;
+  padding: 10px;
+  border: none;
   width: 200px;
-  height: 40px;
+  border-radius: 10px;
+ }
+
+ .targetdate input{
+  width: 200px;
   border-radius: 10px;
   border: none;
   background-color: whitesmoke;
   padding: 10px;
-  text-align: start;
-  font-size: 20px;
-  font-weight: 100;
-}
+ }
 
-.expenseinput input::-webkit-outer-spin-button,
-.expenseinput input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-
-.expenseinput input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.resultsdisplay {
-  background-color: rgba(24,40,102,255);
-  padding: 50px 50px 0;
-  flex: 1;
-}
-
-.retireValueOutput {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  text-align: center;
-}
-
-.retireValueOutput p {
-  font-weight: bold;
+ .targetresult {
+  background-color: white;
   font-size: 12px;
-  color: white;
-}
+ }
 
-.retireValueOutput p:nth-child(1){
-  background-color: rgba(1,87,164,255);
-  padding: 5px;
-}  
-
-.retireValueOutput div{
-  font-weight: bold;
-  font-size: 25px;
-  color: white;
-}
-
-.retireContribution{
-  padding: 30px 0 0 0;
-  display: block;
-}
-
-.retireContribution > {
-  
-  
-}
-
-.retireContribution div:nth-child(2) {
+ .targetresult > div:nth-child(1) {
   display: flex;
-  text-align: center;
-  justify-content: space-between;
-}
+ }
 
-.retireContribution div:nth-child(2) > div {
-  display: block;
-  padding: 20px 10px;
-}
+ .targetresult > div:nth-child(1) > div{
+  margin-right: 30px;
+ }
 
-.retireContribution div:nth-child(2) p:nth-child(2)  {
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
-}
-
-.retireContribution div:nth-child(2) p:nth-child(1)  {
-  font-weight: 100;
-  color: grey;
-}
-
-/* Buttons */
-
-#buttonSwitch {
-  border: solid 1px white;
-  position: relative;
-  border-radius: 20px;
-  height: auto;
-  width: 300px;
-  overflow: hidden;
+ .targetTableHeading {
   display: flex;
+ }
+
+ .targetResultRow {
+  display: grid;
+  grid-template-columns: 50% 1fr;
   background-color: whitesmoke;
-}
+  margin: 5px 0;
+  border-radius: 10px;
+ }
 
-#buttonSwitch > button {
-  outline: none;
-  border: none;
-  height: inherit;
-  width: inherit;
-  height: 40px;
+ .targetResultProduct {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ }
+
+ .targetResultContri {
+ }
+
+ .targetRecomRow {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3px 0;
+  text-align: center;
+  border-bottom: 1px solid black;;
+ }
+
+ .totalContri {
+  display: flex;
+  justify-content: space-evenly;
+ }
+
+ .incomeInput div {
+  margin-bottom: 10px;
+ }
+
+ .incomeInput p {
+  font-weight: 100;
+ }
+
+ .incomeInput input,
+ .incomeInput label{
+  padding: 10px;
+  border: 1px solid silver;
+  margin: 5px 0;
+  border-radius: 10px;
   cursor: pointer;
   background-color: whitesmoke;
-  border-radius: 20px;
-}
+  font-size: 15px;
+ }
 
-.contriActive {
-  background-color: rgba(24,40,102,255);
+ .incomeInput label{
+  display: block;
+  width: 150px;
+ }
+
+
+ .incomeInput label span{
+  margin-left: 10px;
+ }
+
+ .incomeInput button {
+  padding: 10px 20px;
+  border: none;
+  background-color: navy;
   color: white;
-}
+  border-radius: 20px;
+  font-size: 15px;
+ }
 
-.pieChartContainer {
-  position: relative;
-  height: 100px;
-  width: 100px;
+ .incomeContainer {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  padding: 20px;
+  background-color: white;
+  font-size: 15px;
+ }
+
+ .incomeResultRow {
   display: flex;
-  justify-content: flex-start;
+  background-color: whitesmoke;
+  margin-bottom: 5px;
+  justify-content: space-evenly;
+  text-align: start;
 }
 
-.pieChart {
-  position: absolute;
-}
+.incomeResultRow > div {
+  margin-right: 10px;
+  padding: 10px 0;
 
-.incomeContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
-  position: absolute;
-  display: none;
-}
-
-.incomeInput {
-  display: flex;
-  flex-direction: column;
 }

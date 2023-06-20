@@ -38,13 +38,13 @@ export default async function Post({ params }) {
           <Image objectFit="cover" fill='true' src={img} sizes="100vw"></Image>
         </div>
           <div className={styles.headright}>
-            <div className={styles.textmiddle}>
-              <Link href={`/category/${content.tags[0]}`}><span>{content.tags[0]}</span></Link>
+            {/* <div className={styles.textmiddle}> */}
+              <span><Link href={`/category/${content.tags[0]}`}>{content.tags[0]}</Link></span>
               <h1 className={raleway.className}> {content.title}</h1>
-              <h4>By {'Author Name'}</h4>
-              <h4>{'Published Date'}</h4>
+              <p>By {'Author Name'}</p>
+              <p>{'Published Date'}</p>
               <p>4 mins read</p>
-            </div>
+            {/* </div> */}
             <SocialSharing></SocialSharing>
           </div>
       </section>

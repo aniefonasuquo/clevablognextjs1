@@ -9,6 +9,8 @@ import Rangeslider from './multiRangeSlider/MultiRangeSlider'
 import { PieChart } from 'react-minimal-pie-chart';
 import Target from "./target/target";
 import Image from "next/image";
+import retireimage from './../../public/retire.jpg'
+import { error } from "logrocket";
 
 const CalcOptions = React.memo(options)
 
@@ -183,146 +185,160 @@ export default function Thispage () {
       }
 
       function showTarget () {
-        const refDiv = document.getElementById('referencediv');
-        refDiv.style.display = 'block'
-
-        const targetDiv = document.getElementById('targetcontainer');
-        targetDiv.style.display = 'block'
-
-        console.log(refDiv)
-        console.log(targetDiv)
       }
+
+      const [calcimage, setcalcimage] = useState()
+      const [calcdetails, setcalcdetails] = useState({})
+      const [calcdisplay, setCalc] = useState('retire')
+      
+      
+      const calcDB = [
+        {type: 'retire',
+        details: 'Retire Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun',
+        image: retireimage   
+      },
+      {type: 'income',
+      details: 'Income Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun ',
+      image: ''   
+    },
+    {type: 'target',
+    details: 'target Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun ',
+    image: ''   
+    },
+    
+  ]
+    function changeDisplay (e) {
+      setCalc(e.target.id)
+    }
+      
+  useEffect(()=>{
+    const calc = calcDB.find((calc) => calc.type == calcdisplay)
+    calc ? setcalcdetails(calc)  : console.log(error)
+  })
+
+
 
   return (
     <>
-      <div className={Styles.topsection}>   
-        <div className={Styles.topheading}> 
-          <p className={`${raleway.className}`}> Discover the best investment decision for you </p> 
-        </div> 
-      
-        <div className={Styles.toOptions}>
-          {/* <CalcOptions
-          onClick={showTarget} 
-          option='Investment Goals' 
-          detail='Discover the best ways to achieve your investment goals'
-          className={Styles.optionsCard}>
-          </CalcOptions> */}
-          <div onclick={showTarget} className={Styles.targetOption}> 
-            <p>Investment Goals</p>
-            <p>Discover the best ways to achieve your investment goals</p>
-          </div>
-          <CalcOptions className={Styles.optionsCard}></CalcOptions>
-          <CalcOptions className={Styles.optionsCard}></CalcOptions>
-          <CalcOptions className={Styles.optionsCard}></CalcOptions>
-        </div>
-      </div>
+      <div className={Styles.pagecontainer}></div>  
+          <div className={Styles.topheading}> 
+            <p className={`${raleway.className}`}> Discover the best investment decision for you </p> 
+          </div> 
 
-      <div id='referencediv' className={Styles.referencediv}>
-
-      <div id='targetcontainer' className={Styles.targetcontainer}> 
-           
-            <div>
-            <form onSubmit={handlesubmit}>
-            <div className={Styles.targetinput}>
-              <div className={Styles.icon}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" id="currency"><path d="M8.006 8.018h22.072c.526.046.928.46.928 1v4.957c-.174.016-.332.043-.526.043h-4.974c-1.93 0-3.5 1.57-3.5 3.5s1.57 3.5 3.5 3.5H30.512a.501.501 0 0 0 .146-.024c.125-.004.229-.028.348-.037v5.027c0 .573-.446 1.016-1.018 1.016H14.637a7.432 7.432 0 0 0 1.506-4.482.502.502 0 0 0-.04-.188c-.106-4.043-3.406-7.312-7.482-7.312-.555 0-1.095.064-1.615.18v-6.18a.986.986 0 0 1 1-1zm23.723 0h.277c.562 0 1 .437 1 1v4.26c-.224.184-.554.365-1 .507V9.018c0-.365-.106-.704-.277-1zm-23.723 1v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zM8.023 11.016l-.003 1 1 .01.003-1zm19.989 1.004v1.007h.994V12.02zm-19.998.996-.006 1 1 .01.006-1zm24.992 1.38v4.86c-.418.356-1.206.752-2.5.762h-5a2.484 2.484 0 0 1-2.5-2.5c0-1.394 1.106-2.5 2.5-2.5h4.974c1.102 0 1.886-.276 2.526-.622zM8.62 16.018c3.602 0 6.522 2.909 6.522 6.5 0 3.592-2.92 6.5-6.522 6.5a6.47 6.47 0 0 1-6.48-6.5c0-3.595 2.877-6.5 6.48-6.5zm16.969 0c-.869 0-1.584.717-1.584 1.586 0 .868.715 1.583 1.584 1.583a1.59 1.59 0 0 0 1.582-1.583c0-.87-.713-1.586-1.582-1.586zm0 1c.328 0 .582.257.582.586a.575.575 0 0 1-.582.583.577.577 0 0 1-.584-.583c0-.33.256-.586.584-.586zm-16.955 1a.52.52 0 0 0-.492.507v.541c-.965.21-1.75.911-1.75 1.895 0 1.163 1.042 2.055 2.25 2.055.73 0 1.248.493 1.248 1.052 0 .56-.518 1.055-1.248 1.055s-1.25-.496-1.25-1.055a.52.52 0 0 0-.5-.507.52.52 0 0 0-.5.507c0 .998.769 1.792 1.75 1.998v.446a.52.52 0 0 0 .5.507.52.52 0 0 0 .5-.507v-.547c.964-.21 1.748-.913 1.748-1.897 0-1.299-1.16-2.053-2.248-2.053-.73 0-1.25-.495-1.25-1.054 0-.552.508-1.038 1.222-1.051a.51.51 0 0 0 .057.002c.713.014 1.219.498 1.219 1.049a.52.52 0 0 0 .5.507.52.52 0 0 0 .5-.507c0-.998-.768-1.794-1.748-2v-.436a.52.52 0 0 0-.508-.507zm24.37 2.431v5.569c0 .562-.437 1-1 1h-.296c.184-.304.297-.655.297-1.034v-5.18c.378-.09.71-.21 1-.355zm-5 2.072-.001.997h1.01v-.997zm-12.062 2.497v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1zm2 0v1h1v-1z" color="white" font-family="sans-serif" font-weight="400" overflow="visible"></path></svg>
-              </div>
-              <div>
-                <select onInput={e => setCurr(e.target.value)} name="currency" id="currency" className={Styles.selectInput}>
-                  <option value="" hidden> Select currency </option>
-                  <option value="NGN">Naira (NGN) </option>
-                  <option value="USD">US Dollar (USD) </option>
-                </select>
-              </div>
-              <div className={Styles.icon}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" id="target"><path d="M12,9a3,3,0,1,0,3,3A3,3,0,0,0,12,9Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,12,13Zm9-2H19.93A8,8,0,0,0,13,4.07V3a1,1,0,0,0-2,0V4.07A8,8,0,0,0,4.07,11H3a1,1,0,0,0,0,2H4.07A8,8,0,0,0,11,19.93V21a1,1,0,0,0,2,0V19.93A8,8,0,0,0,19.93,13H21a1,1,0,0,0,0-2Zm-9,7a6,6,0,1,1,6-6A6,6,0,0,1,12,18Z"></path></svg>
-              </div>
-              <div className={Styles.inputDiv}>
-                <input type='number' className={Styles.inputAmount} name="targetamount" placeholder="Target Amount"/>
-                <div className={Styles.amountcurr}>{selectcurr}</div>
-              </div>
-              <div className={Styles.icon}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" id="check-meeting"><path fill="white" d="M13 3a1 1 0 1 0-2 0H8a1 1 0 0 0-2 0 4 4 0 0 0-4 4v.004c.033-.003.066-.004.1-.004h19.8c.034 0 .067.001.1.004V7a4 4 0 0 0-4-4 1 1 0 1 0-2 0h-3Z"></path><path fill="white" fill-rule="evenodd" d="M2 18V8.996c.033.003.066.004.1.004h19.8c.034 0 .067-.001.1-.004V18a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4Zm13.707-5.707a1 1 0 0 0-1.414 0L12 14.586l-1.293-1.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0 0-1.414Z" clip-rule="evenodd"></path></svg>
-              </div>
-              <div>
-                <input type="date" className={Styles.targetdate} name="targetdate" placeholder="Choose Target Date" required/> 
-              </div>
-    
-              <button type="submit" className={Styles.targetSubmit}> Submit </button>
+          <div className={Styles.bodycontainer}>
+            <div className={Styles.up}>
+              <button id='retire' className={calcdisplay == 'retire'? `${Styles.selected}` : Styles.calselect} onClick={changeDisplay}>Retirement</button>
+              <button id='target' className={calcdisplay == 'target'? Styles.selected : Styles.calselect} onClick={changeDisplay}>Target Investment</button>
+              <button id='income' className={calcdisplay == 'income'? Styles.selected : Styles.calselect} onClick={changeDisplay}>Income Portfolio</button>
+              <button id='equity' className={calcdisplay == 'equity'? Styles.selected : Styles.calselect}>Stock Porfolio</button>
             </div>
-            </form>
-            </div>
-        
-          {/* Target Return */}
-
-            <div className={Styles.targetresult}>
-              <div className={Styles.resultHead}>
-                <div>
-                  <p>Target Value</p>
-                  <p>N{targetamount.toLocaleString('en-us', {minimumFractionDigits: 2,maximumFractionDigits: 2})}</p>
-                </div>
-
-                <div>
-                  <p>Duration</p>
-                  <p>{targetdate <= 365 ? `${targetdate}days` : targetdate < 729 ? `1year ${targetdate - 365}days` : `${Math.ceil(targetdate/365)}years ${targetdate - (Math.ceil(targetdate/365) * 365)}days`}</p>
-                </div>
+            <div className={Styles.down} >
+              <div className={Styles.calcInfo}>
+                <div><Image src={calcdetails.image} objectFit="cover" fill={true} sizes='100vw'></Image></div>
+                <div><p>{calcdetails.details}</p></div>
               </div>
-          
-          
-              <div className={Styles.targetResultContainer}>
-                <div className={Styles.targetTableHeading}>
-                  <div>Issuer</div>
-                  <div>Product</div>
-                  <div>Rate</div>
-                  <div>Periodic Contribution</div>
-                  <div>Total Contribution</div>
-                  <div>Return</div>
-                </div>
+              <div className={Styles.calculators}>
               
-                <div>
-                {Targetresult.map(({product, rate, payments})=> (
-                  <div className={Styles.targetResultRow} id={product}>
-                    <div className={Styles.targetResultProduct}>
-                      <div><div>Company logo</div>{product}</div>
-                      <div>{product} Flex Savings</div>
-                      <div>{(rate * 100).toFixed(2)}% </div>
+              <div className={calcdisplay == 'target' ? Styles.active : Styles.invisible}>
+                <div className={Styles.targetcontainer}> 
+                <div className={Styles.targetinput}>
+                  <form onSubmit={handlesubmit}>
+                    <div className={Styles.targetCurr}>
+                      <p>Select currency</p>
+                      <label htmlFor="targetNGN">
+                        <input value='NGN' type="radio" id='targetNGN' name='targetcurr'/>
+                        <p>NGN</p>
+                      </label>
+                      <label htmlFor="targetUSD">
+                        <input value='USD' type="radio" id='targetUSD' name='targetcurr'/>
+                        <p>USD</p>
+                      </label>
                     </div>
+                      
+                    <div className={Styles.targetAmount}>
+                      <p>Select amount</p>
+                      <div className={Styles.inputAmount}>
+                        <span className={Styles.amountcurr}>{selectcurr}</span>
+                        <input type='number'  name="targetamount" placeholder="Target Amount"/>
+                      </div>
                   
-                    <div className={Styles.targetResultContri}>
-                      {payments.map((e)=>(
-                      <div className={Styles.targetRecomRow} id={Object.keys(e)[0]}>
-                        <div>              
-                          <p>
-                            {(Object.values(e)[0]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}  
-                          </p>                                                           
-                          <p>
-                            every {Object.keys(e)[0]}
-                          </p> 
-                        </div>
-
-                        <div className={Styles.totalContri}>
-                          <div>
-                            {(Object.values(e)[1]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
-                          </div>
-                          <div>
-                            {(targetamount - (Object.values(e)[1])).toLocaleString('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2})}
-                          </div>
-                        </div>
-                      </div> 
-                      ))}
                     </div>
+
+                    <div className={Styles.targetdate}>
+                      <p>Choose target date</p>
+                      <input type="date" className={Styles.targetdate} name="targetdate" placeholder="Choose Target Date" required/> 
+                    </div>
+      
+                    <button type="submit" className={Styles.targetSubmit}> Submit </button>
+                </form>
+              </div>
+        
+              <div className={Styles.targetresult}>
+                <div>
+                  <div>
+                    <p>Target Value</p>
+                    <h1>N{targetamount.toLocaleString('en-us', {minimumFractionDigits: 2,maximumFractionDigits: 2})}</h1>
                   </div>
-                ))}
+
+                  <div>
+                    <p>Duration</p>
+                    <h1>{targetdate <= 365 ? `${targetdate}days` : targetdate < 729 ? `1year ${targetdate - 365}days` : `${Math.ceil(targetdate/365)}years ${targetdate - (Math.ceil(targetdate/365) * 365)}days`}</h1>
+                  </div>
+                </div>
+          
+          
+                <div className={Styles.targetResultBody}>
+                  <div className={Styles.targetTableHeading}>
+                    <div>Product</div>
+                    <div>Rate</div>
+                    <div>Periodic Contribution</div>
+                    <div>Total Contribution</div>
+                    <div>Return</div>
+                  </div>
+              
+                  <div className={Styles.targetResultList}>
+                    {Targetresult.map(({product, rate, payments})=> (
+                    <div className={Styles.targetResultRow} id={product}>
+                      <div className={Styles.targetResultProduct}>
+                        <div>logo</div>
+                        <div>{product} Flex Savings</div>
+                        <h>{(rate * 100).toFixed(2)}% </h>
+                      </div>
+                  
+                      <div className={Styles.targetResultContri}>
+                        {payments.map((e)=>(
+                        <div className={Styles.targetRecomRow} id={Object.keys(e)[0]}>
+                            <div>              
+                              <p>
+                                {(Object.values(e)[0]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}  
+                              </p>                                                           
+                              <p>
+                                every {Object.keys(e)[0]}
+                              </p> 
+                            </div>
+                            <div>
+                              {(Object.values(e)[1]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
+                            </div>
+                            <div>
+                              {(targetamount - (Object.values(e)[1])).toLocaleString('en-US', {minimumFractionDigits: 2,maximumFractionDigits: 2})}
+                            </div>
+                        </div> 
+                        ))}
+                      </div>
+                    </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
-      </div>        
+            </div>        
       
-        {/* Retirement  */}
-
-              <div className={Styles.retirementContainer} >
-                <div className={Styles.retireInputCard}>                   
-                <div className={Styles.retireage}>
+            {/* Retirement  */}
+            <div className={calcdisplay == 'retire' ? Styles.active : Styles.invisible}>
+            <div className={Styles.retirementContainer} >
+              <div className={Styles.retireInputCard}>
+                <h1> </h1>                   
+                <div>
                   <p>Select current age and retirement age</p>
                   <div className={Styles.slidercontainer}>
                     <Rangeslider id={Styles.slider}
@@ -345,7 +361,6 @@ export default function Thispage () {
                     onChange={e => setexpenses(e.target.value)}
                     value={expenses}
                     />
-                    <p id={Styles.retireCurr}></p>
                 </div>
 
                 <div className={Styles.expenseinput}>
@@ -357,7 +372,6 @@ export default function Thispage () {
                     onChange={e => setrental(e.target.value)}
                     value={rental}
                   />
-                  <p id={Styles.retireCurr}></p>
                 </div>
                     
                 <div className={Styles.expenseinput}>
@@ -370,117 +384,111 @@ export default function Thispage () {
                     onChange={e => setotherexpenses(e.target.value)}
                     value={otherexpenses}
                     />
-                  <p id={Styles.retireCurr}></p>
                 </div>
               </div>
             
-                  
-              <div div className={Styles.resultsdisplay}>
-                <div  className={Styles.retireValueOutput} >
-                  <div>
+              < div className={Styles.RetireResultsdisplay}>
+                <div>
                     <p>Projected portfolio value at retirement</p> 
-                    <div>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</div>
-                  </div>
-                  <div>
-                    <p>Retirement age</p> 
-                    <div>{retireage}</div>
-                  </div>
-                  <div>
-                    <p>Contribution Duration</p>
-                    <div>
-                      {(retireage - userage).toLocaleString("en-US",{maximumFractionDigits: 2})}
-                    </div>
-                  </div>       
+                    <h2>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</h2>                       
                 </div>
-
-                <div className={Styles.retireContribution}>
+                <div>
                   <p>Select preferred frequency</p>
                   <div id={Styles.buttonSwitch}>
                     <button onClick={changeColor} className={Styles.buttons} style={{backgroundColor: 'rgba(24,40,102,255)', color: 'white'}} id='month'>Monthly</button>
                     <button onClick={changeColor} className={Styles.buttons} id='quarter'>Quarterly</button>
                     <button onClick={changeColor} className={Styles.buttons} id='year'>Annually</button>
                   </div>
+                </div>
                   <div>
                     <div>
-                      <p>{active}ly retirment portfolio contribution</p>
-                      <p>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</p>
+                      <p>Retirment portfolio contribution</p>
+                      <h2>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
+                      <p>Every {active}</p>
+
                     </div>               
                   </div>
 
                   <div>
                     <p>Total portfolio gain at retirement</p>
-                    N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}
+                    <h2> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
                   </div>
 
                   <div>
                     <p>Minimum average yearly portfolio return</p>
-                    <div>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</div>
+                    <h2>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h2>
                   </div>
                 
                   <div className={Styles.pieChartContainer}>
-                    <PieChart className={Styles.pieChart}
-                    data={[
-                    { title: 'One', value: 10, color: '#E38627' },
-                    { title: 'Two', value: 15, color: '#C13C37' },
-                    { title: 'Three', value: 20, color: '#6A2135' },
-                    ]}/>;
+                    {/* <PieChart className={Styles.pieChart} */}
+                    {/* data={[ */}
+                    {/* { title: 'One', value: 10, color: '#E38627' }, */}
+                    {/* { title: 'Two', value: 15, color: '#C13C37' }, */}
+                    {/* { title: 'Three', value: 20, color: '#6A2135' },]}/>; */}
                   </div>
-                </div>
               </div>
-          </div>
-          {/* Income Portfolio  */}
-          <div className={Styles.incomeContainer}>
-            <div>
-              <form onSubmit={getIncomeRecom}>
+            </div>
+            </div>
+
+            {/* Income Portfolio  */}
+            <div className={calcdisplay == 'income'? Styles.active : Styles.invisible}>
+            <div className={Styles.incomeContainer}>
               <div className={Styles.incomeInput}>
-                <p>How often would you receive your investment income</p>
-                <label htmlFor="monthlyPeriod">
-                <input type='radio' id="monthPeriod" name="incomePeriod" value='monthly' required/>
-                Monthly
-                </label>
-                <label htmlFor="quarterlyPeriod">
-                <input type='radio' id="quarterPeriod" name="incomePeriod" value='quartely' required/>
-                Quarterly
-                </label>
-                <label htmlFor="yearlyPeriod">
-                <input type='radio' id="yearPeriod" name="incomePeriod" value='yearly' required/>
-                yearly
-                </label>
-
-                <label htmlFor="tagetincome">How much are you looking to earn from your investments
+                <form onSubmit={getIncomeRecom}>
                   <div>
-                   <input type='number' id="incomeTarget" name="incomeTarget" required/> every {'Month'}
+                    <p>How often would you receive your investment income</p>
+                    <label htmlFor="monthPeriod">
+                    <input type='radio' id="monthPeriod" name="incomePeriod" value='monthly' required/>
+                    <span>Monthly</span>
+                    </label>
+                    <label htmlFor="quarterPeriod">
+                    <input type='radio' id="quarterPeriod" name="incomePeriod" value='quartely' required/>
+                    <span>Quarterly</span>
+                    </label>
+                    <label htmlFor="yearPeriod">
+                    <input type='radio' id="yearPeriod" name="incomePeriod" value='yearly' required/>
+                    <span>Yearly</span>
+                    </label>
                   </div>
-                </label>
 
-                <p>What currency would your like to earn your investment income</p>
-                <label htmlFor="incomeNGN">
-                  <input type='radio' id="incomeNGN" name="incomeCurr" value='NGN' required/>
-                  Nigerian Naira
-                </label>
-                <label htmlFor="incomeUSD">
-                <input type='radio' id="incomeUSD" name="incomeCurr" value='USD' required/>
-                US Dollars
-                </label>
-  
-                <button type="submit">Submit</button>
-              </div>
-              </form>
-            </div>
-            <div className={Styles.incomeResult}>
-              {incomeResult.map(({product, rate, value})=> (
-                <div className={Styles.targetResultRow} id={product}>
-                  <div className={Styles.targetResultProduct}>
-                    <div><div>Company logo</div>{product}</div>
-                    <div>{product} Flex Savings</div>
-                    <div>{(rate * 100).toFixed(2)}% </div>
-                    <div>{value.toLocaleString('en-US',{maximumFractionDigits: 2})}</div>
+                  <div>
+                    <p htmlFor="tagetincome">How much are you looking to earn from your investments
+                      <div>
+                       <input type='number' id="incomeTarget" name="incomeTarget" required/> every {'Month'}
+                      </div>
+                    </p>
                   </div>
-                </div>
-              ))}
+                  <div>
+                    <p>What currency would your like to earn your investment income</p>
+                    <label htmlFor="incomeNGN">
+                      <input type='radio' id="incomeNGN" name="incomeCurr" value='NGN' required/>
+                      <span>Nigerian Naira</span>
+                    </label>
+                    <label htmlFor="incomeUSD">
+                    <input type='radio' id="incomeUSD" name="incomeCurr" value='USD' required/>
+                    <span>US Dollars</span>
+                    </label>
+                  </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+              </div>
+
+              <div className={Styles.incomeResult}>
+                {incomeResult.map(({product, rate, value})=> (
+                  <div className={Styles.incomeResultRow} id={product}>
+                      <div>Company logo</div>
+                      <div>{product} Flex Savings</div>
+                      <div>{(rate * 100).toFixed(2)}%</div>
+                      <div>{value.toLocaleString('en-US',{maximumFractionDigits: 2})}</div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>                
-    </>
+          </div>
+         </div>  
+        </div>               
+  </>
   )
 }

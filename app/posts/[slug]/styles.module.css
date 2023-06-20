@@ -23,7 +23,7 @@
 }
 
 .headright {
-  background-color: lightgray;
+  background-color: silver;
   flex: 1;
   display: flex;
   align-items: flex-start;
@@ -32,28 +32,19 @@
   flex-shrink: 1;
 }
 
-.textmiddle {
-  margin-bottom: 10px;
+.headright * {
+  margin: 5px 0;
 }
 
-.textmiddle h1 {
+.headright h1 {
   font-size: 40px;
-  margin: 10px 0 10px 0;
 }
 
-.textmiddle span {
+.headright span a {
   font-size: 20px;
   text-decoration: none;
   color: black;
-  font-weight: 200;
   border-bottom: 0.5px solid black;
-  padding-bottom: 5px;
-}
-
-.textmiddle h4 {
-  font-size: 15px;
-  padding-bottom: 10px;
-  font-weight: 100;
 }
 
 .articlebody {
@@ -80,7 +71,14 @@
     display: block;
     position: relative;
     width: 100%;
-    height: 600px;
+    /* height: 600px; */
+    aspect-ratio: 1 / 0.8;
+  }
+
+  .textmiddle > a {
+    color: white;
+    ;
+    /* background-color: blue; */
   }
   
   .articlebody {
@@ -90,7 +88,7 @@
   }
   
   .headright {
-    position: absolute;
+    /* position: absolute; */
     background-color: transparent;
     flex: 1;
     display: flex;
@@ -99,7 +97,6 @@
     padding: 20px 10px;
     flex-shrink: 1;
     bottom: 0;
-    color: white
   }
 
   .headright > * {
