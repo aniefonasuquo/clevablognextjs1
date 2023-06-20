@@ -27,7 +27,7 @@ export default async function Homepage({ params }) {
             <div className={styles.imageandtext} >
               <div className={styles.recomimgwrap}>
                 <Link href="/">
-                  <Image className={styles.recomimg} src={"/../public/investimg.jpg"} fill='true'></Image>
+                  <Image className={styles.recomimg} sizes="100vw" src={"/../public/investimg.jpg"} fill='true'></Image>
                 </Link>
               </div>
               <div className={styles.recominfo}>
