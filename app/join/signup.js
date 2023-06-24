@@ -9,11 +9,11 @@ async function addUser (name, email) {
     headers: {
       'Content-Type': 'application/json',},
     body: JSON.stringify({
-      "grant_type" : 'client_credentials',
-      "client_id" : 'bd318f5835c528023a17bc5504c93166',
-      "client_secret" : '31e866e0a05bd78a704c0af207e30e71'
+      grant_type : 'client_credentials',
+      client_id : 'bd318f5835c528023a17bc5504c93166',
+      client_secret : '31e866e0a05bd78a704c0af207e30e71'
    }
-  )}).then(data => data.access_token)
+  )}).then(data => data.json()).then(token => token.access_token)
 
   console.log(sendpulsekey)
     
@@ -38,7 +38,7 @@ async function addUser (name, email) {
    return signup
   
   } else {
-    return 400 
+    return sendpulsekey 
    }
 
 }
