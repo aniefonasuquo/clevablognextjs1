@@ -4,15 +4,46 @@ import styles from './style.module.css'
 
 async function addUser (name, email) {
 
-  const signup = await fetch('/api/adduser', {
+  const sendpulsekey = await fetch('https://api.sendpulse.com/oauth/access_token', {
     method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({data: {
-          name: name,
-          email: email,}})
-  }).then(data => data.status)
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',},
+    body: JSON.stringify({
+      "grant_type" : 'client_credentials',
+      "client_id" : 'bd318f5835c528023a17bc5504c93166',
+      "client_secret" : '31e866e0a05bd78a704c0af207e30e71'
+   }
+  )}).then(data => data.access_token)
 
-  return signup
+  console.log(sendpulsekey)
+    
+  if (sendpulsekey) { 
+  const signup = await fetch(`https://api.sendpulse.com/addressbooks/241130/emails`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Authorization': `Bearer ${sendpulsekey}`},
+    body: JSON.stringify({
+      emails:[
+         {
+            email: email,
+            variables:{
+               name: name
+            }
+         }
+      ],
+      confirmation:"force",
+      sender_email:"hello@cleva.ng",
+      message_lang:"en"
+   })}).then(data => data.status) 
+  
+   return signup
+  
+  } else {
+    return 400 
+   }
+
 }
 
 
