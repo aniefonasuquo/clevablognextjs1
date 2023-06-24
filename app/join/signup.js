@@ -7,10 +7,7 @@ async function addUser (name, email) {
   const sendpulsekey = await fetch('https://api.sendpulse.com/oauth/access_token', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization',},
+      'Content-Type': 'application/json',},
     body: JSON.stringify({
       "grant_type" : 'client_credentials',
       "client_id" : 'bd318f5835c528023a17bc5504c93166',
