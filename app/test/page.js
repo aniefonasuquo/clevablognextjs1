@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 import React, { useEffect, useState } from "react";
 import { PieChart } from 'react-minimal-pie-chart';
 import { useRouter } from 'next/navigation';
-import { processForm } from '../investor-personality-test/handleform';
+import { processForm } from '../investorquiz/handleform';
 import { Varela   } from 'next/font/google'
 import { element } from 'prop-types';
 
@@ -15,7 +15,7 @@ const varela = Varela ({
   display: 'swap' 
 })
 
-function SocialSharing() {
+function Investorquiz() {
   const [text, setText] = useState(0)
   
   const router = useRouter()
@@ -145,4 +145,4 @@ function SocialSharing() {
   )
 }
 
-export default SocialSharing;
+export default Investorquiz;

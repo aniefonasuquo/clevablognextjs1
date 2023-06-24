@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: rgb(24, 40, 102);
+  padding: 20px 0;
+}
+
+.container > div {
+ padding: 0 20px;
+}
+
+.container > div:nth-child(1) h1, 
+.container > div:nth-child(1) p {
+  padding: 10px 0;
+}
+
+
+.bar {
+  width: 200px;
+  height: 15px;
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: gray;
+}
+
+.bar div {
+  height: 100%;
+  background-color: rgb(24, 40, 102);;
+  border-radius: 30px;
+}
+
+.resultImage {
+  width: 500px;
+}
+
+.resultDetails > div {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: whitesmoke;
+  color:  
+  rgb(34, 34, 150);;
+}
+
+.resultDetails h3, .resultDetails h5 {
+  margin: 5px 0;
+}
+
+.resultDetails p {
+  font-weight: 100;
+  padding: 2px 0;
+}
+
+.resultIcons {
+  display: flex;
+}
+
+.resultIcons svg {
+  margin-right: 10px;
+  display: flex;
+  width: 20px;
+  align-items: center;
+}
+
+.chart {
+  width: 100px;
+}
+
+@media screen and (max-width: 600px){
+  .container {
+    display: block;
+  }
+}

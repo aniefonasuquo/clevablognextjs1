@@ -10,48 +10,56 @@ import logo from './../public/logos/logo-main.png'
 export default function Header ( ) {
 
   const [menuDisplay, setMenuDisplay] = useState('inactive')
+  const [screen, setscreen] = useState()
+
   
 
   function showMobileNav () {
     const nav = document.getElementById('mobileNav');
+        const menu = document.getElementById('menu')
+    const close = document.getElementById('close')
 
     if (menuDisplay == 'inactive') {
+      close.style.display = 'none'
+      menu.style.display = 'block'
       nav.style.display = 'block';
       setMenuDisplay('active')
     }
     else {
+      close.style.display = 'block'
+      menu.style.display = 'none'
       nav.style.display = 'none';
       setMenuDisplay('inactive')
     }
 
   }
 
-  useEffect (()=> {
+  // useEffect (()=> {
+  //   const menu = document.getElementById('menu')
+  //   const close = document.getElementById('close')
 
-    const menu = document.getElementById('menu')
-    const close = document.getElementById('close')
-
-    if(menuDisplay == 'inactive') {
-      close.style.display = 'none'
-      menu.style.display = 'block'
-    } else {
-      close.style.display = 'block'
-      menu.style.display = 'none'
-    }
-  })
-
+  //   if(menuDisplay == 'inactive') {
+  //     close.style.display = 'none'
+  //     menu.style.display = 'block'
+  //   } else {
+  //     close.style.display = 'block'
+  //     menu.style.display = 'none'
+  //   }
+  // },[menuDisplay])
+ 
   return (
     <>
       <header className={style.header}>
         <div className={style.headerlogo}>
           <Link href="/">
-            <Image alt='pic' sizes='100vw' src={logo} fill='true' objectFit='contain'/>
+            <Image alt='pic' sizes='100vw' src={logo}/>
           </Link>
         </div>
         <nav className={style.navs}>
           <ul>
             <li><Link href='/'> Wealth 101 </Link></li>
-            <li><Link href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
+            <li><Link href={`/investorquiz/`}> In
+            vesting Personality Test </Link></li>
             <li><Link href="/calculators/"> Calculators </Link></li>
             <li><Link href="/"> Guides </Link></li>
             <li><Link href="/"> Markets </Link></li>
@@ -73,8 +81,8 @@ export default function Header ( ) {
               <li><Link onClick={showMobileNav} href="/"> Guides </Link></li>
               <li><Link onClick={showMobileNav} href="/"> Markets </Link></li>
             </ul>
-          </nav>  
-
+        </nav>  
+        {screen}
       </header>
           </>
   )

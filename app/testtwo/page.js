@@ -3,7 +3,7 @@
 import styles from './style.module.css'
 import React, {useState, useEffect, useRef} from 'react'
 import allQuestions from './questions'
-import { processForm } from '../investor-personality-test/handleform'
+import { processForm } from '../investorquiz/handleform'
 import { useRouter } from 'next/navigation';
 
 

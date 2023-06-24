@@ -1,0 +1,48 @@
+.container {
+  background-color: rgb(24, 40, 102);
+  display: flex;
+  justify-content: space-between;
+  padding: 150px 100px;
+  align-items: center;
+}
+
+.container * div:nth-child(2) {
+  text-align: end;
+}
+
+.container h1 {
+  font-size: 50px;
+  color: greenyellow
+}
+
+.container p {
+  color: whitesmoke}
+
+.container button,
+.container input {
+  height: 60px;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px;
+  margin-right: 5px;
+  padding: 10px;
+}
+
+.container input {
+  width: 300px;
+  color: greenyellow;
+  background-color: rgb(24, 43, 122);
+  border: 1px solid greenyellow;
+  font-weight: 100;
+}
+
+.container input:focus {
+  border: none;
+}
+
+.container button {
+  color:  rgb(24, 40, 102);
+  background-color: greenyellow;
+  cursor: pointer;
+  font-weight: bold;
+}

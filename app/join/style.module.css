@@ -1,0 +1,38 @@
+.form label, .form p, .form input{
+  display: block;
+  padding: 10px 0;
+}
+
+.form input{
+  border-radius: 10px;
+  border: 1px silver solid;
+  background-color: whitesmoke;
+  padding: 10px;
+}
+
+.form button {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  background-color: greenyellow;
+  color: navy;
+  border: 1px navy solid;
+}
+
+.pagecontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pagecontainer > div {
+  padding: 50px;
+}
+
+.left {
+  flex:  1;
+  background-color: navy;
+}
+
+.right {
+  flex: 1;
+}

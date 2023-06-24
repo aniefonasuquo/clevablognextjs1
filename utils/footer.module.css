@@ -14,33 +14,48 @@
 }
 
 .footerlogowrap {
-  position: relative;
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  margin-bottom: 20px;
+
+}
+
+.topfooter p {
+  margin: 20px 0;
+}
+
+.navs ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navs li {
+  padding: 5px 0;
+  color: white;
+  text-align: end;
+}
+
+.navs li a {
+  color: white;
 }
 
 .footerlogowrap img{
-  position: absolute;
-  object-position: top left;
+  width: 100%;
+  height: 100%;
 }
 
 .addresswrap {
   font-size: 16px;
-  text-align: end;
 }
 
 .middlefooter {
-  padding: 50px 0;
-  font-size: 14px;
-}
-
-.buttomfooter {
-  border-top: gray solid 1px;
-  padding: 20px 0;
   display: flex;
   justify-content: space-between;
+  padding: 20px 0;
 }
 
+.middlefooter * {
+  padding: 10px 0;
+}
 
 @media screen and (max-width: 900px) {
   .footer {
@@ -48,13 +63,8 @@
     display: block
   }
 
-  .footerlogowrap {
-    height: 30px;
-  }
-
   .topfooter {
-    display: flex;
-    flex-direction: column;
+    display: block
   }
 
   .topfooter > div{
@@ -62,12 +72,12 @@
     text-align: start;
   }
 
-  .buttomfooter {
-    display: block
+  .navs li {
+    text-align: start;
   }
 
-  .buttomfooter > div{
-    padding: 10px 0px
+  .middlefooter {
+    display: block;
   }
 
 }

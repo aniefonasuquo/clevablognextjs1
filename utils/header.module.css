@@ -2,26 +2,23 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
   position: sticky;
-  top: 0;
   z-index: 1;
-  padding: 10px 0px;
-  position: relative;
-  align-items: flex-end;
+  padding: 10px 50px;
+  align-items: center;
 }
 
 .headerlogo {
-  position: relative;
-  min-width: 150px;
-  height: 50px;
+  width: 150px;
 }
 
-.headerlogo img{
-  position: absolute;
-  object-position: top left;
+.headerlogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .navs ul {
@@ -70,40 +67,54 @@
     align-items: center;
     padding: 10px 10px;
     position: sticky;
-    top: 0;
   }
 
   .ctabutton {
    display: none;
   }
+
   .navs {
     display: none;
   }
 
   .mobileNav {
-    display: none;
+    /* display: none; */
     position: absolute;
     left: 0;
     top: 0;
     background-color: white;
     width: 100%;
-    height: 300px;
-    padding: 10px 0;
+    padding: 10px 20px;
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
-    transform: translateY(60px);
-    transition: all 2s ease-in-out;
+    animation: forwards;
+    animation-name: dropdown;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+   }
+
+  @keyframes dropdown {
+    0% {
+      left: 0;
+      top: 0;
+      translate: 0 -60px;
+    }
+
+    100% {
+      left: 0;
+      top: 0;
+      translate: 0 70px;
+    }
   }
   
-  .mobileNav li {
-    list-style: none;
+  .mobileNav ul {
+    list-style-type: none;
     font-size: 30px;
     color: black;
-    padding: 2px 0;
-    transition: transform ease-in;
+    padding: 0;
   }
 
   .mobileNav li:hover {
-    transform: scale(1.1);
+    transform: scale(1.01);
   }
 
   .mobileNav li a{
