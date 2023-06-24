@@ -1,18 +1,14 @@
-"use client"
+'use client'
 
 import React, { useEffect, useState } from "react"
 const Finance = require("tvm-financejs");
 import Styles from './styles.module.css'
 import { Raleway  } from 'next/font/google'
-import options from "./calcoptions/optioncard";
 import Rangeslider from './multiRangeSlider/MultiRangeSlider'
 import { PieChart } from 'react-minimal-pie-chart';
-import Target from "./target/target";
 import Image from "next/image";
 import retireimage from './../../public/retire.jpg'
 import { error } from "logrocket";
-
-const CalcOptions = React.memo(options)
 
 const raleway = Raleway({
   weight: '600',
@@ -22,9 +18,14 @@ const raleway = Raleway({
 })
 
 const products = [
-  {name: "piggyvets", rate: 0.04},
-  {name: "cowrywise", rate: 0.09},
-  {name: "fairmoney", rate: 0.18}
+  {name: "Piggyvest", rate: 0.04, product: 'Safelock', img: '', curr: 'NGN', tenor: 30},
+  {name: "Piggyvest", rate: 0.04, product: 'Target Savings', img: '', curr: 'NGN', tenor: 30},
+  {name: "Piggyvest", rate: 0.04, product: 'Flex Naira', img: '', curr: 'NGN', tenor: 30},
+  {name: "Cowrywise", rate: 0.09, product: '', img: '', curr: 'NGN', tenor: 0},
+  {name: "Risevest", rate: 0.14, product: 'Fixed Income', img: '', curr: 'USD', tenor: 0},
+  {name: "Risevest", rate: 0.14, product: 'Real Estate', img: '', curr: 'USD', tenor: 0},
+  {name: "Risevest", rate: 0.10, product: 'Stocks', img: '', curr: 'USD', tenor: 0},
+  {name: "Bamboo", rate: 0.08, product: 'Fixed Returns', img: '', curr: 'USD', tenor: 0}
 ]
 
 export default function Thispage () {
@@ -68,16 +69,11 @@ export default function Thispage () {
   
     const otherOptions = document.querySelectorAll(['#month','#year','#quarter']);
     otherOptions.forEach((e) => {
-      e.style.backgroundColor = 'whitesmoke';
-      e.style.color = 'black';
+
     })
 
     const button = e.target.id;
     setActive(button)
-
-    const contriActive = document.getElementById(button);
-    contriActive.style.backgroundColor = 'rgba(24,40,102,255)'
-    contriActive.style.color = 'white';
   }
 
   const [contriDisplay, setContri]  = useState(monthlypayments);
@@ -90,7 +86,7 @@ export default function Thispage () {
       setContri(monthlypayments) 
     } else setContri(quarterpayments)
 
-  })
+  }, [active])
 
   // Target logic
 
@@ -184,12 +180,8 @@ export default function Thispage () {
           setIncomeResult(incomeArray)  
       }
 
-      function showTarget () {
-      }
-
-      const [calcimage, setcalcimage] = useState()
+      const [calcdisplay, setCalc] = useState('none')
       const [calcdetails, setcalcdetails] = useState({})
-      const [calcdisplay, setCalc] = useState('retire')
       
       
       const calcDB = [
@@ -206,17 +198,20 @@ export default function Thispage () {
     image: ''   
     },
     
-  ]
+    ]
+
     function changeDisplay (e) {
       setCalc(e.target.id)
     }
+  
+    async function showTarget () {
+      const calc = calcDB.find((calc) => calc.type == calcdisplay)
+      calc ? setcalcdetails(calc)  : ''
+    }
       
-  useEffect(()=>{
-    const calc = calcDB.find((calc) => calc.type == calcdisplay)
-    calc ? setcalcdetails(calc)  : console.log(error)
-  })
-
-
+  useEffect(() =>  {
+    showTarget()
+  }, [calcdisplay])
 
   return (
     <>
@@ -227,10 +222,10 @@ export default function Thispage () {
 
           <div className={Styles.bodycontainer}>
             <div className={Styles.up}>
-              <button id='retire' className={calcdisplay == 'retire'? `${Styles.selected}` : Styles.calselect} onClick={changeDisplay}>Retirement</button>
-              <button id='target' className={calcdisplay == 'target'? Styles.selected : Styles.calselect} onClick={changeDisplay}>Target Investment</button>
-              <button id='income' className={calcdisplay == 'income'? Styles.selected : Styles.calselect} onClick={changeDisplay}>Income Portfolio</button>
-              <button id='equity' className={calcdisplay == 'equity'? Styles.selected : Styles.calselect}>Stock Porfolio</button>
+              <button id='retire' onClick={changeDisplay}>Retirement</button>
+              <button id='target' onClick={changeDisplay}>Target Investment</button>
+              <button id='income' onClick={changeDisplay}>Income Portfolio</button>
+              <button id='equity'>Stock Porfolio</button>
             </div>
             <div className={Styles.down} >
               <div className={Styles.calcInfo}>
