@@ -2,11 +2,10 @@
 
 import styles from './styles.module.css'
 import React from "react";
-import { usePathname } from 'next/navigation';
 
 function SocialSharing({title}) {
 
-  const pathname = usePathname()
+  const pathname = window.location.href
 
   const shareOnFacebook = () => {
     // Replace the URL with the desired sharing URL
@@ -21,7 +20,7 @@ function SocialSharing({title}) {
 
   const shareOnTwitter = () => {
     // Replace the URL and text with the desired sharing URL and message
-    const url = pathname;
+    const url = window.location.href;
     const text = title;
     window.open(
       `https://twitter.com/intent/tweet?url=${encodeURIComponent(
