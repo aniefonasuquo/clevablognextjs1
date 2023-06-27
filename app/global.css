@@ -34,3 +34,7 @@ header {
   left: 0;
   width: 100%;
 }
+
+button {
+  cursor: pointer;
+}

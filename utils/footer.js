@@ -17,7 +17,7 @@ export default function Footer () {
             </div>
             <p>Global investment opportunites, for you</p>
             <div className={style.socialicons}>
-            <SocialSharing></SocialSharing>
+            <SocialSharing fill='white'></SocialSharing>
             </div>
           </div>
           <div>

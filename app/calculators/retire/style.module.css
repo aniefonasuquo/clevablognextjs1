@@ -1,0 +1,44 @@
+
+.retirementContainer {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  background-color: white;
+  height: 100%;
+  column-gap: 20px;
+}
+
+.retirementContainer > div {
+  padding: 20px
+}
+
+.retireInputCard {
+}
+
+.expenseinput input{
+  padding: 5px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background-color: whitesmoke;
+}
+
+.expenseinput p {
+  margin: 10px 0;
+}
+
+.RetireResultsdisplay {
+  background-color: whitesmoke;
+  border-radius: 20px;
+  border: 1px solid rgb(24, 40, 102);
+}
+
+.RetireResultsdisplay > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.RetireResultsdisplay > div {
+  margin: auto;
+}
+

@@ -33,19 +33,6 @@ export default function Header ( ) {
     }
 
   }
-
-  // useEffect (()=> {
-  //   const menu = document.getElementById('menu')
-  //   const close = document.getElementById('close')
-
-  //   if(menuDisplay == 'inactive') {
-  //     close.style.display = 'none'
-  //     menu.style.display = 'block'
-  //   } else {
-  //     close.style.display = 'block'
-  //     menu.style.display = 'none'
-  //   }
-  // },[menuDisplay])
  
   return (
     <>
@@ -57,10 +44,9 @@ export default function Header ( ) {
         </div>
         <nav className={style.navs}>
           <ul>
-            <li><Link href='/'> Wealth 101 </Link></li>
-            <li><Link href={`/investorquiz/`}> In
-            vesting Personality Test </Link></li>
-            <li><Link href="/calculators/"> Calculators </Link></li>
+            <li><Link href='/blog'>Blog</Link></li>
+            <li><Link href={`/investorquiz/`}> Investor Personality Quiz</Link></li>
+            <li><Link href="/calculators/"> Discovery </Link></li>
             <li><Link href="/"> Guides </Link></li>
             <li><Link href="/"> Markets </Link></li>
           </ul>

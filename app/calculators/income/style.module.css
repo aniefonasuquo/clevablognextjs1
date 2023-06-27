@@ -1,0 +1,78 @@
+
+.incomeContainer {
+  display: flex;
+  background-color: white;
+  height: 100%;
+  column-gap: 20px;
+}
+
+.incomeInput div {
+  margin-bottom: 10px;
+ }
+
+ .incomeInput div div {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+ }
+
+ .incomeInput p {
+  font-weight: 100;
+ }
+
+ .incomeInput input,
+ .incomeInput label{
+  padding: 10px;
+  border: 1px solid silver;
+  margin: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: whitesmoke;
+  font-size: 15px;
+ }
+
+ .incomeInput label{
+  width: 120px;
+ }
+
+ .incomeInput label span{
+  margin-left: 10px;
+ }
+
+ .incomeInput button {
+  padding: 10px 20px;
+  border: none;
+  background-color: navy;
+  color: white;
+  border-radius: 20px;
+  font-size: 15px;
+ }
+
+ .inputamount {
+  position: relative;
+ }
+
+ .inputamount input {
+  text-align: end;
+  -moz-appearance: textfield;
+ }
+
+ .inputamount span {
+  position: absolute;
+  top: 25%;
+  left: 5px
+ }
+
+ .incomeResultRow {
+  display: flex;
+  background-color: whitesmoke;
+  margin-bottom: 5px;
+  justify-content: space-evenly;
+  text-align: start;
+}
+
+.incomeResultRow > div {
+  margin-right: 10px;
+  padding: 10px 0;
+
+}

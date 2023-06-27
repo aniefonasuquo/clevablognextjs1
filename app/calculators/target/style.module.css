@@ -1,0 +1,137 @@
+.targetcontainer {
+  display: flex;
+  justify-content: center;
+  color: navy;
+  column-gap: 100px;
+}
+
+.targetcontainer > div {
+}
+
+.targetinput > div {
+  margin-bottom: 20px
+}
+
+.targetinput p {
+  margin: 10px 0;
+;
+}
+
+.inputAmount {
+}
+
+.inputAmount label{
+  position: relative;
+}
+
+.inputAmount span {
+  position: absolute;
+  align-items: center;
+  top: -70%;
+  right: 5px;
+  font-size: 30px;
+}
+
+
+ .targetinput button {
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: navy;
+  color: white;
+ }
+
+ .targetinput button:hover {
+  background-color: skyblue;
+  cursor: pointer;
+ }
+
+ .targetCurr {
+  /* display: flex; */
+ }
+
+ .targetCurr label{
+  display: inline-flex;
+  border: 1px whitesmoke solid;
+  width: 150px;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+  font-size: 20px;
+ }
+
+ .targetcurr label:has(input:checked) {
+  background-color: rgb(133, 133, 192);
+ }
+
+ .targetCurr label:hover {
+  background-color: rgb(133, 133, 192);
+  border: 2px solid navy;
+ }
+
+ .targetCurr span {
+  padding: 0 10px;
+ }
+
+ .targetAmount input {
+  background-color: whitesmoke;
+  padding: 10px;
+  border: none;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  font-size: 30px;
+  color: navy;
+  -moz-appearance: textfield; 
+ }
+
+ .targetdate input{
+  width: 300px;
+  border-radius: 10px;
+  border: none;
+  background-color: whitesmoke;
+  padding: 10px;
+  font-size: 30px;
+  color: navy;
+ }
+
+ .targetresult {
+  flex: 1;
+  column-gap: 20px;
+  padding: 10px;
+ }
+
+ .targetresult > div:nth-child(1) {
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid navy;
+ }
+
+ .targetresult > div:nth-child(1) > div{
+  margin-right: 30px;
+ }
+
+ .targetresult > div:nth-child(2){
+  padding: 10px 0;
+ }
+
+ .targetResultTable {
+  text-align: left;
+  width: 100%;
+ }
+
+ @media screen and (max-width: 1000px) {
+  
+  .targetcontainer {
+    display: block;
+  }
+
+  .targetcontainer > div {
+    padding: 0;
+    margin: 20px 0;
+  }
+
+
+ }

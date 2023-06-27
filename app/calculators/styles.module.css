@@ -1,107 +1,81 @@
-.topheading {
-  margin: 20px 150px;
-  display: flex;
-  color: grey;
-  font-weight: bolder;
-  padding: 80px 50px;
+.pagecontainer {
+  position: relative;
 }
 
-.toOptions {
+.topheading {
   display: flex;
-  margin: 0 150px;
   justify-content: center;
-  flex-wrap: wrap;
-  padding: 20px 0;
+  padding: 100px 200px;
 }
 
 .topheading p {
   font-size: 60px;
-  color: black;
+  color: 
+  rgb(24, 40, 102);;
   font-weight: bolder;
   text-align: center;
 }
 
-
-.bodycontainer {
-  padding: 0 150px;
-  background-color:
-   rgb(24, 40, 102);
-}
-
-.up {
+.midsection {
+  padding: 20px 100px;
   display: flex;
-  padding: 10px 0;
+  color: rgb(24, 40, 102);;
+  column-gap: 50px;
 }
 
-.selected {
-  padding: 10px 10px;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  text-align: start;
-  cursor: pointer;
-  color: white;
-  opacity: 0.5;
+.midsection > div:nth-child(1) {
+  flex: 1;
 }
 
-.up button {
-  padding: 10px 10px;
-  height: auto;
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  text-align: start;
-  cursor: pointer;
-  color: silver;
-  opacity: 0.5;
+.up,
+.midsection h1, 
+.midsection p {
+  padding-bottom: 20px;
 }
 
-.selected {
-  font-size: 28px;
-  color: white;
-  opacity: 1;
-}
 
-.up button:hover {
-  color: white;
-  border: silver solid 1px;
-  font-size: 28px;
-}
-
-.down {
-  display: grid;
-  grid-template-columns: 30% 1fr;
-}
-
-.down * p {
-  /* font-weight: 100; */
-  /* font-size: 18px; */
-}
-
-.down * h2 {
-  font-size: 30px;
-}
 .calcInfo {
-  background-color: transparent;
+  flex: 1;
 }
 
 .calcInfo div:nth-child(1) {
   position: relative;
   width: 100%;
-  height: 300px;
-}
-
-.calcInfo div:nth-child(2) {
-  padding: 20px 10px;
-  color: silver
+  aspect-ratio: 1/1;
 }
 
 .calcInfo img {
   position: absolute;
-  aspect-ratio: 1/1;
-  object-fit: cover;
+  object-fit:cover;
 }
+
+.downarrow {
+  width: 100px;
+  padding-top: 50px;
+}
+
+.bodycontainer {
+  padding: 50px 100px;
+  color: rgb(24, 40, 102);
+
+}
+
+.up {
+  display: flex;
+  position: sticky;
+  top: 80px;
+  position: -webkit-sticky;
+}
+
+.up button {
+  padding: 5px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
 
 .calculators {
   width: 100%;
@@ -135,228 +109,30 @@
   display: grid;
 }
 
-.retirementContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  background-color: white;
-  height: 100%;
-}
 
-.retirementContainer > div {
-  padding: 20px
-}
+@media screen and (max-width: 900px) {
 
-.retireInputCard {
-  color: grey;
+  .topheading {
+    padding: 10px;
+  }
 
-}
+  .midsection {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+    text-align: center;
+  }
 
-.expenseinput input{
-  padding: 5px;
-  height: 40px;
-  border: none;
-  border-radius: 10px;
-  background-color: whitesmoke;
-}
+  .midsection > div{
+    padding: 10px;
+   }
 
-.expenseinput p {
-  margin: 10px 0;
-  color: gray;
-}
+  .bodycontainer {
+   padding: 10px;
+  }
 
-.RetireResultsdisplay {
-  background-color: whitesmoke;
-  border-radius: 10px;
-}
-
-.RetireResultsdisplay > div {
- padding: 10px 0;
-}
-
-.RetireResultsdisplay > div p {
-  font-weight: 100;
- }
-
- .targetcontainer {
-  display: grid;
-  grid-template-columns: minmax(35%, 1fr) 3fr;
-  font-size: 15px;
- }
-
- .targetcontainer > div {
-  padding: 25px 20px;
-
-}
-
- .targetinput {
-  background-color: white;
-  border-right: 1px silver solid;
- }
-
-.targetinput > div {
-}
-.inputAmount {
-  position: relative;
-}
-
-.inputAmount span {
-  position: absolute;
-  align-items: center;
-  top: 20%;
-  left: 150px;
-  color: grey;
-}
-
-
- .targetinput button {
-  padding: 15px;
-  border-radius: 20px;
-  border: none;
-  background-color: navy;
-  color: white;
- }
-
- .targetCurr {
-  /* display: flex; */
- }
-
- .targetCurr label{
-  display: inline-flex;
-  border: 1px whitesmoke solid;
-  width: 100px;
-  margin-right: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid grey;
-  cursor: pointer;
- }
-
- .targetCurr label:hover {
-  background-color: silver;
-  border: 2px solid grey;
- }
-
- .targetCurr input {}
-
- .targetAmount input {
-  background-color: whitesmoke;
-  padding: 10px;
-  border: none;
-  width: 200px;
-  border-radius: 10px;
- }
-
- .targetdate input{
-  width: 200px;
-  border-radius: 10px;
-  border: none;
-  background-color: whitesmoke;
-  padding: 10px;
- }
-
- .targetresult {
-  background-color: white;
-  font-size: 12px;
- }
-
- .targetresult > div:nth-child(1) {
-  display: flex;
- }
-
- .targetresult > div:nth-child(1) > div{
-  margin-right: 30px;
- }
-
- .targetTableHeading {
-  display: flex;
- }
-
- .targetResultRow {
-  display: grid;
-  grid-template-columns: 50% 1fr;
-  background-color: whitesmoke;
-  margin: 5px 0;
-  border-radius: 10px;
- }
-
- .targetResultProduct {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
- }
-
- .targetResultContri {
- }
-
- .targetRecomRow {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 3px 0;
-  text-align: center;
-  border-bottom: 1px solid black;;
- }
-
- .totalContri {
-  display: flex;
-  justify-content: space-evenly;
- }
-
- .incomeInput div {
-  margin-bottom: 10px;
- }
-
- .incomeInput p {
-  font-weight: 100;
- }
-
- .incomeInput input,
- .incomeInput label{
-  padding: 10px;
-  border: 1px solid silver;
-  margin: 5px 0;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: whitesmoke;
-  font-size: 15px;
- }
-
- .incomeInput label{
-  display: block;
-  width: 150px;
- }
-
-
- .incomeInput label span{
-  margin-left: 10px;
- }
-
- .incomeInput button {
-  padding: 10px 20px;
-  border: none;
-  background-color: navy;
-  color: white;
-  border-radius: 20px;
-  font-size: 15px;
- }
-
- .incomeContainer {
-  display: grid;
-  grid-template-columns: 40% 1fr;
-  padding: 20px;
-  background-color: white;
-  font-size: 15px;
- }
-
- .incomeResultRow {
-  display: flex;
-  background-color: whitesmoke;
-  margin-bottom: 5px;
-  justify-content: space-evenly;
-  text-align: start;
-}
-
-.incomeResultRow > div {
-  margin-right: 10px;
-  padding: 10px 0;
-
+  .calculators {
+    height: 800px;
+  }
+  
 }

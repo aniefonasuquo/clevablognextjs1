@@ -1,7 +1,7 @@
 "use client"
 
 import styles from './style.module.css'
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect, useRef, Suspense} from 'react'
 import { processForm } from './handleform'
 import { useRouter } from 'next/navigation';
 import characters from './characterlineup.png'
@@ -58,7 +58,11 @@ export default function Archetypes () {
 
           <div className={display == 0? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.quizintro}>
-              <div className={styles.archetypeImage}><Image alt='characters' src={characters} sizes='100vw'></Image></div>
+              <div className={styles.archetypeImage}>
+                <Suspense fallback={<p>loading...</p>}>
+                <Image alt='characters' src={characters} sizes='100vw'></Image>
+                </Suspense>
+              </div>
               <h1>Discover You</h1>
               <p>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</p>
               <p>This quiz aims to understand some of these factors to advise on optimal wealth decision making</p>

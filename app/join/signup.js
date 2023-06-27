@@ -15,8 +15,6 @@ async function addUser (name, email) {
    }
   )}).then(data => data.json()).then(token => token.access_token)
 
-  console.log(sendpulsekey)
-    
   if (sendpulsekey) { 
   const signup = await fetch(`https://api.sendpulse.com/addressbooks/241130/emails`, {
     method: 'POST',
@@ -57,8 +55,7 @@ export default function Joinform () {
     const email = joinDetails.get('joinemail')
 
     const status = await addUser(name, email)
-    console.log(status)
-    status == 200? setSubmit('success') : setSubmit('submit')
+    status == 200? setSubmit('success') : setSubmit('failed')
 
   }
 
@@ -75,9 +72,12 @@ export default function Joinform () {
         <p>Email</p>
         <input name="joinemail" id="joinemail" type='email' placeholder='example@email.com'></input>
       </label>
-      <button type='submit'>{submit == 'submit' ? 'Submit' : 'success'}</button>
+      <button type='submit'>{submit == 'success' ? 'Success' : 'Submit'}</button>
     </form>
-    <div>{submit == 'success' && <div>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</div>}</div>
+    <div>
+      {submit == 'success' && <p>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
+      {submit == 'failed' && <p>Something went wrong, could not register</p>}
+    </div>
     </div> 
   )
 }

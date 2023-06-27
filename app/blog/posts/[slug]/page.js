@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from './styles.module.css'
 import Image from 'next/image'
 import slugify from 'slugify'
-import SocialSharing from './../../../utils/share/page'
+import Share from './../../../../utils/share/page'
 import { Raleway  } from 'next/font/google'
-import img from './../../../public/investimg.jpg'
+import img from './../../../../public/investimg.jpg'
 
 
 const raleway = Raleway({
@@ -39,13 +39,13 @@ export default async function Post({ params }) {
         </div>
           <div className={styles.headright}>
             {/* <div className={styles.textmiddle}> */}
-              <span><Link href={`/category/${content.tags[0]}`}>{content.tags[0]}</Link></span>
+              <span><Link href={`/blog/category/${content.tags[0]}`}>{content.tags[0]}</Link></span>
               <h1 className={raleway.className}> {content.title}</h1>
               <p>By {'Author Name'}</p>
               <p>{'Published Date'}</p>
               <p>4 mins read</p>
             {/* </div> */}
-            <SocialSharing></SocialSharing>
+            <Share></Share>
           </div>
       </section>
 
