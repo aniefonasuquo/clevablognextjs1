@@ -1,0 +1,123 @@
+.pagecontainer {
+  padding: 50px 100px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(auto, 1fr) minmax(auto, 3fr);
+  column-gap: 50px;
+}
+
+.categorypost {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.articleframe {
+}
+
+.articleframe h3 {
+  margin-top: 10px;
+  color: black;
+  font-size: 25px;
+}
+
+.imgwrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.imgwrap img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+.rightsection {
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.rightsection > div {
+  padding-bottom: 10px;
+}
+
+.sideheading{
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: grey 1px solid;
+  font-size: 40px;
+}
+
+.catdesc {
+  font-weight: 100;
+  font-size: 18px
+}
+
+.sidearticle h4 {
+  padding-bottom: 5px;
+}
+
+#categorytext {
+  text-decoration: underline;
+  padding: 2px 5px;
+  width: 100%;
+}
+
+.imageandtext {
+  display: flex;
+  column-gap: 10px;
+}
+
+.recomimgwrap {
+  width: 150px;
+}
+
+.recomimgwrap img {
+  width: 100%;
+  height: 150px;
+}
+
+.recominfo {
+  flex: 1;
+}
+
+.recomcat {
+  color: black;
+  font-size: 18px;
+  font-weight: 100;
+  border-bottom: 0.5px gray solid;
+  margin-bottom: 10px;
+}
+
+.recomtitlecontainer {
+  margin-top: 10px;
+}
+
+.recomtitle {
+  color: black;
+  font-size: 18px;
+  }
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.button button{
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+  @media screen and (max-width: 900px) {
+    .wrapper {
+      display: block;
+      padding: 50px 10px;
+    }
+
+  }
