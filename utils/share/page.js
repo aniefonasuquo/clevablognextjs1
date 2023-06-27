@@ -2,8 +2,12 @@
 
 import styles from './styles.module.css'
 import React from "react";
+import { usePathname } from 'next/navigation';
 
-function SocialSharing() {
+function SocialSharing({title}) {
+
+  const pathname = usePathname()
+
   const shareOnFacebook = () => {
     // Replace the URL with the desired sharing URL
     const url = "https://example.com";
@@ -17,14 +21,15 @@ function SocialSharing() {
 
   const shareOnTwitter = () => {
     // Replace the URL and text with the desired sharing URL and message
-    const url = "https://example.com";
-    const text = "Check out this awesome website!";
+    const url = pathname;
+    const text = title;
     window.open(
       `https://twitter.com/intent/tweet?url=${encodeURIComponent(
         url
       )}&text=${encodeURIComponent(text)}`,
       "_blank"
     );
+      console.log(pathname)
   };
 
   const shareOnLinkedIn = () => {

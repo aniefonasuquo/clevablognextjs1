@@ -6,7 +6,6 @@ import Share from './../../../../utils/share/page'
 import { Raleway  } from 'next/font/google'
 import img from './../../../../public/investimg.jpg'
 
-
 const raleway = Raleway({
   weight: '600',
   subsets: ['latin'],
@@ -29,7 +28,6 @@ export default async function Post({ params }) {
   const posts = await getPost();
   const content = posts.find(post => post.slug == params.slug)
 
-
   return (<>
   <div className={styles.pagecontainer}> 
       
@@ -45,7 +43,7 @@ export default async function Post({ params }) {
               <p>{'Published Date'}</p>
               <p>4 mins read</p>
             {/* </div> */}
-            <Share></Share>
+            <Share title={content.title}></Share>
           </div>
       </section>
 
