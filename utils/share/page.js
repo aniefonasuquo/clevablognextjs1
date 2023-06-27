@@ -10,7 +10,7 @@ function SocialSharing({title}) {
 
   const shareOnFacebook = () => {
     // Replace the URL with the desired sharing URL
-    const url = "https://example.com";
+    const url = pathname;
     window.open(
       `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
         url
@@ -29,13 +29,12 @@ function SocialSharing({title}) {
       )}&text=${encodeURIComponent(text)}`,
       "_blank"
     );
-      console.log(pathname)
   };
 
   const shareOnLinkedIn = () => {
     // Replace the URL, title, and summary with the desired sharing URL, title, and description
-    const url = "https://example.com";
-    const title = "Example Website";
+    const url = pathname
+    const title = title;
     const summary = "Check out this awesome website!";
     window.open(
       `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(
