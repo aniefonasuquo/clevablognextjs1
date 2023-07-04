@@ -1,193 +1,165 @@
-.pagecontainer {
-  box-sizing: border-box;
+.pagecontainer * a:visited {
+ text-decoration: none;
+}
+
+.top {
+  background-color: rgb(17, 30, 72);
+  padding: 100px 50px;
 }
 
 .topDiv {
-  margin-top: 50px;
-  padding: 0 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-column-gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
 }
 
-.topleft {
-  display: block;
+.topDiv h1{
+  font-size: 80px;
 }
 
-.featuredimagewrapper {
-  position: relative;
-  aspect-ratio: 1 / 0.8;
-}
-
-.featuredimage {
-  position: absolute;
-}
-
-.featuredarticle {
-  background-color: white;
-  margin-top: 10px;
-}
-
- .featuredarticle span {
-  padding: 5px 0;
-  border-bottom: gray 1px solid;
+.topDiv p{
+  color: #22B454;
   font-size: 20px;
-  font-weight: 100;
-  color: black;
 }
 
-.featuredarticle h2 {
+.category {
+  border: 1px solid white;
+  padding: 10px;
   margin-top: 10px;
-  color: black;
+  border-radius: 10px;
+  background-color: transparent;
+  color:#C7D2D8;
+}
+
+.category:hover {
+  background-color: #C7D2D8;
+  color: #131A33;
+}
+
+.imageDiv {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.imageDiv img {
+  position: absolute;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Recent Post */
+
+.recent {
+  background-color: #131A33;
+  padding: 50px 50px;
+  color: #C7D2D8;
 } 
 
-.topright {
-  display: block;
-  position: relative;
-  overflow:auto;
-}
-
-.recentpostswrapper {
-  position: absolute;
-}
-
-.rArticle {
+.recentPosts {
   display: grid;
-  grid-template-columns: minmax(30%, 1fr) 3fr;
-  column-gap: 10px;
-  padding: 2px 0;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 50px 0;
+
 }
 
-.rArticleImg {
-  display: grid;
-  position: relative;
-  overflow: hidden; 
-  aspect-ratio: 1 / 0.9;
+.recentButton {
+  display: flex;
+  justify-content: center;
 }
 
-.rArticleImg img {
-  position: absolute;
+.recentButton button{
+  border: 1px solid #C7D2D8 ;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: transparent;
+  color: #C7D2D8;
 }
 
-.rArticleDetails span {
-  padding: 5px 0;
-  border-bottom: gray 1px solid;
-  font-size: 20px;
-  font-weight: 100;
-  color: black;
+.recentButton button:hover {
+  background-color:#C7D2D8;
+  color: #131A33;
+}
+ 
+.recentPostCard div:nth-child(2) * {
+  margin-bottom: 10px;
 }
 
-.rArticleDetails h2 {
-  font-weight: 100;
-  color: black;
-  margin-top: 10px;
+/* category blotter */
+
+.categoryBlotters {
+
 }
 
-/* Categories blotter  */
-
-.blotterwrapper {
-  margin-top: 50px;
-  padding: 50px;
-  display: grid;
-  grid-template-columns: minmax(30%, 1fr) 3fr;
-  background-color: whitesmoke;
-  column-gap: 20px;
-}
-
-.categorydesc {
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 100;
-}
-
-.button {
-  margin-top: 10px;
-  color: black;
-  border: 1px black solid;
-  border-radius: 15px;
+.blotter button {
+  border: 1px solid #131A33 ;
   padding: 10px;
-  width: 100px;
-}
-
-.blotterPostWrapper {
-  display: grid;
-  column-gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-}
-
-.blotterPost {
-  padding-bottom: 20px;
-}
-
-.blotterPostImg {
-  display: grid;
-  position: relative;
-  aspect-ratio: 1 / 0.8;
-}
-
-.catimage {
-  position: absolute;
-}
-
-.blottercategory {
-  padding: 5px 0;
-  border-bottom: gray 1px solid;
+  border-radius: 20px;
   font-size: 20px;
-  font-weight: 100;
-  color: black;
+  background-color: transparent;
 }
 
-.blottertitle {
-  font-weight: 100;
-  color: black;
-  margin-top: 10px;
+.blotter button:hover {
+  background-color: #131A33;
+  color:#C7D2D8;
 }
 
-@media screen and (max-width: 700px){
-  .pagecontainer {
+.blotter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  border-bottom: 1px solid #131A33;
+  background-color: #C7D2D8;
+  color: #131A33;
+  padding: 100px 50px;
+}
+
+.blotterinfo * {
+  margin: 10px 0;
+}
+
+.blotterCard div:nth-child(2) * {
+  padding-bottom: 10px;
+}
+
+.blotterinfo h1{
+  font-size: 80px;
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .pagecontainer * {
+    font-size: 16px;
   }
 
-  .topDiv {
-    margin-top: 10px;
-    display: block;
-    padding: 0 10px;
-    font-size: 10px;
+  .pagecontainer > div {
+    padding: 20px 10px;
   }
 
-  .topDiv > div{
-    margin: 10px 0;
-  }
-
-  .topleft > div{
-    margin: 10px 0;
-    display: block;
-  }
-
-  .blotterwrapper {
-    padding: 10px;
-    display: block;
-    margin: 10px 0;
-    font-size: 10px;
-  }
-
-  .topright {
-    overflow: hidden;
-  }
-
-  .recentpostswrapper {
-    position: relative;
+  .topDiv h1{
+    font-size: 50px;
   }
   
-  .blotterPostWrapper {
-    margin: 30px 0;
-    display: block;
-  }
-
-  .blotterPost {
+  .recentPostCard {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 10px;
-    padding: 5px 0;
+    grid-template-columns: 40% 1fr;
+    gap: 20px;
   }
-  
+
+  .blotter {
+    padding: 20px 0;
+  }
+
+  .blotterCard {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 20px;
+  }
+
+  .recentButton button{
+    padding: 20px;
+    font-size: 16px;
+  }
 }

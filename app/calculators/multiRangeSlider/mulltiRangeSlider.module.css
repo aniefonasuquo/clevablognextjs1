@@ -1,12 +1,15 @@
 .container {
   display: flex;
   position: relative;
-  margin: 25px 0 70px 0;
+  margin: 25px 0;
+  height: 35px;
+  /* max-width: 360px; */
+  
 }
 
 .slider {
   position: relative;
-  width: 400px;
+  width: 350px;
 }
 
 .slider__track,
@@ -23,21 +26,20 @@
 }
 
 .slider__track {
-  background-color: #ced4da;
+  background-color: white;
   width: 100%;
   z-index: 1;
 }
 
 .slider__range {
-  background-color: black;
+  background-color: white;
   z-index: 2;
 }
 
 .slider__left-value,
 .slider__right-value {
-  color: #000000;
-  margin-top: 30px;
-  
+  color: white;
+  /* margin-top: 30px; */
 }
 
 .slider__left_value {
@@ -61,7 +63,8 @@
   pointer-events: none;
   position: absolute;
   height: 0;
-  width: 400px;
+  width: 350px;
+  max-width: 350px;
   outline: none;
 }
 

@@ -29,25 +29,27 @@ export default function Allposts ({ posts }) {
     <div className={styles.categorypost}>  
         {posts.slice(0,limit).map(({title, tags, slug, userID}) => (
           <div key={userID} className={styles.articleframe}>
-          <div className={styles.imgwrap}>
-            <Link href={`/blog/posts/${slug}`}> 
+            <div className={styles.imgwrap}>
               <Suspense fallback={<>loading</>}>
-                <Image sizes="100vw" src={"/../public/investimg.jpg"} width={100} height={100}/> 
+                <Link href={`/blog/posts/${slug}`}> 
+                  <Image sizes="100vw" src={"/../public/investimg.jpg"} fill={true}/> 
+                </Link>
               </Suspense>
-            </Link>
+            </div>
+            <div>  
+              <Suspense>
+                <Link href={`/blog/category/${tags[0]}`}><button className={styles.category}>{tags[0]}</button></Link>            
+              </Suspense>
+              <Suspense fallback={<>loading</>}>
+                <Link href={`/blog/posts/${slug}`}><p>{title}</p></Link>
+              </Suspense>
+              <span>1 mins read</span>
+            </div>
           </div>
-          <Suspense>
-            <Link href={`/blog/category/${tags[0]}`}><h3 className={raleway.className}>{tags[0]}</h3></Link>            
-          </Suspense>
-          <Suspense fallback={<>loading</>}>
-            <Link href={`/blog/posts/${slug}`}><h3 className={raleway.className}>{title}</h3></Link>
-          </Suspense>
-        </div>
         ))}
     </div>
-    <div  className={styles.button}>
-
-    <button onClick={loadMorePosts}>More Posts</button>  
+    <div className={styles.button}>
+      <button onClick={loadMorePosts}>More Posts</button>  
     </div>
     </div>
   )

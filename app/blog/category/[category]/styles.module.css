@@ -1,120 +1,107 @@
 .wrapper {
   display: grid;
-  padding: 50px 100px;
+  padding: 100px 50px;
   grid-template-columns: minmax(auto, 1fr) minmax(auto, 3fr);
   column-gap: 50px;
+  background-color: rgb(17, 30, 72);
+  color: #C7D2D8;
 }
 
 .categorypost {
+  padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  column-gap: 20px;
-  row-gap: 20px;
-}
-
-.articleframe {
-}
-
-.articleframe h3 {
-  margin-top: 10px;
-  color: black;
-  font-size: 25px;
+  gap: 50px;
 }
 
 .imgwrap {
-  overflow: hidden;
-  width: 100%;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 5px;
 }
 
 .imgwrap img {
+  position: absolute;
   object-fit: cover;
-  width: 100%;
-  height: 300px;
 }
 
-.rightsection {
-  flex: 1;
+.leftSection h1{
+  padding: 20px 0;
+}
+
+.leftSection > div{
+  border-bottom: 1px solid white;
+  padding-bottom: 50px;
+}
+
+.recommendedPost > div{
   display: grid;
-  grid-template-rows: auto 1fr;
+  gap: 20px;
 }
 
-.rightsection > div {
+.recomArticleframe {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 20px;
+}
+
+.recomArticleframe div:nth-child(2) *{
   padding-bottom: 10px;
 }
 
-.sideheading{
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  border-bottom: grey 1px solid;
-  font-size: 40px;
-}
-
-.catdesc {
-  font-weight: 100;
-  font-size: 18px
-}
-
-.sidearticle h4 {
-  padding-bottom: 5px;
-}
-
-#categorytext {
-  text-decoration: underline;
-  padding: 2px 5px;
-  width: 100%;
-}
-
-.imageandtext {
-  display: flex;
-  column-gap: 10px;
-}
-
 .recomimgwrap {
-  width: 150px;
+  position: relative;
+  aspect-ratio: 1 / 1;
 }
 
 .recomimgwrap img {
-  width: 100%;
-  height: 150px;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 5px;
 }
 
-.recominfo {
-  flex: 1;
+.articleframe div:nth-child(2) *{
+  padding: 10px 0;
 }
 
-.recomcat {
-  color: black;
-  font-size: 18px;
-  font-weight: 100;
-  border-bottom: 0.5px gray solid;
-  margin-bottom: 10px;
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
 }
-
-.recomtitlecontainer {
-  margin-top: 10px;
-}
-
-.recomtitle {
-  color: black;
-  font-size: 18px;
-  }
-
-  .button {
-    display: flex;
-    justify-content: center;
-    padding: 30px 0;
-  }
   
-  .button button{
-    padding: 20px;
-    border: none;
-    border-radius: 20px;
-  }
+.button button{
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+}
 
   @media screen and (max-width: 900px) {
+    
     .wrapper {
       display: block;
       padding: 50px 10px;
+    }
+
+    .recomArticleframe {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .recomArticleframe div:nth-child(2) *{
+      margin-bottom: 10px;
+    }
+    
+    .recomArticleframe div:nth-child(1) {
+      position: relative;
+      aspect-ratio: 1/0.6;
+    }
+
+    .articleframe {
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      font-size: 16px;
+      gap: 20px;
     }
 
   }

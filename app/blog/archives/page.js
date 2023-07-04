@@ -31,41 +31,32 @@ export default async function Archives() {
   return (
 
   <div className={styles.pagecontainer}>
-    <div>
-      <h1>All Posts</h1>
-    </div>
     <div className={styles.wrapper}>
-      <div className={styles.rightsection}>
-        <div className={styles.recommendedpost}>
-          <h2 className={`${styles.sideheading} ${raleway.className}`}>Recommended posts</h2>
-          <div className={styles.sidearticle}> 
-            <div className={styles.imageandtext} >
-              <div className={styles.recomimgwrap}>
-                <Link href="/">
-                  <Suspense fallback={<>loading</>}>
-                    <Image className={styles.recomimg} width={100} height={100} sizes="100vw" src={"/../public/investimg.jpg"}></Image>
-                  </Suspense>
-                </Link>
-              </div>
-              <div className={styles.recominfo}>
-                <Link href={"/"}><span className={styles.recomcat}>category</span></Link>
-                <Suspense fallback={<>loading</>}>
-                  <div className={styles.recomtitlecontainer}>
-                    <Link href="/">
-                      <h4 className={`${styles.recomtitle} ${raleway.className}`}> Finding the optimal investment portfolio </h4>
-                    </Link>
-                  </div>
-                </Suspense> 
-              </div>
-            </div>
+      <div className={styles.recommendedPosts}>
+        <h1 className={`${styles.sideheading}`}>Recommended</h1>
+        <div className={styles.recomArticleframe}>
+          <div className={styles.imgwrap}>
+            <Suspense fallback={<>loading</>}>
+              <Link href="/">
+                <Image fill={true} sizes="100vw" src={"/../public/investimg.jpg"}></Image>
+              </Link>
+            </Suspense>
+          </div>
+          <div>
+            <Suspense>
+              <Link href={`/`}><button className={styles.category}>Category</button></Link>            
+            </Suspense>
+            <Suspense fallback={<>loading</>}>
+              <Link href={`/`}><p>Making Long Term Returns</p></Link>
+            </Suspense>
+            <span>1 mins read</span>
           </div>
         </div>
       </div>
-      
-      <div >
+      <div>
+      <h1>All Posts</h1>
         <Allposts posts={posts}></Allposts>
       </div>
-
     </div>
   </div>
   )}

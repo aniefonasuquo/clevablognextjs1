@@ -52,7 +52,9 @@ export default function Header ( ) {
           </ul>
         </nav>
         <div className={style.ctabutton}>
-          <button> {`Sign Up >`} </button>
+          <Link href='/join'>
+            <button>Join Cleva</button>
+          </Link>
         </div>
         <div className={style.menu}>
           <button id='menuButton' onClick={showMobileNav}><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="menu"><path fill='none' color="rgba(24,40,102,255)" d="M0 0h48v48H0z"></path><path d="M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path></svg>

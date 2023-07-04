@@ -8,8 +8,6 @@ import SocialSharing from '@/utils/share/page';
 
 
 export default async function PersonalityPage ({params}) {
-  
-  console.log(params)
 
   const pronsandcons = [
     {archetype: "Boss",
@@ -101,9 +99,9 @@ export default async function PersonalityPage ({params}) {
             <div>
               <h3>Investing behaviour</h3>
               <h5>Cons</h5>
-              {emotion.cons.map((con)=> (<p key={con}>{con}{console.log(con)}</p>))}
+              {emotion.cons.map((con)=> (<p key={con}>{con}</p>))}
               <h5>pros</h5>
-              {emotion.pros.map((pro)=> (<p key={pro}>{pro}{console.log(pro)}</p>))}
+              {emotion.pros.map((pro)=> (<p key={pro}>{pro}</p>))}
             </div>
             <div>
               <h3>Ideal Porfolio Allocation</h3>

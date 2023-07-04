@@ -20,85 +20,74 @@ const raleway = Raleway({
   display: 'swap' 
 })
 
+export function Calc ({calc}) {
+
+  switch (calc) {
+    case 'target':  
+      return (<Target></Target>)
+      // break;
+    case 'income':  
+      return (<Income></Income>)
+      // break;
+    default:
+      return (<Retire></Retire>)
+      break;
+  }
+}
+
 
 export default function Thispage () {
-
- 
-
-  // Target logic
-
-      // Target Income logic
    
-      const [calcdisplay, setCalc] = useState('target')
-      const [calcdetails, setcalcdetails] = useState({})
+  const [calcdisplay, setCalc] = useState('target')
+  const [calcdetails, setcalcdetails] = useState({})
       
       
-      const calcDB = [
-        {type: 'retire',
-        details: 'Retire Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun',
-        image: retireimage   
-      },
-      {type: 'income',
-      details: 'Income Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun ',
-      image: ''   
-    },
+  const calcDB = [
+    {type: 'retire',
+    heading: 'Retirement Advisor',
+    details: 'Retirement planning is essential for ensuring financial security during your golden years. By carefully managing your savings, investments, and expenses, you can create a solid financial foundation for a comfortable retirement. Start planning early, set realistic goals, and regularly review and adjust your retirement plan to stay on track towards a financially stable future.',
+    image: retireimage},
+    {type: 'income',
+    heading: 'Income Portfolio',
+    details: 'Earning income from numerous sources, including investments helps protect against sudden financial shocks that could arise from job losses or disability. Estimate the required investment value required to meet your desired income goals, and find the investment that help you achieve this goals',
+      image: ''   },
     {type: 'target',
-    details: 'target Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet mauris ex. Integer et nisi vitae diam tincidunt auctor. Maecenas ultrices dictum fringilla. Cras in magna et massa tempus pharetra. Etiam et semper nisl. Aenean malesuada dui quis diam varius, tincidun ',
-    image: ''   
-    },
-    
-    ]
+    heading: 'Target Portfolio',
+    details: 'Either planning for a vacation, or purchasing that new car, find the right investments that help you bring your aspirations to reality',   
+    }, 
+  ]
 
-    function changeDisplay (e) {
-      setCalc(e.target.id)
-    }
-  
-    async function showTarget () {
-      const calc = calcDB.find((calc) => calc.type == calcdisplay)
-      calc ? setcalcdetails(calc)  : ''
-    }
+  function changeDisplay (e) {
+    setCalc(e.target.id)
+  }
+
+  async function showTarget () {
+    const calc = calcDB.find((calc) => calc.type == calcdisplay)
+    calc ? setcalcdetails(calc)  : ''
+  }
       
   useEffect(() =>  {
     showTarget()
   }, [calcdisplay])
 
   return (
-    <>
-      <div className={Styles.pagecontainer}></div>  
-          <div className={Styles.topheading}> 
-            <p className={`${raleway.className}`}> Discover the best investment decision for you </p> 
-          </div> 
-          <div className={Styles.midsection}>
-            <div>
-              <div className={Styles.up}>
-                <button id='retire' onClick={changeDisplay}>Retirement</button>
-                <button id='target' onClick={changeDisplay}>Target Investment</button>
-                <button id='income' onClick={changeDisplay}>Income Portfolio</button>
-                <button id='equity'>Stock Porfolio</button>
-              </div>
-              <h1>Calculate the return on investiment you could earn with our powered demos</h1>
-              <p>{calcdetails.details}</p>
-              <div className={Styles.downarrow}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="downarrow"><path d="M349.7 322.2c-3.1-3.1-8-3-11.3 0L264 388.6V104c0-4.4-3.6-8-8-8s-8 3.6-8 8v284.6l-74.4-66.3c-3.4-2.9-8.1-3.2-11.2-.1-3.1 3.1-3.3 8.5-.1 11.4 0 0 87 79.2 88 80s2.8 2.4 5.7 2.4 4.9-1.6 5.7-2.4 88-80 88-80c1.5-1.5 2.3-3.6 2.3-5.7s-.8-4.1-2.3-5.7z" fill="rgb(24, 40, 102)" class="color000000 svgShape"></path></svg></div>
-            </div>
-            <div className={Styles.calcInfo}>
-              <div><Image src={calcdetails.image} fill={true} sizes='100vw'></Image></div>
-            </div>
-
-          </div>
-
-          <div className={Styles.bodycontainer}>
-            <div className={Styles.calculators}> 
-              <div className={calcdisplay == 'target' ? Styles.active : Styles.invisible}>
-                <Target></Target>
-              </div>        
-              <div className={calcdisplay == 'retire' ? Styles.active : Styles.invisible}>
-                <Retire></Retire>
-              </div>
-              <div className={calcdisplay == 'income'? Styles.active : Styles.invisible}>
-                <Income></Income>
-              </div>
-            </div>  
-          </div>               
-  </>
+    <div className={Styles.pagecontainer}>  
+      <div className={Styles.topheading}> 
+        <h1 className={`${raleway.className}`}>Discover the best investment decision for you</h1> 
+      </div> 
+      <div className={Styles.options}>
+        <button id='retire' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'retire' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'retire' ? 'white' : ''}}>Retirement</button>
+        <button id='target' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'target' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'target' ? 'white' : ''}}>Target Investment</button>
+        <button id='income' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'income' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'income' ? 'white' : ''}}>Income Portfolio</button>
+        <button id='equity'>Stock Porfolio</button>
+      </div>
+      <div className={Styles.midsection}>
+        {/* <div> */}
+          <h1>{calcdetails.heading}</h1>
+          <p>{calcdetails.details}</p>
+        {/* </div> */}
+      </div>
+      <Calc className={Styles.calculators} calc={calcdisplay}></Calc>
+    </div>
   )
 }

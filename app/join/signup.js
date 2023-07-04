@@ -44,7 +44,7 @@ async function addUser (name, email) {
 
 export default function Joinform () {
 
-  const [submit, setSubmit] = useState('submit')
+  const [submit, setSubmit] = useState('Join')
 
   async function handleJoin (e) {
     e.preventDefault()
@@ -59,25 +59,24 @@ export default function Joinform () {
 
   }
 
-  useEffect(()=> {console.log(submit)},[submit])
+  // useEffect(()=> {console.log(submit)},[submit])
 
   return (
     <div>
-    <form onSubmit={handleJoin} className={styles.form}>
-      <label htmlFor="joinname">
-        <p>Name</p>
-        <input name="joinname" id="joinname" type='text' placeholder='John Appleseed'></input>
-      </label>
-      <label htmlFor="joinemail">
-        <p>Email</p>
-        <input name="joinemail" id="joinemail" type='email' placeholder='example@email.com'></input>
-      </label>
-      <button type='submit'>{submit == 'success' ? 'Success' : 'Submit'}</button>
-    </form>
-    <div>
-      {submit == 'success' && <p>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
-      {submit == 'failed' && <p>Something went wrong, could not register</p>}
-    </div>
+      <form onSubmit={handleJoin} className={styles.form}>
+        <div>
+          <h1>Join Cleva</h1>
+          <p>Begin your journey to boundless wealth opportunities</p>
+        </div>
+        <input name="joinname" id="joinname" type='text' placeholder='Name...'></input>
+        <input name="joinemail" id="joinemail" type='email' placeholder='Email...'></input>
+        <span>Joining Cleva means you are okay with receiving our email newsletters, and product and services information</span>
+        <div>
+          {submit == 'success' && <p className={styles.feedback}>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
+          {submit == 'failed' && <p className={styles.feedback}>Oops! something went wrong, unable to join.. Let's give it another shot</p>}
+        </div>
+        <button type='submit'>{submit}</button>
+      </form>
     </div> 
   )
 }

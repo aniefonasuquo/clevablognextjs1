@@ -16,6 +16,7 @@ const incomeArray = [];
 const [incomeResult, setIncomeResult] = useState(incomeArray)
 const [incomePeriod, setIncomePeriod] = useState()
 const [incomeCurr, setIncomeCurr] = useState()
+const [incomeTarget, setIncomeTarget] = useState()
 const [submit, setsubmit] = useState(null)
 
 function getIncomeRecom (e) {
@@ -26,7 +27,9 @@ function getIncomeRecom (e) {
     
     const incomePeriod = forminput.get('incomePeriod')        
     const incomeCurr = forminput.get('incomeCurr')
+    setIncomeCurr(incomeCurr)
     const incomeTarget = forminput.get('incomeTarget')
+    setIncomeTarget(incomeTarget)
     
     const filtered = products.filter(product => product.curr == incomeCurr)
 
@@ -35,10 +38,10 @@ function getIncomeRecom (e) {
       let value = 0
 
       switch (incomePeriod) {
-        case 'Quarter':
+        case 'quarter':
           value = incomeTarget/product.rate * 4;
           break;
-        case 'Month':
+        case 'month':
           value = incomeTarget/product.rate * 12;
           break;
         default:
@@ -70,74 +73,85 @@ function setcurr (e) {
 }
 
   return (
-            <div className={Styles.incomeContainer}>
-              <div className={Styles.incomeInput}>
-                <form onSubmit={getIncomeRecom}>
-                  <div>
-                    <p>How often would you receive your investment income</p>
-                    <div>
-                    <label htmlFor="monthPeriod">
-                    <input onChange={setperiod} type='radio' id="monthPeriod" name="incomePeriod" value='Month' required/>
-                    <span>Monthly</span>
-                    </label>
-                    <label  htmlFor="quarterPeriod">
-                    <input onChange={setperiod} type='radio' id="quarterPeriod" name="incomePeriod" value='Quarter' required/>
-                    <span>Quarterly</span>
-                    </label>
-                    <label htmlFor="yearPeriod">
-                    <input onChange={setperiod} type='radio' id="yearPeriod" name="incomePeriod" value='Year' required/>
-                    <span>Yearly</span>
-                    </label>
-                    </div>
-                  </div>
-                  <div>
-                    <p>What currency would your like to earn your investment income</p>
-                    <div>
-                    <label onChange={setcurr} htmlFor="incomeNGN">
-                      <input type='radio' id="incomeNGN" name="incomeCurr" value='NGN' required/>
-                      <span>NGN Naira</span>
-                    </label>
-                    <label htmlFor="incomeUSD">
-                    <input onChange={setcurr} type='radio' id="incomeUSD" name="incomeCurr" value='USD' required/>
-                    <span>US Dollars</span>
-                    </label>
-                    </div>
-                  </div>
-                  <div>
-                    <p htmlFor="tagetincome">How much are you looking to earn from your investments</p>
-                    <div className={Styles.inputamount}>
-                      <input type='number' id="incomeTarget" name="incomeTarget" required/> every {incomePeriod}
-                      <span>{incomeCurr}</span>
-                    </div>
-                  </div>
-                  <button type="submit">Submit</button>
-                </form>
-              </div>
-              
-              { submit &&
-              <div className={Styles.incomeResult}>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Issuer</th>
-                      <th>Product</th>
-                      <th>Annual Yield</th>
-                      <th>Initial Investment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  {incomeResult.map(({logo, issuer, name, rate, value})=> (
-                  <tr key={name}>
-                      <td><Image src={logo} sizes="100vw" width={20} height={20} style={{borderRadius: '50%'}}></Image></td>
-                      <td>{issuer} {name}</td>
-                      <td>{(rate * 100).toFixed(2)}%</td>
-                      <td>{value.toLocaleString('en-US',{maximumFractionDigits: 2})}</td>
-                  </tr>
-                  ))}
-                  </tbody>
-                </table>
-              </div>
-              } 
+    <div className={Styles.container}>
+      <div className={Styles.input}>
+        <form onSubmit={getIncomeRecom}>
+          <div>
+            <p>How often would you receive your investment income</p>
+            <div className={Styles.inputRadio}>
+              <label htmlFor="monthPeriod">
+              <input onChange={setperiod} type='radio' id="monthPeriod" name="incomePeriod" value='month' required/>
+              <span>Monthly</span>
+              </label>
+              <label  htmlFor="quarterPeriod">
+              <input onChange={setperiod} type='radio' id="quarterPeriod" name="incomePeriod" value='quarter' required/>
+              <span>Quarterly</span>
+              </label>
+              <label htmlFor="yearPeriod">
+              <input onChange={setperiod} type='radio' id="yearPeriod" name="incomePeriod" value='year' required/>
+              <span>Yearly</span>
+              </label>
             </div>
+          </div>
+          <div>
+            <p>What currency would your like to earn your investment income</p>
+            <div className={Styles.inputRadio}>
+              <label onChange={setcurr} htmlFor="incomeNGN">
+              <input type='radio' id="incomeNGN" name="incomeCurr" value='NGN' required/>
+              <span>NGN Naira</span>
+              </label>
+              <label htmlFor="incomeUSD">
+              <input onChange={setcurr} type='radio' id="incomeUSD" name="incomeCurr" value='USD' required/>
+              <span>US Dollars</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <p htmlFor="tagetincome">How much are you looking to earn from your investments</p>
+            <div>
+              <label className={Styles.inputamount}>
+                <input type='number' id="incomeTarget" name="incomeTarget" placeholder="investment income..." required/>
+                <span>{incomeCurr}</span>
+              </label>
+              <span>{incomePeriod && `every ${incomePeriod}`}</span>
+            </div>
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+      
+      { submit &&
+      <div className={Styles.result}>
+        <div>
+          <h3>Porfolio Income</h3>
+          <h3>{incomeCurr == 'USD'? '$' : 'N'}{incomeTarget.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})} every quarter</h3>
+        </div>
+        <div>
+        <table className={Styles.resultTable}>
+          <thead>
+            <tr>
+              <th>Issuer</th>
+              <th>Product</th>
+              <th>Annual Yield</th>
+              <th>Initial Investment</th>
+            </tr>
+          </thead>
+          <tbody>
+          {incomeResult.map(({logo, issuer, name, rate, value})=> (
+          <tr key={name}>
+              <td><Image src={logo} sizes="100vw" width={40} height={40} style={{borderRadius: '50%', objectFit: "contain"}}></Image></td>
+              <td>{issuer} {name}</td>
+              <td>{(rate * 100).toFixed(2)}%</td>
+              <td>{value.toLocaleString('en-US',{maximumFractionDigits: 2})}</td>
+          </tr>
+          ))}
+          </tbody>
+        </table>
+        </div>
+      </div>
+      } 
+    </div>
   )
 }

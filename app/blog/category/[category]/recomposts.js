@@ -20,33 +20,28 @@ export default function RecomPosts ({ posts }) {
   const recompost = posts
 
   return (
-    <>
-    <div className={styles.recommendedpost}>
-      <h2 className={`${styles.sideheading} ${raleway.className}`}>Recommended posts</h2>
-      <div className={styles.sidearticle}>
+    <div className={styles.recommendedPost}>
+      <h1>Recommended</h1>
+      <div>
         {recompost.slice(0,4).map(({title, slug, id}) => (
-            <div key={id} className={styles.imageandtext}>
+          <div key={id} className={styles.recomArticleframe}>
             <div className={styles.recomimgwrap}>
-              <Link href={`/blog/posts/${slug}`}>
-                <Suspense fallback={<>loading</>}>
-                  <Image className={styles.recomimg} width={100} height={100} sizes="100vw" src={"/../public/investimg.jpg"}></Image>
-                </Suspense>
-              </Link>
-            </div>
-            <div className={styles.recominfo}>
               <Suspense fallback={<>loading</>}>
-                <div className={styles.recomtitlecontainer}>
-                  <Link href={`/blog/posts/${slug}`}>
-                    <h4 className={`${styles.recomtitle} ${raleway.className}`}>{title}</h4>
-                  </Link>
-                </div>
-              </Suspense> 
+                <Link href={`/blog/posts/${slug}`}>
+                  <Image sizes="100vw" fill={true} src={"/../public/investimg.jpg"}></Image>
+                </Link>
+              </Suspense>
+            </div>
+            <div>
+              <Suspense fallback={<>loading</>}>
+                <Link href={`/blog/posts/${slug}`}><p>{title}</p></Link>
+              </Suspense>
+              <span>1 mins read</span>
             </div>
           </div>              
         ))}
       </div>
     </div>
-    </>
   )
 
 }

@@ -1,78 +1,134 @@
-
-.incomeContainer {
-  display: flex;
-  background-color: white;
-  height: 100%;
-  column-gap: 20px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  color: white;
+  gap: 50px;
+  font-weight: 100;
+  justify-items: center;
+  align-items: start;
 }
 
-.incomeInput div {
-  margin-bottom: 10px;
- }
-
- .incomeInput div div {
+.input {
   display: flex;
-  align-items: center;
-  column-gap: 10px;
+  justify-content: center;
+}
+
+.input form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputRadio {
+  display: flex;
+  gap: 20px;
  }
 
- .incomeInput p {
-  font-weight: 100;
+ .inputRadio label{
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid grey;
+  font-size: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
  }
 
- .incomeInput input,
- .incomeInput label{
+ .inputRadio label:has(input:checked) {
+  background-color: rgb(133, 133, 192);
+ }
+
+ .inputRadio label:hover {
+  color: rgb(24, 40, 102);
+  background-color: whitesmoke;
+  border: 2px solid navy;
+ }
+
+ .input p {
+  margin: 5px 0;
+}
+
+ .input input[type='radio'],
+ .input label:has(input[type='radio']){
   padding: 10px;
   border: 1px solid silver;
   margin: 5px 0;
   border-radius: 10px;
   cursor: pointer;
-  background-color: whitesmoke;
   font-size: 15px;
  }
 
- .incomeInput label{
-  width: 120px;
- }
-
- .incomeInput label span{
-  margin-left: 10px;
- }
-
- .incomeInput button {
+ .input button {
   padding: 10px 20px;
   border: none;
   background-color: navy;
   color: white;
   border-radius: 20px;
   font-size: 15px;
+  
  }
 
  .inputamount {
   position: relative;
+  padding: 0;
+  background-color: white;
+  margin-right: 10px;
  }
 
- .inputamount input {
-  text-align: end;
+ .inputamount input[type='number'] {
   -moz-appearance: textfield;
+  border: none;
+ background-color: whitesmoke;
+ padding: 10px;
+ border: none;
+ width: 250px;
+ border-radius: 10px;
+ font-size: 20px;
+ color: navy;
  }
 
  .inputamount span {
   position: absolute;
-  top: 25%;
-  left: 5px
+  align-items: center;
+  top: -25%;
+  right: 5px;
+  font-size: 20px;
+  color: rgb(24, 40, 102);
+
  }
 
- .incomeResultRow {
+
+ .result {
   display: flex;
-  background-color: whitesmoke;
-  margin-bottom: 5px;
-  justify-content: space-evenly;
-  text-align: start;
-}
+  flex-direction: column;
+  gap: 20px;
+ }
 
-.incomeResultRow > div {
-  margin-right: 10px;
-  padding: 10px 0;
+ .result > div:nth-child(1) {
+  display: flex;
+  gap: 30px;
+ }
 
-}
+ .resultTable {
+  text-align: left;
+ }
+
+ .resultTable tr,
+ .resultTable td,
+ .resultTable th 
+  {
+  padding: 5px;
+ }
+
+ .resultTable thead {
+  border-bottom: 1px solid white;
+ }
+
+
+ @media screen and (max-width: 900px) {
+  .result > div:nth-child(1) {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 30px;
+   }
+ }

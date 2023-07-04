@@ -1,273 +1,121 @@
 .pagecontainer {
-  background-color:  rgb(24, 40, 102);
-  color: greenyellow;
-  padding: 50px 0;
 }
 
-.progressOut {
-  width: 100%;
-  height: 5px;
-  background-color: gray;
+.topDiv {
+  padding: 100px 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  background-color: rgb(17, 30, 72);
 }
 
-.progressOut div {
-  background-color: greenyellow;
-  height: 100%;
+.topDiv h1{
+  font-size: 80px;
+  font-weight: bold;
 }
 
-.quizintro > div{
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  color: greenyellow;
-}
-
-.quizintro  *{
- padding: 20px 0;
-}
-
-.quizintro p{
+.topDiv p{
+  color: #22B454;
   font-size: 20px;
-  font-weight: 100;
- }
-
-.pagecontainer * button{
- background-color: greenyellow;
- color:navy;
- border: 1px white solid;
- border: none;
- font-weight: bold;
- font-size: 20px;
- padding: 20px;
- border-radius: 20px;
- cursor: pointer;
 }
 
-.ageQuestion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.ageQuestion * {
-  margin: 10px 0;
-}
-
-.ageQuestion input {
- width: 300px;
- height: 1px;
- -webkit-appearance: none;
- appearance: none;
-}
-
-.ageQuestion input::-webkit-slider-thumb {
-  
-  -webkit-appearance: none;/* appearance: none; */
-  width: 30px;
-  height: 30px;
-  background-color: rgb(24, 40, 102);
-  border: 1px solid greenyellow;
-  border-radius: 50%;
-  cursor: pointer;
- }
-
- .ageQuestion input::-ms-thumb {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(24, 40, 102);
-  border: 1px solid greenyellow;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.ageQuestion input::-moz-range-thumb {
-  width: 30px;
-  height: 30px;
-  background-color: rgb(24, 40, 102);
-  border: 1px solid greenyellow;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.ageQuestion div {
-  font-size: 20px;
-  padding: 20px 0;
-  font-weight: bolder;
-}
-
-.formcontainer {
-  color: white;
-  font-weight: 100;
-  padding: 0 400px;
-}
-
-.questionContainer {
-  height: 450px;
-}
-
-.questionContainer h1 {
-  padding: 5px 0;
-}
-
-.formnavigation * {
-  display: flex;
-  justify-content: space-between;
-}
-
-.formnavigation button{
-  border: none;
-  padding: 15px;
-  border-radius: 50px;
-  width: 100px;
-  background-color: white;
-  color: navy;
-  cursor: pointer;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 100;
-}
-
-.formnavigation  .prevbutton {
-  /* background-color: navy;
-  color:white;
-  border: 1px white solid; */
-}
-
-.multichoiceContainter label {
-  position: relative;
-}
-
-.multichoiceContainter input {
-  /* opacity: 1; */
-  /* visibility: hidden; */
-}
-
-.multichoiceContainter input:checked + div {
-  cursor: pointer;
-  background-color: rgb(30, 144, 255, 0.3);
-}
-
-.multichoiceContainter label > div {
-  padding: 15px;
-  margin: 5px 0;
+.category {
   border: 1px solid white;
-  cursor: pointer;
+  padding: 10px;
   border-radius: 20px;
 }
 
-.multichoiceContainter * div:hover{
-  background-color: rgb(30, 144, 255, 0.3);
-  border: 2px solid white; 
+.imageDiv {
+  position: relative;
+  aspect-ratio: 1 / 1;
 }
 
-.circleOptionContainer {
-  display: block;
-  align-items: center;
+.imageDiv img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.circleOptionContainer * div {
-  padding: 10px 0;
+.topDiv div:nth-child(2) {
+  padding: 0 50px;
+  color: #C7D2D8;
+}
+
+/* Recent Post */
+
+.recentPosts {
+  background-color: #131A33;
+  padding: 50px;
+  color: #C7D2D8;
+}
+
+.recentPosts > div:nth-child(1) {  
+  display: grid;
+  row-gap: 50px;
+  column-gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.recentPosts > div:nth-child(2) {
+  padding: 30px 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.circleOptionContainer > div {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
+.recentPosts button{
+  border: 1px solid #C7D2D8 ;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: transparent;
+  color: #C7D2D8;
 }
 
-.circle {
-display: flex;
-border-radius: 50%;
-border: 1px solid greenyellow;
-margin: 0 10px;
+.recentPostCard div:nth-child(2) > span {
+  margin: 20px 0;
 }
 
-.circle:hover {
-background-color: blue;
+/*  */
+
+.categoryBlotters {
+  background-color: #C7D2D8;
+  padding: 0 50px;
+  color: #131A33;
 }
 
-input[type="radio"]:checked + .circle {
-background-color: blue;
-border-color: greenyellow;
+.categoryBlotters button {
+  border: 1px solid #131A33 ;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: transparent;
 }
 
-.ranking {
-  display: none
+.categoryBlotters h1 {
+  font-size: 100px;
 }
 
-#big {
-  width: 80px;
-  height: 80px;
+.blotter {
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr) minmax(400px, 3fr) ;
+  padding: 100px 0;
+  column-gap: 50px;
+  row-gap: 20px;
+  border-bottom: 1px solid #131A33;
 }
 
-#small {
-  width: 30px;
-  height: 30px;
+.blotterinfo * {
+  margin: 10px 0;
 }
 
-#mid {
-  width: 55px;
-  height: 55px;
+.blottercards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  column-gap: 50px;
+  row-gap: 50px;
 }
 
-
-@media screen and (max-width: 1400px) {
-  .formcontainer {
-    padding: 0 200px;
-  }
-
-  .formnavigation button{
-  }
-}
-
-@media screen and (max-width: 900px){
-  .formcontainer {
-    padding: 0 50px;
-  }
-  .formnavigation button{
-  }
-}
-
-@media screen and (max-width: 600px){
-  .pagecontainer {
-    padding: 10px 0;
-  }
-
-  .formcontainer {
-    padding: 0 10px;
-    font-size: 12px;
-  }
-
-  .formnavigation button{
-    font-size: 15px;
-  }
-  
-  .questionContainer {
-    height: 70vh
-  }
-
-  #big {
-    width: 70px;
-    height: 70px;
-  }
-  
-  #small {
-    width: 25px;
-    height: 25px;
-  }
-  
-  #mid {
-    width: 40px;
-    height: 40px;
-  }
-
-  .circleOptionContainer > div {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-  }
-
+.blottercards h1 {
+  font-size: 30px;
 }

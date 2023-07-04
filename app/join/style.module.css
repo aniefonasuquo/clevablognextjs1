@@ -1,5 +1,54 @@
-.form label, .form p, .form input{
+.pagecontainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100vh;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(17, 30, 72);
+  color: greenyellow;
+}
+
+.right { 
   display: block;
+  padding: 20px;
+}
+
+.right > div:nth-child(1) {
+  height: 5%;
+  margin: 5px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logowrap {
+  position: relative;
+  width: 100px;
+  height: 100%;
+}
+
+.logowrap img {
+  position: absolute;
+  object-fit: contain;
+}
+
+.right > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+  max-width: 300px;
+}
+
+.form label, .form p, .form input{
+  display: grid;
   padding: 10px 0;
 }
 
@@ -7,7 +56,9 @@
   border-radius: 10px;
   border: 1px silver solid;
   background-color: whitesmoke;
-  padding: 10px;
+  padding: 10px 20px;
+  height: 50px;
+  width: 300px;
 }
 
 .form button {
@@ -16,23 +67,30 @@
   width: 100px;
   background-color: greenyellow;
   color: navy;
-  border: 1px navy solid;
 }
 
-.pagecontainer {
-  display: flex;
-  justify-content: center;
+.form span {
+  font-size: 12px;
+  font-weight: 100;
 }
 
-.pagecontainer > div {
-  padding: 50px;
+.feedback {
+  border: 1px solid green;
 }
 
-.left {
-  flex:  1;
-  background-color: navy;
+@media (max-width: 900px) {
+  .pagecontainer {
+    display: block;
+    background-color:  rgb(17, 30, 72);
+  }
+
+  .form input {
+    background-color: rgb(17, 30, 72);
+    color: silver;
+  }
+
+  .form {
+    color: greenyellow;
+  }
 }
 
-.right {
-  flex: 1;
-}

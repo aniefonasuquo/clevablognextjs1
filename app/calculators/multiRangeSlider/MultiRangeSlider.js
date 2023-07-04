@@ -42,46 +42,44 @@ const MultiRangeSlider = ({min, max, onChange }) => {
   return (
     <div className={Styles.container}>
       <div>
-
-      <input
-        type="range"
-        // defaultValue={28}
-        min={0}
-        max={100}
-        value={minVal}
-        onChange={(event) => {
-          const value = Math.min(Number(event.target.value), maxVal - 1);
-          setMinVal(value);
-          minValRef.current = value;
-        }}
-        className={`${Styles.thumb} ${Styles.thumb__left}`}
-        style={{ zIndex: minVal > 100 - 100 && '5' }}
-        />
-      <input
-        type="range"
-        // defaultValue={60}
-        min={0}
-        max={100}
-        value={maxVal}
-        onChange={(event) => {
-          const value = Math.max(Number(event.target.value), minVal + 1);
-          setMaxVal(value);
-          maxValRef.current = value;
-        }}
-        className={`${Styles.thumb} ${Styles.thumb__right}`}
-        />
-
+        <input
+          type="range"
+          // defaultValue={28}
+          min={0}
+          max={100}
+          value={minVal}
+          onChange={(event) => {
+            const value = Math.min(Number(event.target.value), maxVal - 1);
+            setMinVal(value);
+            minValRef.current = value;
+          }}
+          className={`${Styles.thumb} ${Styles.thumb__left}`}
+          style={{ zIndex: minVal > 100 - 100 && '5' }}
+          />
+        <input
+          type="range"
+          // defaultValue={60}
+          min={0}
+          max={100}
+          value={maxVal}
+          onChange={(event) => {
+            const value = Math.max(Number(event.target.value), minVal + 1);
+            setMaxVal(value);
+            maxValRef.current = value;
+          }}
+          className={`${Styles.thumb} ${Styles.thumb__right}`}
+          />
       </div>
       <div className={Styles.slider}>
         <div className={Styles.slider__track} />
           <div ref={range} className={Styles.slider__range} />
             <div className={Styles.slider__left_value}>
-              <p>Current Age</p>
-              <p>{minVal} years old</p>
+              <div>Current Age</div>
+              <div>{minVal} years old</div>
             </div>
             <div className={Styles.slider__right_value}>  
-              <p>Retirement Age</p>
-              <p>{maxVal} years old</p>
+              <div>Retirement Age</div>
+              <div>{maxVal} years old</div>
           </div>
       </div>
     </div>
