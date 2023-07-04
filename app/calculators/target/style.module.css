@@ -132,7 +132,6 @@
       color: white;
       gap: 50px;
       font-weight: 100;
-      align-items: start;
     }
     
   .result > div:nth-child(1) {
