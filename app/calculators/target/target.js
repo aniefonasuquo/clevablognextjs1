@@ -125,7 +125,7 @@ export default function Target () {
         <div>
           <div>
             <p>Target Value</p>
-            <h3>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1>
+            <h3>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h3>
           </div>
           <div>
             <p>Duration</p>
