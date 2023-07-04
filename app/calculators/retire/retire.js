@@ -30,7 +30,6 @@ export default function Retire () {
   //finance.PPMT(rate, per, nper, pv, [fv\], [type]);
 
   const accruedInterest = (contriOption) => {
-    
     switch (contriOption) {
       case 'year':
         return value - (annaulpayments * retiretime);
@@ -42,12 +41,6 @@ export default function Retire () {
   }
 
   function changeColor (e) {
-  
-    const otherOptions = document.querySelectorAll(['#month','#year','#quarter']);
-    otherOptions.forEach((e) => {
-
-    })
-
     const button = e.target.id;
     setActive(button)
   }
@@ -66,86 +59,85 @@ export default function Retire () {
 
   return (
     <div className={Styles.retirementContainer} >
-    <div className={Styles.retireInputCard}>
-      <h1> </h1>                   
-      <div>
-        <p>Select current age and retirement age</p>
-        <div className={Styles.slidercontainer}>
-          <MultiRangeSlider id={Styles.slider}
-          min={28}
-          max={60}
-          onChange={({ min, max }) => 
-          {setuserage(min)
-            setretireage(max)
-          }}>
-          </MultiRangeSlider>
+      <div className={Styles.input}>               
+        <div>
+          <p>Select current age and retirement age</p>
+          {/* <div className={Styles.slidercontainer}> */}
+            <MultiRangeSlider id={Styles.slider}
+            min={28}
+            max={60}
+            onChange={({ min, max }) => 
+            {setuserage(min)
+              setretireage(max)
+            }}>
+            </MultiRangeSlider>
+          {/* </div> */}
+        </div>
+    
+        <div>
+          <p>Estimated monthly basic survival expense (food, energy, clothing, utilities, transportation) </p>
+          <input
+            name="foodspend"
+            type="number"
+            onChange={e => setexpenses(e.target.value)}
+            value={expenses}
+            />
+        </div>
+
+        <div>
+          <p>Estimated annual rental expenses</p>
+          <input
+            name="rental"
+            type="number"
+            onChange={e => setrental(e.target.value)}
+            value={rental}
+          />
+        </div>
+          
+        <div>
+          <p>
+          Estimated annual medical/health expenses
+          </p>
+          <input
+            name="otherexpense"
+            type="number"
+            onChange={e => setotherexpenses(e.target.value)}
+            value={otherexpenses}
+            />
         </div>
       </div>
-    
-      <div className={Styles.expenseinput}>
-        <p>Estimated monthly basic survival expense (food, energy, clothing, utilities, transportation) 
-        </p>
-        <input
-          name="foodspend"
-          type="number"
-          onChange={e => setexpenses(e.target.value)}
-          value={expenses}
-          />
-      </div>
-
-      <div className={Styles.expenseinput}>
-        <p>Estimated annual rental expenses
-        </p>
-        <input
-          name="rental"
-          type="number"
-          onChange={e => setrental(e.target.value)}
-          value={rental}
-        />
-      </div>
-          
-      <div className={Styles.expenseinput}>
-        <p>
-        Estimated annual medical/health expenses
-        </p>
-        <input
-          name="otherexpense"
-          type="number"
-          onChange={e => setotherexpenses(e.target.value)}
-          value={otherexpenses}
-          />
-      </div>
-    </div>
   
-    <div className={Styles.RetireResultsdisplay}>
-      <div>
+      <div className={Styles.result}>
+        <div>
           <p>Projected portfolio value at retirement</p> 
           <h2>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</h2>                       
-      </div>
-      <div>
-        <div id={Styles.buttonSwitch}>
-          <p>Select preferred frequency</p>
-          <button onClick={changeColor} className={Styles.buttons} style={{backgroundColor: 'rgba(24,40,102,255)', color: 'white'}} id='month'>Monthly</button>
-          <button onClick={changeColor} className={Styles.buttons} id='quarter'>Quarterly</button>
-          <button onClick={changeColor} className={Styles.buttons} id='year'>Annually</button>
         </div>
-      </div>
         <div>
-          <p>Retirment portfolio contribution</p>
+          <div id={Styles.buttonSwitch}>
+            <p>Select preferred frequency</p>
+            <div>
+              <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
+              <button onClick={changeColor} style={{backgroundColor: active == 'quarter' ? 'navy' : '', color: active == 'quarter' ? 'white' : ''}} id='quarter'>Quarterly</button>
+              <button onClick={changeColor} style={{backgroundColor: active == 'year' ? 'navy' : '', color: active == 'year' ? 'white' : ''}} id='year'>Annually</button>
+            </div>
+          </div>
+        </div>
           <div>
-            <h2>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
-            <p>Every {active}</p>
-          </div>               
-        </div>
-        <div>
-          <p>Total portfolio gain at retirement</p>
-          <h2> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
-        </div>
-        <div>
-          <p>Minimum average yearly portfolio return</p>
-          <h2>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h2>
-        </div>
+            <p>Retirment portfolio contribution</p>
+            <div>
+              <h2>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
+              <p style={{textAlign: 'right'}}>Every {active}</p>
+            </div>               
+          </div>
+          <div>
+            <p>Total portfolio gain at retirement</p>
+            <h2> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
+          </div>
+          <div>
+            <p>Minimum average yearly portfolio return</p>
+            <h2>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h2>
+          </div>
+      </div>
     </div>
-  </div>
   )
 }

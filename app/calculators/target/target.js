@@ -9,12 +9,11 @@ import Image from "next/image"
 
 export default function Target () {
 
-    const finance = new Finance();
+  const finance = new Finance();
   
   const [selectcurr, setCurr] = useState('')
   const [showResult, setshow] = useState('')
   
-
   const [Targetresult, setresult] = useState(Array)
   const [targetamount, settargetamount] = useState(0)
   const [targetdate, settargetdate] = useState()
@@ -30,9 +29,10 @@ export default function Target () {
     
     const inputDate = forminput.get('targetdate')
     const targetDate = new Date(inputDate)
-    
+    const targetCurr = forminput.get('targetcurr')
+    setCurr(targetCurr)
     const targetAmount = forminput.get('targetamount')
-    settargetamount(targetAmount.toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,}))
+    settargetamount(targetAmount)
     
     const tenor = (targetDate - today)/(1000 * 60 * 60 * 24);
     const year = Math.ceil(tenor/365) 
@@ -41,7 +41,7 @@ export default function Target () {
     
     settargetdate(Math.ceil(tenor))
 
-    const prodCurr = products.filter(product => product.curr == selectcurr)
+    const prodCurr = products.filter(product => product.curr == targetCurr)
     
     prodCurr.forEach((product)=> {
       const weeklypay = Math.ceil(finance.PMT(product.rate/52, week - 1,0,-targetAmount,1))
@@ -83,89 +83,93 @@ export default function Target () {
   }
 
   return (
-    <div className={Styles.targetcontainer}> 
-      <form onSubmit={handlesubmit}>
-    <div className={Styles.targetinput}>
-        <div className={Styles.targetCurr}>
+    <div className={Styles.container}>
+      <div className={Styles.input}>
+        <form onSubmit={handlesubmit}>
+        <div>
           <p>Select currency</p>
-          <label htmlFor="targetNGN">
-            <input onChange={updateCurr} value='NGN' type="radio" id='targetNGN' name='targetcurr' required/>
-            <span>NGN</span>
-          </label>
-          <label htmlFor="targetUSD">
-            <input onChange={updateCurr} value='USD' type="radio" id='targetUSD' name='targetcurr' required/>
-            <span>USD</span>
-          </label>
+          <div className={Styles.inputRadio}>
+            <label htmlFor="targetNGN">
+              <input onChange={updateCurr} value='NGN' type="radio" id='targetNGN' name='targetcurr' required/>
+              <span>NGN</span>
+            </label>
+            <label htmlFor="targetUSD">
+              <input onChange={updateCurr} value='USD' type="radio" id='targetUSD' name='targetcurr' required/>
+              <span>USD</span>
+            </label>
+          </div>
         </div> 
-        <div className={Styles.targetAmount}>
-          <p>Select amount</p>
-          <div className={Styles.inputAmount}>
+        <div>
+          <p>Target Value</p>
+          <div className={Styles.targetAmount}>
             <label>
               <input type='number' inputMode="numeric" name="targetamount" placeholder="Target Amount"/>
-              <span className={Styles.amountcurr}>{selectcurr}</span>
+              <span>{selectcurr}</span>
             </label>
           </div>
         </div>
-        <div className={Styles.targetdate}>
+        <div>
           <p>Choose target date</p>
-          <input type="date" className={Styles.targetdate} name="targetdate" placeholder="Choose Target Date" required/> 
+          <label className={Styles.targetdate}>
+            <input type="date" name="targetdate" placeholder="Choose Target Date" required/> 
+          </label>
         </div>
-        <button type="submit" className={Styles.targetSubmit}> Submit </button>
-    </div>
-      </form>
-  
-  {showResult === 'show' &&
-  <div className={Styles.targetresult}>
-    <div>
-      <div>
-        <p>Target Value</p>
-        <h1>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+        </form>
       </div>
 
-      <div>
-        <p>Duration</p>
-        <h1>{targetdate <= 365 ? `${targetdate}days` : targetdate < 729 ? `1year ${targetdate - 365}days` : `${Math.ceil(targetdate/365)}years ${targetdate - (Math.ceil(targetdate/365) * 365)}days`}</h1>
-      </div>
-    </div>
-
-    <div className={Styles.targetResultBody}>
-      <table className={Styles.targetResultTable}>
-        <thead>
-          <tr>
-            <th>Issuer</th>
-            <th>Product</th>
-            <th>Current Annual Yield</th>
-            <th>Recommended Contribution</th>
-            <th>Total Contribution</th>
-          </tr>
-        </thead>
-        <tbody>
-        {Targetresult.map(({issuer, product, rate, payments, logo})=> (
-          <tr key={product}>
-            <td><Image src={logo} sizes="100vw" width={40} height={40} style={{borderRadius: '50%'}} ></Image></td>
-            <td>{issuer} {product}</td>
-            <td>{(rate * 100).toFixed(2)}%</td>
-            <td>
+      {showResult === 'show' &&
+      <div className={Styles.result}>
+        <div>
+          <div>
+            <p>Target Value</p>
+            <h1>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1>
+          </div>
+          <div>
+            <p>Duration</p>
+            <h1>{targetdate <= 365 ? `${targetdate} days` : targetdate < 729 ? `1 year ${targetdate - 365} days` : `${Math.ceil(targetdate/365)} years ${targetdate - (Math.ceil(targetdate/365) * 365)} days`}</h1>
+          </div>
+        </div>
+        <div>
+          <table className={Styles.resultTable}>
+            <thead>
+              <tr>
+                <th>Issuer</th>
+                <th>Product</th>
+                <th>Annual Yield</th>
+                <th>Recommended Contribution</th>
+                <th>Total Contribution</th>
+              </tr>
+            </thead>
+            <tbody>
+            {Targetresult.map(({issuer, product, rate, payments, logo})=> (
+              <tr key={product}>
+                <td><Image src={logo} sizes="100vw" width={40} height={40} style={{borderRadius: '50%'}} ></Image></td>
+                <td>{issuer} {product}</td>
+                <td>{(rate * 100).toFixed(2)}%</td>
+                <td>
                 {payments.map((e)=>(
-                  <tr key={Object.keys(e)[0]}>           
-                    {selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[0]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})} every {Object.keys(e)[0]}
-                </tr>))}
-            </td>
-            <td>
-            {payments.map((e)=>(
-                  <tr key={Object.keys(e)[0]}>           
-                  {selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[1]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
+                  <tr key={Object.keys(e)[0]}>
+                    <div>{selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[0]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
+                    </div>          
+                    <div>every {Object.keys(e)[0]}
+                    </div> 
                   </tr>))}
-
-            </td>
-          </tr>
-        ))}
-        </tbody>
-      </table>
-  
+                </td>
+                <td>
+                {payments.map((e)=>(
+                  <tr key={Object.keys(e)[0]}>{selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[1]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
+                  </tr>))}              
+                </td>
+              </tr>
+            ))}
+            </tbody>
+          </table>          
+        </div>
+      </div>
+      }
     </div>
-  </div>
-}
-</div>
   )
 }
