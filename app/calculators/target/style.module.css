@@ -115,11 +115,6 @@
  .resultTable td:has(tr) {
   border-spacing: 0 5px;
   border-collapse: separate;
-  /* text-align: left; */
-  /* display: flex; */
-  /* gap: 20px; */
-  /* justify-content: space-evenly; */
-  /* width: 70px; */
  }
 
   @media screen and (max-width: 700px) {
@@ -137,11 +132,10 @@
     display: flex;
     gap: 30px;
    }
-
-  
+   
    .resultTable {
     border-spacing: 5px 2px;
-     font-size: 13px;
+     font-size: 10px;
    }
  }
 

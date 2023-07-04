@@ -125,11 +125,11 @@ export default function Target () {
         <div>
           <div>
             <p>Target Value</p>
-            <h1>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1>
+            <h3>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h1>
           </div>
           <div>
             <p>Duration</p>
-            <h1>{targetdate <= 365 ? `${targetdate} days` : targetdate < 729 ? `1 year ${targetdate - 365} days` : `${Math.ceil(targetdate/365)} years ${targetdate - (Math.ceil(targetdate/365) * 365)} days`}</h1>
+            <h3>{targetdate <= 365 ? `${targetdate} days` : targetdate < 729 ? `1 year ${targetdate - 365} days` : `${Math.ceil(targetdate/365)} years ${targetdate - (Math.ceil(targetdate/365) * 365)} days`}</h3>
           </div>
         </div>
         <div>
