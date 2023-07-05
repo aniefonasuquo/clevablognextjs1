@@ -115,12 +115,14 @@ export default function Retire () {
               <td>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</td>
             </tr>
             <tr>
-              <p>Select preferred frequency</p>
-              <div>
-                <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
-                <button onClick={changeColor} style={{backgroundColor: active == 'quarter' ? 'navy' : '', color: active == 'quarter' ? 'white' : ''}} id='quarter'>Quarterly</button>
-                <button onClick={changeColor} style={{backgroundColor: active == 'year' ? 'navy' : '', color: active == 'year' ? 'white' : ''}} id='year'>Annually</button>
-              </div>
+              <td colSpan={2}>
+                <p>Select preferred frequency</p>
+                <div>
+                  <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
+                  <button onClick={changeColor} style={{backgroundColor: active == 'quarter' ? 'navy' : '', color: active == 'quarter' ? 'white' : ''}} id='quarter'>Quarterly</button>
+                  <button onClick={changeColor} style={{backgroundColor: active == 'year' ? 'navy' : '', color: active == 'year' ? 'white' : ''}} id='year'>Annually</button>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Retirment portfolio contribution</td>
