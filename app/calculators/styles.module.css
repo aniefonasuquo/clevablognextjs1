@@ -22,20 +22,23 @@
 }
 
 .options {
-  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  position: sticky;
-  top: 80px;
-  position: -webkit-sticky;
+  gap: 20px;
+  
 }
 
 .options button {
-  padding: 12px;
+  padding: 10px;
   border: 1px solid black;
   border-radius: 10px;
   z-index: 10;
+  position: sticky;
+  top: 80px;
+  position: -webkit-sticky;
+  flex-shrink: 1;
+  max-width: 200px;
+  flex: 1;
   /* height: 50px; */
 }
 
@@ -112,9 +115,14 @@
     font-size: 30px;
   }
 
+  .options {
+    gap: 10px;
+  }
+
   .options button{
-    font-size: 10px;
-    padding: 5px;
+    /* font-size: 10px; */
+    /* padding: 2px; */
+
   }
 
   .midsection {
