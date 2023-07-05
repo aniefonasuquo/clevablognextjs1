@@ -34,6 +34,10 @@
   justify-content: space-between;
  }
 
+ .inputRadio input {
+  display: none;
+ }
+
  .inputRadio label:has(input:checked) {
   background-color: rgb(133, 133, 192);
  }
@@ -96,7 +100,6 @@
   color: rgb(24, 40, 102);
 
  }
-
 
  .result {
   display: flex;

@@ -108,35 +108,41 @@ export default function Retire () {
       </div>
   
       <div className={Styles.result}>
-        <div>
-          <p>Projected portfolio value at retirement</p> 
-          <h3>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</h3>                       
-        </div>
-        <div>
-          <div className={Styles.buttonSwitch}>
-            <p>Select preferred frequency</p>
-            <div>
-              <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
-              <button onClick={changeColor} style={{backgroundColor: active == 'quarter' ? 'navy' : '', color: active == 'quarter' ? 'white' : ''}} id='quarter'>Quarterly</button>
-              <button onClick={changeColor} style={{backgroundColor: active == 'year' ? 'navy' : '', color: active == 'year' ? 'white' : ''}} id='year'>Annually</button>
-            </div>
-          </div>
-        </div>
-          <div>
-            <p>Retirment portfolio contribution</p>
-            <div>
-              <h3>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h3>
-              <p style={{textAlign: 'right'}}>Every {active}</p>
-            </div>               
-          </div>
-          <div>
-            <p>Total portfolio gain at retirement</p>
-            <h3> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h3>
-          </div>
-          <div>
-            <p>Minimum average yearly portfolio return</p>
-            <h3>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h3>
-          </div>
+        <table className={Styles.resultTable}>
+          <tbody>
+            <tr>
+              <td>Projected portfolio value at retirement</td>
+              <td>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</td>
+            </tr>
+            <tr>
+              <p>Select preferred frequency</p>
+              <div>
+                <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
+                <button onClick={changeColor} style={{backgroundColor: active == 'quarter' ? 'navy' : '', color: active == 'quarter' ? 'white' : ''}} id='quarter'>Quarterly</button>
+                <button onClick={changeColor} style={{backgroundColor: active == 'year' ? 'navy' : '', color: active == 'year' ? 'white' : ''}} id='year'>Annually</button>
+              </div>
+            </tr>
+            <tr>
+              <td>Retirment portfolio contribution</td>
+              <td>
+                <p>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</p>
+                <p>Every {active}</p>
+              </td>
+            </tr>
+            <tr>
+              <td>Total portfolio gain at retirement</td>
+              <td>
+              N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}
+              </td>
+            </tr>
+            <tr>
+              <td>Minimum average yearly portfolio return</td>
+              <td>
+              {averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   )

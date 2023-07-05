@@ -65,6 +65,10 @@
   gap: 20px;
  }
 
+ .inputRadio input {
+  display: none;
+ }
+
  .inputRadio label{
   padding: 10px;
   border-radius: 10px;
