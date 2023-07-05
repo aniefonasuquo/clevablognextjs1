@@ -131,11 +131,12 @@
   .result > div:nth-child(1) {
     display: flex;
     gap: 30px;
+    font-size: 13px;
    }
-   
+
    .resultTable {
     border-spacing: 5px 2px;
-     font-size: 10px;
+     font-size: 12px;
    }
  }
 

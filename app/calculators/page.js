@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react"
 const Finance = require("tvm-financejs");
 import Styles from './styles.module.css'
+import Link from "next/link";
 import { Raleway  } from 'next/font/google'
 import Rangeslider from './multiRangeSlider/MultiRangeSlider'
 import { PieChart } from 'react-minimal-pie-chart';
@@ -75,19 +76,20 @@ export default function Thispage () {
       <div className={Styles.topheading}> 
         <h1 className={`${raleway.className}`}>Discover the best investment decision for you</h1> 
       </div> 
-      <div className={Styles.options}>
+      <div className={Styles.options}><Link href={'#calc'} >
         <button id='retire' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'retire' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'retire' ? 'white' : ''}}>Retirement</button>
+      </Link>
         <button id='target' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'target' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'target' ? 'white' : ''}}>Target Investment</button>
         <button id='income' onClick={changeDisplay} style={{backgroundColor: calcdisplay == 'income' ? 'rgb(17, 30, 72)' : '', color: calcdisplay == 'income' ? 'white' : ''}}>Income Portfolio</button>
         <button id='equity'>Stock Porfolio</button>
       </div>
-      <div className={Styles.midsection}>
+      <div id="calc" className={Styles.midsection}>
         {/* <div> */}
           <h1>{calcdetails.heading}</h1>
           <p>{calcdetails.details}</p>
         {/* </div> */}
       </div>
-      <Calc className={Styles.calculators} calc={calcdisplay}></Calc>
+      <Calc  className={Styles.calculators} calc={calcdisplay}></Calc>
     </div>
   )
 }

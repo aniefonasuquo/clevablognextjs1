@@ -45,7 +45,7 @@
 }
 
 .result button {
-  padding: 15px;
+  padding: 10px;
   border: none;
 }
 
@@ -59,6 +59,10 @@
   border-bottom-right-radius: 20px ;
 }
 
-.result h2 {
-  font-size: 20px;
+.result h4 {
+  /* font-size: 20px; */
+}
+
+.buttonSwitch p {
+  padding-bottom: 10px;
 }

@@ -110,10 +110,10 @@ export default function Retire () {
       <div className={Styles.result}>
         <div>
           <p>Projected portfolio value at retirement</p> 
-          <h2>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</h2>                       
+          <h3>N{value.toLocaleString('en-US', {maximumFractionDigits: 2})}</h3>                       
         </div>
         <div>
-          <div id={Styles.buttonSwitch}>
+          <div className={Styles.buttonSwitch}>
             <p>Select preferred frequency</p>
             <div>
               <button onClick={changeColor} style={{backgroundColor: active == 'month' ? 'navy' : '', color: active == 'month' ? 'white' : ''}} id='month' >Monthly</button>
@@ -125,17 +125,17 @@ export default function Retire () {
           <div>
             <p>Retirment portfolio contribution</p>
             <div>
-              <h2>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
+              <h3>N{contriDisplay.toLocaleString("en-US",{maximumFractionDigits: 2})}</h3>
               <p style={{textAlign: 'right'}}>Every {active}</p>
             </div>               
           </div>
           <div>
             <p>Total portfolio gain at retirement</p>
-            <h2> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h2>
+            <h3> N{accruedInterest(active).toLocaleString("en-US",{maximumFractionDigits: 2})}</h3>
           </div>
           <div>
             <p>Minimum average yearly portfolio return</p>
-            <h2>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h2>
+            <h3>{averageInvestReturn.toLocaleString('en-US', { style: 'percent' })}</h3>
           </div>
       </div>
     </div>
