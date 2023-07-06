@@ -40,8 +40,6 @@ export default function Header ( ) {
               <li><Link onClick={handleLinkClick} href='/blog'>Blog</Link></li>
               <li><Link onClick={handleLinkClick} href={`/investorquiz/`}> Investor Personality Quiz</Link></li>
               <li><Link onClick={handleLinkClick} href="/calculators/"> Discovery </Link></li>
-              <li><Link onClick={handleLinkClick} href="/"> Guides </Link></li>
-              <li><Link onClick={handleLinkClick} href="/"> Markets </Link></li>
             </ul>
           </nav>
         </div>

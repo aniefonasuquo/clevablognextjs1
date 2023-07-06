@@ -59,7 +59,7 @@
 
 @media screen and (max-width: 900px){
   .header {
-    position: relative;
+    /* position: relative; */
   }
 
   .navs {
