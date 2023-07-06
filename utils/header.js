@@ -5,34 +5,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import logo from './../public/logos/logo-main.png'
+import { useRouter } from 'next/navigation';
+
 
 
 export default function Header ( ) {
 
-  const [menuDisplay, setMenuDisplay] = useState('inactive')
-  const [screen, setscreen] = useState()
-
-  
+  const [menuDisplay, setMenuDisplay] = useState('burger')
 
   function showMobileNav () {
-    const nav = document.getElementById('mobileNav');
-        const menu = document.getElementById('menu')
-    const close = document.getElementById('close')
 
-    if (menuDisplay == 'inactive') {
-      close.style.display = 'none'
-      menu.style.display = 'block'
-      nav.style.display = 'block';
-      setMenuDisplay('active')
-    }
-    else {
-      close.style.display = 'block'
-      menu.style.display = 'none'
-      nav.style.display = 'none';
-      setMenuDisplay('inactive')
-    }
-
+    if (menuDisplay == 'burger') {
+      setMenuDisplay('close')
+    } else { 
+      setMenuDisplay('burger')}
   }
+  
+  const handleLinkClick = async (e) => {  
+    setMenuDisplay('burger')
+  };
+
  
   return (
     <>
@@ -42,35 +34,30 @@ export default function Header ( ) {
             <Image alt='pic' sizes='100vw' src={logo}/>
           </Link>
         </div>
-        <nav className={style.navs}>
-          <ul>
-            <li><Link href='/blog'>Blog</Link></li>
-            <li><Link href={`/investorquiz/`}> Investor Personality Quiz</Link></li>
-            <li><Link href="/calculators/"> Discovery </Link></li>
-            <li><Link href="/"> Guides </Link></li>
-            <li><Link href="/"> Markets </Link></li>
-          </ul>
-        </nav>
+        <div id='nav' className={style.navs} style={{top: menuDisplay == 'close' ? '59px': '-300%'}}>
+            <nav>
+            <ul>
+              <li><Link onClick={handleLinkClick} href='/blog'>Blog</Link></li>
+              <li><Link onClick={handleLinkClick} href={`/investorquiz/`}> Investor Personality Quiz</Link></li>
+              <li><Link onClick={handleLinkClick} href="/calculators/"> Discovery </Link></li>
+              <li><Link onClick={handleLinkClick} href="/"> Guides </Link></li>
+              <li><Link onClick={handleLinkClick} href="/"> Markets </Link></li>
+            </ul>
+          </nav>
+        </div>
         <div className={style.ctabutton}>
           <Link href='/join'>
             <button>Join Cleva</button>
           </Link>
         </div>
         <div className={style.menu}>
-          <button id='menuButton' onClick={showMobileNav}><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" id="menu"><path fill='none' color="rgba(24,40,102,255)" d="M0 0h48v48H0z"></path><path d="M24 16c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 4c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4z"></path></svg>
-          <svg style={{display: 'none'}} xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 512 512" id="close" fill="rgba(24,40,102,255)"><path d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9-14.1-14.1-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0-14.1 14.1-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9 14.1 14.1 36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z"></path></svg>
+          <button id='menuButton' onClick={showMobileNav}>
+            {menuDisplay == 'burger' &&
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512"  width="30" height="30" fill='navy'><g><path d="M480,224H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,224,480,224z"/><path d="M32,138.667h448c17.673,0,32-14.327,32-32s-14.327-32-32-32H32c-17.673,0-32,14.327-32,32S14.327,138.667,32,138.667z"/><path d="M480,373.333H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h448c17.673,0,32-14.327,32-32S497.673,373.333,480,373.333z"/></g></svg>}
+           {menuDisplay == 'close' &&  
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.021 512.021" width="30" height="30" fill='navy'><g><path d="M301.258,256.01L502.645,54.645c12.501-12.501,12.501-32.769,0-45.269c-12.501-12.501-32.769-12.501-45.269,0l0,0   L256.01,210.762L54.645,9.376c-12.501-12.501-32.769-12.501-45.269,0s-12.501,32.769,0,45.269L210.762,256.01L9.376,457.376   c-12.501,12.501-12.501,32.769,0,45.269s32.769,12.501,45.269,0L256.01,301.258l201.365,201.387   c12.501,12.501,32.769,12.501,45.269,0c12.501-12.501,12.501-32.769,0-45.269L301.258,256.01z"/></g></svg>}
           </button>
-        </div>
-        <nav id='mobileNav' className={style.mobileNav}>
-          <ul>
-              <li><Link onClick={showMobileNav} href='/'> Wealth 101 </Link></li>
-              <li><Link  onClick={showMobileNav} href={`/investor-personality-test/`}> Investing Personality Test </Link></li>
-              <li><Link onClick={showMobileNav} href="/calculators/"> Calculators </Link></li>
-              <li><Link onClick={showMobileNav} href="/"> Guides </Link></li>
-              <li><Link onClick={showMobileNav} href="/"> Markets </Link></li>
-            </ul>
-        </nav>  
-        {screen}
+        </div> 
       </header>
           </>
   )

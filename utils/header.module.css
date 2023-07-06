@@ -6,8 +6,8 @@
   background-color: white;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
   position: sticky;
-  z-index: 1;
-  padding: 10px 50px;
+  z-index: 100;
+  padding: 2px 10px;
   align-items: center;
 }
 
@@ -25,17 +25,18 @@
   list-style: none;
   display: flex;
   justify-content: space-evenly;
+  gap: 20px;
 }
 
 .navs ul li{
-  padding: 0 20px;
   font-size-adjust: auto;
   text-align: center;
+  list-style: none;
 }
 
 .navs ul li a{
-  text-decoration: none
-
+  text-decoration: none;
+  color: navy;
 }
 
 .ctabutton {
@@ -56,84 +57,50 @@
   display: none;
 }
 
-.mobileNav {
-  display: none;
-}
-
 @media screen and (max-width: 900px){
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px;
-    position: sticky;
+    position: relative;
+  }
+
+  .navs {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: -300%;
+    padding: 0;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    transition: all 1s ease-in-out;
+    z-index: 90;
+  }
+
+  .navs ul {
+    flex-direction: column;
+    gap: 2px;
+    padding: 0 15px;
+    }
+
+  .navs ul li {
+    text-align: start;
+    padding: 2px 0;
+    font-weight: 700;
   }
 
   .ctabutton {
    display: none;
   }
 
-  .navs {
-    display: none;
-  }
-
-  .mobileNav {
-    /* display: none; */
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: white;
-    width: 100%;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
-    animation: forwards;
-    animation-name: dropdown;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-   }
-
-  @keyframes dropdown {
-    0% {
-      left: 0;
-      top: 0;
-      translate: 0 -60px;
-    }
-
-    100% {
-      left: 0;
-      top: 0;
-      translate: 0 70px;
-    }
-  }
-  
-  .mobileNav ul {
-    list-style-type: none;
-    font-size: 30px;
-    color: black;
-    padding: 0;
-  }
-
-  .mobileNav li:hover {
-    transform: scale(1.01);
-  }
-
-  .mobileNav li a{
-    color: rgba(24,40,102,255)
-  }
-
-  .mobileNav li a:hover{
-    color: rgba(24,40,102, 0.5)
-  }
-
   .menu{
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   .menu button{
     background-color: transparent;
     border: none;
-    cursor: pointer;
-    position: relative;
   }
 
   .menu button:active {
@@ -142,10 +109,6 @@
 
   .menu button:focus {
     outline: none;
-  }
-
-  .menu button svg{
-
   }
   
 }
