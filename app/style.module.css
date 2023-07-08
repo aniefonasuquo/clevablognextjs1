@@ -76,7 +76,8 @@
 }
 
 .propdeets {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: 20px 0;
   gap: 20px;
   margin-bottom: 200px;
@@ -100,7 +101,6 @@
 .decideImage img {
   position: absolute;
   object-fit: contain;
-  padding: 50px;
 }
 
 
@@ -161,16 +161,16 @@
 }
 
 .decideItem {
+  display: grid;
   background-color: #C7D2D8;
+  padding: 50px 50px;
+  gap: 50px;
 }
 
 .decidedeets {
-  top: 70%;
-  left: 0;
-  right: 0;
   text-align: center;
   color: black;
-  margin: 50px 100px ;
+  /* margin: 50px 100px ; */
 } 
 
 
@@ -187,10 +187,18 @@
 
   .propdeets {
     margin-bottom: 0;
+    text-align: center;
   }
 
   .top h1 {
     font-size: 20px;
   } 
+
+  /* .decidedeets {
+    text-align: center;
+    color: black;
+    margin: 20px 100px ;
+  } 
+   */
   
 }
