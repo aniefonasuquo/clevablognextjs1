@@ -101,10 +101,10 @@ export default async function Homepage() {
             <div className={styles.propImage}><Image src={world} sizes="100vw" fill={true}></Image></div>
             <div  className={styles.propdeets}>
               <div><svg id="Layer_1" height="20" fill="silver" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m13 16a8 8 0 1 0 -8-8 8.009 8.009 0 0 0 8 8zm0-14a6 6 0 1 1 -6 6 6.006 6.006 0 0 1 6-6zm9.907 12.773a11.992 11.992 0 0 1 -8.907 5.166v2.061h4a1 1 0 0 1 0 2h-10a1 1 0 0 1 0-2h4v-2.051a11.994 11.994 0 0 1 -8.257-19.586 1 1 0 0 1 1.542 1.274 10 10 0 1 0 15.971 12.006 1 1 0 0 1 1.651 1.13z"/></svg></div>
-              <div>
                 <h1>Global wealth opportunities</h1>
+              <div>
                 <p>Access investment in multiple countries and opportunities in various currencies.</p>
-                </div>
+              </div>
             </div>           
           </div>
           <div className={styles.prop}>
@@ -125,8 +125,8 @@ export default async function Homepage() {
             <div className={styles.propdeets}>
               <div><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20" fill="silver"> <path d="m11,1h-6.5C2.019,1,0,3.019,0,5.5v3.5c0,1.103.897,2,2,2h9c1.103,0,2-.897,2-2V3c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1H2c-.551,0-1-.448-1-1v-3.5c0-1.93,1.57-3.5,3.5-3.5h6.5c.551,0,1,.448,1,1v6Zm7.5-6h-2.5c-1.103,0-2,.897-2,2v13c0,1.103.897,2,2,2h2.5c2.481,0,4.5-2.019,4.5-4.5V7.5c0-2.481-2.019-4.5-4.5-4.5Zm3.5,12.5c0,1.93-1.57,3.5-3.5,3.5h-2.5c-.551,0-1-.448-1-1V5c0-.552.449-1,1-1h2.5c1.93,0,3.5,1.57,3.5,3.5v8Zm-12-2.5h-7c-1.103,0-2,.897-2,2v3.5c0,2.481,2.019,4.5,4.5,4.5h4.5c1.103,0,2-.897,2-2v-6c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1h-4.5c-1.93,0-3.5-1.57-3.5-3.5v-3.5c0-.552.449-1,1-1h7c.551,0,1,.448,1,1v6Z"/></svg>
             </div>
-            <div>
               <h1>Multiple investment classes</h1>
+            <div>
               <p>
                 Sometimes, funds are great other times direct investment are, Cleva provides a channel to gain exposure to the neccessary asset classes and investment products.
               </p>
