@@ -1,0 +1,196 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px ;
+  background-color: #131A33;
+  color: #C7D2D8;
+  padding: 100px;
+}
+
+.container > div {
+  flex-shrink: 1;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+}
+
+.top span {
+  padding: 0 10px;
+}
+
+.top button {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid greenyellow;
+  color: greenyellow;;
+  background-color: #131A33;
+}
+
+.topDetails {
+
+}
+
+.marquee {
+  position: relative;
+  padding-bottom: 20px;
+  color: green;
+  height: 50px;
+  margin: 20px 0;
+}
+
+.track {
+  animation: tickerAnimation 10s linear infinite;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+}
+
+.track {
+  animation: tickerAnimation 10s linear infinite;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+}
+
+.track span {
+  padding: 0 20px;
+  font-size: 40px;
+}
+
+.moreDetails {
+  display: grid;
+  gap: 50px;
+}
+
+.prop {
+  display: flex;
+  gap: 50px;
+}
+
+.prop > div {
+  flex: 1;
+}
+
+.propdeets {
+  display: grid;
+  padding: 20px 0;
+  gap: 20px;
+  margin-bottom: 200px;
+}
+
+.propImage {
+  position: relative;
+  aspect-ratio: 1/1;
+}
+
+.propImage img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.decideImage {
+  position: relative;
+  aspect-ratio: 1/0.5;
+}
+
+.decideImage img {
+  position: absolute;
+  object-fit: contain;
+  padding: 50px;
+}
+
+
+.decideGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: start;
+}
+
+.decideGrid > div {
+  width: 100%;
+}
+
+@keyframes tickerAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-10%);
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px ;
+  overflow: hidden;
+}
+
+.circleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.circle {
+  font-size: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: navy;
+  background-color: greenyellow;
+}
+
+.circleContainer span:nth-child(2) {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.decideItem {
+  background-color: #C7D2D8;
+}
+
+.decidedeets {
+  top: 70%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: black;
+  margin: 50px 100px ;
+} 
+
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 100px 10px;
+  }
+
+  .prop {
+    display: block;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .propdeets {
+    margin-bottom: 0;
+  }
+
+  .top h1 {
+    font-size: 25px;
+  } 
+  
+}
