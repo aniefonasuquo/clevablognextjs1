@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 100px ;
-  background-color: #131A33;
+  background-color: rgb(17, 30, 72);
   color: #C7D2D8;
   padding: 100px;
 }

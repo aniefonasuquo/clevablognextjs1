@@ -52,10 +52,10 @@ export default function Archetypes () {
   return (
     <div className={styles.pagecontainer}>
       {display > 0 && (<div className={styles.progressOut}><div style={{width: `${((display/16)*100)}%`}}></div></div>)}
+      
       <div className={styles.formcontainer}>
         <form onSubmit={handleSubmit}>
         <div className={styles.questioncontainer}>
-
           <div className={display == 0? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.quizintro}>
               <div className={styles.archetypeImage}>
@@ -63,9 +63,11 @@ export default function Archetypes () {
                 <Image alt='characters' src={characters} sizes='100vw'></Image>
                 </Suspense>
               </div>
-              <h1>Discover You</h1>
-              <p>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</p>
-              <p>This quiz aims to understand some of these factors to advise on optimal wealth decision making</p>
+              <h1><span> Discover You</span></h1>
+              <p>
+                <span>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</span>
+                <span>This quiz aims to understand some of these factors to advise on optimal wealth decision making</span>
+              </p>
             </div>
           </div>
 
@@ -427,24 +429,23 @@ export default function Archetypes () {
               <div>
                 <label htmlFor="male">
                 <input type="radio" name="gender" id="male" value='male' required/>
-                  <p> Sell </p>
+                  <p>Male</p>
                 </label>
                 <label htmlFor="female">
                 <input type="radio" name="gender" id="female" value='female' required/>
-                  <p> consider buying more </p>
+                  <p>Female</p>
                 </label>
               </div>
               </div>
+              </div>
           </div>
-        </div>
-        <div className={styles.controls}>
-          
+          <div className={styles.controls}>      
             {display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}
             {display > 0 && (<button className={styles.prevbutton} onClick={prevquestion}>previous</button>)}
             {display < 16 && display > 0 && (<button className={styles.nextbutton}onClick={nextquestion}>next</button>)}
             {display == 16 && (<button className={styles.submit} type="submit">Submit</button>)}
+          </div>
 
-        </div>
         </form>
         </div>
       </div>
