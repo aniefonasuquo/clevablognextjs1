@@ -11,17 +11,13 @@
   color: greenyellow;
 }
 
-.right { 
-  display: block;
-  padding: 20px;
-}
 
-.right > div:nth-child(1) {
+/* .right > div:nth-child(1) {
   height: 5%;
   margin: 5px 0;
   display: flex;
   justify-content: flex-end;
-}
+} */
 
 .logowrap {
   position: relative;
@@ -34,11 +30,11 @@
   object-fit: contain;
 }
 
-.right > div:nth-child(2) {
+.right {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0;
+  /* margin: 50px 0; */
 }
 
 .form {
@@ -58,7 +54,7 @@
   background-color: whitesmoke;
   padding: 10px 20px;
   height: 50px;
-  width: 300px;
+  /* width: 300px; */
 }
 
 .form button {
@@ -75,7 +71,18 @@
 }
 
 .feedback {
-  border: 1px solid green;
+  font-size: 12px;
+}
+
+.Succesfeedback {
+  border: 1px green solid;
+  border-radius: 10px;
+  /* padding: 10px; */
+}
+
+.failfeedback {
+  border: 1px red solid;
+  border-radius: 10px;
 }
 
 @media (max-width: 900px) {
@@ -92,5 +99,9 @@
   .form {
     color: greenyellow;
   }
+
+  .right {
+    padding: 10px 0
+  };
 }
 

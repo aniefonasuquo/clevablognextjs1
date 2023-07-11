@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 50px ;
+  gap: 100px ;
   background-color: #131A33;
   color: #C7D2D8;
   padding: 100px;
@@ -14,12 +14,20 @@
 .top {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 20px;
   text-align: center;
+}
+
+.top h1 {
+  font-size: 80px;
 }
 
 .top span {
   padding: 0 10px;
+}
+
+.top h3 {
+ /* margin: 0 300px; */
 }
 
 .top button {
@@ -28,6 +36,7 @@
   border: 1px solid greenyellow;
   color: greenyellow;;
   background-color: #131A33;
+  font-size: 20px;
 }
 
 .topDetails {
@@ -61,14 +70,21 @@
   font-size: 40px;
 }
 
+.section p {
+  font-size: 20px;
+  font-weight: 100;
+}
+
 .moreDetails {
-  display: grid;
-  gap: 50px;
 }
 
 .prop {
   display: flex;
   gap: 50px;
+}
+
+.prop:nth-of-type(2) {
+  flex-direction: row-reverse;
 }
 
 .prop > div {
@@ -140,6 +156,15 @@
   margin-bottom: 20px;
 }
 
+.circleContainer h1 {
+  font-size: 60px;
+}
+
+.circleContainer p {
+  /* width: 600px; */
+  margin: 0 200px;
+}
+
 .circle {
   font-size: 30px;
   border-radius: 50%;
@@ -161,9 +186,10 @@
 }
 
 .decideItem {
+  border-radius: 10px;
   display: grid;
   background-color: #C7D2D8;
-  padding: 50px 50px;
+  padding: 50px 20px;
   gap: 50px;
 }
 
@@ -179,6 +205,11 @@
     padding: 100px 10px;
   }
 
+  .top h1 {
+    font-size: 70px;
+  }
+  
+
   .prop {
     display: block;
     flex-direction: column;
@@ -190,15 +221,14 @@
     text-align: center;
   }
 
-  .top h1 {
-    font-size: 20px;
-  } 
+  .top h1 span {
+    display: block;
+    /* font-size: 20px; */
+  }
 
-  /* .decidedeets {
-    text-align: center;
-    color: black;
-    margin: 20px 100px ;
-  } 
-   */
+  .circleContainer p {
+    /* width: 600px; */
+    margin: 0;
+  }
   
 }

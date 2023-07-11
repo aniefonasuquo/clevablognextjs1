@@ -16,6 +16,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 300px;
 }
 
 .input p {
@@ -63,6 +64,7 @@
  .inputRadio {
   display: flex;
   gap: 20px;
+  width: 100%;
  }
 
  .inputRadio input {

@@ -2,17 +2,16 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
   background-color: white;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
   position: sticky;
   z-index: 100;
-  padding: 2px 10px;
-  align-items: center;
+  padding: 5px 100px;
+  align-items: flex-end;
 }
 
 .headerlogo {
-  width: 150px;
+  width: 100px;
 }
 
 .headerlogo img {
@@ -21,44 +20,59 @@
   object-fit: cover;
 }
 
+.navs {
+  /* width: auto; */
+}
+
 .navs ul {
   list-style: none;
   display: flex;
-  justify-content: space-evenly;
   gap: 20px;
+}
+
+.navs ul li:hover {
+  border-bottom: 1px solid navy;
 }
 
 .navs ul li{
   font-size-adjust: auto;
-  text-align: center;
   list-style: none;
+  font-size: 20px;
 }
 
 .navs ul li a{
   text-decoration: none;
   color: navy;
+  padding-bottom: 2px;
 }
 
 .ctabutton {
+  flex: 1;
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .ctabutton button {
   background-color: #0A018E;
-  width: 130px;
-  height: 51px;
+  /* width: 130px; */
+  padding: 10px 20px;
   color: white;
   border-radius: 8px;
   border: none;
+  font-size: 18px;
+  font-weight: 100;
 }
-
 .menu {
   display: none;
 }
 
 @media screen and (max-width: 900px){
 
+  .header {
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;  
+  }
   .navs {
     position: absolute;
     background-color: white;
@@ -91,7 +105,7 @@
 
   .menu{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: flex-end;
   }
 

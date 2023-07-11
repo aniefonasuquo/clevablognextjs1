@@ -71,9 +71,9 @@ export default function Joinform () {
         <input name="joinname" id="joinname" type='text' placeholder='Name...'></input>
         <input name="joinemail" id="joinemail" type='email' placeholder='Email...'></input>
         <span>Joining Cleva means you are okay with receiving our email newsletters, and product and services information</span>
-        <div>
-          {submit == 'success' && <p className={styles.feedback}>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
-          {submit == 'failed' && <p className={styles.feedback}>Oops! something went wrong, unable to join.. Let's give it another shot</p>}
+        <div className={styles.feedback}>
+          {submit == 'success' && <p className={styles.Succesfeedback}>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
+          {submit == 'failed' && <p className={styles.failfeedback}>Oops! something went wrong, unable to join.. Let's give it another shot</p>}
         </div>
         <button type='submit'>{submit}</button>
       </form>

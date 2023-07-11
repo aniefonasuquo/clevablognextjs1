@@ -12,11 +12,9 @@ export default function Join () {
         <h1>Lifestyle</h1>
       </div>
       <div className={style.right}>
-        <div>
-          <div className={style.logowrap}>
-            <Image alt="clevaLogo" src={logo} fill={true} sizes="100vw"></Image>
-          </div>
-        </div>
+        {/* <div className={style.logowrap}>
+          <Image alt="clevaLogo" src={logo} fill={true} sizes="100vw"></Image>
+        </div>      */}
         <Joinform></Joinform>
       </div>
     </div>
