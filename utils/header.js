@@ -34,7 +34,7 @@ export default function Header ( ) {
             <Image alt='pic' sizes='100vw' src={logo}/>
           </Link>
         </div>
-        <div id='nav' className={style.navs} style={{top: menuDisplay == 'close' ? '59px': '-300%'}}>
+        <div id='nav' className={style.navs} style={{top: menuDisplay == 'close' ? '47px': '-300%'}}>
             <nav>
             <ul>
               <li><Link onClick={handleLinkClick} href='/blog'>Blog</Link></li>
