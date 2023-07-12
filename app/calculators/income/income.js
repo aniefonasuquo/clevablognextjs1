@@ -113,11 +113,11 @@ function setcurr (e) {
                 <input type='number' id="incomeTarget" name="incomeTarget" placeholder="investment income..." required/>
                 <span>{incomeCurr}</span>
               </label>
-              <span>{incomePeriod && `every ${incomePeriod}`}</span>
+              <span>{incomePeriod && `Every ${incomePeriod}`}</span> 
             </div>
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit">Discover</button>
           </div>
         </form>
       </div>

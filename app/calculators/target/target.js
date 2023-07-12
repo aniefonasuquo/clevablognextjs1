@@ -115,7 +115,7 @@ export default function Target () {
           </label>
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">Discover</button>
         </div>
         </form>
       </div>

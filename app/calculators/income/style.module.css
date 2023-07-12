@@ -16,7 +16,7 @@
 .input form{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
 .inputRadio {
@@ -25,13 +25,14 @@
  }
 
  .inputRadio label{
-  padding: 10px;
+  flex: 1;
+  padding: 15px;
   border-radius: 10px;
   border: 1px solid grey;
   font-size: 20px;
   display: flex;
   gap: 10px;
-  justify-content: space-between;
+  justify-content: center;
  }
 
  .inputRadio input {
@@ -49,12 +50,12 @@
  }
 
  .input p {
-  margin: 5px 0;
+  margin: 10px 0;
 }
 
  .input input[type='radio'],
  .input label:has(input[type='radio']){
-  padding: 10px;
+  padding: 15px;
   border: 1px solid silver;
   margin: 5px 0;
   border-radius: 10px;
@@ -63,18 +64,16 @@
  }
 
  .input button {
-  padding: 10px 20px;
+  padding: 15px;
   border: none;
   color: navy;
   border-radius: 20px;
-  font-size: 15px;
-  
  }
 
  .inputamount {
   position: relative;
   padding: 0;
-  background-color: white;
+  background-color: whitesmoke;
   margin-right: 10px;
  }
 
@@ -82,9 +81,9 @@
   -moz-appearance: textfield;
   border: none;
  background-color: whitesmoke;
- padding: 10px;
+ padding: 15px;
  border: none;
- width: 250px;
+ width: 100%;
  border-radius: 10px;
  font-size: 20px;
  color: navy;
@@ -97,7 +96,7 @@
   right: 5px;
   font-size: 20px;
   color: rgb(24, 40, 102);
-
+  margin: 5px 0 ;
  }
 
  .result {
