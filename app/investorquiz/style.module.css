@@ -21,11 +21,11 @@
   display: block;
   padding: 10px 0;
   text-align: center;
-  width: 600px;
+  max-width: 600px;
 }
 
 .quizintro * {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .quizintro h1 {
@@ -54,7 +54,7 @@
 }
 
 .questioncontainer{
-  height: 75vh;
+  height: 600px;
   position: relative;
   width: 100%;
   padding: 50px 0;
@@ -90,11 +90,12 @@
 
 .radio {
   font-size: 18px;
+  max-width: 500px;
 }
 
 .radio > div:first-child {
-  font-weight: bolder;
-  margin: 10px 0;
+  /* font-weight: bolder; */
+  margin: 20px 0;
 }
 
 .radio div:nth-child(2) * {
@@ -103,10 +104,12 @@
 
 .radio div:nth-child(2) label {
   border: 1px solid greenyellow ;
-  padding: 10px;
+  padding: 0 10px;
   border-radius: 5px;
   font-weight: 100;
   display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .radio div:nth-child(2) label:has(input:checked) {
@@ -114,8 +117,6 @@
 }
 
 .radio div:nth-child(2) input {
-  width: 20px;
-  height: 20px;
 }
 
 .radio div:nth-child(2) label:hover {
@@ -124,6 +125,10 @@
 
 .radio div:nth-child(2) * p {
   padding: 0 10px;
+}
+
+.degree {
+  max-width: 500px;
 }
 
 .degree div:nth-child(2) {

@@ -39,7 +39,7 @@ export default function Posts ({posts}) {
           </div>
           <div>
             <Suspense fallback={<>loading</>}>
-              <Link href={`/blog/posts/${slug}`}><p className={raleway.className}>{title}</p></Link>
+              <Link href={`/blog/posts/${slug}`}><h1 className={raleway.className}>{title}</h1></Link>
             </Suspense>
             <span>1 mins read</span>
           </div>

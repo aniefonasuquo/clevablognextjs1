@@ -82,19 +82,19 @@ export default function Archetypes () {
             <div className={display == 2? `${styles.visible}` : `${styles.question}`}>
            
           <div className={styles.radio}>
-            <div>How much is your average monthly income</div>
+            <div>How much do you earn in income on average monthly?</div>
             <div>
               <label htmlFor='annualincome1'>
-                  <input type='radio' name='annualIncome' value={1} id='annualincome1'/><p>1</p>
+                  <input type='radio' name='annualIncome' value={1} id='annualincome1'/><span>Less N500k</span>
               </label>   
               <label htmlFor='annualincome2'>
-                  <input type='radio' name='annualIncome' value={2} id='annualincome2'/><p>1</p>
+                  <input type='radio' name='annualIncome' value={2} id='annualincome2'/><span>More than N500k, less than N1 million</span>
               </label>   
               <label htmlFor='annualincome3'>
-                  <input type='radio' name='annualIncome' value={3} id='annualincome3'/><p>1</p>
+                  <input type='radio' name='annualIncome' value={3} id='annualincome3'/><span>More than N1 million, less than N2.5 million</span>
               </label>   
               <label htmlFor='annualincome4'>
-                  <input type='radio' name='annualIncome' value={4} id='annualincome4'/><p>1</p>
+                  <input type='radio' name='annualIncome' value={4} id='annualincome4'/><span>More than N2.5m</span>
               </label>   
             </div>
           </div>
@@ -108,11 +108,11 @@ export default function Archetypes () {
             <div>
             <label htmlFor="NGN">
               <input type="radio" name="incomeCurrency" id="NGN" value={1} required/>
-              <p> NGN </p>
+              <span> NGN </span>
             </label>        
             <label htmlFor="USD-GBP-EUR">
               <input type="radio" name="incomeCurrency" id="USD-GBP-EUR" value={2} required/>
-              <p> Forex (USD/GBP/EUR) </p>
+              <span> Forex (USD/GBP/EUR) </span>
             </label>
             </div>
             </div>
@@ -120,19 +120,19 @@ export default function Archetypes () {
 
             <div className={display == 4? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-              <div>How long have your been earning from your primary source of income</div>
+              <div>How long have your been earning from your primary source of income?</div>
               <div>
             <label htmlFor="durationone">
               <input type="radio" name="incomeDuration" id="durationone" required value={1}/>
-              <p> less than 5 years </p>
+              <span> less than 5 years </span>
             </label>
             <label htmlFor="durationtwo">
               <input type="radio" name="incomeDuration" id="durationtwo" required value={2}/>
-              <p> Over 5 years but less than 10 years </p>
+              <span> Over 5 years but less than 10 years </span>
             </label>
             <label htmlFor="durationthree">
               <input type="radio" name="incomeDuration" id="durationthree" required value={3}/>
-                <p> Over ten years </p>
+                <span> Over ten years </span>
             </label>
             </div>
             </div>
@@ -140,23 +140,26 @@ export default function Archetypes () {
 
             <div className={display == 5? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-            <div> What is the value of your total financial investments?</div>
+            <div>
+              <p>What is the total value of your financial investments?</p>
+              <p>This only includes monies in savings and investment accounts</p>
+            </div>
             <div>
             <label htmlFor="5m">
             <input type="radio" name="investmentvalue" id="5m" value={1} />
-              <p> less than 1m </p>
+              <span> less than 1m </span>
             </label>  
             <label htmlFor="10m">
             <input type="radio" name="investmentvalue" id="10m" value={2} />
-              <p> greater than 1m  & less than 10m </p>
+              <span> greater than 1m  & less than 10m </span>
             </label>  
             <label htmlFor="big">
             <input type="radio" name="investmentvalue" id="big" value={3} />
-              <p> greater than 10m </p>
+              <span> greater than 10m </span>
             </label>  
             <label htmlFor="no-invest">
             <input type="radio" name="investmentvalue" id="no-invest" value={3} />
-              <p> I have no investments </p>
+              <span> I have no investments </span>
             </label>
             </div>
             </div>           
@@ -165,24 +168,24 @@ export default function Archetypes () {
             <div className={display == 6? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
               <div>
-                What are your sources of income`
+                Select your current source(s) of income? Select more than one if you have multiple sources of income.
               </div>
               <div>
               <label htmlFor="salary">
               <input type="checkbox" name="incomeType" id="salary" value={2}/>
-                <p>Salary income</p>
+                <span>Salary income</span>
               </label>
               <label htmlFor="business">
               <input type="checkbox" name="incomeType" id="business" value={1}/>
-                <p>Business and services income</p>
+                <span>Business and services income</span>
               </label>
               <label htmlFor="investments">
               <input type="checkbox" name="incomeType" id="investments" value={1}/>
-                <p>Investments</p>
+                <span>Investments</span>
               </label>
               <label htmlFor="others">
               <input type="checkbox" name="incomeType" id="others" value={1}/>
-                <p>Others</p>
+                <span>Others</span>
                </label>
              </div>
              </div> 
@@ -337,23 +340,23 @@ export default function Archetypes () {
 
             <div className={display === 12 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-                <div> Investment Orientation </div>
+                <div>Which of the following do your identify most with as your investment orientation?</div>
                 <div>
                   <label htmlFor="trading">
                   <input type="radio" name="orientation" id="trading" value={3} required/>
-                    <p> Active Trading - Active buying and selling with risk of loss </p>
+                    <span>Active Trading - Active buying and selling with risk of loss</span>
                   </label>
                   <label htmlFor="growth">
                   <input type="radio" name="orientation" id="growth" value={2} required/>
-                    <p> Accumulation - Not bothered about short term losses, consistent growth of porfolio from contributions and returns </p>
+                    <span>Accumulation - Not bothered about short term losses, consistent growth of porfolio from contributions and returns. </span>
                   </label>
                   <label htmlFor="Hybrid">
                   <input type="radio" name="orientation" id="Hybrid" value={2} required/>
-                    <p> Hybrid (Passive and active investing) </p>
+                    <span>Hybrid (Passive and active investing)</span>
                   </label>
                   <label htmlFor="income">
                   <input type="radio" name="orientation" id="income" value={2} required/>
-                    <p> Income - preserve the portfolio capital, earn returns and withdraw returns </p>
+                    <span>Income - preserve the portfolio capital, earn and withdraw returns</span>
                   </label>
                 </div>
               </div>
@@ -361,19 +364,19 @@ export default function Archetypes () {
 
             <div className={display === 13 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>      
-              <div> Investment operations </div>
+              <div>What is your preferred investment operation style?</div>
               <div>
                 <label htmlFor="DIY">
                 <input type="radio" name="operation" id="DIY" value={3} required/>
-                  <p> DIY - Select, monitor, trade my investments by myself </p>
+                  <span>DIY - Select, monitor, trade my investments by myself</span>
                 </label>
                 <label htmlFor="assisted">
                 <input type="radio" name="operation" id="assisted" value={2} required/>
-                  <p> Assisted - I would like to work actively with an advisor in making decisions </p>
+                  <span>Assisted - I would like to work actively with an advisor in making decisions </span>
                 </label>
                 <label htmlFor="outsourced">
                 <input type="radio" name="operation" id="outsourced" value={2} required/>
-                  <p> Outsourced - completely hand over investing to an professional </p>
+                  <span> Outsourced - completely hand over investing to an professional </span>
                 </label>
               </div>
               </div>  
@@ -381,19 +384,19 @@ export default function Archetypes () {
 
             <div className={display == 14 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>           
-              <div>How can you you tell that an investment is profitable </div>
+              <div>Which do your identify as your style of making investment decisions?</div>
                 <div>  
                   <label htmlFor="research">
                   <input type="radio" name="judgement" id="research" value={3} required/>
-                    <p> {`I'll do my own research - including reading long pages of financial/investment reports`} </p>
+                    <span> {`I'll do my own research - including reading long pages of financial/investment reports`} </span>
                   </label>
                   <label htmlFor="wordofmouth">
                   <input type="radio" name="judgement" id="wordofmouth" value={2} required/>
-                    <p> {`Depending on other people's experience with the investment, regardless if they are professionals`} </p>
+                    <span> {`Depending on other people's experience with the investment, regardless if they are professionals`} </span>
                   </label>
                   <label htmlFor="professional">
                   <input type="radio" name="judgement" id="professional" value={2} required/>
-                    <p> {`I'll consult an investment professional or savvy individuals to make that decision.`} </p>
+                    <span> {`I'll consult an investment professional or savvy individuals to make that decision.`} </span>
                   </label>
                 </div>
                </div> 
@@ -407,15 +410,15 @@ export default function Archetypes () {
               <div>
                 <label htmlFor="sell">
                 <input type="radio" name="lossReaction" id="sell" value={1} required/>
-                  <p> Sell </p>
+                  <span> Sell </span>
                 </label>
                 <label htmlFor="buymore">
                 <input type="radio" name="lossReaction" id="buymore" value={3} required/>
-                  <p> consider buying more </p>
+                  <span> consider buying more </span>
                 </label>
                 <label htmlFor="hold">
                 <input type="radio" name="lossReaction" id="hold" value={2} required/>
-                  <p> Hold and wait it out </p>
+                  <span> Hold and wait it out </span>
                 </label>
               </div>
               </div>
@@ -429,11 +432,11 @@ export default function Archetypes () {
               <div>
                 <label htmlFor="male">
                 <input type="radio" name="gender" id="male" value='male' required/>
-                  <p>Male</p>
+                  <span>Male</span>
                 </label>
                 <label htmlFor="female">
                 <input type="radio" name="gender" id="female" value='female' required/>
-                  <p>Female</p>
+                  <span>Female</span>
                 </label>
               </div>
               </div>
