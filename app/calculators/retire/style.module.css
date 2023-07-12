@@ -1,10 +1,10 @@
 .retirementContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   color: white;
   gap: 50px;
   font-weight: 100;
-  /* justify-items: center; */
+  justify-content: center;
   align-items: start;
 }
 
@@ -32,7 +32,6 @@
 
 .result {
   border-radius: 20px;
-  border: 1px solid rgb(24, 40, 102);
   display: flex;
 }
 
