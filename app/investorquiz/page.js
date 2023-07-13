@@ -54,8 +54,8 @@ export default function Archetypes () {
       {display > 0 && (<div className={styles.progressOut}><div style={{width: `${((display/16)*100)}%`}}></div></div>)}
       
       <div className={styles.formcontainer}>
-        <form className={styles.questioncontainer} onSubmit={handleSubmit}>
-
+        <form onSubmit={handleSubmit}>
+        <div className={styles.questioncontainer} >
           <div className={display == 0? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.quizintro}>
               <div className={styles.archetypeImage}>
@@ -68,7 +68,11 @@ export default function Archetypes () {
                 <span>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</span>
                 <span>This quiz aims to understand some of these factors to advise on optimal wealth decision making</span>
               </p>
+              <div>
+              {display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}
             </div>
+            </div>
+
           </div>
 
             <div className={display == 1? `${styles.visible}` : `${styles.question}`}>
@@ -441,13 +445,16 @@ export default function Archetypes () {
               </div>
               </div>
               </div>
-        </form>
-        <div className={styles.controls}>      
-            {display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}
+              <div className={styles.controls}>      
             {display > 0 && (<button className={styles.prevbutton} onClick={prevquestion}>previous</button>)}
             {display < 16 && display > 0 && (<button className={styles.nextbutton}onClick={nextquestion}>next</button>)}
             {display == 16 && (<button className={styles.submit} type="submit">Submit</button>)}
           </div>
+            </div>
+
+        
+        </form>
+
         </div>
       </div>
   

@@ -5,7 +5,9 @@
 }
 
 .formcontainer {
-  padding: 30px 0;
+  padding: 20px 0;
+  max-width: 600px;
+  margin: auto;
 }
 
 .archetypeImage  {
@@ -54,10 +56,15 @@
 }
 
 .questioncontainer{
-  height: 450px;
+  /* height: 550px; */
   position: relative;
-  width: 100%;
-  padding: 50px 0;
+  max-width: auto;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* width: 600px; */
 }
 
 .question {
@@ -76,16 +83,17 @@
 }
 
 .visible {
-  height: inherit;
+  height: auto;
   display: flex;
   justify-content: center;
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   margin: auto;
   transition: all 0.5s ease-in-out;
+  /* height: 300px; */
 }
 
 .radio {
@@ -173,21 +181,10 @@
 
   .controls {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin: 20px 0;
+    /* max-width: 500px; */
   }
-  
-  /* .controls button{
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    width: 100px;
-    background-color: white;
-    color: navy;
-    cursor: pointer;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 100;
-  } */
 
   .ageQuestion {
     display: flex;
@@ -243,7 +240,7 @@
 
     .controls button{
     border: none;
-    padding: 20px;
+    padding: 10px;
     border-radius: 50px;
     cursor: pointer;
     text-align: center;
@@ -251,26 +248,26 @@
 
   
   .startquiz {
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
     border: 1px solid greenyellow;
     color: greenyellow;;
     background-color: #131A33;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   @media screen and (max-width: 600px) {
     .visible {
       padding: 0 10px;
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .questioncontainer{
-      height: 500px;
+      /* height: 500px; */
     }
 
     .quizintro h1 {
-      font-size: 50px;
+      font-size: 40px;
     }
 
     .quizintro p {
@@ -279,8 +276,8 @@
     
 
     #big {
-      width: 60px;
-      height: 60px;
+      width: 55px;
+      height: 55px;
     }
     
     #small {
@@ -289,8 +286,8 @@
     }
     
     #mid {
-      width: 40px;
-      height: 40px;
+      width: 35px;
+      height: 35px;
     }
     
   }
