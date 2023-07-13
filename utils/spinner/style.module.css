@@ -1,0 +1,25 @@
+.spinner {
+	animation: spinner 10s linear infinite;
+	white-space: nowrap;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(30deg);
+  }
+  20% {
+    transform: rotate(60deg);
+  }
+  40% {
+    transform: rotate(90deg);
+  }
+  60% {
+    transform: rotate(120deg);
+  }
+  80% {
+    transform: rotate(150deg);
+  }
+  100% {
+    transform: translateX(180deg);
+  }
+}

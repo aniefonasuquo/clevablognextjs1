@@ -3,6 +3,7 @@ import style from './style.module.css'
 import Image from "next/image"
 import logo from './../../public/logos/logo-main.png'
 
+
 export default function Join () {
 
   return (
@@ -15,6 +16,7 @@ export default function Join () {
         {/* <div className={style.logowrap}>
           <Image alt="clevaLogo" src={logo} fill={true} sizes="100vw"></Image>
         </div>      */}
+        
         <Joinform></Joinform>
       </div>
     </div>

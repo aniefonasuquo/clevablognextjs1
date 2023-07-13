@@ -54,8 +54,8 @@ export default function Archetypes () {
       {display > 0 && (<div className={styles.progressOut}><div style={{width: `${((display/16)*100)}%`}}></div></div>)}
       
       <div className={styles.formcontainer}>
-        <form onSubmit={handleSubmit}>
-        <div className={styles.questioncontainer}>
+        <form className={styles.questioncontainer} onSubmit={handleSubmit}>
+
           <div className={display == 0? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.quizintro}>
               <div className={styles.archetypeImage}>
@@ -441,15 +441,13 @@ export default function Archetypes () {
               </div>
               </div>
               </div>
-          </div>
-          <div className={styles.controls}>      
+        </form>
+        <div className={styles.controls}>      
             {display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}
             {display > 0 && (<button className={styles.prevbutton} onClick={prevquestion}>previous</button>)}
             {display < 16 && display > 0 && (<button className={styles.nextbutton}onClick={nextquestion}>next</button>)}
             {display == 16 && (<button className={styles.submit} type="submit">Submit</button>)}
           </div>
-
-        </form>
         </div>
       </div>
   

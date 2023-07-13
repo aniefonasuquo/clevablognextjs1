@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import styles from './style.module.css'
+import Spinner from "@/utils/spinner/spinner"
 
 async function addUser (name, email) {
 
@@ -75,7 +76,12 @@ export default function Joinform () {
           {submit == 'success' && <p className={styles.Succesfeedback}>Thank you for joining Cleva! You will get an email notification shortly to confirm your registration</p>}
           {submit == 'failed' && <p className={styles.failfeedback}>Oops! something went wrong, unable to join.. Let's give it another shot</p>}
         </div>
-        <button type='submit'>{submit}</button>
+        <button type='submit'>
+          {submit == 'Join' && 'Join'}
+          {submit == 'success' && 'Join'}
+          {submit == 'failed' && 'failed'}
+          {submit == 'loading' && (<Spinner></Spinner>)}
+        </button>
       </form>
     </div> 
   )
