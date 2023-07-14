@@ -6,10 +6,14 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import logo from './../public/logos/logo-main.png'
 import { useRouter } from 'next/navigation';
+import Nav from './nav/nav';
+
 
 
 
 export default function Header ( ) {
+
+  const router = useRouter()
 
   const [menuDisplay, setMenuDisplay] = useState('burger')
 
@@ -30,18 +34,12 @@ export default function Header ( ) {
     <>
       <header className={style.header}>
         <div className={style.headerlogo}>
-          <Link href="/">
+          <Link onClick={handleLinkClick} href="/">
             <Image alt='pic' sizes='100vw' src={logo}/>
           </Link>
         </div>
         <div id='nav' className={style.navs} style={{top: menuDisplay == 'close' ? '47px': '-300%'}}>
-            <nav>
-            <ul>
-              <li><Link onClick={handleLinkClick} href='/blog'>Blog</Link></li>
-              <li><Link onClick={handleLinkClick} href={`/investorquiz/`}> Investor Personality Quiz</Link></li>
-              <li><Link onClick={handleLinkClick} href="/calculators/"> Discovery </Link></li>
-            </ul>
-          </nav>
+          <Nav onClick={handleLinkClick}></Nav>
         </div>
         <div className={style.ctabutton}>
           <Link href='/join'>
