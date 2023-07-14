@@ -16,8 +16,8 @@ export default function Nav ({onClick}) {
     <nav>
       <ul>
         <li><Link onClick={onClick} href='/blog'><span>Blog</span></Link></li>
-        <li><Link onClick={handleLinkClick} href={`/investorquiz/`}><span>Investor Personality Quiz</span></Link></li>
-        <li><Link onClick={handleLinkClick} href="/calculators/"><span>Discovery</span></Link></li>
+        <li><Link onClick={onClick} href={`/investorquiz/`}><span>Investor Personality Quiz</span></Link></li>
+        <li><Link onClick={onClick} href="/calculators/"><span>Discovery</span></Link></li>
       </ul>
     </nav>
   )
