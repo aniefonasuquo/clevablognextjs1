@@ -105,9 +105,7 @@ export default function Archetypes () {
 
             <div className={display == 3? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-            <p>
-              What is your primary income currency?
-            </p>
+            <p>What is your primary income currency?</p>
             <div>
             <label htmlFor="NGN">
               <input type="radio" name="incomeCurrency" id="NGN" value={1} required/>
@@ -123,7 +121,7 @@ export default function Archetypes () {
 
             <div className={display == 4? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-              <div>How long have your been earning from your primary source of income?</div>
+              <p>How long have your been earning from your primary source of income?</p>
               <div>
             <label htmlFor="durationone">
               <input type="radio" name="incomeDuration" id="durationone" required value={1}/>
@@ -143,8 +141,7 @@ export default function Archetypes () {
 
             <div className={display == 5? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-            <p>What is the total value of your financial investments?. This only includes monies in savings and investment accounts
-            </p>
+            <p>What is the total value of your financial investments?. This only includes monies in savings and investment accounts</p>
             <div>
             <label htmlFor="5m">
             <input type="radio" name="investmentvalue" id="5m" value={1} />
@@ -168,9 +165,7 @@ export default function Archetypes () {
 
             <div className={display == 6? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-              <p>
-                Select your current source(s) of income? Select more than one if you have multiple sources of income.
-              </p>
+              <p>Select your current source(s) of income? Select more than one if you have multiple sources of income.</p>
               <div>
               <label htmlFor="salary">
               <input type="checkbox" name="incomeType" id="salary" value={2}/>
@@ -194,9 +189,7 @@ export default function Archetypes () {
 
             <div className={display == 7? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <p>
-              I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck
-            </p>
+            <p>I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck</p>
             <div className={styles.rankingcontainer}>    
               <label>
                 <input className={styles.ranking} type="radio" name="confidence" value={1} required/>
@@ -226,9 +219,7 @@ export default function Archetypes () {
 
             <div className={display == 8? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <p>
-              I feel bad when I miss out on an investment opportunity?
-            </p>
+            <p>I feel bad when I miss out on an investment opportunity?</p>
             <div className={styles.rankingcontainer}>  
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
@@ -258,9 +249,7 @@ export default function Archetypes () {
 
             <div className={display == 9? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>   
-            <p>
-              How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?
-            </p>  
+            <p>How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?</p>  
             <div className={styles.rankingcontainer}>
               <label>
                 <input className={styles.ranking} type="radio" name="preserve" value={1} required/>
@@ -387,30 +376,30 @@ export default function Archetypes () {
                 </label>
                 <label htmlFor="outsourced">
                 <input type="radio" name="operation" id="outsourced" value={2} required/>
-                  <span> Outsourced - completely hand over investing to an professional </span>
+                  <span>Outsourced - completely hand over investing to an professional </span>
                 </label>
               </div>
               </div>  
             </div>
 
             <div className={display == 14 ? `${styles.visible}` : `${styles.question}`}>
-            <div className={styles.radio}>           
-              <p>Which do your identify as your style of making investment decisions?</p>
+              <div className={styles.radio}>           
+                <p>Which do your identify as your style of making investment decisions?</p>
                 <div>  
                   <label htmlFor="research">
                   <input type="radio" name="judgement" id="research" value={3} required/>
-                    <span> {`I'll do my own research - including reading long pages of financial/investment reports`} </span>
+                    <span>I'll do my own research - including reading long pages of financial/investment reports.</span>
                   </label>
                   <label htmlFor="wordofmouth">
                   <input type="radio" name="judgement" id="wordofmouth" value={2} required/>
-                    <span> {`Depending on other people's experience with the investment, regardless if they are professionals`} </span>
+                    <span>Depending on other people's experience with the investment, regardless if they are professionals.</span>
                   </label>
                   <label htmlFor="professional">
                   <input type="radio" name="judgement" id="professional" value={2} required/>
-                    <span> {`I'll consult an investment professional or savvy individuals to make that decision.`} </span>
+                    <span>I'll consult an investment professional or savvy individuals to make that decision.</span>
                   </label>
                 </div>
-               </div> 
+              </div> 
             </div>
 
             <div className={display == 15 ? `${styles.visible}` : `${styles.question}`}>
@@ -419,15 +408,15 @@ export default function Archetypes () {
               <div>
                 <label htmlFor="sell">
                 <input type="radio" name="lossReaction" id="sell" value={1} required/>
-                  <span> Sell </span>
+                  <span>Sell</span>
                 </label>
                 <label htmlFor="buymore">
                 <input type="radio" name="lossReaction" id="buymore" value={3} required/>
-                  <span> consider buying more </span>
+                  <span>Consider buying more</span>
                 </label>
                 <label htmlFor="hold">
                 <input type="radio" name="lossReaction" id="hold" value={2} required/>
-                  <span> Hold and wait it out </span>
+                  <span>Hold and wait it out</span>
                 </label>
               </div>
               </div>
