@@ -257,18 +257,13 @@
   }
 
   @media screen and (max-width: 600px) {
-    .visible * p, .visible * span {
+    .degree * p, .degree * span,
+    .radio * p, .radio * span {
       font-size: 12px;
     }
 
-    .visible * h1 {
-      font-size: 30px;
-    }
-
-
     .questioncontainer{
       padding: 0 10px;
-      /* height: 500px; */
     }
 
     .quizintro h1 {
