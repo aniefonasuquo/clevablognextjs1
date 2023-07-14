@@ -247,8 +247,7 @@
   }
 
   @media screen and (max-width: 600px) {
-    .degree * p, .degree * span,
-    .radio * p, .radio * span {
+    .questioncontainer * p, .questioncontainer * span{
       font-size: 12px;
     }
 
@@ -262,7 +261,6 @@
 
     .quizintro span {
       display: block;
-      font-size: 13px;
     }
 
     .radio > div {
