@@ -232,7 +232,7 @@ export default function Archetypes () {
             <div>
               I feel bad when I miss out on an investment opportunity?
             </div>
-            <div>  
+            <div className={styles.rankingcontainer}>  
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>

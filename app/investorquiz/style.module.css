@@ -36,7 +36,6 @@
 
 .quizintro p {
   font-weight: 100;
-  font-size: 20px;
 }
 
 .quizintro p span {
@@ -157,7 +156,12 @@
   background-color: greenyellow;
   border-color: white;
   }
-  
+
+  .rankingcontainer {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   .ranking {
     display: none
   }
@@ -247,18 +251,16 @@
     text-align: center;
   }
 
-  
   .startquiz {
     padding: 10px;
     border-radius: 20px;
     border: 1px solid greenyellow;
     color: greenyellow;;
     background-color: #131A33;
-    font-size: 16px;
   }
 
   @media screen and (max-width: 600px) {
-    .visible {
+    .visible * {
       font-size: 12px;
     }
 
@@ -272,7 +274,7 @@
     }
 
     .quizintro p {
-      font-size: 16px;
+      font-size: 13px;
     }
     
 
