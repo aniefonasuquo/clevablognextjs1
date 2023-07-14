@@ -70,6 +70,7 @@
 
 .resultIcons {
   display: flex;
+  align-items: center;
 }
 
 .resultIcons svg {
