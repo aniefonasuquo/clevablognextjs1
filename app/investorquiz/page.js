@@ -56,6 +56,7 @@ export default function Archetypes () {
       <div className={styles.formcontainer}>
         <form onSubmit={handleSubmit}>
         <div className={styles.questioncontainer} >
+
           <div className={display == 0? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.quizintro}>
               <div className={styles.archetypeImage}>
@@ -70,7 +71,6 @@ export default function Archetypes () {
               </div>
               <div>{display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}</div>
             </div>
-
           </div>
 
             <div className={display == 1? `${styles.visible}` : `${styles.question}`}>
