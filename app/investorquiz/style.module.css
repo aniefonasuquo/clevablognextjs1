@@ -97,18 +97,16 @@
   max-width: 500px;
 }
 
-.radio > div:first-child {
-  /* font-weight: bolder; */
-  margin: 20px 0;
+.radio > div {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 }
 
-.radio div:nth-child(2) * {
-  margin: 10px 0;
-}
-
-.radio div:nth-child(2) label {
-  border: 1px solid greenyellow ;
-  padding: 0 10px;
+.radio > div label {
+  border: 1px solid gray ;
+  padding: 5px 10px;
   border-radius: 5px;
   font-weight: 100;
   display: flex;
@@ -116,8 +114,9 @@
   align-items: center;
 }
 
-.radio div:nth-child(2) label:has(input:checked) {
-  background-color: skyblue;
+.radio > div label:has(input:checked) {
+  background-color: white;
+  color: #131A33;
 }
 
 .radio div:nth-child(2) input {
@@ -135,11 +134,11 @@
   max-width: 500px;
 }
 
-.degree div:nth-child(2) {
+.rankingcontainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+  justify-content: space-around;
+  padding: 30px 0;
 }
 
 .circle {
@@ -157,11 +156,6 @@
   border-color: white;
   }
 
-  .rankingcontainer {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
   .ranking {
     display: none
   }
@@ -172,16 +166,19 @@
   }
   
   #small {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
   
   #mid {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
   }
 
   .degree * label:has(.ranking) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
@@ -260,9 +257,14 @@
   }
 
   @media screen and (max-width: 600px) {
-    .visible * {
+    .visible * p, .visible * span {
       font-size: 12px;
     }
+
+    .visible * h1 {
+      font-size: 30px;
+    }
+
 
     .questioncontainer{
       padding: 0 10px;
@@ -276,6 +278,12 @@
     .quizintro p {
       font-size: 13px;
     }
+
+    .radio > div {
+      margin: 20px 0;
+      gap: 10px
+    }
+    
     
 
     #big {
