@@ -84,31 +84,30 @@ export default function Archetypes () {
             </div>
           
             <div className={display == 2? `${styles.visible}` : `${styles.question}`}>
-           
-          <div className={styles.radio}>
-            <div>How much do you earn in income on average monthly?</div>
-            <div>
-              <label htmlFor='annualincome1'>
-                  <input type='radio' name='annualIncome' value={1} id='annualincome1'/><span>Less N500k</span>
-              </label>   
-              <label htmlFor='annualincome2'>
-                  <input type='radio' name='annualIncome' value={2} id='annualincome2'/><span>More than N500k, less than N1 million</span>
-              </label>   
-              <label htmlFor='annualincome3'>
-                  <input type='radio' name='annualIncome' value={3} id='annualincome3'/><span>More than N1 million, less than N2.5 million</span>
-              </label>   
-              <label htmlFor='annualincome4'>
-                  <input type='radio' name='annualIncome' value={4} id='annualincome4'/><span>More than N2.5m</span>
-              </label>   
+            <div className={styles.radio}>
+              <p>How much do you earn in income on average monthly?</p>
+              <div>
+                <label htmlFor='annualincome1'>
+                    <input type='radio' name='annualIncome' value={1} id='annualincome1'/><span>Less N500k</span>
+                </label>   
+                <label htmlFor='annualincome2'>
+                    <input type='radio' name='annualIncome' value={2} id='annualincome2'/><span>More than N500k, less than N1 million</span>
+                </label>   
+                <label htmlFor='annualincome3'>
+                    <input type='radio' name='annualIncome' value={3} id='annualincome3'/><span>More than N1 million, less than N2.5 million</span>
+                </label>   
+                <label htmlFor='annualincome4'>
+                    <input type='radio' name='annualIncome' value={4} id='annualincome4'/><span>More than N2.5m</span>
+                </label>   
+              </div>
             </div>
-          </div>
-          
             </div>
+
             <div className={display == 3? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-            <div>
+            <p>
               What is your primary income currency?
-            </div>
+            </p>
             <div>
             <label htmlFor="NGN">
               <input type="radio" name="incomeCurrency" id="NGN" value={1} required/>
@@ -144,10 +143,8 @@ export default function Archetypes () {
 
             <div className={display == 5? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-            <div>
-              <p>What is the total value of your financial investments?</p>
-              <p>This only includes monies in savings and investment accounts</p>
-            </div>
+            <p>What is the total value of your financial investments?. This only includes monies in savings and investment accounts
+            </p>
             <div>
             <label htmlFor="5m">
             <input type="radio" name="investmentvalue" id="5m" value={1} />
@@ -171,9 +168,9 @@ export default function Archetypes () {
 
             <div className={display == 6? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-              <div>
+              <p>
                 Select your current source(s) of income? Select more than one if you have multiple sources of income.
-              </div>
+              </p>
               <div>
               <label htmlFor="salary">
               <input type="checkbox" name="incomeType" id="salary" value={2}/>
@@ -197,10 +194,10 @@ export default function Archetypes () {
 
             <div className={display == 7? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <div>
+            <p>
               I know fairly enough about investing, and always stay updated on latest investment related news and concerns, so,  I attribute my investment  performance to my abilities and luck
-            </div>
-            <div>    
+            </p>
+            <div className={styles.rankingcontainer}>    
               <label>
                 <input className={styles.ranking} type="radio" name="confidence" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
@@ -229,9 +226,9 @@ export default function Archetypes () {
 
             <div className={display == 8? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <div>
+            <p>
               I feel bad when I miss out on an investment opportunity?
-            </div>
+            </p>
             <div className={styles.rankingcontainer}>  
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
@@ -261,10 +258,10 @@ export default function Archetypes () {
 
             <div className={display == 9? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>   
-            <div>
+            <p>
               How important is the preservation of your initial investment amount to you, even if it means potentially sacrificing higher returns?
-            </div>  
-            <div>
+            </p>  
+            <div className={styles.rankingcontainer}>
               <label>
                 <input className={styles.ranking} type="radio" name="preserve" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
@@ -293,9 +290,9 @@ export default function Archetypes () {
 
             <div className={display == 10? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}> 
-            <div>How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
-            </div>  
-            <div>
+            <p>How comfortable are you with exploring alternative investments or strategies that have higher chance of loss but offer potential higher returns?
+            </p>  
+            <div className={styles.rankingcontainer}>
               <label>
                 <input className={styles.ranking} type="radio" name="aversion" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
@@ -324,8 +321,8 @@ export default function Archetypes () {
         
             <div className={display === 11 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <div>How would you describe your comfort level with uncertainty and porfolio losses when investing?</div>  
-            <div>
+            <p>How would you describe your comfort level with uncertainty and porfolio losses when investing?</p>  
+            <div className={styles.rankingcontainer}>
               <label>
                 <input className={styles.ranking} type="radio" name="uncertainty" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
@@ -354,7 +351,7 @@ export default function Archetypes () {
 
             <div className={display === 12 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>
-                <div>Which of the following do your identify most with as your investment orientation?</div>
+                <p>Which of the following do your identify most with as your investment orientation?</p>
                 <div>
                   <label htmlFor="trading">
                   <input type="radio" name="orientation" id="trading" value={3} required/>
@@ -378,7 +375,7 @@ export default function Archetypes () {
 
             <div className={display === 13 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>      
-              <div>What is your preferred investment operation style?</div>
+              <p>What is your preferred investment operation style?</p>
               <div>
                 <label htmlFor="DIY">
                 <input type="radio" name="operation" id="DIY" value={3} required/>
@@ -398,7 +395,7 @@ export default function Archetypes () {
 
             <div className={display == 14 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.radio}>           
-              <div>Which do your identify as your style of making investment decisions?</div>
+              <p>Which do your identify as your style of making investment decisions?</p>
                 <div>  
                   <label htmlFor="research">
                   <input type="radio" name="judgement" id="research" value={3} required/>
@@ -418,9 +415,7 @@ export default function Archetypes () {
 
             <div className={display == 15 ? `${styles.visible}` : `${styles.question}`}>
               <div className={styles.radio}>            
-              <div>
-                How would you react if a significant portion of your investment portfolio declined in value over a short period?
-              </div>
+              <p>How would you react if a significant portion of your investment portfolio declined in value over a short period?</p>
               <div>
                 <label htmlFor="sell">
                 <input type="radio" name="lossReaction" id="sell" value={1} required/>
@@ -440,9 +435,7 @@ export default function Archetypes () {
 
           <div className={display == 16 ? `${styles.visible}` : `${styles.question}`}>
               <div className={styles.radio}>            
-              <div>
-                Gender?
-              </div>
+              <p>Gender?</p>
               <div>
                 <label htmlFor="male">
                 <input type="radio" name="gender" id="male" value='male' required/>
