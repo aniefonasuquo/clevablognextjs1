@@ -66,8 +66,8 @@ export default function Archetypes () {
               </div>
               <h1>Discover You</h1>
               <div>
-                <span>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</span>
-                <span>This quiz aims to understand some of these factors to advise on optimal wealth decision making</span>
+                <span>Many factors determine our investment outcome, understanding how your financial status, pyschological makeup, risk aversion affect our decisions when investing could help in making better choices.</span>
+                <span>This quiz aims to determine how these factors affect our investments, and advises on the optimal strategy for success.</span>
               </div>
               <div>{display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}</div>
             </div>
@@ -86,16 +86,16 @@ export default function Archetypes () {
               <p>How much do you earn in income on average monthly?</p>
               <div>
                 <label htmlFor='annualincome1'>
-                    <input type='radio' name='annualIncome' value={1} id='annualincome1'/><span>Less N500k</span>
+                    <input type='radio' name='annualIncome' value={1} id='annualincome1'/><span>Below N500k</span>
                 </label>   
                 <label htmlFor='annualincome2'>
-                    <input type='radio' name='annualIncome' value={2} id='annualincome2'/><span>More than N500k, less than N1 million</span>
+                    <input type='radio' name='annualIncome' value={2} id='annualincome2'/><span>Above N500k, below N1 million</span>
                 </label>   
                 <label htmlFor='annualincome3'>
-                    <input type='radio' name='annualIncome' value={3} id='annualincome3'/><span>More than N1 million, less than N2.5 million</span>
+                    <input type='radio' name='annualIncome' value={3} id='annualincome3'/><span>Above N1 million, below N2.5 million</span>
                 </label>   
                 <label htmlFor='annualincome4'>
-                    <input type='radio' name='annualIncome' value={4} id='annualincome4'/><span>More than N2.5m</span>
+                    <input type='radio' name='annualIncome' value={4} id='annualincome4'/><span>Above N2.5m</span>
                 </label>   
               </div>
             </div>

@@ -30,10 +30,6 @@
   gap: 20px;
 }
 
-.navs ul li:hover {
-  border-bottom: 1px solid navy;
-}
-
 .navs ul li{
   font-size-adjust: auto;
   list-style: none;
@@ -41,10 +37,20 @@
 }
 
 .navs ul li a{
-  text-decoration: none;
-  color: navy;
-  padding-bottom: 2px;
+
 }
+
+.navs ul li span {
+  padding-bottom: 10px;
+  text-decoration: none;
+  color: rgb(17, 30, 72);
+}
+
+.navs ul li span:hover {
+  text-decoration: underline;
+  /* border-bottom: 2px solid  rgb(17, 30, 72); */
+}
+
 
 .ctabutton {
   flex: 1;
@@ -54,9 +60,8 @@
 
 .ctabutton button {
   background-color: rgb(17, 30, 72);
-  /* width: 130px; */
   padding: 10px 20px;
-  color: white;
+  color: greenyellow;
   border-radius: 8px;
   border: none;
   font-size: 18px;

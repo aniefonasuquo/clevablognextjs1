@@ -143,10 +143,10 @@ export default async function Homepage() {
         <span className={styles.circle}>3</span>
         <h1><span>Decide</span></h1>
         <h2>
-          <span>All the tools to make smart investing decisions.</span>
+          <span>All the tools to make smart investing decisions</span>
         </h2>
         <p>
-          <span>Bye to long research and consideration time that comes with making investment decisions, our algorithm produces results that fits your objectives </span>
+          <span>Bye to long research and consideration time that comes with making investment decisions, our algorithm produces results that fits your objectives.</span>
         </p>
       </div>
 
@@ -157,7 +157,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Risk</h1>
-            <span>Understand associated risks before making investments</span>
+            <span>Understand associated risks before making investments.</span>
           </div>
         </div>
         <div className={styles.decideItem}>
@@ -166,7 +166,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Performance</h1>
-            <span>find investments that maximise your returns</span>
+            <span>find investments that maximise your returns.</span>
           </div>
         </div>
         <div className={styles.decideItem}>
@@ -175,7 +175,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Algo-advisory</h1>
-            <span>Our propietary algorithms help make expert decisions is no time</span>
+            <span>Our propietary algorithms help make expert decisions is no time.</span>
           </div>
         </div>
 

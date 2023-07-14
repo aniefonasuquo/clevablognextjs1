@@ -188,14 +188,15 @@
 .decideItem {
   border-radius: 10px;
   display: grid;
-  background-color: #C7D2D8;
+  border: 1px solid #C7D2D8;
+  /* background-color: #C7D2D8; */
   padding: 50px 20px;
   gap: 50px;
 }
 
 .decidedeets {
   text-align: center;
-  color: black;
+  color: #C7D2D8
   /* margin: 50px 100px ; */
 } 
 

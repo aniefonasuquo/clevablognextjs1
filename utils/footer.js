@@ -1,8 +1,11 @@
+'use client'
+
 import style from './footer.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import SocialSharing from './social/page'
 import logo from './../public/logos/logo-white.png'
+import Nav from './nav/nav'
 
 export default function Footer () {
 
@@ -20,16 +23,8 @@ export default function Footer () {
             <SocialSharing fill='white'></SocialSharing>
             </div>
           </div>
-          <div>
-            <nav className={style.navs}>
-              <ul>
-                <li><Link href='/'> Wealth 101 </Link></li>
-                <li><Link href={`/investorquiz/`}> Investing Personality Test </Link></li>
-                <li><Link href="/calculators/"> Calculators </Link></li>
-                <li><Link href="/"> Guides </Link></li>
-                <li><Link href="/"> Markets </Link></li>
-              </ul>
-            </nav>
+          <div className={style.navs}>
+            <Nav></Nav>
           </div>
         </div>
 

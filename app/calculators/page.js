@@ -74,7 +74,7 @@ export default function Thispage () {
   return (
     <div className={Styles.pagecontainer}>  
       <div className={Styles.topheading}> 
-        <h1 className={`${raleway.className}`}>Discover the best investment decision for you</h1> 
+        <h1 className={`${raleway.className}`}>Discover the right investment decision for you</h1> 
       </div> 
       <div className={Styles.options}>
         
