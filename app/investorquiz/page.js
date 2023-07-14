@@ -204,6 +204,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="confidence" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly Disagree</span>
               </label>
               <label>
                 <input className={styles.ranking} type="radio" name="confidence" value={2} required/>
@@ -220,6 +221,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="confidence" value={5} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly Agree</span>
               </label>
             </div> 
             </div>   
@@ -228,12 +230,13 @@ export default function Archetypes () {
             <div className={display == 8? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
             <div>
-              How do you feel about missing out on investment opportunity
+              I feel bad when I miss out on an investment opportunity?
             </div>
             <div>  
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly Disagree</span>
               </label>
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={2} required/>
@@ -250,6 +253,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="fomo" value={5} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly Agree</span>
               </label>
             </div>
             </div>
@@ -264,6 +268,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="preserve" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Very unimportant</span>
               </label>
               <label>
                 <input className={styles.ranking} type="radio" name="preserve" value={2} required/>
@@ -280,6 +285,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="preserve" value={5} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Very important</span>
               </label>
             </div>
             </div>
@@ -293,6 +299,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="aversion" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly uncomfortable</span>
               </label>
               <label>
                 <input className={styles.ranking} type="radio" name="aversion" value={2} required/>
@@ -309,6 +316,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="aversion" value={5} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly comfortable</span>
               </label>
             </div>
             </div>
@@ -316,11 +324,12 @@ export default function Archetypes () {
         
             <div className={display === 11 ? `${styles.visible}` : `${styles.question}`}>
             <div className={styles.degree}>
-            <div>How would you describe your comfort level with uncertainty and potential losses when it comes to investing?</div>  
+            <div>How would you describe your comfort level with uncertainty and porfolio losses when investing?</div>  
             <div>
               <label>
                 <input className={styles.ranking} type="radio" name="uncertainty" value={1} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly uncomfortable</span>
               </label>
               <label>
                 <input className={styles.ranking} type="radio" name="uncertainty" value={2} required/>
@@ -337,6 +346,7 @@ export default function Archetypes () {
               <label>
                 <input className={styles.ranking} type="radio" name="uncertainty" value={5} required/>
                 <div id={styles.big} className={styles.circle}></div>
+                <span>Highly comfortable</span>
               </label>
             </div>
             </div>

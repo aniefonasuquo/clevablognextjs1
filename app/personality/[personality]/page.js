@@ -55,7 +55,7 @@ export default async function PersonalityPage ({params}) {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.resultImage}>
+        <div className={styles.right}>
             <div>
               <h1>{params.personality}</h1>
               <div className={styles.social}>
@@ -68,8 +68,8 @@ export default async function PersonalityPage ({params}) {
               <p>You should take care to be more analytical before making investing decisions. As a risk taker, your past wins might give the illusion of infailability, be careful of blind spots and chasing highs when investing</p>
             </div>
           
-          {gender && (<div style={{position: 'relative', width: '400px', height: '400px'} }>
-          <Image style={{position: 'absolute'}} src={img} fill='true' sizes='100vw'/>
+          {gender && (<div className={styles.imgcontainer}>
+          <Image src={img} fill='true' sizes='100vw'/>
           </div>)}
         </div>
         <div className={styles.resultDetails}>

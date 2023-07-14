@@ -4,10 +4,13 @@
   background-color: white;
   color: rgb(24, 40, 102);
   padding: 20px 0;
+  gap: 20px ;
 }
 
 .container > div {
  padding: 0 20px;
+ flex: 1;
+ /* margin: auto; */
 }
 
 .container > div:nth-child(1) h1, 
@@ -30,8 +33,21 @@
   border-radius: 30px;
 }
 
-.resultImage {
-  width: 500px;
+.right {
+  max-width: 400px;
+}
+
+.imgcontainer {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.imgcontainer img {
+  position: absolute;
+}
+
+.resultDetails {
+  max-width: max-content
 }
 
 .resultDetails > div {
@@ -69,6 +85,7 @@
 
 @media screen and (max-width: 600px){
   .container {
-    display: block;
+    flex-direction: column;
+    align-items: center;
   }
 }

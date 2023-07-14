@@ -5,7 +5,7 @@ import React from "react";
 
 function SocialSharing({title}) {
 
-  const pathname = window.location.href
+  const pathname = '/'
 
   const shareOnFacebook = () => {
     // Replace the URL with the desired sharing URL

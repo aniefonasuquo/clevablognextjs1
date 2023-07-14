@@ -56,7 +56,6 @@
 }
 
 .questioncontainer{
-  /* height: 550px; */
   position: relative;
   max-width: auto;
   display: flex;
@@ -64,7 +63,6 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  /* width: 600px; */
 }
 
 .question {
@@ -73,7 +71,7 @@
   display: flex;
   justify-content: center;
   position: absolute;
-  left: -200%;
+  left: -300%;
   right: 0;
   top: 0;
   bottom: 0;
@@ -147,17 +145,17 @@
 
 .circle {
   border-radius: 50%;
-  border: 1px solid greenyellow;
+  border: 1px solid white;
   margin: 10px;
   }
   
   .circle:hover {
-  background-color: blue;
+  background-color: greenyellow;
   }
   
   input[type="radio"]:checked + .circle {
-  background-color: blue;
-  border-color: greenyellow;
+  background-color: greenyellow;
+  border-color: white;
   }
   
   .ranking {
@@ -179,11 +177,8 @@
     height: 55px;
   }
 
-  .controls {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    /* max-width: 500px; */
+  .degree * label:has(.ranking) {
+    text-align: center;
   }
 
   .ageQuestion {
@@ -238,10 +233,16 @@
     font-weight: bolder;
   }
 
-    .controls button{
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .controls button{
     border: none;
     padding: 10px;
-    border-radius: 50px;
+    border-radius: 20px;
     cursor: pointer;
     text-align: center;
   }
@@ -258,11 +259,11 @@
 
   @media screen and (max-width: 600px) {
     .visible {
-      padding: 0 10px;
       font-size: 12px;
     }
 
     .questioncontainer{
+      padding: 0 10px;
       /* height: 500px; */
     }
 
