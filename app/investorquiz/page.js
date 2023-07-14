@@ -63,14 +63,12 @@ export default function Archetypes () {
                 <Image alt='characters' src={characters} sizes='100vw'></Image>
                 </Suspense>
               </div>
-              <h1><span> Discover You</span></h1>
-              <p>
+              <h1>Discover You</h1>
+              <div>
                 <span>Understanding how our relationship with money, psychological makeup, amongst others are factors that affect how we make wealth related decisions.</span>
                 <span>This quiz aims to understand some of these factors to advise on optimal wealth decision making</span>
-              </p>
-              <div>
-              {display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}
-            </div>
+              </div>
+              <div>{display == 0 && (<button className={styles.startquiz} onClick={nextquestion}>{'Take Quiz >>'}</button>)}</div>
             </div>
 
           </div>

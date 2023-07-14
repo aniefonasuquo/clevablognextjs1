@@ -34,11 +34,8 @@
   font-size: 80px;
 }
 
-.quizintro p {
+.quizintro span {
   font-weight: 100;
-}
-
-.quizintro p span {
   display: block;
 }
 
@@ -76,21 +73,14 @@
   bottom: 0;
   margin: auto;
   opacity: 0;
-  transition: all 0.5s ease-in-out;
 }
 
 .visible {
   height: auto;
   display: flex;
   justify-content: center;
-  /* position: absolute; */
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   margin: auto;
   transition: all 0.5s ease-in-out;
-  /* height: 300px; */
 }
 
 .radio {
@@ -270,7 +260,8 @@
       font-size: 40px;
     }
 
-    .quizintro p {
+    .quizintro span {
+      display: block;
       font-size: 13px;
     }
 
