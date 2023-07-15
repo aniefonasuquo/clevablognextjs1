@@ -2,7 +2,7 @@ import Joinform from "./signup"
 import style from './style.module.css'
 import Image from "next/image"
 import logo from './../../public/logos/logo-main.png'
-import pic from './joinimage.webp'
+import pic from './../../public/joinimage.webp'
 
 
 export default function Join () {
