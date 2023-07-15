@@ -49,10 +49,11 @@ export default async function Homepage() {
             <div>
               <span>Purchase House</span>
               <span>Baby's Tuition Fund</span>
-              <span>Summer vaction in ibiza</span>
+              <span>Supplement income</span>
               <span>One year target savings</span>
               <span>Save 10% of my income</span>
-              <span>Earn additional income</span>
+              <span>Investment war chest</span>
+              <span>Fund lifestyle</span>
             </div>
           </div>
         </div>
@@ -106,7 +107,7 @@ export default async function Homepage() {
               <div><svg id="Layer_1" height="40" fill="silver" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m13 16a8 8 0 1 0 -8-8 8.009 8.009 0 0 0 8 8zm0-14a6 6 0 1 1 -6 6 6.006 6.006 0 0 1 6-6zm9.907 12.773a11.992 11.992 0 0 1 -8.907 5.166v2.061h4a1 1 0 0 1 0 2h-10a1 1 0 0 1 0-2h4v-2.051a11.994 11.994 0 0 1 -8.257-19.586 1 1 0 0 1 1.542 1.274 10 10 0 1 0 15.971 12.006 1 1 0 0 1 1.651 1.13z"/></svg></div>
                 <h1>Global wealth opportunities</h1>
               <div>
-                <p>Hedge currency, inflation and geographical risks with opportunities in various economies. Borderless opportunities to maximise your investment performance</p>
+                <p>Hedge currency, inflation and geographical risks with opportunities in various economies. Borderless opportunities to maximise your investment performance.</p>
               </div>
             </div>           
           </div>
@@ -118,7 +119,7 @@ export default async function Homepage() {
                 </div>
                   <h1>Personalised investing</h1>
                   <div>
-                <p>Improve your investment performance using strategies modelled after your unique investing factors such as income level, risk tolerance and liquisity preferenece etc.</p>
+                <p>Improve your investment performance using strategies modelled after your unique investing factors such as income level, risk tolerance and liquidity preferenece etc.</p>
               </div>
             </div>
             
@@ -131,7 +132,7 @@ export default async function Homepage() {
               <h1>Diverse investment categories</h1>
             <div>
               <p>
-                Optimise returns, and take advantage of various asset classes. From real estate to alternatives.
+                Optimise investment returns, diversifiying risk and take advantage of various asset classes, from real estate to alternatives.
               </p>
             </div>
             </div>
@@ -147,7 +148,7 @@ export default async function Homepage() {
           <span>All the tools to make smart investing decisions</span>
         </h2>
         <p>
-          <span>Bye to long research and consideration time that comes with making investment decisions, our algorithm produces results that fits your objectives.</span>
+          <span>No more long research and consideration time, make decisions easily at lightning speed.</span>
         </p>
       </div>
 
@@ -167,7 +168,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Performance</h1>
-            <span>maked decisions that maximise investment returns.</span>
+            <span>Choose investment that maximise your returns.</span>
           </div>
         </div>
         <div className={styles.decideItem}>

@@ -33,14 +33,14 @@ export default async function Post({ params }) {
     <>
     <div className={styles.pagecontainer}>     
       <section className={styles.articlehead}>
-        <div className={styles.blogpic}>
+        <div className={styles.headpic}>
           <Image objectFit="cover" fill='true' src={img} sizes="100vw"></Image>
         </div>
         <div className={styles.headright}>
           <Link href={`/blog/category/${content.tags[0]}`}><button className={styles.category}>{content.tags[0]}</button></Link>
           <h1 className={raleway.className}> {content.title}</h1>
           <span>4 mins read</span>
-          <div>Share this article <Share title={content.title}></Share></div>
+          <div>Share this article <Share size='20px' color='rgb(17, 30, 72)' title={content.title}></Share></div>
         </div>
       </section>
       <section className={styles.articlebody}>

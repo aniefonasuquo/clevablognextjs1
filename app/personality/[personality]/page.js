@@ -31,28 +31,28 @@ export default async function PersonalityPage ({params}) {
       pros: ['Analytical','Long term investor'],
       cons: ['Ignoring qualitative factors like market sentiment'],
       advice: ['avoid deviatiing from your set allocation', 'Go the extra-mile to analyse an investment before commiting'],
-    allocation: {equity: 0.6, bonds: 0.2, cash: 0.1, alternative: 0.1}
+    allocation: {equity: 0.4, bonds: 0.4, cash: 0.1, alternative: 0.1}
   },
     {archetype: "Builder",
     description: ["Your financial status greatly influences your investing decisions, making your opt for safe investment that may not maximise your returns. Your financial status greatly influences your investing decisions, making your opt for safe investment that may not maximise your returns.", 'However, you tend to be overconservative and shy away from risky investments. Try making more efforts toward seeking reasonable risk and optimising your returns ' ],
       pros: ['patient investor'],
       cons: ['May only invest in safe assets'],
       advice: ['avoid deviatiing from your set allocation', 'Go the extra-mile to analyse an investment before commiting'],
-    allocation: {equity: 0.6, bonds: 0.2, cash: 0.1, alternative: 0.1}
+    allocation: {equity: 0.3, bonds: 0.45, cash: 0.2, alternative: 0.05}
   },
     {archetype: "Soldier",
     description: ["Your high ambition is accompanied with risk seeking behaviour which does not consider your financial status, you are always on the prowl for the next best opppotuniy", 'These attributes leave you subsceptible to investment scam and bubbles that could lead to financial fataility as you may not have enough cushion for severe losses. Be careful to seek advise from informed persons before making investment decisions' ],
       pros: ['Comfortable with risk'],
       cons: ['Excessive trading','Trying to time market prices', 'short term mindset'],
       advice: ['avoid deviatiing from your set allocation', 'Go the extra-mile to analyse an investment before commiting'],
-    allocation: {equity: 0.6, bonds: 0.2, cash: 0.1, alternative: 0.1}
+    allocation: {equity: 0.40, bonds: 0.35, cash: 0.2, alternative: 0.05}
   },
     {archetype: "Custodian",
       description: ["Your are an above average earner, earnings are from less risky endeavours, as such have a preference for 'what you know", "Because investment factors change, you may miss opportunities by holding onto investments that may not be worthwhile. You should seek advise from informed persons on safe ways of diversifiying your investments and optimising your returns" ],
       pros: ['long term/patient investing'],
       cons: ['Extremely conservative with risk','Slow to respond to changing investment factors'],
       advice: ['avoid deviatiing from your set allocation', 'Go the extra-mile to analyse an investment before commiting'],
-    allocation: {equity: 0.6, bonds: 0.2, cash: 0.1, alternative: 0.1}
+    allocation: {equity: 0.4, bonds: 0.4, cash: 0.1, alternative: 0.1}
   },
 
   ]
@@ -63,9 +63,6 @@ export default async function PersonalityPage ({params}) {
   const gender = cookies().get('gender').value
   const willigness = cookies().get('willigness').value
   const capacity = cookies().get('capacity').value
-
-  console.log(params.personality)
-  console.log(gender)
 
   let img = '';
 
@@ -116,15 +113,12 @@ export default async function PersonalityPage ({params}) {
   }
 
   return (
-    <>
+    <div className={styles.page}>
       <div className={styles.container}>
         <div className={styles.right}>
             <div>
               <h1>{params.personality}</h1>
-              <div className={styles.social}>
-                <p>Share your result</p>
-                <div><SocialSharing></SocialSharing></div>
-              </div>  
+ 
             </div>
             <div>
               <p>{emotion.description[0]}</p>
@@ -172,23 +166,27 @@ export default async function PersonalityPage ({params}) {
             </div>
             <div>
               <div className={styles.resultIcons}>
-              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" fill='rgb(24, 40, 102)' data-name="Layer 1" viewBox="0 0 24 24" width="30" height="30"><path d="M11.91,24c-1.51,0-3.02-.29-4.49-.89-2.96-1.19-5.34-3.58-6.53-6.54C-.46,13.23-.26,9.65,1.44,6.49,3.22,3.18,6.44,.78,10.05,.05c.71-.14,1.45,.04,2.02,.51,.59,.48,.93,1.2,.93,1.96V11h8.5c.76,0,1.47,.34,1.96,.93,.47,.57,.65,1.31,.51,2.02-.73,3.61-3.14,6.83-6.44,8.61-1.78,.96-3.68,1.44-5.61,1.44ZM10.53,1c-.09,0-.18,0-.28,.03C6.92,1.7,3.96,3.92,2.32,6.96c-1.56,2.89-1.74,6.17-.5,9.24,1.09,2.71,3.27,4.89,5.98,5.98,3.07,1.24,6.35,1.06,9.25-.5,3.05-1.64,5.27-4.6,5.94-7.93,.08-.42-.03-.85-.3-1.19-.29-.36-.72-.56-1.18-.56H12.5c-.28,0-.5-.22-.5-.5V2.51c0-.46-.2-.89-.56-1.18-.26-.22-.58-.33-.91-.33Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="30" height="30" fill='rgb(24, 40, 102)'>
+              <path d="m11,1h-6.5C2.019,1,0,3.019,0,5.5v3.5c0,1.103.897,2,2,2h9c1.103,0,2-.897,2-2V3c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1H2c-.551,0-1-.448-1-1v-3.5c0-1.93,1.57-3.5,3.5-3.5h6.5c.551,0,1,.448,1,1v6Zm7.5-6h-2.5c-1.103,0-2,.897-2,2v13c0,1.103.897,2,2,2h2.5c2.481,0,4.5-2.019,4.5-4.5V7.5c0-2.481-2.019-4.5-4.5-4.5Zm3.5,12.5c0,1.93-1.57,3.5-3.5,3.5h-2.5c-.551,0-1-.448-1-1V5c0-.552.449-1,1-1h2.5c1.93,0,3.5,1.57,3.5,3.5v8Zm-12-2.5h-7c-1.103,0-2,.897-2,2v3.5c0,2.481,2.019,4.5,4.5,4.5h4.5c1.103,0,2-.897,2-2v-6c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1h-4.5c-1.93,0-3.5-1.57-3.5-3.5v-3.5c0-.552.449-1,1-1h7c.551,0,1,.448,1,1v6Z"/></svg>
                 <h3>Ideal Porfolio Allocation</h3>
               </div>
               <div className={styles.chart}>
-                <Chart equity={50} bonds={20} cash={30}></Chart>  
+                <Chart equity={emotion.allocation.equity} bonds={emotion.allocation.bonds} cash={emotion.allocation.cash} alternatives={emotion.allocation.alternative}></Chart>  
               </div>
               <div>
                 <p>Stocks and equities - {emotion.allocation.equity * 100}%</p>
                 <p>Bonds - {emotion.allocation.bonds * 100}%</p>
-                <p>Cash and shor term investments - {emotion.allocation.cash* 100}%</p>
+                <p>Cash and short term investments - {emotion.allocation.cash* 100}%</p>
+                <p>Alterntives - {emotion.allocation.alternative* 100}%</p>
               </div>
             </div>
-
-        </div>
-      
+        </div>     
       </div>
-    </>
+      <div className={styles.social}>
+        <p>Share your result</p>
+        <div><SocialSharing size='30px' color='silver' href='https://cleva.ng/investorquiz' title={`I just took an investment personality quiz. I'm a ${params.personality}, my risk willingness ${willigness.split('-')[0]}, and my financial capacity is ${capacity.split('-')[0]}.`}></SocialSharing></div>
+      </div> 
+    </div>
   )
 }
 

@@ -1,8 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  background-color: rgb(17, 30, 72);
-  color: #C7D2D8;
+  background-color: rgb(2,4,37);
+  color: silver;
 }
 
 .container > div {
@@ -34,8 +34,8 @@
 }
 
 .top button {
-  padding: 20px;
-  border-radius: 20px;
+  padding: 15px;
+  border-radius: 15px;
   border: 1px solid greenyellow;
   color: greenyellow;;
   background-color: #131A33;
@@ -43,34 +43,26 @@
 }
 
 .topDetails {
-
+  margin: 20px 0;
 }
 
 .marquee {
   position: relative;
   padding-bottom: 20px;
   color: greenyellow;
-  height: 50px;
-  margin: 20px 0;
+  height: 100px;
 }
 
 .track {
-  animation: tickerAnimation 10s linear infinite;
-  position: absolute;
-  left: 0;
-  white-space: nowrap;
-}
-
-.track {
-  animation: tickerAnimation 10s linear infinite;
+  animation: tickerAnimation 20s linear infinite;
   position: absolute;
   left: 0;
   white-space: nowrap;
 }
 
 .track span {
-  padding: 0 20px;
-  font-size: 40px;
+  padding: 0 30px;
+  font-size: 60px;
 }
 
 .section p {
@@ -112,35 +104,13 @@
   object-fit: cover;
 }
 
-.decideImage {
-  position: relative;
-  aspect-ratio: 1/0.5;
-}
-
-.decideImage img {
-  position: absolute;
-  object-fit: contain;
-}
-
-
-.decideGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-items: start;
-  padding: 0 100px;
-}
-
-.decideGrid > div {
-  width: 100%;
-}
 
 @keyframes tickerAnimation {
   0% {
-    transform: translateX(0);
+    transform: translateX(-10%);
   }
   100% {
-    transform: translateX(-10%);
+    transform: translateX(-20%);
   }
 }
 
@@ -190,19 +160,39 @@
   font-weight: bold;
 }
 
+
+.decideImage {
+  position: relative;
+  aspect-ratio: 1/0.5;
+}
+
+.decideImage img {
+  position: absolute;
+  object-fit: contain;
+}
+
+.decideGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: start;
+}
+
+.decideGrid > div {
+  width: 100%;
+}
+
 .decideItem {
   border-radius: 10px;
   display: grid;
   border: 1px solid #C7D2D8;
-  /* background-color: #C7D2D8; */
-  padding: 50px 20px;
-  gap: 50px;
+  gap: 20px;
+  padding: 10px;
 }
 
 .decidedeets {
   text-align: center;
   color: #C7D2D8
-  /* margin: 50px 100px ; */
 } 
 
 
@@ -216,6 +206,12 @@
     background-size: cover;
     padding: 50px 10px;
   }
+
+  .section {
+    padding: 50px 10px;
+  }
+  
+
 
   .top h1 {
     font-size: 70px;
@@ -235,11 +231,10 @@
 
   .top h1 span {
     display: block;
-    /* font-size: 20px; */
+
   }
 
   .circleContainer p {
-    /* width: 600px; */
     margin: 0;
   }
   

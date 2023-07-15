@@ -24,7 +24,7 @@
 }
 
 .category {
-  border: 1px solid white;
+  border: 1px solid #C7D2D8;
   padding: 10px;
   margin-top: 10px;
   border-radius: 10px;
@@ -40,7 +40,6 @@
 .imageDiv {
   position: relative;
   aspect-ratio: 1 / 0.8;
-  /* width: 100%; */
 }
 
 .imageDiv img {
@@ -52,16 +51,18 @@
 /* Recent Post */
 
 .recent {
+  display: flex;
+  flex-direction: column;
   background-color: #131A33;
-  padding: 50px 50px;
-
+  padding: 100px 50px;
+  gap: 100px;
 } 
 
 .recentPosts {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 50px 0;
+  /* padding: 50px 0; */
 }
 
 .recentPosts h1, .recentPosts span {
@@ -75,9 +76,9 @@
 
 .recentButton button{
   border: 1px solid #C7D2D8 ;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 20px;
   background-color: transparent;
   color: #C7D2D8;
 }
@@ -140,21 +141,46 @@
 @media screen and (max-width: 800px) {
 
   .pagecontainer * {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .pagecontainer > div {
-    padding: 20px 10px;
+    padding: 50px 10px;
   }
 
   .topDiv h1{
-    font-size: 50px;
+    font-size: 40px;
   }
+
+  .category {
+    padding: 0;
+    padding-bottom: 5px;
+    font-size: 14px;
+    margin: 0;
+    border: 0;
+    border-bottom: 1px solid whitesmoke;
+    border-radius: 0;
+  }
+
+  .recent {
+    display: flex;
+    flex-direction: column;
+    background-color: #131A33;
+    padding: 100px 50px;
+    gap: 50px;
+  } 
   
   .recentPostCard {
     display: grid;
     grid-template-columns: 40% 1fr;
     gap: 20px;
+  }
+
+  .recentButton button{
+    border: 1px solid #C7D2D8 ;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
   }
 
   .blotter {
@@ -167,8 +193,13 @@
     gap: 20px;
   }
 
-  .recentButton button{
-    padding: 20px;
-    font-size: 16px;
+  .blotter button {
+    border: 1px solid #131A33 ;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    background-color: transparent;
   }
+  
+
 }
