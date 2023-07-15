@@ -93,12 +93,10 @@ export default function Thispage () {
 
           <button id='equity'>Stock Porfolio</button>
         </div>
-           <div id="calc" className={Styles.midsection}>
-        {/* <div> */}
+        <div id="calc" className={Styles.midsection}>
           <h1>{calcdetails.heading}</h1>
           <p>{calcdetails.details}</p>
-        {/* </div> */}
-      </div>
+        </div>
       <Calc  className={Styles.calculators} calc={calcdisplay}></Calc>
     </div>
   )

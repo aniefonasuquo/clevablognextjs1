@@ -1,10 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 100px ;
   background-color: rgb(17, 30, 72);
   color: #C7D2D8;
-  padding: 100px;
 }
 
 .container > div {
@@ -14,8 +12,13 @@
 .top {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  text-align: center;
+  gap: 30px;
+  justify-content: center;
+  background-image: url('./../public/topbackground.webp');
+  background-size: cover;
+  background-blend-mode: color-burn;
+  border: none;
+  padding: 200px 100px;
 }
 
 .top h1 {
@@ -125,6 +128,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   justify-items: start;
+  padding: 0 100px;
 }
 
 .decideGrid > div {
@@ -143,8 +147,9 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 30px ;
+  /* gap: 30px ; */
   overflow: hidden;
+  padding: 50px 100px;
 }
 
 .circleContainer {
@@ -203,11 +208,17 @@
 
 @media screen and (max-width: 900px) {
   .container {
-    padding: 100px 10px;
+  }
+
+  .top {
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    padding: 50px 10px;
   }
 
   .top h1 {
-    font-size: 65px;
+    font-size: 70px;
   }
   
 

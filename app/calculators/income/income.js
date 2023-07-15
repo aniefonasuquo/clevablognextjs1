@@ -125,7 +125,7 @@ function setcurr (e) {
       { submit &&
       <div className={Styles.result}>
         <div>
-          <h4>Porfolio Income</h4>
+          <p>Porfolio Income</p>
           <h4>{incomeCurr == 'USD'? '$' : 'N'}{incomeTarget.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})} every quarter</h4>
         </div>
         <div>

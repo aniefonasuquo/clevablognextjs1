@@ -13,12 +13,13 @@ import block from './../public/landingimages/block.webp';
 import neural from './../public/landingimages/neural.png';
 import speed from './../public/landingimages/speed.png';
 import risk from './../public/landingimages/risks.png';
+import topback from './../public/topbackground.webp'
 
 export default async function Homepage() {
 
   return ( 
   <div className={styles.container}>
-    <div className={styles.top}>
+    <div className={styles.top} style={{backgroundImage: {topback}}}>
       <h1>
         <span>Dream.</span>
         <span>Discover.</span>
@@ -36,7 +37,7 @@ export default async function Homepage() {
         <span className={styles.circle}>1</span>
         <h1><span>Dream</span></h1>
         <h2>
-          <span>Best opportunities for your dreams</span>
+          <span>Bordeless opportunities to fuel your dreams</span>
         </h2>
         <p>
           <span>Wealth strategies that factor key elements of your aspirations performance better. Cleva provides suitable investment opportunities that put you first.</span>
@@ -166,7 +167,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Performance</h1>
-            <span>find investments that maximise your returns.</span>
+            <span>maked decisions that maximise investment returns.</span>
           </div>
         </div>
         <div className={styles.decideItem}>
@@ -175,7 +176,7 @@ export default async function Homepage() {
           </div>
           <div className={styles.decidedeets}>
             <h1>Algo-advisory</h1>
-            <span>Our propietary algorithms help make expert decisions is no time.</span>
+            <span>Our propietary algorithms helps make expert decisions is no time.</span>
           </div>
         </div>
 

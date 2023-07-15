@@ -3,7 +3,7 @@
   color: white;
   display: grid;
   gap: 100px;
-  padding: 100px 200px;
+  padding: 100px 0;
   justify-content: center;
   grid-template-rows: repeat(auto-fit, 1fr);
 }
@@ -44,7 +44,8 @@
  display: grid;
  justify-content: center;
  text-align: center;
- gap: 10px
+ gap: 10px;
+ padding: 0 200px;
 }
 
 .midsection h1 {
@@ -65,6 +66,10 @@
   .pagecontainer * h1{
     font-size: 30px;
   }
+
+  .midsection {
+    padding: 0 10px;
+   }
 
   .options {
     gap: 10px;

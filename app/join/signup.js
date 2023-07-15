@@ -67,7 +67,7 @@ export default function Joinform () {
       <form onSubmit={handleJoin} className={styles.form}>
         <div>
           <h1>Join Cleva</h1>
-          <p>Begin your journey to boundless wealth opportunities</p>
+          <p>Discover and make the right decisions from global wealth opportunites.</p>
         </div>
         <input name="joinname" id="joinname" type='text' placeholder='Name...'></input>
         <input name="joinemail" id="joinemail" type='email' placeholder='Email...'></input>
