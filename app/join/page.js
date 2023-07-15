@@ -2,6 +2,7 @@ import Joinform from "./signup"
 import style from './style.module.css'
 import Image from "next/image"
 import logo from './../../public/logos/logo-main.png'
+import pic from './joinimage.webp'
 
 
 export default function Join () {
@@ -9,14 +10,12 @@ export default function Join () {
   return (
     <div className={style.pagecontainer}>
       <div className={style.left}>
-        <h1>Discover the best opportunities that suit your</h1>
-        <h1>Lifestyle</h1>
+        <Image src={pic} alt="join-image" sizes="100vw" fill={true}></Image>
+        <div className={style.deets}>
+
+        </div>
       </div>
       <div className={style.right}>
-        {/* <div className={style.logowrap}>
-          <Image alt="clevaLogo" src={logo} fill={true} sizes="100vw"></Image>
-        </div>      */}
-        
         <Joinform></Joinform>
       </div>
     </div>

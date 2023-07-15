@@ -5,13 +5,6 @@ import { useState } from 'react'
 
 export default function Nav ({onClick}) {
 
-  const [menuDisplay, setMenuDisplay] = useState('burger')
-
-  const handleLinkClick = async (e) => {  
-    setMenuDisplay('burger')
-  };
-
-
   return (
     <nav>
       <ul>
