@@ -6,6 +6,8 @@ import { Suspense } from "react";
 import Posts from "./posts";
 import slugify from "slugify";
 import RecomPosts from "./recomposts";
+import { getdata } from "@/utils/Wordpress/getposts";
+import { getCatPosts } from "@/utils/Wordpress/getcategoryposts";
 
 const raleway = Raleway({
   weight: '600',
@@ -14,20 +16,9 @@ const raleway = Raleway({
   display: 'swap' 
 })
 
-export const getallpost =  async (category) => {
-  let Posts = await fetch('https://dummyjson.com/posts').then(res => res.json())
-
-  const {posts} = Posts
-  posts.forEach(post => {{post['slug'] = slugify(post.title)}})
-  const filteredPost = posts.filter(post => post.tags.includes(category))
+export default async function CategoryArchive({ params }) {
+  const posts = await getCatPosts(params.category);
   
-  return filteredPost
-}
-
-export default async function Postpage({ params }) {
-
-  const posts = await getallpost(params.category);
-
   return (
   <>
     <div className={styles.wrapper}>

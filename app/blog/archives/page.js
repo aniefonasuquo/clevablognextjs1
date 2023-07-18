@@ -16,18 +16,13 @@ const raleway = Raleway({
 
 export const getdata =  async () => {
 
-  let Posts = await fetch('https://dummyjson.com/posts').then(res => res.json())
-
-  const {posts} = Posts
-  posts.forEach(post => {{post['slug'] = slugify(post.title)}})
-  
-  return posts
-}
-
-export default async function Archives() {
-  
+   let Posts = await fetch('https://blog.cleva.ng/wp-json/wp/v2/posts').then(res => res.json())  
+    return Posts
+  }
+    
+  export default async function Archives() {
   const posts = await getdata();
-
+  
   return (
 
   <div className={styles.pagecontainer}>
