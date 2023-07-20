@@ -2,11 +2,11 @@ import Link from 'next/link'
 import styles from './style.module.css'
 import globe from './../public/landingimages/globex.png'
 import pie from './../public/landingimages/pie-chart.png'
-import income from './../public/landingimages/Incomeone.png'
-import personality from './../public/landingimages/personality.jpg'
-import allocation from './../public/landingimages/allocation.png'
-import productdetail from './../public/landingimages/productdetail.png'
 import Image from 'next/image'
+import incomeimg from './../public/landingimages/incomeone.png'
+import personalityimg from './../public/landingimages/personality.jpg'
+import allocationimg from './../public/landingimages/allocation.png'
+import productdetailimg from './../public/landingimages/productdetail.png'
 
 export default function Landing () {
 
@@ -136,16 +136,16 @@ c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.70
     </div>
     <div className={styles.informationillustration}>
       <div className={styles.productimage}>
-        <Image src={income} width={300} height={300} sizes='100vw'></Image>
+        <Image src={incomeimg} width={300} height={300} sizes='100vw'></Image>
       </div>
       <div className={styles.productimage}>
-        <Image src={personality} width={400} height={400} sizes='100vw'></Image>
+        <Image src={personalityimg} width={400} height={400} sizes='100vw'></Image>
       </div>
       <div className={styles.productimage}>
-        <Image src={allocation} width={250} height={500} sizes='100vw'></Image>
+        <Image src={allocationimg} width={250} height={500} sizes='100vw'></Image>
       </div>
       <div className={styles.productimage}>
-        <Image src={productdetail} width={300} height={150} sizes='100vw'></Image>
+        <Image src={productdetailimg} width={300} height={150} sizes='100vw'></Image>
       </div>
     </div>
   </section>
