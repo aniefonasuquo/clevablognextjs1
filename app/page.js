@@ -2,11 +2,11 @@ import Link from 'next/link'
 import styles from './style.module.css'
 import globe from './../public/landingimages/globex.png'
 import pie from './../public/landingimages/pie-chart.png'
-import Image from 'next/image'
 import incomeimg from './../public/landingimages/incomeone.png'
 import personalityimg from './../public/landingimages/personality.jpg'
 import allocationimg from './../public/landingimages/allocation.png'
 import productdetailimg from './../public/landingimages/productdetail.png'
+import Image from 'next/image'
 
 export default function Landing () {
 
