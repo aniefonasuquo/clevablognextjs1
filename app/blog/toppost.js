@@ -6,6 +6,13 @@ import Link from "next/link"
 import { wpm } from "@/utils/wpm/wpm"
 import { getCatNames } from "@/utils/Wordpress/getCategoryname"
 import { getdata } from "@/utils/Wordpress/getposts"
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
 
 export default async function TopPost () {
   
@@ -24,14 +31,14 @@ export default async function TopPost () {
       <div className={styles.topdeets}>
         <div>
           <Link href={`/blog/category/${categoryName[0]}`}>
-            <button className={styles.category}>{categoryName[0]}</button>
+            <button className={styles.category}><span className={Satoshi.className}>{categoryName[0]}</span></button>
           </Link>
         </div>
           <Link href={`/blog/posts/${post.slug}`}>
-            <h1>{post.title.rendered}</h1>
+            <h1 className={Satoshi.className}>{post.title.rendered}</h1>
           </Link>
-          <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></div>
-        <span>{wpm(post.content.rendered)} mins read</span>
+          <div className={Satoshi.className} dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></div>
+        <span className={Satoshi.className}>{wpm(post.content.rendered)} mins read</span>
       </div>
     </div>
   )

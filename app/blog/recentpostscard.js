@@ -4,6 +4,14 @@ import styles from './page.module.css'
 import Link from "next/link"
 import slugify from "slugify"
 import { wpm } from "@/utils/wpm/wpm"
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
+
 
 export const getdata =  async () => {
   let Posts = await fetch('https://dummyjson.com/posts').then(res => res.json())
@@ -31,12 +39,12 @@ export default async function RecentPost () {
         </div>
         <div>
           <Link href={`/blog/category/${tags[0]}`}>
-            <button className={styles.category}>{tags[0]}</button>
+            <button className={styles.category}><span className={Satoshi.className}>{tags[0]}</span></button>
           </Link>
           <Link href={`blog/post/${slug}`}>
-            <h1>{title}</h1>
+            <h1 className={Satoshi.className}>{title}</h1>
           </Link>
-          <span>{wpm(body)} mins read</span>
+          <span className={Satoshi.className}>{wpm(body)} mins read</span>
         </div>
       </div>
     ))}

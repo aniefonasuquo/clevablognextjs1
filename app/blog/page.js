@@ -4,14 +4,14 @@ import Link from 'next/link'
 import RecentPost from './recentpostscard'
 import TopPost from './toppost'
 import CategoryBlotter from './categoryblotter'
+import localfont from 'next/font/local'
 
-
-const varela = Varela ({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-redhat',
-  display: 'swap' 
+const Satoshi = localfont({
+  src: './../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
 })
+
 
 export default async function BlogHome() {
   
@@ -24,7 +24,7 @@ export default async function BlogHome() {
         <RecentPost></RecentPost>
         <div className={styles.recentButton}>
           <Link href={'/blog/archives'}>
-            <button>More Posts</button>
+            <button className={Satoshi.className}>More Posts</button>
           </Link>
         </div>
       </div>

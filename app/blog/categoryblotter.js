@@ -5,6 +5,14 @@ import Link from "next/link"
 import slugify from "slugify"
 import { wpm } from "@/utils/wpm/wpm"
 import { getCatPosts } from "@/utils/Wordpress/getcategoryposts"
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
+
 
 
 export default async function CategoryBlotter ({category}) {
@@ -14,10 +22,10 @@ export default async function CategoryBlotter ({category}) {
   return (
     <div className={styles.blotter}>
       <div className={styles.blotterinfo}>
-        <h1>{category}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores</p>
+        <h1 className={Satoshi.className}>{category}</h1>
+        <p className={Satoshi.className}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores</p>
         <Link href={`/blog/category/${category}`}>
-          <button>Read More</button>
+          <button className={Satoshi.className}>Read More</button>
         </Link>
       </div>
       <div className={styles.blotterPosts}>     
@@ -32,7 +40,7 @@ export default async function CategoryBlotter ({category}) {
               <Link href={`/blog/posts/${slug}`}>
                 <h1>{title.rendered}</h1>
               </Link>
-              <span>{wpm(content.rendered)} mins read</span>
+              <span className={Satoshi.className}>{wpm(content.rendered)} mins read</span>
             </div>
           </div>
         ))}

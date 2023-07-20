@@ -3,12 +3,12 @@
 import Styles from './global.css'
 import Header from '@/utils/header'
 import Footer from '@/utils/footer'
-import { Red_Hat_Display  } from 'next/font/google'
+import localfont from 'next/font/local'
 
-const redhatdisplay = Red_Hat_Display({
-  subsets: ['latin'],
-  variable: '--font-redhat',
-  display: 'swap' 
+const Satoshi = localfont({
+  src: './../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
 })
 
 export const metadata = {
@@ -19,9 +19,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-        <body> 
+        <body className={Satoshi.className}> 
           <Header className={Styles.header} ></Header>
-            <div>{children}</div>
+            <div className={Satoshi.className}>{children}</div>
           <Footer></Footer>
         </body>
     </html>
