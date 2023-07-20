@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+.container h1 {
+  font-size: 60px;
+}
+
 .herocontainer {
   max-width: 90vw;
   margin: auto;
@@ -19,7 +23,7 @@
 
 .heroheading h1 span {
   padding-right: 10px;
-  font-size: 2em;
+  font-size: 60px;
   font-weight: bold;
 }
 
@@ -27,7 +31,7 @@
 
 }
 .herodetail span {
-  font-size: 1.2rem;
+  font-size: 25px;
   font-size: bold;
   display: block;
   padding: 5px 0;
@@ -40,13 +44,14 @@
 
 .herocta {
   padding: 10px;
-  width: 150px;
+  width: max-content;
   background-color: greenyellow;
   display: flex;
   justify-content: space-evenly;  
   align-items: center;
   border-radius: 50px;
-  color: rgb(2,4,37)
+  color: rgb(2,4,37);
+  font-size: 20px;
 }
 
 .herocta span {
@@ -100,10 +105,7 @@
 }
 
 .discovercta {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  margin: auto;
+  padding: 20px;
   width: max-content;
   background-color: greenyellow;
   display: flex;
@@ -111,6 +113,8 @@
   align-items: center;
   border-radius: 50px;
   color: rgb(2,4,37);
+  margin: auto;
+  gap: 10px ;
   font-size: 20px;
 }
 
@@ -123,13 +127,14 @@
   color: rgb(2,4,37);
 }
 
-.limitlessheading span {
+.limitlessheading h1 {
   font-size: 60px;
 }
 
 .limitlessdescription {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  font-size: 20px;
 }
 
 .limitlessdescription > div {
@@ -149,6 +154,7 @@
 .limitlessdescriptiontop {
   padding: 20px 0;
   font-size: 30px;
+  font-weight: bold;
 } 
 
 .limitlessdescriptiontop div:nth-of-type(1){
@@ -239,7 +245,7 @@
 
 
 .signup form input {
-  width: 400px;
+  max-width: 400px;
   height: 50px;
   border-radius: 10px;
   border: none;
@@ -254,6 +260,7 @@
 
 
 .signup form button {
+  width: max-content;
   gap: 10px;
   height: 50px;
   border-radius: 40px;
@@ -273,6 +280,18 @@
 }
 
 @media screen and (max-width: 800px) {
+  .heroheading h1 span {
+    font-size: 40px;
+  }
+
+  .container h1 {
+    font-size: 40px;
+  }
+
+  .limitlessdescriptiontop {
+
+  }
+
   .section_one {
     padding: 50px 10px;
   }
