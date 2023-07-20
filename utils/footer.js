@@ -12,12 +12,10 @@ export default function Footer () {
   return (
     <footer className={style.footer}>
         <div className={style.topfooter}>
-          <div>
-            <div className={style.footerlogowrap}> 
-              <Link href="/"> 
-                <Image sizes='100vw' src={logo} alt='clevalogo'></Image> 
-              </Link>
-            </div>
+          <div className={style.footerlogowrap}> 
+            <Link href="/"> 
+              <Image sizes='100vw' src={logo} alt='clevalogo'></Image> 
+            </Link>
           </div>
           <div className={style.navs}>
             <Nav></Nav>

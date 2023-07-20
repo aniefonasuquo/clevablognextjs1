@@ -20,7 +20,9 @@
 .navs ul {
   display: flex;
   list-style: none;
-  gap: 10px
+  gap: 10px;
+  list-style-type: none;
+  list-style: none;
 }
 
 .navs li a {
@@ -28,6 +30,10 @@
   color: white;
   font-size: 20px;
   font-weight: 500;
+}
+
+.navs li a:hover {
+  color: greenyellow
 }
 
 .footerlogowrap img{
@@ -54,19 +60,28 @@
 
   .topfooter {
     flex-direction: column;
+    gap: 50px;
   }
 
   .topfooter * div{
-    padding: 10px 0;
+    /* padding: 10px 0; */
     text-align: start;
   }
 
-  .navs li {
-    text-align: start;
+  .navs ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .navs ul li a{
+    font-size: 16px;
+    font-weight: normal;
   }
 
   .middlefooter {
-    flex-direction: column;  
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;  
   }
 
 }
