@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Suspense } from "react"
 import { Raleway  } from 'next/font/google'
 import Image from "next/image"
+import { wpm } from "@/utils/wpm/wpm"
 
 const raleway = Raleway({
   weight: '600',
@@ -23,7 +24,7 @@ export default function RecomPosts ({ posts }) {
     <div className={styles.recommendedPost}>
       <h1>Recommended</h1>
       <div>
-        {recompost.slice(0,4).map(({title, slug, id}) => (
+        {recompost.slice(0,4).map(({title, slug, id, content}) => (
           <div key={id} className={styles.recomArticleframe}>
             <div className={styles.recomimgwrap}>
               <Suspense fallback={<>loading</>}>
@@ -34,9 +35,9 @@ export default function RecomPosts ({ posts }) {
             </div>
             <div>
               <Suspense fallback={<>loading</>}>
-                <Link href={`/blog/posts/${slug}`}><p>{title}</p></Link>
+                <Link href={`/blog/posts/${slug}`}><p>{title.rendered}</p></Link>
               </Suspense>
-              <span>1 mins read</span>
+              <span>{wpm(content.rendered)} mins read</span>
             </div>
           </div>              
         ))}

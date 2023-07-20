@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Suspense } from "react"
 import { Raleway  } from 'next/font/google'
 import Image from "next/image"
+import { wpm } from "@/utils/wpm/wpm"
 
 const raleway = Raleway({
   weight: '600',
@@ -28,8 +29,8 @@ export default function Posts ({posts}) {
   return (
     <div>
     <div className={styles.categorypost}>  
-      {posts.slice(0,limit).map(({title, tags, slug, userID}) => (
-        <div key={userID} className={styles.articleframe}>
+      {posts.slice(0,limit).map(({title, content, slug, id}) => (
+        <div key={id} className={styles.articleframe}>
           <div className={styles.imgwrap}>
             <Suspense fallback={<>loading</>}>
               <Link href={`/blog/posts/${slug}`}> 
@@ -39,9 +40,9 @@ export default function Posts ({posts}) {
           </div>
           <div>
             <Suspense fallback={<>loading</>}>
-              <Link href={`/blog/posts/${slug}`}><h1 className={raleway.className}>{title}</h1></Link>
+              <Link href={`/blog/posts/${slug}`}><h1 className={raleway.className}>{title.rendered}</h1></Link>
             </Suspense>
-            <span>1 mins read</span>
+            <span>{wpm(content.rendered)} mins read</span>
           </div>
         </div>
       ))}

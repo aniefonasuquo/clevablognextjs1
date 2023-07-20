@@ -1,25 +1,20 @@
 .pagecontainer {
-  display: flex;
-  flex-direction: column;
   color: rgb(17, 30, 72);
-}
-
-.articlebuttom {
-  padding-bottom: 100px;
+  padding: 0 5px;
 }
 
 .articlehead {
   display: flex;
 }
 
-.blogpic {
+.headpic {
   flex: 1;
   position: relative;
   width: 100%;
   flex-shrink: 1;
 }
 
-.blogpic img {
+.headpic img {
   position: absolute;
 }
 
@@ -29,16 +24,13 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding: 50px 20px;
-  flex-shrink: 1;
+  padding: 50px 20px 10px;
+  gap: 10px;
 }
 
-.headright * {
-  margin: 5px 0;
-}
 
 .headright h1 {
-  font-size: 40px;
+  font-size: 60px;
 }
 
 .headright span a {
@@ -49,15 +41,17 @@
 }
 
 .articlebody {
-  margin: 40px 100px;
-  padding: 0 200px;
   line-height: 30px;
+  max-width: 800px;
+  margin: auto;
+  padding: 50px 0;
 }
 
 .blogcta {
   background-color: rgb(17, 30, 72);
   color: white;
-  margin: 50px 100px;
+  max-width: 800px;
+  margin: auto;
   border-radius: 20px;
   padding: 50px;
   text-align: center;
@@ -93,7 +87,8 @@
 }
 
 .related {
-  /* padding: 20px 0; */
+  max-width: 800px;
+  margin: auto;
 }
 
 .related h1{
@@ -142,18 +137,23 @@
 }
 
 
-@media (max-width: 1400px) and (min-width: 300px){
-  .articlebody {
-    margin: 20px 0;
-    padding: 10px;
-  }
-  
-}
-
 @media screen and (max-width: 600px) {
   .articlehead {
-    display: block;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .headpic {
+    flex: 1;
     position: relative;
+  }
+
+  .headright {
+    padding: 50px 5px 10px;
+  }
+
+  .headright h1 {
+    font-size: 30px;
   }
 
   .blogcta {
@@ -174,37 +174,8 @@
     gap: 20px;
   }
 
-  .blogpic {
-    display: block;
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-  }
-
   .textmiddle > a {
     color: white;
   }
   
-  .articlebody {
-    margin: 10px;
-    padding: 0;
-    line-height: normal;
-  }
-  
-  .headright {
-    background-color: transparent;
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 20px 10px;
-    flex-shrink: 1;
-    bottom: 0;
-  }
-
-  .headright > * {
-    padding: 0px;
-    margin: 0px;
-  }
-
 }

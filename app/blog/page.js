@@ -13,7 +13,7 @@ const varela = Varela ({
   display: 'swap' 
 })
 
-export default function BlogHome() {
+export default async function BlogHome() {
   
   return (
     <div className={styles.pagecontainer}>
@@ -28,8 +28,12 @@ export default function BlogHome() {
           </Link>
         </div>
       </div>
-      <CategoryBlotter category='french'></CategoryBlotter>
-      <CategoryBlotter category='history'></CategoryBlotter>
+      <div>
+        <CategoryBlotter category='Investing'></CategoryBlotter>
+      </div>
+      <div>
+        {/* <CategoryBlotter category='Investment'></CategoryBlotter> */}
+      </div>
 
     </div>
   )

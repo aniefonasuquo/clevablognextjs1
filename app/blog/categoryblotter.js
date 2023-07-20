@@ -4,23 +4,12 @@ import styles from './page.module.css'
 import Link from "next/link"
 import slugify from "slugify"
 import { wpm } from "@/utils/wpm/wpm"
-
-export const getdata =  async () => {
-  let Posts = await fetch('https://dummyjson.com/posts').then(res => res.json())
-
-  const  { posts } = Posts
-  posts.forEach(post => {
-    {post['slug'] = slugify(post.title)}
-  });
-  
-  return posts
-}
+import { getCatPosts } from "@/utils/Wordpress/getcategoryposts"
 
 
-export default async function CategoryBlotter ({ category }) {
-
-  const posts = await getdata();
-  const catposts = posts.filter((post) => post.tags.includes(category)).slice(0,3)
+export default async function CategoryBlotter ({category}) {
+  const data = await getCatPosts(category)
+  const posts = data.slice(0,3)
   
   return (
     <div className={styles.blotter}>
@@ -31,8 +20,9 @@ export default async function CategoryBlotter ({ category }) {
           <button>Read More</button>
         </Link>
       </div>
-        {catposts.map(({title, slug, id, body}) => (
-          <div className={styles.blotterCard} key={id}>
+      <div className={styles.blotterPosts}>     
+        {posts.map(({title, slug, id, content}) => (
+          <div className={styles.blotterCard} >
             <div className={styles.imageDiv}>
               <Link href={`blog/posts/${slug}`}>
                 <Image src={img} sizes='100vw' fill='true' priority></Image>
@@ -40,12 +30,13 @@ export default async function CategoryBlotter ({ category }) {
             </div>
             <div>
               <Link href={`/blog/posts/${slug}`}>
-                <h1>{title}</h1>
+                <h1>{title.rendered}</h1>
               </Link>
-              <span>{wpm(body)} mins read</span>
+              <span>{wpm(content.rendered)} mins read</span>
             </div>
           </div>
         ))}
+      </div>
     </div>
   )
 }
