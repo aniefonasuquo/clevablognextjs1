@@ -18,10 +18,6 @@ export default function Footer () {
                 <Image sizes='100vw' src={logo} alt='clevalogo'></Image> 
               </Link>
             </div>
-            <p>Global investment opportunites, for you</p>
-            <div className={style.socialicons}>
-            <SocialSharing fill='white'></SocialSharing>
-            </div>
           </div>
           <div className={style.navs}>
             <Nav></Nav>
@@ -29,14 +25,12 @@ export default function Footer () {
         </div>
 
         <div className={style.middlefooter}>
-          <div>
-            <p>
-            ©2023 Cleva Wealth
-            </p>
+          <div><span>©2023 Cleva Wealth</span>
           </div>
-          <div className={style.copywritewrap}>
-           Terms of service
-          </div>
+          <div className={style.socialicons}>
+            <p>We are Social</p>
+            <SocialSharing fill='white'></SocialSharing>
+            </div>
         </div>
     </footer>
   )

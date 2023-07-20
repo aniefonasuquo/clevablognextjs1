@@ -1,130 +1,168 @@
-/* Header style */
-
-.header {
-  display: flex;
-  background-color: white;
-  box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.15);
+.navanim {
+  background-color: rgb(2,4,37);
   position: sticky;
-  z-index: 100;
-  padding: 5px 100px;
-  align-items: flex-end;
+  top: 0;
 }
 
-.headerlogo {
-  width: 100px;
-}
-
-.headerlogo img {
+.navcontainer {
+  animation: header 2s ease-in-out 1s forwards;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  padding: 20px 100px 10px;
+  z-index: 100;
+  color: white;
+  margin: auto;
 }
 
-.navs {
-  /* width: auto; */
+@keyframes header {
+  0% {
+    translate: 0 -100%;
+  }
+
+  100% {
+    translate: 0 0;
+  }
 }
 
-.navs ul {
-  list-style: none;
+.logocontainer {
+  width: 300px;
+  margin: auto;
+  padding: auto;
   display: flex;
-  gap: 20px;
+  align-items: ce;
 }
 
-.navs ul li{
-  font-size-adjust: auto;
-  list-style: none;
+.nav {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px
+}
+
+.nav div {
+  display: flex;
+}
+
+.nav div:hover {
+  cursor: pointer;
+}
+
+.nav a + div{
+  display: none;
+  opacity: 0;
   font-size: 20px;
+  transform-style: flat;
+  transition: all 10s ease-in-out;
 }
 
-.navs ul li a{
-
-}
-
-.navs ul li span {
-  padding-bottom: 10px;
-  text-decoration: none;
-  color: rgb(17, 30, 72);
-}
-
-.navs ul li span:hover {
-  text-decoration: underline;
-  /* border-bottom: 2px solid  rgb(17, 30, 72); */
-}
-
-
-.ctabutton {
-  flex: 1;
+.nav div:hover > div{
+  transition: all 10s ease-in-out;
+  opacity: 1;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px; 
 }
 
-.ctabutton button {
-  background-color: rgb(17, 30, 72);
-  padding: 10px 20px;
-  color: greenyellow;
-  border-radius: 8px;
-  border: none;
-  font-size: 18px;
-  font-weight: 100;
+.nav div > div{
+  
 }
-.menu {
+
+.menu, .mobileNav {
   display: none;
 }
 
-@media screen and (max-width: 900px){
 
-  .header {
-  justify-content: space-between;
-  padding-left: 10px;
-  padding-right: 10px;  
+
+@media screen and (max-width: 600px) {
+
+  .navanim {
+    /* height: 100vh; */
   }
-  .navs {
+
+  .navcontainer {
+    padding: 20px 10px 10px;
+    position: relative;;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+    width: 50px;
+    position: relative;
+  }
+
+  .menu div {
     position: absolute;
+    padding: 0.2px 0;
+    width: 30px;
+    border-radius: 2px ;
     background-color: white;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: -300%;
-    padding: 0;
-    padding-top: 5px;
-    padding-bottom: 20px;
     transition: all 1s ease-in-out;
-    z-index: 90;
   }
 
-  .navs ul {
-    flex-direction: column;
-    gap: 2px;
-    padding: 0 15px;
-    }
-
-  .navs ul li {
-    text-align: start;
-    padding: 2px 0;
-    font-weight: 700;
+  .flatone {
+    top: 30%;
+  }
+  .flatwo {
+    top: 70%;
   }
 
-  .ctabutton {
-   display: none;
+  .crossOne {
+    top: 50%;
+    transform: rotate(-45deg);
+    transition: all 50ms ease-in-out;
   }
-
-  .menu{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-  }
-
-  .menu button{
-    background-color: transparent;
-    border: none;
-  }
-
-  .menu button:active {
-    outline: none;
-  }
-
-  .menu button:focus {
-    outline: none;
+  .crossTwo {
+    top: 50%;
+    transform: rotate(45deg);
+    transition: all 50ms ease-in-out;
   }
   
+  .mobileNav {
+    display: block;
+    position: absolute;
+    left: -100%;
+    height: 350px;
+    width: 100%;
+    background-color:  rgb(2,4,37);
+    color: white;
+    transition: all 1s ease-in-out;
+    padding: 0 10px;
+    padding-left: 10px;
+  }
+
+  .mobileNav span {
+    font-size: 10px;
+  }
+
+  .navtwo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px 0;
+  }
+
+  .navtwo div {
+    display: flex;
+    align-items: center;
+    gap: 10px ;
+  }
+
+  .navtwo div a {
+    color: white ;
+    font-size: 16px;
+  }
+  
+  
+  .navtwo div:hover {
+    cursor: pointer;
+  }
+
+  
+
 }
+
+
