@@ -3,12 +3,8 @@
 import React, { useEffect, useState } from "react"
 const Finance = require("tvm-financejs");
 import Styles from './styles.module.css'
-import Link from "next/link";
 import { Raleway  } from 'next/font/google'
-import Rangeslider from './multiRangeSlider/MultiRangeSlider'
-import { PieChart } from 'react-minimal-pie-chart';
-import Image from "next/image";
-import retireimage from './../../public/retire.jpg'
+
 
 import Retire from "./retire/retire";
 import Target from "./target/target";
