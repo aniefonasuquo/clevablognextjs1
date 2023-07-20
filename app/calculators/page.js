@@ -43,7 +43,7 @@ export default function Thispage () {
     {type: 'retire',
     heading: 'Retirement Advisor',
     details: 'Retirement planning is essential for ensuring financial security during your golden years. By carefully managing your savings, investments, and expenses, you can create a solid financial foundation for a comfortable retirement. Start planning early, set realistic goals, and regularly review and adjust your retirement plan to stay on track towards a financially stable future.',
-    image: retireimage},
+    image: ''},
     {type: 'income',
     heading: 'Income Portfolio',
     details: 'Earning income from numerous sources, including investments helps protect against sudden financial shocks that could arise from job losses or disability. Estimate the required investment value required to meet your desired income goals, and find the investment that help you achieve this goals',

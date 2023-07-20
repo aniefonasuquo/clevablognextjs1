@@ -30,7 +30,7 @@ export default async function TopPost () {
           <Link href={`/blog/posts/${post.slug}`}>
             <h1>{post.title.rendered}</h1>
           </Link>
-        {HtmlParser(post.excerpt.rendered)}
+          <div dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}></div>
         <span>{wpm(post.content.rendered)} mins read</span>
       </div>
     </div>
