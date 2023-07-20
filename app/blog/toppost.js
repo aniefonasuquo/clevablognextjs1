@@ -4,7 +4,6 @@ import styles from './page.module.css'
 import slugify from "slugify"
 import Link from "next/link"
 import { wpm } from "@/utils/wpm/wpm"
-import HtmlParser from "react-html-parser"
 import { getCatNames } from "@/utils/Wordpress/getCategoryname"
 import { getdata } from "@/utils/Wordpress/getposts"
 
