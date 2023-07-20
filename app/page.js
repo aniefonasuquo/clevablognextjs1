@@ -1,49 +1,50 @@
-
-
-import Link from "next/link";
+import Link from 'next/link'
 import styles from './style.module.css'
+import globe from './../public/landingimages/globex.png'
+import pie from './../public/landingimages/pie-chart.png'
+import income from './../public/landingimages/incomeone.png'
+import personality from './../public/landingimages/personality.jpg'
+import allocation from './../public/landingimages/allocation.png'
+import productdetail from './../public/landingimages/productdetail.png'
 import Image from 'next/image'
-import slugify from 'slugify'
-import { Varela   } from 'next/font/google'
-import img from './../public/investimg.jpg'
-import Cta from "./cta/earlysignup";
-import world from './../public/landingimages/globe2.png';
-import hand from './../public/landingimages/2.jpg';
-import block from './../public/landingimages/block.webp';
-import neural from './../public/landingimages/neural.png';
-import speed from './../public/landingimages/speed.png';
-import risk from './../public/landingimages/risks.png';
-import topback from './../public/topbackground.webp'
 
-export default async function Homepage() {
+export default function Landing () {
 
-  return ( 
-  <div className={styles.container}>
-    <div className={styles.top} style={{backgroundImage: {topback}}}>
-      <h1>
-        <span>Dream.</span>
-        <span>Discover.</span>
-        <span>Decide.</span>
-      </h1>
-      <h2>
-        <span>Make the best wealth decisions from global opportunities.</span>
-      </h2>
-      <div>
-        <Link href='/join'><button>Join Cleva</button></Link>
+  return (<div className={styles.container}>
+  
+    <div className={styles.heroanim}>
+      <div className={styles.herocontainer}>
+        <div className={styles.heroheading}>
+          <h1>
+            <span>Your Wealth Advisor on the Go</span>
+          </h1>
+        </div>
+        <div className={styles.herodetail}>
+          <span>Discover and make the wealth decisions that suit your unique characteristics.</span>
+          <span>Cleva is a wealth adviser than helps individuals make suitable investment and financial decisions from current and emerging global opportunities.</span>
+        </div>
+        <Link href='/join'>
+          <div className={styles.herocta}>
+            <span>Join Cleva</span>
+            <svg fill="rgb(2,4,37)" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.755 511.755"><g><g><path d="M436.891,74.866c-99.819-99.819-262.208-99.819-362.027,0c-99.819,99.797-99.819,262.229,0,362.027
+c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.709,337.095,536.709,174.663,436.891,74.866z
+			 M341.211,319.879c-11.797,0-21.333-9.557-21.333-21.333v-76.501l-134.251,134.25c-4.16,4.16-9.621,6.251-15.083,6.251
+			c-5.461,0-10.923-2.091-15.083-6.251c-8.341-8.341-8.341-21.824,0-30.165l134.251-134.251h-76.501
+			c-11.797,0-21.333-9.557-21.333-21.333s9.536-21.333,21.333-21.333h128c2.773,0,5.547,0.576,8.149,1.643
+			c5.227,2.155,9.387,6.315,11.541,11.541c1.088,2.603,1.643,5.376,1.643,8.149v128h0
+			C362.544,310.322,353.008,319.879,341.211,319.879z"/></g></g></svg>
+          </div>
+        </Link>
       </div>
     </div>
-    <div className={styles.section}>
-      <div className={styles.circleContainer}>
-        <span className={styles.circle}>1</span>
-        <h1><span>Dream</span></h1>
-        <h2>
-          <span>Bordeless opportunities to fuel your dreams</span>
-        </h2>
-        <p>
-          <span>Wealth strategies that factor key elements of your aspirations performance better. Cleva provides suitable investment opportunities that put you first.</span>
-        </p>
-      </div>
-      <div className={styles.topDetails}>
+    <section className={styles.section_one}>
+        <div className={styles.section_one_detail}>
+          <span>
+            know the right choices, specific to your investment goals and desires.
+          </span>
+        </div>
+        <div className={styles.topDetails}>
+
         <div className={styles.marquee}>
           <div className={styles.track}>
             <div>
@@ -86,104 +87,87 @@ export default async function Homepage() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div className={styles.section}>
-      <div className={styles.circleContainer}>
-        <span className={styles.circle}>2</span>
-        <h1><span>Discover</span></h1>
-        <h2>
-          <span></span>
-        </h2>
-        <p>
-          <span>Hedge currency, inflation and geographical risks with opportunities in various economies.</span>
-        </p>
-      </div>
-     
-      <div className={styles.moreDetails}>
-          <div className={styles.prop}>
-            <div className={styles.propImage}><Image src={world} sizes="100vw" fill={true}></Image></div>
-            <div  className={styles.propdeets}>
-              <div><svg id="Layer_1" height="40" fill="silver" viewBox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="m13 16a8 8 0 1 0 -8-8 8.009 8.009 0 0 0 8 8zm0-14a6 6 0 1 1 -6 6 6.006 6.006 0 0 1 6-6zm9.907 12.773a11.992 11.992 0 0 1 -8.907 5.166v2.061h4a1 1 0 0 1 0 2h-10a1 1 0 0 1 0-2h4v-2.051a11.994 11.994 0 0 1 -8.257-19.586 1 1 0 0 1 1.542 1.274 10 10 0 1 0 15.971 12.006 1 1 0 0 1 1.651 1.13z"/></svg></div>
-                <h1>Global wealth opportunities</h1>
-              <div>
-                <p>Hedge currency, inflation and geographical risks with opportunities in various economies. Borderless opportunities to maximise your investment performance.</p>
-              </div>
-            </div>           
-          </div>
-          <div className={styles.prop}>
-            <div className={styles.propImage}><Image src={hand} sizes="100vw" fill={true}></Image></div>
-            <div className={styles.propdeets}>
-                <div>
-                  <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="40" height="40" fill="silver"><path d="M23.393,19.789l-1.325-.756c.278-.621,.432-1.309,.432-2.033s-.155-1.411-.432-2.033l1.325-.756c.24-.137,.323-.442,.186-.682s-.443-.324-.682-.186l-1.326,.757c-.816-1.142-2.101-1.928-3.571-2.075v-1.525c0-.276-.224-.5-.5-.5s-.5,.224-.5,.5v1.525c-1.47,.147-2.754,.933-3.571,2.075l-1.326-.757c-.241-.138-.546-.054-.682,.186-.137,.24-.054,.545,.186,.682l1.325,.756c-.278,.621-.432,1.309-.432,2.033s.155,1.411,.432,2.033l-1.325,.756c-.24,.137-.323,.442-.186,.682,.092,.162,.261,.252,.435,.252,.084,0,.169-.021,.248-.066l1.326-.757c.816,1.142,2.101,1.928,3.571,2.075v1.525c0,.276,.224,.5,.5,.5s.5-.224,.5-.5v-1.525c1.47-.147,2.754-.933,3.571-2.075l1.326,.757c.078,.045,.164,.066,.248,.066,.174,0,.342-.09,.435-.252,.137-.24,.054-.545-.186-.682Zm-5.893,1.211c-2.206,0-4-1.794-4-4s1.794-4,4-4,4,1.794,4,4-1.794,4-4,4ZM9,12c3.309,0,6-2.691,6-6S12.309,0,9,0,3,2.691,3,6s2.691,6,6,6Zm0-11c2.757,0,5,2.243,5,5s-2.243,5-5,5-5-2.243-5-5S6.243,1,9,1Zm.088,13.486c.013,.276-.2,.51-.476,.523-4.269,.204-7.612,3.713-7.612,7.991v.5c0,.276-.224,.5-.5,.5s-.5-.224-.5-.5v-.5c0-4.812,3.762-8.761,8.564-8.99,.26-.015,.51,.199,.523,.476Z"/></svg>
-                </div>
-                  <h1>Personalised investing</h1>
-                  <div>
-                <p>Improve your investment performance using strategies modelled after your unique investing factors such as income level, risk tolerance and liquidity preferenece etc.</p>
-              </div>
-            </div>
-            
-          </div>
-          <div className={styles.prop}>
-          <div className={styles.propImage}><Image src={block} sizes="100vw" fill={true}></Image></div>
-            <div className={styles.propdeets}>
-              <div><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="40" height="40" fill="silver"> <path d="m11,1h-6.5C2.019,1,0,3.019,0,5.5v3.5c0,1.103.897,2,2,2h9c1.103,0,2-.897,2-2V3c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1H2c-.551,0-1-.448-1-1v-3.5c0-1.93,1.57-3.5,3.5-3.5h6.5c.551,0,1,.448,1,1v6Zm7.5-6h-2.5c-1.103,0-2,.897-2,2v13c0,1.103.897,2,2,2h2.5c2.481,0,4.5-2.019,4.5-4.5V7.5c0-2.481-2.019-4.5-4.5-4.5Zm3.5,12.5c0,1.93-1.57,3.5-3.5,3.5h-2.5c-.551,0-1-.448-1-1V5c0-.552.449-1,1-1h2.5c1.93,0,3.5,1.57,3.5,3.5v8Zm-12-2.5h-7c-1.103,0-2,.897-2,2v3.5c0,2.481,2.019,4.5,4.5,4.5h4.5c1.103,0,2-.897,2-2v-6c0-1.103-.897-2-2-2Zm1,8c0,.552-.449,1-1,1h-4.5c-1.93,0-3.5-1.57-3.5-3.5v-3.5c0-.552.449-1,1-1h7c.551,0,1,.448,1,1v6Z"/></svg>
-            </div>
-              <h1>Diverse investment categories</h1>
-            <div>
-              <p>
-                Optimise investment returns, diversifiying risk and take advantage of various asset classes, from real estate to alternatives.
-              </p>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
-    <div className={styles.section}>
-      
-      <div className={styles.circleContainer}>
-        <span className={styles.circle}>3</span>
-        <h1><span>Decide</span></h1>
-        <h2>
-          <span>All the tools to make smart investing decisions</span>
-        </h2>
-        <p>
-          <span>No more long research and consideration time, make decisions easily at lightning speed.</span>
-        </p>
-      </div>
-
-      <div className={styles.decideGrid}>
-        <div className={styles.decideItem}>
-          <div className={styles.decideImage}>
-            <Image src={risk} sizes="100vw" fill={true}></Image>
-          </div>
-          <div className={styles.decidedeets}>
-            <h1>Risk</h1>
-            <span>Understand associated risks before making investments.</span>
-          </div>
-        </div>
-        <div className={styles.decideItem}>
-          <div className={styles.decideImage}>
-            <Image src={speed} sizes="100vw" fill={true}></Image>
-          </div>
-          <div className={styles.decidedeets}>
-            <h1>Performance</h1>
-            <span>Choose investment that maximise your returns.</span>
-          </div>
-        </div>
-        <div className={styles.decideItem}>
-          <div className={styles.decideImage}>
-            <Image src={neural} sizes="100vw" fill={true}></Image>
-          </div>
-          <div className={styles.decidedeets}>
-            <h1>Algo-advisory</h1>
-            <span>Our propietary algorithms helps make expert decisions is no time.</span>
-          </div>
-        </div>
-
-      </div>
 
     </div>
-
-  </div>)}
-
+    <Link href='/join'>
+          <div className={styles.discovercta}>
+            <span>Discover Opportunities</span><svg fill="rgb(2,4,37)" width="30px" height="30px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<title>lens</title>
+<path d="M0 13.024q0-2.624 1.024-5.056t2.784-4.16 4.16-2.752 5.056-1.056q2.656 0 5.056 1.056t4.16 2.752 2.784 4.16 1.024 5.056q0 3.616-1.984 6.816l7.072 7.040q0.864 0.896 0.864 2.144t-0.864 2.112-2.144 0.864-2.112-0.864l-7.040-7.040q-3.2 1.952-6.816 1.952-2.656 0-5.056-1.024t-4.16-2.784-2.784-4.128-1.024-5.088zM4 13.024q0 2.464 1.216 4.544t3.296 3.264 4.512 1.216q1.824 0 3.488-0.704t2.88-1.92 1.92-2.88 0.736-3.52-0.736-3.52-1.92-2.848-2.88-1.92-3.488-0.736q-2.432 0-4.512 1.216t-3.296 3.296-1.216 4.512z"></path>
+</svg></div>
+        </Link>
+  </section>
+  <section className={styles.limitless}>
+    <div className={styles.limitlessheading}>
+      <span>Limit your wealth to nothing</span>
+    </div>
+    <div className={styles.limitlessdescription}>
+      <div>
+        <div className={styles.limitlessdescriptiontop}>
+          <div>
+            <Image src={globe} width={100} height={100} sizes='100vw'></Image>
+          </div>
+          <div>Global Opportunities</div>
+        </div>
+        <div className={styles.limitlessdescriptiondown}>
+          <span>Hedge currency, inflation and geographical</span>
+          <span>Earn foreign exchange income.</span>
+          <span>Globalise your wealth portfolio.</span>
+        </div>
+      </div>
+      <div>
+        <div className={styles.limitlessdescriptiontop}>
+          <div>
+            <Image src={pie} width={100} height={100} sizes='100vw'></Image>
+          </div>
+          <div>Diverse Investment Categories</div>
+        </div>
+        <div className={styles.limitlessdescriptiondown}>
+          <span>Reallocate between asset classes</span>
+          <span>Optimise portfolio through diversification</span>
+          <span>Take advantage of all opportunities</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section className={styles.information}>
+    <div className={styles.informationheading}>
+      <span>All the information you need to make the Cleva decisions</span>
+    </div>
+    <div className={styles.informationillustration}>
+      <div className={styles.productimage}>
+        <Image src={income} width={300} height={300} sizes='100vw'></Image>
+      </div>
+      <div className={styles.productimage}>
+        <Image src={personality} width={400} height={400} sizes='100vw'></Image>
+      </div>
+      <div className={styles.productimage}>
+        <Image src={allocation} width={250} height={500} sizes='100vw'></Image>
+      </div>
+      <div className={styles.productimage}>
+        <Image src={productdetail} width={300} height={150} sizes='100vw'></Image>
+      </div>
+    </div>
+  </section>
+  <section className={styles.signup}>
+    <div><h1>Never Miss an Opportunity</h1></div>
+    <div>
+      <span>Join our email newsletters and receive insights and guidiance on wealth opportunities.</span> 
+      <span>Get update on our products and offerings.</span> 
+      <span>Get early access to the Cleva mobile app</span> 
+     </div>
+    <div>
+      <form>
+        <input type='email' placeholder='Your Email Address...'></input>
+        <button type='submit'><span>Join Cleva</span><svg fill="rgb(2,4,37)" height="40px" width="40px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.755 511.755"><g><g><path d="M436.891,74.866c-99.819-99.819-262.208-99.819-362.027,0c-99.819,99.797-99.819,262.229,0,362.027
+c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.709,337.095,536.709,174.663,436.891,74.866z
+			 M341.211,319.879c-11.797,0-21.333-9.557-21.333-21.333v-76.501l-134.251,134.25c-4.16,4.16-9.621,6.251-15.083,6.251
+			c-5.461,0-10.923-2.091-15.083-6.251c-8.341-8.341-8.341-21.824,0-30.165l134.251-134.251h-76.501
+			c-11.797,0-21.333-9.557-21.333-21.333s9.536-21.333,21.333-21.333h128c2.773,0,5.547,0.576,8.149,1.643
+			c5.227,2.155,9.387,6.315,11.541,11.541c1.088,2.603,1.643,5.376,1.643,8.149v128h0
+			C362.544,310.322,353.008,319.879,341.211,319.879z"/></g></g></svg></button>
+      </form>
+    </div>
+  </section>
+  </div>)
+}
