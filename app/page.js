@@ -3,10 +3,10 @@ import styles from './style.module.css'
 import Image from 'next/image'
 import globe from './../public/landingimages/globex.png'
 import pie from './../public/landingimages/pie-chart.png'
-import income from './../public/landingimages/incomeone.png'
-import allocation from './../public/landingimages/allocation.png'
+import income from './../public/landingimages/productimg2.png'
+import allocation from './../public/landingimages/productimg1.png'
 import personality from './../public/landingimages/personality.jpg'
-import productimg from './../public/landingimages/productdetail.png'
+import productimg from './../public/landingimages/productimg3.png'
 
 export default function Landing () {
 
