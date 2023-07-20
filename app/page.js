@@ -23,7 +23,7 @@ export default function Landing () {
       <div className={styles.herocontainer}>
         <div className={styles.heroheading}>
           <h1 className={Satoshi.className}>
-            <span className={Satoshi.className}>Your Wealth Advisor on the Go</span>
+            Your Wealth Advisor on the Go
           </h1>
         </div>
         <div className={styles.herodetail}>
@@ -46,9 +46,9 @@ c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.70
     </div>
     <section className={styles.section_one}>
         <div className={styles.section_one_detail}>
-          <span className={Satoshi.className}>
+          <h2 className={Satoshi.className}>
             know the right choices, specific to your investment goals and desires.
-          </span>
+          </h2>
         </div>
         <div className={styles.topDetails}>
 
@@ -161,7 +161,7 @@ c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.70
     <div>
       <span className={Satoshi.className}>Join our email newsletters and receive insights and guidiance on wealth opportunities.</span> 
       <span className={Satoshi.className}>Get update on our products and offerings.</span> 
-      <span className={Satoshi.className}>Get early access to the Cleva mobile app</span> 
+      <span className={Satoshi.className}>Get early access to the Cleva mobile app.</span> 
      </div>
     <div>
       <form>
