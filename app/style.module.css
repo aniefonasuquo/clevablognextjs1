@@ -153,7 +153,6 @@
 
 .limitlessdescriptiontop {
   padding: 20px 0;
-  font-size: 30px;
   font-weight: bold;
 } 
 
@@ -280,12 +279,8 @@
 }
 
 @media screen and (max-width: 800px) {
-  .heroheading h1 span {
-    font-size: 40px;
-  }
-
   .container h1 {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .limitlessdescriptiontop {

@@ -114,10 +114,10 @@ c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.70
           <div>
             <Image src={globe} width={100} height={100} sizes='100vw'></Image>
           </div>
-          <div className={Satoshi.className}>Global Opportunities</div>
+          <div ><h2 className={Satoshi.className}>Global Opportunities</h2></div>
         </div>
         <div className={styles.limitlessdescriptiondown}>
-          <span className={Satoshi.className}>Hedge currency, inflation and geographical</span>
+          <span className={Satoshi.className}>Protect your wealth from devaluation and inflation.</span>
           <span className={Satoshi.className}>Earn foreign exchange income.</span>
           <span className={Satoshi.className}>Globalise your wealth portfolio.</span>
         </div>
@@ -127,12 +127,12 @@ c49.899,49.92,115.456,74.859,181.013,74.859s131.115-24.939,181.013-74.859C536.70
           <div>
             <Image src={pie} width={100} height={100} sizes='100vw'></Image>
           </div>
-          <div className={Satoshi.className}>Diverse Investment Categories</div>
+          <div className={Satoshi.className}><h2 className={Satoshi.className}>Diverse Investment Categories</h2></div>
         </div>
         <div className={styles.limitlessdescriptiondown}>
-          <span className={Satoshi.className}>Reallocate between asset classes</span>
-          <span className={Satoshi.className}>Optimise portfolio through diversification</span>
-          <span className={Satoshi.className}>Take advantage of all opportunities</span>
+          <span className={Satoshi.className}>Reallocate between asset classes.</span>
+          <span className={Satoshi.className}>Optimise portfolio through diversification.</span>
+          <span className={Satoshi.className}>Take advantage of all opportunities.</span>
         </div>
       </div>
     </div>
