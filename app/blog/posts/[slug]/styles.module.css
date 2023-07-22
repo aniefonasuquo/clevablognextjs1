@@ -230,6 +230,10 @@
     gap: 20px;
   }
 
+  .relatedframe h1 {
+    font-size: 20px;
+  }
+
   .textmiddle > a {
     color: white;
   }
