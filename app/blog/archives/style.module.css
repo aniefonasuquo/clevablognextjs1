@@ -6,31 +6,89 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(auto, 3fr);
+  grid-template-columns: minmax(200px, 1fr) 3fr;
   gap: 50px;
 }
 
-.recomArticleframe {
-  display: grid;
-  gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid  #C7D2D8;
+.recommendedPostsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #C7D2D8;
 }
 
-.recomArticleframe div:nth-child(2) *{
-  margin-bottom: 10px;
+.recomposts{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.recomArticleframe div:nth-child(1) {
+.recomposts h1 {
+  font-size: 20px;
+}
+
+.recomimgwrap {
   position: relative;
-  aspect-ratio: 1/0.6;
+  aspect-ratio: 1/0.7;
 }
 
-.categorypost {
+.recomimgwrap img {
+  object-fit: cover;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.recomposts div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recomposts div:nth-of-type(2) a {
+  color: #C7D2D8;
+}
+
+.recomposts div:nth-of-type(2) a span{
+  padding-bottom: 5px;
+  border-bottom:#C7D2D8 1px solid;
+}
+
+
+.allpostcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.allpost {
   display: grid;
-  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px 0;
+  color: #C7D2D8;
+}
+
+.articleframe {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.articleframe div:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0
+}
+
+.articleframe div:nth-of-type(2) a span {
+  color: #C7D2D8;
+  padding-bottom: 5px;
+  border-bottom: #C7D2D8 1px solid;
+}
+
+.articleframe h1 {
+  color: #C7D2D8;
+  font-size: 20px;
 }
 
 .imgwrap {
@@ -44,36 +102,20 @@
   border-radius: 5px;
 }
 
-.category {
-  border: 1px solid white;
+.allpostcontainer button{
+  border: 1px solid #C7D2D8 ;
   padding: 10px;
   border-radius: 10px;
-  background-color: transparent;
-  color:#C7D2D8;
-}
-
-.category:hover {
-  background-color: #C7D2D8;
-  color: #131A33;
-}
-
-.articleframe div:nth-child(2) *{
-  margin: 10px 0;
-}
-
-.button {
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-}
-
-.button button{
-  border: 1px solid #C7D2D8 ;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 30px;
+  font-size: 20px;
   background-color: transparent;
   color: #C7D2D8;
+  width: max-content;
+  margin: auto;
+}
+
+.allpostcontainer button:hover {
+  background-color:#C7D2D8;
+  color: #131A33;
 }
 
 .button button:hover{
@@ -81,37 +123,56 @@
   color: #131A33;
 }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 700px) {
 
     .pagecontainer {
       padding: 50px 10px;
       }
 
     .wrapper {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
 
-    .wrapper > div:nth-child(2){
-      padding: 50px 0;
+    .recommendedPostsContainer {
+      gap: 10px;
     }
 
-    .categorypost {
-      
+    .recomposts {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    .recomposts div:nth-of-type(1) {
+      flex: 1;
+    }
+
+    .recomposts div:nth-of-type(2) {
+      flex: 3;
+    }
+
+    .allpostcontainer {
+      gap: 20px;
+    }
+
+    .allpost {
+      display: flex;
+      flex-direction: column;
     }
 
     .articleframe {
-      display: grid;
-      grid-template-columns: 40% 1fr;
-      gap: 20px;
-      font-size: 16px;
+      flex-direction: row;
     }
 
-    .button {
-      padding: 20px 0;
+    .articleframe div:nth-of-type(1) {
+      flex: 2;
     }
-    
-    .button button{
-      padding: 20px;
+
+    .articleframe div:nth-of-type(2) {
+      flex: 3;
+    }
+
+    .allpostcontainer button {
       font-size: 16px;
     }
 

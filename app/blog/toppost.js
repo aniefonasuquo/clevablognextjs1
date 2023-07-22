@@ -29,11 +29,9 @@ export default async function TopPost () {
         </Link>
       </div>
       <div className={styles.topdeets}>
-        <div>
           <Link href={`/blog/category/${categoryName[0]}`}>
-            <button className={styles.category}><span className={Satoshi.className}>{categoryName[0]}</span></button>
+            <span id='category' className={Satoshi.className}>{categoryName[0].toUpperCase()}</span>
           </Link>
-        </div>
           <Link href={`/blog/posts/${post.slug}`}>
             <h1 className={Satoshi.className}>{post.title.rendered}</h1>
           </Link>

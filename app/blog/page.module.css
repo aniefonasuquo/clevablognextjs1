@@ -18,30 +18,20 @@
   color: #C7D2D8;
 }
 
-.topDiv p{
-  color:#C7D2D8;
-  font-size: 20px;
-  font-weight: 100;
-}
-
 .topdeets {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.category {
-  border: 1px solid #C7D2D8;
+  gap: 10px;
+  color: #C7D2D8;
   padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-  background-color: transparent;
-  color:#C7D2D8;
 }
 
-.category:hover {
-  background-color: #C7D2D8;
-  color: #131A33;
+.topdeets a {
+  color:#C7D2D8
+}
+.topdeets a span{
+  padding-bottom: 5px;
+  border-bottom: #C7D2D8 solid 1px;
 }
 
 .imageDiv {
@@ -51,7 +41,6 @@
 
 .imageDiv img {
   position: absolute;
-  height: auto;
   object-fit: cover;
 }
 
@@ -62,14 +51,14 @@
   flex-direction: column;
   background-color: #131A33;
   padding: 100px 50px;
-  gap: 100px;
+  gap: 50px;
 } 
 
 .recentPosts {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  /* padding: 50px 0; */
+
 }
 
 .recentPosts h1, .recentPosts span {
@@ -79,6 +68,24 @@
 .recentButton {
   display: flex;
   justify-content: center;
+}
+
+.recentPostCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+ 
+.recentPostCard div:nth-of-type(2) {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recentPostCard div:nth-of-type(2) a span {
+  padding-bottom: 5px;
+  border-bottom:#C7D2D8 1px solid;
 }
 
 .recentButton button{
@@ -94,19 +101,25 @@
   background-color:#C7D2D8;
   color: #131A33;
 }
- 
-.recentPostCard div:nth-child(2) * {
-  margin-bottom: 10px;
-}
 
-/* category blotter */
+/* Category */
 
 .categoryBlotters {
 
 }
 
+.blotter {
+  display: grid;
+  grid-template-columns: fit-content(300px) 1fr ;
+  gap: 20px;
+  background-color: #C7D2D8;
+  color: #131A33;
+  padding: 100px 50px;
+}
+
 .blotter button {
-  border: 1px solid #131A33 ;
+  border: 1px solid #131A33;
+  width: max-content;
   padding: 10px;
   border-radius: 20px;
   font-size: 20px;
@@ -118,43 +131,37 @@
   color:#C7D2D8;
 }
 
-.blotter {
-  display: grid;
-  grid-template-columns: fit-content(300px) 1fr ;
-  gap: 20px;
+.blotter:not(:last-of-type) {
   border-bottom: 1px solid #131A33;
-  background-color: #C7D2D8;
-  color: #131A33;
-  padding: 100px 50px;
 }
 
 .blotterinfo {
-flex: 1;
-}
-
-.blotterPosts {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  /* justify-content: center; */
-  gap: 20px;
-}
-
-.blotterinfo * {
-  margin: 10px 0;
-}
-
-.blotterCard div:nth-child(2) * {
-  padding-bottom: 10px;
-}
-
-.blotterCard h1 {
-  color: #131A33;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
 }
 
 .blotterinfo h1{
   font-size: 60px;
 }
 
+.blotterPosts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blotterCard div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0
+}
+
+.blotterCard h1 {
+  color: #131A33;
+}
 
 @media screen and (max-width: 600px) {
 
@@ -214,7 +221,9 @@ flex: 1;
 
   .blotter {
     padding: 50px 10px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .blotterCard {

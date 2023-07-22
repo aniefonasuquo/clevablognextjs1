@@ -6,30 +6,28 @@ import { Suspense } from "react";
 import Posts from "./posts";
 import slugify from "slugify";
 import RecomPosts from "./recomposts";
-import { getdata } from "@/utils/Wordpress/getposts";
-import { getCatPosts } from "@/utils/Wordpress/getcategoryposts";
+import { getAllPosts } from "@/utils/Wordpress/getallposts";
+import localfont from 'next/font/local'
 
-const raleway = Raleway({
-  weight: '600',
-  subsets: ['latin'],
-  variable: '--font-redhat',
-  display: 'swap' 
+const Satoshi = localfont({
+  src: './../../../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
 })
 
 export default async function CategoryArchive({ params }) {
-  const posts = await getCatPosts(params.category);
+  const posts = await getAllPosts()
+  const catPosts = posts.filter(post => post.categorynames[0] == params.category)
   
   return (
-  <>
+  <div className={styles.pagecontainer}>
     <div className={styles.wrapper}>
       <div className={styles.leftSection}>
-          <div>
-            <h1>{params.category}</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <RecomPosts posts={posts}></RecomPosts>
+        <h1 className={Satoshi.className}>{params.category}</h1>
+        <span className={Satoshi.className}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+        <RecomPosts posts={catPosts}></RecomPosts>
       </div> 
-      <Posts posts={posts}></Posts>
+      <Posts posts={catPosts}></Posts>
     </div>
-  </>
+  </div>
   )}

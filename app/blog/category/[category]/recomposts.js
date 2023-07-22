@@ -7,37 +7,31 @@ import { Suspense } from "react"
 import { Raleway  } from 'next/font/google'
 import Image from "next/image"
 import { wpm } from "@/utils/wpm/wpm"
+import testimg from './../../../../public/investimg.jpg'
+import localfont from 'next/font/local'
 
-const raleway = Raleway({
-  weight: '600',
-  subsets: ['latin'],
-  variable: '--font-redhat',
-  display: 'swap' 
+const Satoshi = localfont({
+  src: './../../../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
 })
-
 
 export default function RecomPosts ({ posts }) {
 
-  const recompost = posts
-
   return (
-    <div className={styles.recommendedPost}>
+    <div className={styles.recommendedPostsContainer}>
       <h1>Recommended</h1>
-      <div>
-        {recompost.slice(0,4).map(({title, slug, id, content}) => (
-          <div key={id} className={styles.recomArticleframe}>
+      <div className={styles.recompostcard}>
+        {posts.slice(0,5).map(({title, slug, id, content}) => (
+          <div key={id} className={styles.recomposts}>
             <div className={styles.recomimgwrap}>
-              <Suspense fallback={<>loading</>}>
-                <Link href={`/blog/posts/${slug}`}>
-                  <Image sizes="100vw" fill={true} src={"/../public/investimg.jpg"}></Image>
-                </Link>
-              </Suspense>
+              <Link href={`/blog/posts/${slug}`}>
+                <Image sizes="100vw" fill={true} src={testimg}></Image>
+              </Link>
             </div>
             <div>
-              <Suspense fallback={<>loading</>}>
-                <Link href={`/blog/posts/${slug}`}><p>{title.rendered}</p></Link>
-              </Suspense>
-              <span>{wpm(content.rendered)} mins read</span>
+              <Link href={`/blog/posts/${slug}`}><h1 className={Satoshi.className}>{title.rendered}</h1></Link>
+              <span className={Satoshi.className}>{wpm(content.rendered)} mins read</span>
             </div>
           </div>              
         ))}

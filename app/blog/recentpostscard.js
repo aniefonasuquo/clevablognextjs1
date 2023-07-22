@@ -39,7 +39,7 @@ export default async function RecentPost () {
         </div>
         <div>
           <Link href={`/blog/category/${tags[0]}`}>
-            <button className={styles.category}><span className={Satoshi.className}>{tags[0]}</span></button>
+            <span className={Satoshi.className}>{tags[0].toUpperCase()}</span>
           </Link>
           <Link href={`blog/post/${slug}`}>
             <h1 className={Satoshi.className}>{title}</h1>

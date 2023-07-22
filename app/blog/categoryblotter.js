@@ -23,14 +23,14 @@ export default async function CategoryBlotter ({category}) {
     <div className={styles.blotter}>
       <div className={styles.blotterinfo}>
         <h1 className={Satoshi.className}>{category}</h1>
-        <p className={Satoshi.className}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores</p>
+        <span className={Satoshi.className}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente vero soluta magni facilis, cupiditate recusandae ut eius temporibus quibusdam inventore beatae debitis esse maiores</span>
         <Link href={`/blog/category/${category}`}>
           <button className={Satoshi.className}>Read More</button>
         </Link>
       </div>
       <div className={styles.blotterPosts}>     
         {posts.map(({title, slug, id, content}) => (
-          <div className={styles.blotterCard} >
+          <div className={styles.blotterCard} key={id}>
             <div className={styles.imageDiv}>
               <Link href={`blog/posts/${slug}`}>
                 <Image src={img} sizes='100vw' fill='true' priority></Image>
