@@ -8,8 +8,7 @@
   animation: header 2s ease-in-out 1s forwards;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: 20px 100px 10px;
+  padding: 10px 50px;
   z-index: 100;
   color: white;
   margin: auto;

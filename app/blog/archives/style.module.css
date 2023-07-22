@@ -36,6 +36,7 @@
   object-fit: cover;
   position: absolute;
   border-radius: 5px;
+  z-index: -1;
 }
 
 .recomposts div:nth-of-type(2) {
@@ -100,6 +101,7 @@
   object-fit: cover;
   position: absolute;
   border-radius: 5px;
+  z-index: -1;
 }
 
 .allpostcontainer button{
@@ -144,7 +146,7 @@
     }
 
     .recomposts div:nth-of-type(1) {
-      flex: 1;
+      flex: 2;
     }
 
     .recomposts div:nth-of-type(2) {

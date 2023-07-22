@@ -6,6 +6,13 @@ import Image from 'next/image'
 import SocialSharing from './social/page'
 import logo from './../public/logos/logo-white.png'
 import Nav from './nav/nav'
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
 
 export default function Footer () {
 
@@ -23,10 +30,10 @@ export default function Footer () {
         </div>
 
         <div className={style.middlefooter}>
-          <div><span>©2023 Cleva Wealth</span>
+          <div><span className={Satoshi.className}>©2023 Cleva Wealth</span>
           </div>
           <div className={style.socialicons}>
-            <p>We are Social</p>
+            <span className={Satoshi.className}>We are Social</span>
             <SocialSharing fill='white'></SocialSharing>
             </div>
         </div>
