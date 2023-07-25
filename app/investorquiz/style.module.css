@@ -107,14 +107,12 @@
   color: #131A33;
 }
 
-.radio div:nth-child(2) input {
-}
 
-.radio div:nth-child(2) label:hover {
+.radio div:nth-of-type(2) label:hover {
   background-color: lightskyblue;
 }
 
-.radio div:nth-child(2) * p {
+.radio div:nth-of-type(2) * p {
   padding: 0 10px;
 }
 
@@ -269,9 +267,13 @@
     }
 
     .questioncontainer h1 {
-      font-size: 16px;
+      font-size: 14px;
     }
     
+    .questioncontainer span {
+      font-size: 14px;
+    }
+
     .archetypeImage {
       display: none;
     }
