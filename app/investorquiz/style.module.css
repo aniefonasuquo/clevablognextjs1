@@ -4,12 +4,6 @@
   color: white;
 }
 
-.formcontainer {
-  padding: 20px 0;
-  max-width: 600px;
-  margin: auto;
-}
-
 .archetypeImage  {
   width: 100%;
 }
@@ -17,26 +11,6 @@
 .archetypeImage img {
   width: 100%;
   height: 200px;
-}
-
-.quizintro {
-  display: block;
-  padding: 10px 0;
-  text-align: center;
-  max-width: 600px;
-}
-
-.quizintro * {
-  padding-bottom: 10px;
-}
-
-.quizintro h1 {
-  font-size: 80px;
-}
-
-.quizintro span {
-  font-weight: 100;
-  display: block;
 }
 
 .progressOut {
@@ -51,19 +25,29 @@
   transition: all 1s ease-in-out;
 }
 
+.formcontainer {
+  padding: 100px 0;
+}
+
 .questioncontainer{
   position: relative;
   max-width: auto;
   display: flex;
+  max-width: 600px;
   margin: auto;
+  height: 60vh;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
+.questioncontainer h1 {
+  font-size: 20px;
+}
+
 .question {
   height: inherit;
-  width: 600px;
+  max-width: 600px;
   display: flex;
   justify-content: center;
   position: absolute;
@@ -83,8 +67,22 @@
   transition: all 0.5s ease-in-out;
 }
 
+.quizintro {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quizintro h1, .quizintro p {
+  margin-bottom: 20px;
+}
+
+.quizintro h1 {
+  font-size: 80px;
+}
+
 .radio {
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .radio > div {
@@ -131,6 +129,17 @@
   padding: 30px 0;
 }
 
+.degree * label:has(.ranking) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rankingcontainer + div  {
+  display: flex;
+  justify-content: space-between;
+}
+
 .circle {
   border-radius: 50%;
   border: 1px solid white;
@@ -169,19 +178,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
   }
 
   .ageQuestion {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
-  
+
   .ageQuestion * {
     margin: 20px 0;
   }
-  
+
   .ageQuestion input {
    width: 300px;
    height: 1px;
@@ -231,9 +241,10 @@
   }
 
   .controls button{
+    width: 100px;
     border: none;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 15px;
     cursor: pointer;
     text-align: center;
   }
@@ -244,33 +255,43 @@
     border: 1px solid greenyellow;
     color: greenyellow;;
     background-color: #131A33;
-    font-size: 20px;
   }
 
-  @media screen and (max-width: 600px) {
-    .questioncontainer * p, .questioncontainer * span{
-      font-size: 12px;
+  @media screen and (max-width: 700px) {
+
+    .formcontainer {
+      padding: 20px 0;
     }
 
     .questioncontainer{
       padding: 0 10px;
+      justify-content: flex-start;
+    }
+
+    .questioncontainer h1 {
+      font-size: 16px;
+    }
+    
+    .archetypeImage {
+      display: none;
     }
 
     .quizintro h1 {
       font-size: 40px;
     }
 
-    .quizintro span {
-      display: block;
-    }
-
     .radio > div {
       margin: 20px 0;
       gap: 10px
     }
-    
-    
 
+    .rankingcontainer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px 0;
+    }
+    
     #big {
       width: 55px;
       height: 55px;
