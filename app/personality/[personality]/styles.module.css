@@ -42,10 +42,13 @@
 .imgcontainer {
   position: relative;
   aspect-ratio: 1 / 1;
+  z-index: 2;
 }
 
 .imgcontainer img {
   position: absolute;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .resultDetails {
@@ -103,6 +106,45 @@
   font-size: 20px;
   margin-bottom: 20px ;
 }
+
+/* Loading styles */
+
+.personality {
+  background-color: silver;
+  width: 100%;
+  height: 200px;
+}
+
+.image {
+  background-color: silver;
+  width: 100%;
+  height: 400px;
+}
+
+.capacity {
+  background-color: silver;
+  width: 100%;
+  height: 100px;
+}
+
+.willigness {
+  background-color: silver;
+  width: 100%;
+  height: 100px;
+}
+
+.behaviour {
+  background-color: silver;
+  width: 100%;
+  height: 200px;
+}
+
+.allocation {
+  background-color: silver;
+  width: 100%;
+  height: 300px;
+}
+
 
 @media screen and (max-width: 600px){
   .container {

@@ -1,6 +1,6 @@
 .pagecontainer {
   width: 100%;
-  background-color: rgb(17, 30, 72);;
+  background-color: rgb(2,4,37);
   color: white;
 }
 
@@ -93,18 +93,24 @@
 }
 
 .radio > div label {
+  gap: 10px;
+  cursor: pointer;
   border: 1px solid gray ;
   padding: 5px 10px;
   border-radius: 5px;
   font-weight: 100;
   display: flex;
-  gap: 10px;
   align-items: center;
 }
 
 .radio > div label:has(input:checked) {
   background-color: white;
   color: #131A33;
+  font-weight: bold;
+}
+
+.radio input[type='radio'] {
+  display: none;
 }
 
 
@@ -155,7 +161,7 @@
   }
 
   .ranking {
-    display: none
+    visibility:hidden;
   }
   
   #big {
@@ -247,14 +253,26 @@
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
+    font-weight: bold;
   }
 
   .startquiz {
     padding: 10px;
     border-radius: 20px;
     border: 1px solid greenyellow;
-    color: greenyellow;;
-    background-color: #131A33;
+    color:  rgb(2,4,37);
+    background-color: greenyellow;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: max-content;
+    margin: auto;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .startquiz:hover {
+    transform: scale(1.1);
   }
 
   @media screen and (max-width: 700px) {
