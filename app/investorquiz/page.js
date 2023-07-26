@@ -77,7 +77,7 @@ export default function Archetypes () {
               <h1 className={Satoshi.className}>Discover You</h1>
               <div>
                 <p className={Satoshi.className}>Many factors determine our investment outcome, understanding how your financial status, pyschological makeup, risk aversion affect our decisions when investing could help in making better choices.</p>
-                <p>This quiz aims to determine how these factors affect our investments, and advises on the optimal strategy for success.</p>
+                <p className={Satoshi.className}>This quiz aims to determine how these factors affect our investments, and advises on the optimal strategy for success.</p>
               </div>
               <div>{display == 0 && (<button className={styles.startquiz} onClick={nextquestion}><span className={Satoshi.className}>Take Quiz</span><svg fill="rgb(2,4,37)" height="30px" width="30px" version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"> <path d="M16,2C8.3,2,2,8.3,2,16s6.3,14,14,14s14-6.3,14-14S23.7,2,16,2z M21.7,16.7l-4,4C17.5,20.9,17.3,21,17,21s-0.5-0.1-0.7-0.3
 c-0.4-0.4-0.4-1,0-1.4l2.3-2.3H10c-0.6,0-1-0.4-1-1s0.4-1,1-1h8.6l-2.3-2.3c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l4,4
