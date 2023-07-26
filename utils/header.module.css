@@ -2,6 +2,7 @@
   background-color: rgb(2,4,37);
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 .navcontainer {
@@ -29,7 +30,7 @@
   margin: auto;
   padding: auto;
   display: flex;
-  align-items: ce;
+  align-items: center;
 }
 
 .nav {

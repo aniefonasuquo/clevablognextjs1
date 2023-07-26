@@ -103,13 +103,12 @@ export default async function PersonalityPage ({params}) {
   return (
     <div className={styles.page}>
       <div className={styles.container}>
-        <div className={styles.right}>
+        <div className={styles.left}>
             <div>
               <h1 className={Satoshi.className}>{params.personality}</h1>
- 
             </div>
             <div>
-              <p className={Satoshi.className}>{emotion.description[1]}</p>
+              {emotion.description.map(description => (<p className={Satoshi.className}>{description}</p>))}
             </div>
           
           {gender && (<div className={styles.imgcontainer}>
@@ -133,7 +132,7 @@ export default async function PersonalityPage ({params}) {
             <div>
               <div className={styles.resultIcons}>
               <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" fill='rgb(24, 40, 102)'  data-name="Layer 1" viewBox="0 0 24 24" width="30" height="30"><path d="M11.5,14.5V6.5c0-.28,.22-.5,.5-.5s.5,.22,.5,.5V14.5c0,.28-.22,.5-.5,.5s-.5-.22-.5-.5Zm.5,2.5c-.55,0-1,.45-1,1s.45,1,1,1,1-.45,1-1-.45-1-1-1Zm11.61,3.07c-.64,1.23-1.99,1.93-3.71,1.93H4.1c-1.71,0-3.07-.7-3.71-1.93-.65-1.24-.47-2.87,.48-4.24L9.3,2.43c.62-.9,1.63-1.43,2.7-1.43s2.08,.53,2.69,1.41l8.44,13.43c.95,1.37,1.13,2.99,.48,4.23Zm-1.31-3.67s0-.01-.01-.02L13.86,2.96c-.42-.61-1.1-.96-1.86-.96s-1.44,.36-1.87,.98L1.71,16.38c-.75,1.08-.91,2.31-.43,3.23,.47,.9,1.47,1.39,2.82,1.39h15.81c1.35,0,2.35-.49,2.82-1.39,.48-.91,.32-2.14-.42-3.21Z"/></svg>
-                  <h3 className={Satoshi.className}>Risk Wiliigness</h3>
+                  <h3 className={Satoshi.className}>Risk Willigness</h3>
                 </div>
               <div className={styles.bar}>
                 <div style={{width: `${willigness == 'high-willingness'? '90%' : willigness == 'low-willingness'? '20%' : '50%'}`}}> </div>
@@ -146,10 +145,16 @@ export default async function PersonalityPage ({params}) {
                 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" fill='rgb(24, 40, 102)' viewBox="0 0 24 24" width="30" height="30"><path d="M23.393,19.789l-1.325-.756c.278-.621,.432-1.309,.432-2.033s-.155-1.411-.432-2.033l1.325-.756c.24-.137,.323-.442,.186-.682s-.443-.324-.682-.186l-1.326,.757c-.816-1.142-2.101-1.928-3.571-2.075v-1.525c0-.276-.224-.5-.5-.5s-.5,.224-.5,.5v1.525c-1.47,.147-2.754,.933-3.571,2.075l-1.326-.757c-.241-.138-.546-.054-.682,.186-.137,.24-.054,.545,.186,.682l1.325,.756c-.278,.621-.432,1.309-.432,2.033s.155,1.411,.432,2.033l-1.325,.756c-.24,.137-.323,.442-.186,.682,.092,.162,.261,.252,.435,.252,.084,0,.169-.021,.248-.066l1.326-.757c.816,1.142,2.101,1.928,3.571,2.075v1.525c0,.276,.224,.5,.5,.5s.5-.224,.5-.5v-1.525c1.47-.147,2.754-.933,3.571-2.075l1.326,.757c.078,.045,.164,.066,.248,.066,.174,0,.342-.09,.435-.252,.137-.24,.054-.545-.186-.682Zm-5.893,1.211c-2.206,0-4-1.794-4-4s1.794-4,4-4,4,1.794,4,4-1.794,4-4,4ZM9,12c3.309,0,6-2.691,6-6S12.309,0,9,0,3,2.691,3,6s2.691,6,6,6Zm0-11c2.757,0,5,2.243,5,5s-2.243,5-5,5-5-2.243-5-5S6.243,1,9,1Zm.088,13.486c.013,.276-.2,.51-.476,.523-4.269,.204-7.612,3.713-7.612,7.991v.5c0,.276-.224,.5-.5,.5s-.5-.224-.5-.5v-.5c0-4.812,3.762-8.761,8.564-8.99,.26-.015,.51,.199,.523,.476Z"/></svg>
                 <h3 className={Satoshi.className}>Investing behaviour</h3>
               </div>
-              <h5 className={Satoshi.className}>Cons</h5>
-              {emotion.cons.map((con)=> (<p key={con}>{con}</p>))}
-              <h5 className={Satoshi.className}>pros</h5>
-              {emotion.pros.map((pro)=> (<p key={pro}>{pro}</p>))}
+              <div className={styles.behaviourlist}>
+                <h5 className={Satoshi.className}>Cons</h5>
+                <ul>
+                  {emotion.cons.map((con)=> (<li className={Satoshi.className} key={con}>{con}.</li>))}
+                </ul>
+                <h5 className={Satoshi.className}>pros</h5>
+                <ul>
+                  {emotion.pros.map((pro)=> (<li className={Satoshi.className} key={pro}>{pro}.</li>))}
+                </ul>
+              </div>
             </div>
             <div>
               <div className={styles.resultIcons}>
@@ -161,10 +166,10 @@ export default async function PersonalityPage ({params}) {
                 <Chart equity={emotion.allocation.equity} bonds={emotion.allocation.bonds} cash={emotion.allocation.cash} alternatives={emotion.allocation.alternative}></Chart>  
               </div>
               <div>
-                <p className={Satoshi.className}>Stocks and equities - {emotion.allocation.equity * 100}%</p>
-                <p className={Satoshi.className}>Fixed Income - {emotion.allocation.bonds * 100}%</p>
-                <p>Cash and short term investments - {emotion.allocation.cash* 100}%</p>
-                <p className={Satoshi.className}>Alternatives - {emotion.allocation.alternative* 100}%</p>
+                <p className={Satoshi.className}><span className={styles.stocklegend}></span>Stocks and equities - {emotion.allocation.equity * 100}%</p>
+                <p className={Satoshi.className}><span className={styles.filegend}></span>Fixed Income - {emotion.allocation.bonds * 100}%</p>
+                <p className={Satoshi.className}><div className={styles.cashlegend}></div>Cash and short term investments - {emotion.allocation.cash* 100}%</p>
+                <p className={Satoshi.className}><span className={styles.altlegend}></span>Alternatives - {emotion.allocation.alternative* 100}%</p>
               </div>
             </div>
         </div>     
