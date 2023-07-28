@@ -1,27 +1,29 @@
 .container {
   display: flex;
   color: white;
-  gap: 50px;
+  /* gap: 50px; */
   font-weight: 100;
   justify-content: center;
-
+  /* align-items: center; */
+  padding: 0 20px;
 }
 
 .input {
   display: flex;
-  width: 100%;
-  justify-content: center;
-  padding: 20px 0;
-  flex: 1;
-  width: 320px;
+  flex-direction: column;
+  max-width: 500px;
+
 }
 
-.input form{
+.input form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.input form > div:nth-of-type(1){
+  display: flex;
   gap: 10px;
-  width: 100%;
-  max-width: 320px;
 }
 
 .input p {
@@ -36,9 +38,9 @@
 .input input[type='number'],
 .input input[type='date'] {
  background-color: whitesmoke;
- padding: 15px;
+ padding: 10px;
  border: none;
- width: 100%;
+ width: max-content;
  border-radius: 10px;
  font-size: 20px;
  color: navy;
@@ -51,6 +53,7 @@
   top: -25%;
   right: 5px;
   font-size: 20px;
+  font-weight: bold;
   color: rgb(24, 40, 102);
 }
 
@@ -67,20 +70,23 @@
   background-color: skyblue;
  }
 
- .inputRadio {
+ .inputRadio,
+ .contriInput {
   display: flex;
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
+  width: max-content;
+  gap: 10px;
  }
 
- .inputRadio input {
+ .inputRadio input,
+ .contriInput input {
   display: none;
  }
 
- .inputRadio label{
+ .inputRadio label,
+ .contriInput label
+ {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid grey;
   display: flex;
@@ -88,11 +94,13 @@
   justify-content: center;
  }
 
- .inputRadio label:has(input:checked) {
+ .inputRadio label:has(input:checked),
+ .contriInput label:has(input:checked)
+  {
   background-color: rgb(133, 133, 192);
  }
 
- .inputRadio label:hover {
+ .inputRadio label:hover, .contriInput label:hover {
   color: rgb(24, 40, 102);
   background-color: whitesmoke;
   border: 2px solid navy;
@@ -105,26 +113,34 @@
   gap: 20px;
  }
 
- .result > div:nth-child(1) {
-  padding-left: 20px;
+ .result > div:nth-of-type(1) {
   display: flex;
   gap: 30px;
+  padding-left: 20px;
  }
 
  .resultTable {
   text-align: left;
   border-spacing: 20px 2px;
   border-collapse: separate;
-  width: 100%;
  }
 
- .resultTable * th {
-  /* padding-right: 30px; */
- }
-
- .resultTable * tr {
+ .resultTable > tr {
   text-align: left;
  }
+
+ .resultTable th:nth-of-type(4),  .resultTable th:nth-of-type(5) {
+  max-width: 100px;
+ }
+
+ .resultTable td:nth-of-type(4) td,  .resultTable td:nth-of-type(5) td {
+  display: block;
+  text-align: center;
+ }
+
+ .resultTable td:nth-of-type(4) td:nth-of-type(1) {
+  font-weight: bold;
+}
 
  .resultTable td:has(tr) {
   border-spacing: 0 5px;
@@ -137,22 +153,22 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      /* align-items: center; */
       color: white;
       gap: 50px;
       font-weight: 100;
     }
     
-  .result > div:nth-child(1) {
+  .result > div:nth-of-type(1) {
     display: flex;
     gap: 30px;
-    font-size: 13px;
+    /* font-size: 13px; */
     padding: 0;
    }
 
    .resultTable {
     border-spacing: 5px 2px;
-     font-size: 10px;
+     font-size: 14px;
    }
  }
 

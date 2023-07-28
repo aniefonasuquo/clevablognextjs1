@@ -6,9 +6,16 @@ import { useState, useEffect } from "react"
 import { products } from './../Products'
 import Image from "next/image"
 import { log } from "logrocket"
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
 
 
-export default function Income () {
+export default function Income ({heading, details}) {
 
 const finance = new Finance()
 
@@ -18,6 +25,7 @@ const [incomePeriod, setIncomePeriod] = useState()
 const [incomeCurr, setIncomeCurr] = useState()
 const [incomeTarget, setIncomeTarget] = useState()
 const [submit, setsubmit] = useState(null)
+
 
 function getIncomeRecom (e) {
   
@@ -75,6 +83,10 @@ function setcurr (e) {
   return (
     <div className={Styles.container}>
       <div className={Styles.input}>
+      <div className={Styles.midsection}>
+          <h1 className={Satoshi.className}>{heading}</h1>
+          <p className={Satoshi.className}>{details}</p>
+        </div>
         <form onSubmit={getIncomeRecom}>
           <div>
             <p>How often would you receive your investment income</p>

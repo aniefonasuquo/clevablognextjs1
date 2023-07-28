@@ -3,8 +3,16 @@ import { useState, useEffect } from "react";
 import Finance from "tvm-financejs";
 import Styles from './style.module.css'
 import MultiRangeSlider from "../multiRangeSlider/MultiRangeSlider";
+import localfont from 'next/font/local'
 
-export default function Retire () {
+const Satoshi = localfont({
+  src: './../../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
+
+
+export default function Retire ({heading, details}) {
 
   const finance = new Finance()
 
@@ -59,6 +67,10 @@ export default function Retire () {
 
   return (
     <div className={Styles.retirementContainer} >
+        <div className={Styles.midsection}>
+          <h1 className={Satoshi.className}>{heading}</h1>
+          <p className={Satoshi.className}>{details}</p>
+        </div>
       <div className={Styles.input}>               
         <div>
           <p>Select current age and retirement age</p>

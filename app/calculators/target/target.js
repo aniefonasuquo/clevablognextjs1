@@ -5,14 +5,23 @@ import Styles from './style.module.css'
 import { useState, useEffect } from "react"
 import { products } from './../Products'
 import Image from "next/image"
+import localfont from 'next/font/local'
+
+const Satoshi = localfont({
+  src: './../../../utils/fonts/Satoshi/Satoshi-Variable.woff2',
+  style: 'normal',
+  display: 'swap',
+})
 
 
-export default function Target () {
+export default function Target ({heading, details}) {
 
   const finance = new Finance();
   
   const [selectcurr, setCurr] = useState('')
   const [showResult, setshow] = useState('')
+  const [contribution, setcontribution] = useState([])
+  const [selectedContri, setSelectedcontri] = useState('')
   
   const [Targetresult, setresult] = useState(Array)
   const [targetamount, settargetamount] = useState(0)
@@ -33,43 +42,43 @@ export default function Target () {
     setCurr(targetCurr)
     const targetAmount = forminput.get('targetamount')
     settargetamount(targetAmount)
+    const contribution = forminput.get('contribut')
+    setSelectedcontri(contribution)
     
-    const tenor = (targetDate - today)/(1000 * 60 * 60 * 24);
-    const year = Math.ceil(tenor/365) 
-    const month = tenor/30
-    const week = tenor/7
-    
+    const tenor = (targetDate - today)/(1000 * 60 * 60 * 24);    
     settargetdate(Math.ceil(tenor))
 
     const prodCurr = products.filter(product => product.curr == targetCurr)
     
     prodCurr.forEach((product)=> {
-      const weeklypay = Math.ceil(finance.PMT(product.rate/52, week - 1,0,-targetAmount,1))
-      const totalweek = weeklypay * (week - 1)
-      const yearlypay = Math.ceil(finance.PMT(product.rate, year - 1,0,-targetAmount,1))
-      const totalyear = yearlypay * (year - 1)
-      const monthlypay = Math.ceil(finance.PMT(product.rate/12, month - 1,0,-targetAmount,1))
-      const totalmonth = monthlypay * (month - 1)
-     
+
+      let payment = Number;
+
+      switch (contribution) {
+        case 'yearly':
+          payment = Math.ceil(finance.PMT(product.rate/52, (tenor/365) - 1,0,-targetAmount,1))
+          break;
+          case 'semiannually':            
+            payment = Math.ceil(finance.PMT(product.rate/52, (tenor/182) - 1,0,-targetAmount,1))
+            break;
+            case 'quarterly':              
+              payment = Math.ceil(finance.PMT(product.rate/52, (tenor/91) - 1,0,-targetAmount,1))
+              break;
+              case 'weekly':                
+                payment = Math.ceil(finance.PMT(product.rate/52, (tenor/7) - 1,0,-targetAmount,1))
+                break;                
+                default:
+          payment = Math.ceil(finance.PMT(product.rate/52, (tenor/30) - 1,0,-targetAmount,1))
+          break;
+      }
+
       const data = {
         "issuer": product.name,
         "product": product.product,
         "rate": product.rate,
         "logo": product.img,
-        "payments": []
+        "payment": payment
       }  
-  
-      if (year >= 3) {
-        data.payments.push({'year': yearlypay, 'total': totalyear})
-        data.payments.push({'month': monthlypay, 'total': totalmonth})
-      } else if (month >= 18) {
-        data.payments.push({'month': monthlypay, 'total': totalmonth})
-      } else if (month < 3) {
-        data.payments.push({'week': weeklypay, 'tota': totalweek})
-      } else {
-        data.payments.push({'month': monthlypay,  'total': totalmonth}) 
-        data.payments.push({'week': weeklypay, 'tota': totalweek})
-      } 
       
       array.push(data)
       setresult(array)
@@ -82,40 +91,78 @@ export default function Target () {
     setCurr(e.target.value)
   }
 
+  function showcontribution (e) {
+
+    const targetDate = new Date(e.target.value)
+    const tenor = (targetDate - today)/(1000 * 60 * 60 * 24);
+    const contribution = []
+      
+    if (tenor > 1) {      
+      if (tenor > 1095) {
+        contribution.push('yearly', 'monthly', 'quarterly', 'semiannually')
+      } else if (tenor <= 180) {
+        contribution.push('weekly', 'monthly')
+      } else {contribution.push('monthly', 'quarterly', 'semiannually')}
+    
+      setcontribution(contribution) 
+    } else {}
+    
+  }
+
   return (
     <div className={Styles.container}>
       <div className={Styles.input}>
+      <div className={Styles.midsection}>
+          <h1 className={Satoshi.className}>{heading}</h1>
+          <p className={Satoshi.className}>{details}</p>
+        </div>
         <form onSubmit={handlesubmit}>
-        <div>
-          <p>Select currency</p>
+          <div>
+          <div>
+          <p className={Satoshi.className}>Select currency</p>
           <div className={Styles.inputRadio}>
             <label htmlFor="targetNGN">
               <input onChange={updateCurr} value='NGN' type="radio" id='targetNGN' name='targetcurr' required/>
-              <span>NGN</span>
+              <span className={Satoshi.className}>NGN</span>
             </label>
             <label htmlFor="targetUSD">
               <input onChange={updateCurr} value='USD' type="radio" id='targetUSD' name='targetcurr' required/>
-              <span>USD</span>
+              <span className={Satoshi.className}>USD</span>
             </label>
           </div>
         </div> 
         <div>
-          <p>Target Value</p>
+          <p className={Satoshi.className}>Target Value</p>
           <div className={Styles.targetAmount}>
             <label>
-              <input type='number' inputMode="numeric" name="targetamount" placeholder="Target Amount"/>
-              <span>{selectcurr}</span>
+              <input className={Satoshi.className} type='number' inputMode="numeric" name="targetamount" placeholder="Target Amount"/>
+              <span className={Satoshi.className}>{selectcurr}</span>
             </label>
           </div>
         </div>
-        <div>
-          <p>Choose target date</p>
+    
+          </div>
+          <div>
+          <p className={Satoshi.className}>Choose target date</p>
           <label className={Styles.targetdate}>
-            <input type="date" name="targetdate" placeholder="Choose Target Date" required/> 
+            <input onChange={showcontribution} className={Satoshi.className} type="date" name="targetdate" placeholder="Choose Target Date" required/> 
           </label>
         </div>
+
+          {contribution[0] && (<div>
+          <p className={Satoshi.className}>Preferred Contribution Frequency</p>
+          <div className={Styles.contriInput}>
+          {contribution.map(contri => (
+            <label key={contri} htmlFor={contri}>
+              <input value={contri} type="radio" id={contri} name='contribution' required/>
+              <span className={Satoshi.className}>{contri}</span>
+            </label>
+          ))}
+          </div>
+        </div>)}
+
         <div>
-          <button type="submit">Discover</button>
+          <button className={Satoshi.className} type="submit">Discover</button>
         </div>
         </form>
       </div>
@@ -124,17 +171,17 @@ export default function Target () {
       <div className={Styles.result}>
         <div>
           <div>
-            <p>Target Value</p>
-            <h3>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h3>
+            <p className={Satoshi.className}>Target Value</p>
+            <h3 className={Satoshi.className}>{selectcurr == 'USD'? '$' : 'N'}{targetamount.toLocaleString('en-US',{minimumFractionDigits: 2, maximumFractionDigits: 2})}</h3>
           </div>
           <div>
-            <p>Duration</p>
-            <h3>{targetdate <= 365 ? `${targetdate} days` : targetdate < 729 ? `1 year ${targetdate - 365} days` : `${Math.ceil(targetdate/365)} years ${targetdate - (Math.ceil(targetdate/365) * 365)} days`}</h3>
+            <p className={Satoshi.className}>Duration</p>
+            <h3 className={Satoshi.className}>{targetdate <= 365 ? `${targetdate} days` : targetdate < 729 ? `1 year ${targetdate - 365} days` : `${Math.ceil(targetdate/365)} years ${targetdate - (Math.ceil(targetdate/365) * 365)} days`}</h3>
           </div>
         </div>
         <div>
           <table className={Styles.resultTable}>
-            <thead>
+            <thead className={Satoshi.className}>
               <tr>
                 <th>Issuer</th>
                 <th>Product</th>
@@ -143,26 +190,14 @@ export default function Target () {
                 <th>Total Contribution</th>
               </tr>
             </thead>
-            <tbody>
-            {Targetresult.map(({issuer, product, rate, payments, logo})=> (
+            <tbody className={Satoshi.className}>
+            {Targetresult.map(({issuer, product, rate, payment, logo})=> (
               <tr key={product}>
-                <td><Image src={logo} sizes="100vw" width={40} height={40} style={{borderRadius: '50%'}} ></Image></td>
-                <td>{issuer} {product}</td>
-                <td>{(rate * 100).toFixed(2)}%</td>
-                <td>
-                {payments.map((e)=>(
-                  <tr key={Object.keys(e)[0]}>
-                    <div>{selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[0]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
-                    </div>          
-                    <div>every {Object.keys(e)[0]}
-                    </div> 
-                  </tr>))}
-                </td>
-                <td>
-                {payments.map((e)=>(
-                  <tr key={Object.keys(e)[0]}>{selectcurr == 'USD'? '$' : 'N'}{(Object.values(e)[1]).toLocaleString("en-us", {minimumFractionDigits: 2,maximumFractionDigits: 2,})}
-                  </tr>))}              
-                </td>
+                <td className={Satoshi.className}><Image src={logo} sizes="100vw" width={40} height={40} style={{borderRadius: '50%'}} ></Image></td>
+                <td className={Satoshi.className}>{issuer} {product}</td>
+                <td className={Satoshi.className}>{(rate * 100).toFixed(2)}%</td>
+                <td className={Satoshi.className}>{payment.toLocaleString('en-US')}</td>
+                <td className={Satoshi.className}>{payment}</td>
               </tr>
             ))}
             </tbody>
